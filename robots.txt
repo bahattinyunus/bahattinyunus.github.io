@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bahattinyunus.github.io/sitemap.xml
+# Crawl-delay can be added if needed
