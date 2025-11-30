@@ -1,0 +1,13 @@
+:root{--bg:#0f1720;--card:#0b1220;--muted:#9aa4b2;--accent:#0b84ff;--glass:rgba(255,255,255,0.03)}
+html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#07090b 0%, #0b1220 100%);color:#e6eef6}
+.container{max-width:920px;margin:40px auto;padding:24px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.avatar{width:56px;height:56px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+h1{margin:0;font-size:1.45rem}
+p.lead{color:var(--muted);margin:8px 0 18px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:12px;margin-top:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+a.link{color:var(--accent);text-decoration:none}
+footer{color:var(--muted);font-size:0.9rem;margin-top:28px}
+@media (max-width:520px){.container{padding:16px;margin:18px auto}}
