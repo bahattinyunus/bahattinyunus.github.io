@@ -1,63 +1,407 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bahattin Yunus Çetin - Software Engineer</title>
-  <meta name="description" content="Software Engineer | GitHub Profile of Bahattin Yunus Çetin">
-  <meta name="theme-color" content="#0b84ff">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="assets/styles.css">
-  <meta property="og:title" content="Bahattin Yunus Çetin — Software Engineer">
-  <meta property="og:description" content="Yazılım mühendisi — AI, siber güvenlik ve web geliştirme">
-  <meta property="og:image" content="assets/favicon.svg">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@bahattin_yunus">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Bahattin Yunus Çetin",
-    "url": "https://bahattinyunus.github.io",
-    "sameAs": ["https://github.com/bahattin-yunus-cetin"]
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahattin Yunus Çetin | Operative Status: Active</title>
+    <meta name="description" content="Data Science, AI, Cybersecurity, Defense Systems Portfolio">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fontlar: Orbitron (Taktiksel Başlıklar) ve JetBrains Mono (Kod) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        camo: {
+                            light: '#6B8E23', // Olive Drab
+                            main: '#556B2F',  // Dark Olive Green
+                            dark: '#2F4F2F',  // Dark Slate Green
+                            black: '#0a0f0a', // Almost Black
+                            panel: '#111c11'  // Darker Panel
+                        },
+                        terminal: '#39ff14'
+                    },
+                    fontFamily: {
+                        tactical: ['Orbitron', 'sans-serif'],
+                        code: ['JetBrains Mono', 'monospace'],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #2F4F2F 1px, transparent 1px), linear-gradient(to bottom, #2F4F2F 1px, transparent 1px)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Taktiksel Tarama Çizgisi Efekti */
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 10;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(85, 107, 47, 0.1) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.1;
+            position: fixed;
+            bottom: 100%;
+            left: 0;
+            pointer-events: none;
+            animation: scanline 10s linear infinite;
+        }
+        @keyframes scanline {
+            0% { bottom: 100%; }
+            100% { bottom: -100px; }
+        }
+
+        /* Özel Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0f0a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #556B2F; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6B8E23; 
+        }
+
+        /* HUD Köşeleri */
+        .hud-border {
+            position: relative;
+            border: 1px solid #2F4F2F;
+        }
+        .hud-border::before, .hud-border::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #6B8E23;
+            transition: all 0.3s ease;
+        }
+        .hud-border::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+        .hud-border::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+        
+        .hud-card:hover .hud-border::before, .hud-card:hover .hud-border::after {
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="avatar">BY</div>
-        <div>
-          <h1>Bahattin Yunus Çetin</h1>
-          <div class="lead">Software Engineer • AI • Cyber Security</div>
-        </div>
-      </div>
-      <nav>
-        <a class="link" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a> ·
-        <a class="link" href="https://github.com/bahattin-yunus-cetin" target="_blank" rel="noopener">GitHub</a>
-      </nav>
-    </header>
+<body class="bg-camo-black text-gray-300 font-code selection:bg-camo-main selection:text-white overflow-x-hidden">
 
-    <section class="card">
-      <h2>Hakkımda</h2>
-      <p class="lead">Merhaba — Yazılım mühendisiyim. Yapay zeka, güvenlik ve web geliştirme ile ilgileniyorum. Bu sayfa GitHub Pages üzerinden barındırılan kişisel profilimin basit bir ön yüzüdür.</p>
-      <div class="projects">
-        <div class="card">
-          <strong>Projeler</strong>
-          <p class="lead">Repo bazlı kısa özetler ve bağlantılar ekleyebilirsiniz.</p>
-          <p><a class="link" href="https://github.com/bahattin-yunus-cetin" target="_blank" rel="noopener">Tüm projeler →</a></p>
-        </div>
-        <div class="card">
-          <strong>İletişim</strong>
-          <p class="lead">E-posta: <a class="link" href="mailto:hello@example.com">hello@example.com</a></p>
-        </div>
-      </div>
-    </section>
+    <!-- Arkaplan Grid -->
+    <div class="fixed inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-[0.05] pointer-events-none"></div>
+    <!-- Scanline -->
+    <div class="scanline"></div>
 
-    <footer>
-      Bu sayfa GitHub Pages ile barındırılıyor. Kaynak: <a class="link" href="https://github.com/bahattin-yunus-cetin/bahattinyunus.github.io" target="_blank" rel="noopener">repo</a>.
+    <!-- Navigasyon -->
+    <nav class="fixed top-0 w-full z-50 bg-camo-black/90 backdrop-blur-md border-b border-camo-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-camo-light font-tactical font-bold text-xl tracking-wider">
+                        <i class="fa-solid fa-terminal mr-2"></i>BYC<span class="text-xs align-top opacity-70">.SYS</span>
+                    </span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#briefing" class="hover:bg-camo-dark px-3 py-2 rounded-md text-sm font-medium transition-colors">BRIEFING</a>
+                        <a href="#arsenal" class="hover:bg-camo-dark px-3 py-2 rounded-md text-sm font-medium transition-colors">ARSENAL</a>
+                        <a href="#training" class="hover:bg-camo-dark px-3 py-2 rounded-md text-sm font-medium transition-colors">TRAINING</a>
+                        <a href="#metrics" class="hover:bg-camo-dark px-3 py-2 rounded-md text-sm font-medium transition-colors">METRICS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative flex flex-col items-center justify-center min-h-[80vh] text-center space-y-6">
+            
+            <!-- Profil Resmi yerine Rank Logosu -->
+            <div class="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-camo-main p-1 shadow-[0_0_20px_rgba(85,107,47,0.5)]">
+                <div class="w-full h-full rounded-full bg-camo-panel flex items-center justify-center overflow-hidden">
+                    <i class="fa-solid fa-user-secret text-6xl text-camo-light"></i>
+                </div>
+                <div class="absolute bottom-0 right-0 bg-camo-light text-black text-xs font-bold px-2 py-1 rounded">LVL.99</div>
+            </div>
+
+            <!-- Typing SVG -->
+            <div class="w-full max-w-2xl">
+                <img src="https://readme-typing-svg.herokuapp.com/?font=Orbitron&size=24&center=true&vCenter=true&width=600&height=50&duration=4000&lines=OPERATIVE+STATUS+ACTIVE;Bahattin+Yunus+Çetin;" alt="Typing Name" class="w-full h-auto mx-auto" />
+            </div>
+
+            <h2 class="text-camo-light font-tactical text-lg md:text-xl tracking-widest border-b border-camo-main pb-2">
+                DATA SCIENCE | AI | CYBERSECURITY | DEFENSE SYSTEMS
+            </h2>
+
+            <!-- Status Badges Grid -->
+            <div class="flex flex-wrap justify-center gap-3 mt-4">
+                <img src="https://img.shields.io/badge/RANK-Software%20Engineer-556B2F?style=for-the-badge&logo=shield&logoColor=white" alt="Rank"/>
+                <img src="https://img.shields.io/badge/STATUS-OPERATIONAL-6B8E23?style=for-the-badge&logo=check-circle&logoColor=white" alt="Status"/>
+                <img src="https://img.shields.io/badge/CLEARANCE-ACTIVE-2F4F2F?style=for-the-badge&logo=lock&logoColor=white" alt="Clearance"/>
+            </div>
+
+            <!-- Poem Section -->
+            <div class="mt-8 border-l-4 border-camo-main pl-4 italic text-sm md:text-base text-gray-400 max-w-3xl">
+                <img src="https://readme-typing-svg.herokuapp.com/?font=Orbitron&size=18&center=true&vCenter=true&width=800&duration=3500&color=a3a3a3&lines=Yalnız+iman+ve+fikir,+ne+sevgili+ne+kardeş.;Bir+akıl+gelecek+ki,+akıllar+delirecek.;Ve+bir+devrim,+evvela+devrimi+devirecek.;Her+şey+birbirine+denk,+her+şey+birbirine+eş." alt="Poem" class="w-full" />
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex gap-4 mt-8">
+                <a href="https://www.linkedin.com/in/bahattin-yunus-%C3%A7etin/" target="_blank" class="transform hover:scale-110 transition-transform">
+                    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+                </a>
+                <a href="https://github.com/bahattinyunus" target="_blank" class="transform hover:scale-110 transition-transform">
+                    <img src="https://img.shields.io/badge/GitHub-2F4F2F?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+                </a>
+            </div>
+        </section>
+
+        <!-- OPERATIVE BRIEFING (About) -->
+        <section id="briefing" class="space-y-6">
+            <h3 class="text-3xl font-tactical text-camo-light flex items-center">
+                <span class="w-2 h-8 bg-camo-main mr-3"></span>
+                OPERATIVE BRIEFING
+            </h3>
+            
+            <div class="bg-camo-panel border border-camo-dark p-6 rounded-sm shadow-lg hud-border">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-graduation-cap text-camo-light mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Rank</strong>
+                                <span>Software Engineering Operative | Specialization: Data Science, AI, Cybersecurity</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-crosshairs text-camo-light mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Tactical Capabilities</strong>
+                                <span>Advanced software engineering & mathematical operations for AI defense systems</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-bullseye text-camo-light mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Primary Mission</strong>
+                                <span>Big data analytics, neural networks, and AI-powered cybersecurity defense solutions</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-book-journal-whills text-camo-light mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Training Status</strong>
+                                <span>Continuous skill advancement and tactical knowledge acquisition</span>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-bolt text-camo-light mt-1"></i>
+                            <div>
+                                <strong class="text-white block">Deployment</strong>
+                                <span>Active in tech industry operations</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Values Badges -->
+                        <div class="pt-4 flex flex-wrap gap-2">
+                            <span class="bg-camo-dark/50 px-2 py-1 text-xs border border-camo-main rounded text-camo-light">REVOLUTIONARY</span>
+                            <span class="bg-camo-dark/50 px-2 py-1 text-xs border border-camo-main rounded text-camo-light">FAITH DRIVEN</span>
+                            <span class="bg-camo-dark/50 px-2 py-1 text-xs border border-camo-main rounded text-camo-light">INDEPENDENT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARSENAL (Tech Stack) -->
+        <section id="arsenal" class="space-y-6">
+            <h3 class="text-3xl font-tactical text-camo-light flex items-center">
+                <span class="w-2 h-8 bg-camo-main mr-3"></span>
+                TACTICAL ARSENAL
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Languages -->
+                <div class="bg-camo-panel p-4 border border-camo-dark rounded hud-card hud-border">
+                    <h4 class="text-camo-light font-bold mb-4 border-b border-camo-dark pb-2">LANGUAGES</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+                        <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++"/>
+                        <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go"/>
+                        <img src="https://img.shields.io/badge/C-555555?style=flat-square&logo=c&logoColor=white" alt="C"/>
+                        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JS"/>
+                    </div>
+                </div>
+
+                <!-- Web Tech -->
+                <div class="bg-camo-panel p-4 border border-camo-dark rounded hud-card hud-border">
+                    <h4 class="text-camo-light font-bold mb-4 border-b border-camo-dark pb-2">WEB SYSTEMS</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5"/>
+                        <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3"/>
+                    </div>
+                </div>
+
+                <!-- AI & Cyber -->
+                <div class="bg-camo-panel p-4 border border-camo-dark rounded hud-card hud-border">
+                    <h4 class="text-camo-light font-bold mb-4 border-b border-camo-dark pb-2">AI / DEFENSE</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TF"/>
+                        <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch"/>
+                        <img src="https://img.shields.io/badge/Cybersecurity-2F4F2F?style=flat-square&logo=shield&logoColor=white" alt="Sec"/>
+                    </div>
+                </div>
+
+                <!-- DevOps -->
+                <div class="bg-camo-panel p-4 border border-camo-dark rounded hud-card hud-border">
+                    <h4 class="text-camo-light font-bold mb-4 border-b border-camo-dark pb-2">INFRASTRUCTURE</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git"/>
+                        <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"/>
+                        <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux"/>
+                    </div>
+                </div>
+
+                <!-- Hardware/IoT -->
+                <div class="bg-camo-panel p-4 border border-camo-dark rounded hud-card hud-border">
+                    <h4 class="text-camo-light font-bold mb-4 border-b border-camo-dark pb-2">HARDWARE / IOT</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=white" alt="Arduino"/>
+                        <img src="https://img.shields.io/badge/Raspberry%20Pi-A22846?style=flat-square&logo=raspberrypi&logoColor=white" alt="RPi"/>
+                        <img src="https://img.shields.io/badge/MicroPython-2D2D2D?style=flat-square&logo=micropython&logoColor=white" alt="MicroPy"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRAINING RECORDS (Certifications) -->
+        <section id="training" class="space-y-6">
+            <h3 class="text-3xl font-tactical text-camo-light flex items-center">
+                <span class="w-2 h-8 bg-camo-main mr-3"></span>
+                TRAINING RECORDS
+            </h3>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse border border-camo-dark">
+                    <thead class="bg-camo-dark text-camo-light font-tactical">
+                        <tr>
+                            <th class="p-3 border-r border-camo-dark">CERTIFICATION ID</th>
+                            <th class="p-3 border-r border-camo-dark">MODULE</th>
+                            <th class="p-3 border-r border-camo-dark hidden md:table-cell">PROVIDER</th>
+                            <th class="p-3">STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm bg-camo-panel/50">
+                        <tr class="border-b border-camo-dark/50 hover:bg-camo-dark/20 transition-colors">
+                            <td class="p-3 border-r border-camo-dark/50 font-mono text-xs opacity-70">Yx1hPL1mGY</td>
+                            <td class="p-3 border-r border-camo-dark/50">Python 1</td>
+                            <td class="p-3 border-r border-camo-dark/50 hidden md:table-cell">BTK Akademi</td>
+                            <td class="p-3 text-green-500 font-bold"><i class="fa-solid fa-check mr-1"></i> VERIFIED</td>
+                        </tr>
+                        <tr class="border-b border-camo-dark/50 hover:bg-camo-dark/20 transition-colors">
+                            <td class="p-3 border-r border-camo-dark/50 font-mono text-xs opacity-70">6mqFNqLYdA</td>
+                            <td class="p-3 border-r border-camo-dark/50">C++</td>
+                            <td class="p-3 border-r border-camo-dark/50 hidden md:table-cell">BTK Akademi</td>
+                            <td class="p-3 text-green-500 font-bold"><i class="fa-solid fa-check mr-1"></i> VERIFIED</td>
+                        </tr>
+                        <tr class="border-b border-camo-dark/50 hover:bg-camo-dark/20 transition-colors">
+                            <td class="p-3 border-r border-camo-dark/50 font-mono text-xs opacity-70">XV1hWEow9j</td>
+                            <td class="p-3 border-r border-camo-dark/50">Cybersecurity Intro</td>
+                            <td class="p-3 border-r border-camo-dark/50 hidden md:table-cell">BTK Akademi</td>
+                            <td class="p-3 text-green-500 font-bold"><i class="fa-solid fa-check mr-1"></i> VERIFIED</td>
+                        </tr>
+                        <tr class="border-b border-camo-dark/50 hover:bg-camo-dark/20 transition-colors">
+                            <td class="p-3 border-r border-camo-dark/50 font-mono text-xs opacity-70">zXztak2EeO</td>
+                            <td class="p-3 border-r border-camo-dark/50">AI Introduction</td>
+                            <td class="p-3 border-r border-camo-dark/50 hidden md:table-cell">BTK Akademi</td>
+                            <td class="p-3 text-green-500 font-bold"><i class="fa-solid fa-check mr-1"></i> VERIFIED</td>
+                        </tr>
+                        <tr class="border-b border-camo-dark/50 hover:bg-camo-dark/20 transition-colors">
+                            <td class="p-3 border-r border-camo-dark/50 font-mono text-xs opacity-70">ax1hDzvgrE</td>
+                            <td class="p-3 border-r border-camo-dark/50">Custom GPTs</td>
+                            <td class="p-3 border-r border-camo-dark/50 hidden md:table-cell">BTK Akademi</td>
+                            <td class="p-3 text-green-500 font-bold"><i class="fa-solid fa-check mr-1"></i> VERIFIED</td>
+                        </tr>
+                        <!-- More rows implied for scrolling look -->
+                        <tr class="border-b border-camo-dark/50 hover:bg-camo-dark/20 transition-colors">
+                            <td class="p-3 border-r border-camo-dark/50 font-mono text-xs opacity-70">...</td>
+                            <td class="p-3 border-r border-camo-dark/50 italic text-gray-500">View Full Log on GitHub</td>
+                            <td class="p-3 border-r border-camo-dark/50 hidden md:table-cell"></td>
+                            <td class="p-3">...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- METRICS (GitHub Stats) -->
+        <section id="metrics" class="space-y-6">
+            <h3 class="text-3xl font-tactical text-camo-light flex items-center">
+                <span class="w-2 h-8 bg-camo-main mr-3"></span>
+                FIELD METRICS
+            </h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Activity Graph -->
+                <div class="bg-camo-panel p-2 border border-camo-dark rounded">
+                    <h4 class="text-xs text-camo-light mb-2 font-tactical">ACTIVITY SIGNATURE</h4>
+                    <img src="https://github-readme-activity-graph.vercel.app/graph?username=bahattinyunus&theme=react-dark&bg_color=0D1117&color=6B8E23&line=556B2F&point=8B7355&area=true&hide_border=true" alt="GitHub Activity Graph" class="w-full" />
+                </div>
+                
+                <!-- Snake -->
+                <div class="bg-camo-panel p-2 border border-camo-dark rounded flex flex-col items-center justify-center">
+                    <h4 class="text-xs text-camo-light mb-2 font-tactical">CONTRIBUTION GRID</h4>
+                    <img src="https://raw.githubusercontent.com/bahattinyunus/bahattinyunus/output/github-contribution-grid-snake.svg" alt="snake animation" class="max-w-full h-auto"/>
+                </div>
+            </div>
+
+            <!-- Profile Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=bahattinyunus&theme=2077" alt="GitHub Metrics" class="w-full h-auto rounded border border-camo-dark" />
+                <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=bahattinyunus&theme=2077" alt="Repos Per Language" class="w-full h-auto rounded border border-camo-dark" />
+            </div>
+        </section>
+        
+        <!-- Mission Status Footer -->
+        <div class="text-center py-12 opacity-80">
+            <img src="https://readme-typing-svg.vercel.app/api?font=Orbitron&pause=1000&color=6B8E23&center=true&vCenter=true&width=435&lines=OPERATIONAL+STATUS+ACTIVE;Continuous+learning+in+progress;AI+%26+ML+defense+systems;Open+to+strategic+collaboration" alt="Status Footer" class="mx-auto" />
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-camo-black border-t border-camo-dark py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="font-tactical text-camo-light text-sm">
+                &copy; 2024 BAHATTIN YUNUS ÇETİN | SYSTEM SECURE
+            </p>
+            <p class="text-xs text-gray-600 mt-2 font-code">
+                DESIGNED FOR OPERATIONAL EXCELLENCE
+            </p>
+        </div>
     </footer>
-  </div>
+
 </body>
 </html>
