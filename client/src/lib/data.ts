@@ -52,15 +52,6 @@ export const profileData = {
   },
   featured_projects: [
     {
-      name: "bahattinyunus",
-      description: "Yapay Zeka, Siber Güvenlik ve Savunma Sistemleri alanlarına odaklanan bir öğrenciyim. Akıllı, güvenli ve sürdürülebilir sistemler geliştirmeyi hedefliyorum.",
-      stars: 25,
-      forks: 2,
-      language: null,
-      url: "https://github.com/bahattinyunus/bahattinyunus",
-      image: "/images/project-bahattinyunus.jpg"
-    },
-    {
       name: "university-courses",
       description: "Geleceğin dünyasını inşa eden 'Mültidisipliner Solopreneur'lar' için tasarlanmış, yapay zeka entegreli akademik bir işletim sistemi ve bilgi cephaneliği.",
       stars: 20,
@@ -97,6 +88,24 @@ export const profileData = {
       image: "/images/project-devtools.jpg"
     },
     {
+      name: "NeuroPaint",
+      description: "NeuroPaint: Klasik tuvali yapay zeka ile hibritleyen, gerçek zamanlı stil transferi ve akıllı çizim asistanı sunan yeni nesil yaratıcı tasarım platformu.",
+      stars: 7,
+      forks: 0,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/NeuroPaint",
+      image: "/images/project-neuropaint.jpg"
+    },
+    {
+      name: "TEKNOFEST_Competitions",
+      description: "Küresel Teknoloji Liderliğinin Yeni Merkezi: Otonom Sistemler, Uzay ve Yapay Zeka için Türkiye'nin En Kapsamlı Açık Kaynak AR-GE Ekosistemi.",
+      stars: 6,
+      forks: 1,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/TEKNOFEST_Competitions",
+      image: "/images/project-teknofest.jpg"
+    },
+    {
       name: "AutonomousPrisonSystem",
       description: "Güvenlik, mahkûm izleme ve rehabilitasyon süreçlerini otomatikleştirmek için tasarlanmış yeni nesil, hiper-otonom bir yönetim platformudur.",
       stars: 5,
@@ -115,13 +124,13 @@ export const profileData = {
       image: "/images/project-steganography.jpg"
     },
     {
-      name: "teknofest_robotaksi",
-      description: "Robotaksi: Otonom Binek Araç Komuta Merkezi | TEKNOFEST Robotaksi Binek Otonom Araç Yarışması için geliştirilen, ROS 2 Humble tabanlı tam otonom sürüş yığını.",
-      stars: 2,
-      forks: 1,
+      name: "cizgi_takibi",
+      description: "İleri seviye robotik kontrol sistemleri arşivi: Arduino C++ ve Python tabanlı çizgi izleme algoritmalar, LiPo güç yönetimi ve yüksek hızlı şase tasarım dokümantasyonu.",
+      stars: 4,
+      forks: 0,
       language: "Python",
-      url: "https://github.com/bahattinyunus/teknofest_robotaksi",
-      image: "/images/project-robotaksi.jpg"
+      url: "https://github.com/bahattinyunus/cizgi_takibi",
+      image: "/images/project-linefollower.jpg"
     },
     {
       name: "btk_go",
@@ -133,13 +142,31 @@ export const profileData = {
       image: "/images/project-go.jpg"
     },
     {
-      name: "NeuroPaint",
-      description: "NeuroPaint: Klasik tuvali yapay zeka ile hibritleyen, gerçek zamanlı stil transferi ve akıllı çizim asistanı sunan yeni nesil yaratıcı tasarım platformu.",
-      stars: 7,
+      name: "cyber_security_btk_t3A",
+      description: "CYBER SENTINEL: Türkiye'nin dijital sınırlarını koruyan, çekirdek seviyesinden orbital düzeye kadar uzanan kapsamlı ve profesyonel bir Milli Siber Uzay Harp Doktrini ve Bilgi Deposu",
+      stars: 4,
       forks: 0,
       language: "Python",
-      url: "https://github.com/bahattinyunus/NeuroPaint",
-      image: "/images/project-neuropaint.jpg"
+      url: "https://github.com/bahattinyunus/cyber_security_btk_t3A",
+      image: "/images/project-cyber.jpg"
+    },
+    {
+      name: "LibraMind",
+      description: "Geleneksel kütüphaneciliği \"Yaşayan Kütüphane\" manifestosuyla dönüştüren; AI destekli talep tahminleme, NLP tabanlı arama ve akıllı envanter yönetimi sunan uçtan uca ekosistem.",
+      stars: 3,
+      forks: 0,
+      language: "TypeScript",
+      url: "https://github.com/bahattinyunus/LibraMind",
+      image: "/images/project-libramind.jpg"
+    },
+    {
+      name: "teknofest_robotaksi",
+      description: "Robotaksi: Otonom Binek Araç Komuta Merkezi | TEKNOFEST Robotaksi Binek Otonom Araç Yarışması için geliştirilen, ROS 2 Humble tabanlı tam otonom sürüş yığını.",
+      stars: 2,
+      forks: 1,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/teknofest_robotaksi",
+      image: "/images/project-robotaksi.jpg"
     },
     {
       name: "teknofest_suru_iha",
@@ -158,6 +185,33 @@ export const profileData = {
       language: null,
       url: "https://github.com/bahattinyunus/teknofest_insansiz_kara_araci",
       image: "/images/project-ika.jpg"
+    },
+    {
+      name: "teknofest_robolig",
+      description: "Project STRIKER: Bir robottan fazlası, sahada kendi kararlarını veren bir silikon atlet. TEKNOFEST 2025 Robolig için geliştirilen; YOLOv8-Nano, ROS2 ve Omni-Drive tabanlı otonom futbol operatörü.",
+      stars: 2,
+      forks: 0,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/teknofest_robolig",
+      image: "/images/project-robolig.jpg"
+    },
+    {
+      name: "teknofest_insansiz_deniz_araci",
+      description: "Project Aegis: TEKNOFEST İnsansız Deniz Aracı (İDA) yarışması için geliştirilen otonom navigasyon ve komuta sistemi.",
+      stars: 2,
+      forks: 0,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/teknofest_insansiz_deniz_araci",
+      image: "/images/project-ida.jpg"
+    },
+    {
+      name: "LionSight-AUV",
+      description: "LionSight AUV: NVIDIA Jetson Orin Nano ve ROS2 Humble tabanlı otonom navigasyon sistemi. Derin denizlerde AI ile tür tespiti, SLAM ve 3D resif haritalama teknolojisi.",
+      stars: 2,
+      forks: 0,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/LionSight-AUV",
+      image: "/images/project-lionsight.jpg"
     }
   ]
 };
