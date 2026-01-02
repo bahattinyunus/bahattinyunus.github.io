@@ -401,6 +401,150 @@ export const profileData = {
       language: "Python",
       url: "https://github.com/bahattinyunus/LionSight-AUV",
       image: "/images/project-lionsight.jpg"
+    },
+    {
+      name: "Nexus-TRL-LLM",
+      description: "LLM dünyasının stratejik istihbarat ve egemenlik üssü. Yapay zeka devlerinin hamlelerini, ajanik mimarilerini ve model olgunluğunu TRL disipliniyle analiz eden kapsamlı bir manifesto.",
+      stars: 0,
+      forks: 0,
+      language: "Unknown",
+      url: "https://github.com/bahattinyunus/Nexus-TRL-LLM",
+      image: "/images/project-nexus-trl-llm.jpg"
+    },
+    {
+      name: "NexusBroker",
+      description: "AI destekli eşleştirme motoru ve akıllı sözleşme tabanlı emanet (escrow) protokolü. Geleneksel aracılık mekanizmalarını şeffaflık, hız ve otonom güven ile yeniden tanımlayan hibrit ticaret ekosistemi.",
+      stars: 3,
+      forks: 0,
+      language: "JavaScript",
+      url: "https://github.com/bahattinyunus/NexusBroker",
+      image: "/images/project-nexusbroker.jpg"
+    },
+    {
+      name: "NovaChat-Real-Time-Messaging-App",
+      description: "React, Node.js, Socket.io ve Redis tabanlı, Dockerize edilmiş gerçek zamanlı mesajlaşma iskeleti. Ölçeklenebilir mimari ve modern tech-stack ile hızlı prototipleme imkanı.",
+      stars: 7,
+      forks: 0,
+      language: "JavaScript",
+      url: "https://github.com/bahattinyunus/NovaChat-Real-Time-Messaging-App",
+      image: "/images/project-novachat-real-time-messaging-app.jpg"
+    },
+    {
+      name: "Open-Textile-Intelligence",
+      description: "Tekstilde Endüstri 4.0'ın ötesi: Yapay zeka ve bilgisayarlı görü destekli Otonom Kalite Kontrol Platformu. Kumaşın DNA'sını okuyan, PySide6 tabanlı Elit Komuta Merkezi.",
+      stars: 0,
+      forks: 1,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/Open-Textile-Intelligence",
+      image: "/images/project-open-textile-intelligence.jpg"
+    },
+    {
+      name: "PhysicEngine",
+      description: "Modern yazılım mühendisliği standartlarıyla geliştirilmiş, yüksek performanslı ve modüler bir 2D fizik simülasyon çekirdeği. Temiz kod ve matematiksel şeffaflık felsefesiyle tasarlandı.",
+      stars: 1,
+      forks: 0,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/PhysicEngine",
+      image: "/images/project-physicengine.jpg"
+    },
+    {
+      name: "PoseidonEye",
+      description: "Gemi ana makineleri için IoT tabanlı kestirimci bakım platformu. Isolation Forest ile anomali tespiti, RUL tahmini ve Streamlit tabanlı gerçek zamanlı dashboard.",
+      stars: 3,
+      forks: 0,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/PoseidonEye",
+      image: "/images/project-poseidoneye.jpg"
+    },
+    {
+      name: "AQUASYNC-Multi-Domain-Autonomous-Maritime-System",
+      description: "Maritime RobotX için geliştirilmiş, USV ve AUV birimlerini senkronize eden çok alanı otonom operasyon sistemi. ROS 2 Humble, YOLOv11 ve Nav2 ile hibrit sürü zekası.",
+      stars: 1,
+      forks: 0,
+      language: "Unknown",
+      url: "https://github.com/bahattinyunus/AQUASYNC-Multi-Domain-Autonomous-Maritime-System",
+      image: "/images/project-aquasync-multi-domain-autonomous-maritime-system.jpg"
+    },
+    {
+      name: "robotex_warrior_core",
+      description: "Rekabetçi robotik için tasarlanmış yüksek performanslı otonom kontrol çekirdeği. Düşük gecikmeli SPDA mimarisi, sensör füzyonu ve modüler kontrol stratejileri.",
+      stars: 1,
+      forks: 0,
+      language: "Unknown",
+      url: "https://github.com/bahattinyunus/robotex_warrior_core",
+      image: "/images/project-robotex-warrior-core.jpg"
+    },
+    {
+      name: "SIGINT",
+      description: "SDR, DSP ve FFT tabanlı modern sinyal istihbaratı (SIGINT) komuta merkezi. ELINT, COMINT ve FISINT modülleriyle elektronik sinyal analizi ve spektrum görselleştirme.",
+      stars: 0,
+      forks: 0,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/SIGINT",
+      image: "/images/project-sigint.jpg"
+    },
+    {
+      name: "ktu-sarge-gokcen",
+      description: "KTÜ Gökcen Rocket Team tarafından TEKNOFEST 2026 Yüksek İrtifa Kategorisi için geliştirilen roket projesi. 18.000 ft servis tavanı ve modüler mimari.",
+      stars: 5,
+      forks: 0,
+      language: "CSS",
+      url: "https://github.com/bahattinyunus/ktu-sarge-gokcen",
+      image: "/images/project-ktu-sarge-gokcen.jpg"
+    },
+    {
+      name: "TRL-Bio-Compute",
+      description: "Post-Silikon çağı için stratejik istihbarat merkezi. DNA depolama, Wetware Zekası ve Biyo-Dijital Yakınsama teknolojilerinin TRL odaklı mimari analizi.",
+      stars: 1,
+      forks: 0,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/TRL-Bio-Compute",
+      image: "/images/project-trl-bio-compute.jpg"
+    },
+    {
+      name: "TRL-Hardware-Pulse",
+      description: "Yarı iletken dünyasının stratejik nabzı: NVIDIA, AMD ve Intel gibi devlerin hamlelerini ve GPU mimarilerini TRL metodolojisiyle analiz eden elit strateji rehberi.",
+      stars: 0,
+      forks: 0,
+      language: "Unknown",
+      url: "https://github.com/bahattinyunus/TRL-Hardware-Pulse",
+      image: "/images/project-trl-hardware-pulse.jpg"
+    },
+    {
+      name: "TRL-Quantum-Edge",
+      description: "Kuantum-Güvenli Uç Zeka (Edge Intelligence) için teknolojik olgunluk standartlarını belirliyoruz. PQC, Edge Computing ve TRL metodolojisini birleştiren hibrit teknoloji çerçevesi.",
+      stars: 1,
+      forks: 0,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/TRL-Quantum-Edge",
+      image: "/images/project-trl-quantum-edge.jpg"
+    },
+    {
+      name: "The-Craft-of-Tech-Architecture",
+      description: "Mimar, en zor kodu yazan değil; sistem entropisine karşı durarak yazılması gereken kod miktarını en aza indiren zanaatkardır. Yazılımcılıktan Mimarılığa geçişin teknik ve felsefi yol haritası.",
+      stars: 1,
+      forks: 0,
+      language: "Unknown",
+      url: "https://github.com/bahattinyunus/The-Craft-of-Tech-Architecture",
+      image: "/images/project-the-craft-of-tech-architecture.jpg"
+    },
+    {
+      name: "Math2Code-A-Practical-Guide-for-Developers",
+      description: "Yazılım mühendisliğinin matematiksel temellerini çalışan kod parçalarına dönüştüren elit bir rehber. AI, Graf Teorisi ve Kriptografi disiplinlerini pratik uygulamaya taşıyan dijital bilgi kütüphanesi.",
+      stars: 3,
+      forks: 0,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/Math2Code-A-Practical-Guide-for-Developers",
+      image: "/images/project-math2code-a-practical-guide-for-developers.jpg"
+    },
+    {
+      name: "teknofest_helikopter_tasarim",
+      description: "VERTIX-H1: TEKNOFEST Helikopter Tasarım Yarışması için geliştirilmiş, 18.000 ft servis tavanına sahip modüler mimarili yüksek irtifa kurtarma helikopteri projesi.",
+      stars: 2,
+      forks: 0,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/teknofest_helikopter_tasarim",
+      image: "/images/project-teknofest-helikopter-tasarim.jpg"
     }
   ]
 };
