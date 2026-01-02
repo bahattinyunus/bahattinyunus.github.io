@@ -9,7 +9,8 @@ export const profileData = {
     avatar_url: "/images/ai-avatar.jpg",
     github_url: "https://github.com/bahattinyunus",
     linkedin_url: "https://www.linkedin.com/in/bahattinyunus",
-    stardev_url: "https://www.stardev.io/developers/bahattinyunus"
+    stardev_url: "https://www.stardev.io/developers/bahattinyunus",
+    medium_url: "https://medium.com/@bahattinyunus"
   },
   github_stats: {
     public_repos: 231,
@@ -50,6 +51,50 @@ export const profileData = {
       "IoT & Gömülü Sistemler"
     ]
   },
+  blog_posts: [
+    {
+      title: "2026’ya Doğru Yazılım ve Siber Güvenlikte Paradigma Değişimi",
+      summary: "Teknolojik Dönüşüm ve İş Gücünün Geleceği: Hayatta Kalma Reçetesi",
+      url: "https://medium.com/@bahattinyunus/2026ya-do%C4%9Fru-yaz%C4%B1l%C4%B1m-ve-siber-g%C3%BCvenlikte-paradigma-de%C4%9Fi%C5%9Fimi-hayatta-kalma-re%C3%A7etesi-19f6f09f75c7",
+      image: "/images/blog/paradigma.jpg",
+      date: "2 Ocak 2026"
+    },
+    {
+      title: "TEKNOFEST Bir Yarışma Değil, Bir Okuldur",
+      summary: "Mühendislik Vizyonunuzu Yeniden Tanımlayın: Küresel Teknoloji Liderliğine Giden Yol",
+      url: "https://medium.com/@bahattinyunus/teknofest-bir-yar%C4%B1%C5%9Fma-de%C4%9Fil-bir-okuldur-m%C3%BChendislik-vizyonunuzu-yeniden-tan%C4%B1mlay%C4%B1n-908bce0bd7ab",
+      image: "/images/blog/teknofest.jpg",
+      date: "29 Aralık 2025"
+    },
+    {
+      title: "Yapay Genel Zekâ (AGI) Yolunda Büyük Çatlak",
+      summary: "İlya, LeCun ve Altman Nereye Koşuyor? Yapay Zekâda Yol Ayrımı: Devrim mi, İllüzyon mu?",
+      url: "https://medium.com/@bahattinyunus/yapay-genel-zek%C3%A2-agi-yolunda-b%C3%BCy%C3%BCk-%C3%A7atlak-i%CC%87lya-lecun-ve-altman-nereye-ko%C5%9Fuyor-c0535a22703e",
+      image: "/images/blog/agi.jpg",
+      date: "27 Aralık 2025"
+    },
+    {
+      title: "Dijital Sınır Boyları: Yapay Zekada Türkçenin Geleceği",
+      summary: "Veri Egemenliği ve Yapay Zeka ile girdiğimiz diyaloglarda dil seçiminin stratejik önemi.",
+      url: "https://medium.com/@bahattinyunus/dijital-s%C4%B1n%C4%B1r-boylar%C4%B1-yapay-zekada-t%C3%BCrk%C3%A7enin-gelece%C4%9Fi-ve-veri-egemenli%C4%9Fi-7c6649103f38",
+      image: "/images/blog/sinir.jpg",
+      date: "25 Aralık 2025"
+    },
+    {
+      title: "Gökyüzündeki Sessiz Tehdit: İHA Hareketliliği",
+      summary: "Türkiye Hava Sahasında İHA Hareketliliği ve Genişleyen Savaşın Yeni Cephesi",
+      url: "https://medium.com/@bahattinyunus/g%C3%B6ky%C3%BCz%C3%BCndeki-sessiz-tehdit-t%C3%BCrkiye-hava-sahas%C4%B1nda-i%CC%87ha-hareketlili%C4%9Fi-ve-geni%C5%9Fleyen-sava%C5%9F%C4%B1n-yeni-952385656565",
+      image: "/images/blog/iha.jpg",
+      date: "25 Aralık 2025"
+    },
+    {
+      title: "2026’da Finansal Özgürlüğün Anahtarı",
+      summary: "Ustalaşmanız Gereken 7 Yapay Zeka Becerisi ve Yeni Bir Çağın Eşiğinde 'Süper Birey' Dönemi",
+      url: "https://medium.com/@bahattinyunus/2026da-finansal-%C3%B6zg%C3%BCrl%C3%BC%C4%9F%C3%BCn-anahtar%C4%B1-ustala%C5%9Fman%C4%B1z-gereken-7-yapay-zeka-becerisi-852365456565",
+      image: "/images/blog/finans.jpg",
+      date: "23 Aralık 2025"
+    }
+  ],
   featured_projects: [
     {
       name: "university-courses",

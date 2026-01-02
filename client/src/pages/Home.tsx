@@ -3,7 +3,8 @@ import { CyberCard, GlitchText, HexBadge, SectionHeader } from "@/components/ui-
 import { profileData } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Terminal, Shield, Cpu, Code, ExternalLink, Globe, MapPin, Mail } from "lucide-react";
+import { Github, Linkedin, Terminal, Shield, Cpu, Code, ExternalLink, Globe, MapPin, Mail, ArrowUpRight } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
@@ -238,6 +239,74 @@ export default function Home() {
                 TÜM REPOLARI GITHUB'DA GÖRÜNTÜLE
               </a>
             </Button>
+          </div>
+        </section>
+
+        {/* Blog Section */}
+        <section id="blog" className="py-20 relative z-10">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center gap-4 mb-12">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+              <h2 className="text-3xl md:text-4xl font-bold text-center font-display">
+                <span className="text-primary">_</span>YAZILARIM
+              </h2>
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {profileData.blog_posts.map((post, index) => (
+                <a 
+                  key={index}
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative bg-card/30 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="aspect-video w-full overflow-hidden relative">
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 opacity-60" />
+                    <img 
+                      src={post.image} 
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute top-3 right-3 z-20">
+                      <Badge variant="secondary" className="bg-background/80 backdrop-blur text-xs border-primary/20">
+                        Medium
+                      </Badge>
+                    </div>
+                  </div>
+                  
+                  <div className="p-6 relative z-20">
+                    <div className="text-xs text-muted-foreground mb-2 font-mono flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                      {post.date}
+                    </div>
+                    <h3 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors font-display">
+                      {post.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
+                      {post.summary}
+                    </p>
+                    <div className="flex items-center text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
+                      OKUMAYA DEVAM ET <ArrowUpRight className="w-3 h-3 ml-1" />
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+            
+            <div className="mt-12 text-center">
+              <a 
+                href={profileData.personal.medium_url || "https://medium.com/@bahattinyunus"} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" className="border-primary/20 hover:bg-primary/10 hover:text-primary group">
+                  TÜM YAZILARI GÖR
+                  <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                </Button>
+              </a>
+            </div>
           </div>
         </section>
 
