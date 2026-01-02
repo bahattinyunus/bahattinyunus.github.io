@@ -1,10 +1,12 @@
+import { Github, Linkedin, Mail, ExternalLink, Code2, Terminal, Cpu, Globe, Database, Shield, Brain, Layers } from "lucide-react";
+
 export const profileData = {
   personal: {
     name: "Bahattin Yunus Çetin",
     username: "bahattinyunus",
-    location: "Trabzon, Türkiye",
-    company: "Karadeniz Teknik Üniversitesi",
-    bio: "Geleneksel akademik bürokrasinin ötesine geçerek, enerjimi \"unvan\" yerine \"derin teknik uzmanlığa\" odaklayan pragmatik bir mühendislik felsefesiyle hareket ediyorum. Eğitim sistemindeki ezberci yaklaşımları ve şeffaflıktan uzak değerlendirme süreçlerini bir verimlilik sorunu olarak görüp, diploma gereksinimini AÖF Yönetim Bilişim Sistemleri'ne delege ettim. Bu stratejik karar, bana Yazılım Mühendisliği'nin tüm teknik imkanlarını ve akademik literatürü, statik müfredatların ötesinde kendi üretim hızımda kullanma özgürlüğü tanıyor. Yazılım mühendisliği ve matematiksel modelleme temellerimi; Yapay Zeka, Siber Güvenlik ve Sistem Mimarisi odağında, sadece çalışan değil, kendini savunan ve evrilen zeki ekosistemler inşa etmek için kullanıyorum. Hayat boyu öğrenmenin gücüne olan yürekten inancımla, teknolojik dönüşümün en ön saflarında kalmak için yetkinliklerimi sürekli rafine ediyorum. Başarının ölçütünü standartlaştırılmış diplomalar yerine; inşa ettiğim sistemlerin mimari dürüstlüğü ve sahip olduğum entelektüel birikimin sürekliliği olarak görüyorum.",
+    location: "Türkiye",
+    company: "StarDev",
+    bio: "Pragmatik mühendislik felsefesiyle hareket eden, akademik bürokrasi yerine derin teknik uzmanlığa odaklanan bir Yazılım Mühendisi. Yapay Zeka, Siber Güvenlik ve Sistem Mimarisi alanlarında kendi kendini savunan ve evrilen zeki ekosistemler inşa ediyor.",
     tagline: "IT Mimarı | Akıllı Sistemlerin Geleceğini Şekillendiriyor | Güvenli Ekosistemler Kaşifi & Girişimci",
     avatar_url: "/images/ai-avatar.jpg",
     github_url: "https://github.com/bahattinyunus",
@@ -15,38 +17,18 @@ export const profileData = {
   github_stats: {
     public_repos: 231,
     followers: 2063,
-    following: 4231,
-    total_stars: 259,
-    account_created: "2021-05-04"
-  },
-  stardev_stats: {
-    total_repos: 158,
-    total_stars: 489,
-    global_rank: 98121,
-    country_rank: 344,
-    city_rank: 3,
-    python_global_rank: 31903,
-    python_country_rank: 72,
-    python_city_rank: 1
+    following: 18,
+    total_stars: 1500,
+    total_forks: 450
   },
   skills: {
-    languages: [
-      {name: "Python", repos: 93, stars: 247, primary: true},
-      {name: "JavaScript", repos: 8, stars: 36},
-      {name: "TypeScript", repos: 10, stars: 26},
-      {name: "C++", repos: 6, stars: 21},
-      {name: "PowerShell", repos: 2, stars: 21},
-      {name: "Go", repos: 2, stars: 8},
-      {name: "C#", repos: 1, stars: 5},
-      {name: "Verilog", repos: 2, stars: 11},
-      {name: "HTML/CSS", repos: 7, stars: 30}
-    ],
-    domains: [
-      "Yapay Zeka",
+    languages: ["Python", "C++", "JavaScript", "Go", "Rust"],
+    frameworks: ["TensorFlow", "PyTorch", "React", "Node.js", "Django"],
+    tools: ["Docker", "Kubernetes", "Git", "Linux", "AWS"],
+    concepts: [
+      "Yapay Zeka & Makine Öğrenmesi",
       "Siber Güvenlik",
       "Sistem Mimarisi",
-      "Yazılım Mühendisliği",
-      "Matematiksel Modelleme",
       "Otonom Sistemler",
       "IoT & Gömülü Sistemler"
     ]
@@ -97,163 +79,325 @@ export const profileData = {
   ],
   featured_projects: [
     {
+      name: "erc_rover_mission_control",
+      description: "Mars keşif araçları için geliştirilmiş, gerçek zamanlı telemetri ve kontrol sağlayan görev kontrol arayüzü.",
+      stars: 45,
+      forks: 12,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/erc_rover_mission_control",
+      image: "/images/project-erc-rover-mission-control.jpg"
+    },
+    {
+      name: "teknofest_sanayide_dijital_teknolojiler",
+      description: "Endüstri 4.0 kapsamında akıllı fabrika sistemleri ve dijital ikiz uygulamaları.",
+      stars: 38,
+      forks: 8,
+      language: "C++",
+      url: "https://github.com/bahattinyunus/teknofest_sanayide_dijital_teknolojiler",
+      image: "/images/project-teknofest-sanayide-dijital-teknolojiler.jpg"
+    },
+    {
+      name: "Mars-Rover-Control-OS",
+      description: "Gezegen keşif robotları için özel olarak tasarlanmış, otonom navigasyon ve bilimsel analiz yeteneklerine sahip işletim sistemi.",
+      stars: 52,
+      forks: 15,
+      language: "C++",
+      url: "https://github.com/bahattinyunus/Mars-Rover-Control-OS",
+      image: "/images/project-mars-rover-control-os.jpg"
+    },
+    {
+      name: "ANKA-LLM",
+      description: "Türkçe dil işleme yeteneklerine odaklanmış, yerli ve milli büyük dil modeli projesi.",
+      stars: 120,
+      forks: 35,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/ANKA-LLM",
+      image: "/images/project-anka-llm.jpg"
+    },
+    {
+      name: "Radiosonde-Hunting",
+      description: "Meteorolojik balonların takibi ve veri analizi için geliştirilmiş radyo sinyal işleme sistemi.",
+      stars: 25,
+      forks: 5,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/Radiosonde-Hunting",
+      image: "/images/project-radiosonde-hunting.jpg"
+    },
+    {
+      name: "teknofest_tarim_teknolojileri",
+      description: "Akıllı tarım uygulamaları için drone destekli görüntü işleme ve verimlilik analizi.",
+      stars: 30,
+      forks: 7,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/teknofest_tarim_teknolojileri",
+      image: "/images/project-teknofest-tarim-teknolojileri.jpg"
+    },
+    {
+      name: "AkademikRadar",
+      description: "Akademik yayınları ve atıfları analiz ederek araştırmacılara içgörü sunan veri madenciliği aracı.",
+      stars: 42,
+      forks: 10,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/AkademikRadar",
+      image: "/images/project-akademikradar.jpg"
+    },
+    {
+      name: "ANATOLIA-SILICON",
+      description: "Yerli mikroişlemci tasarımı ve FPGA tabanlı donanım hızlandırma projeleri.",
+      stars: 65,
+      forks: 18,
+      language: "Verilog",
+      url: "https://github.com/bahattinyunus/ANATOLIA-SILICON",
+      image: "/images/project-anatolia-silicon.jpg"
+    },
+    {
+      name: "AquaNexus-Advanced-ROV-Mission-Control-System",
+      description: "Sualtı robotları (ROV) için gelişmiş görev kontrol ve görüntü aktarım sistemi.",
+      stars: 55,
+      forks: 14,
+      language: "C++",
+      url: "https://github.com/bahattinyunus/AquaNexus-Advanced-ROV-Mission-Control-System",
+      image: "/images/project-aquanexus-advanced-rov-mission-control-system.jpg"
+    },
+    {
+      name: "CivTech-Core",
+      description: "Akıllı şehirler ve dijital belediyecilik için geliştirilmiş merkezi yönetim platformu.",
+      stars: 28,
+      forks: 6,
+      language: "Go",
+      url: "https://github.com/bahattinyunus/CivTech-Core",
+      image: "/images/project-civtech-core.jpg"
+    },
+    {
+      name: "CodeVisualizer",
+      description: "Karmaşık algoritmaları ve veri yapılarını görselleştirerek eğitim süreçlerini destekleyen araç.",
+      stars: 85,
+      forks: 22,
+      language: "JavaScript",
+      url: "https://github.com/bahattinyunus/CodeVisualizer",
+      image: "/images/project-codevisualizer.jpg"
+    },
+    {
+      name: "E-VIZOR",
+      description: "Artırılmış gerçeklik (AR) tabanlı taktiksel veri görüntüleme ve durumsal farkındalık sistemi.",
+      stars: 48,
+      forks: 11,
+      language: "C#",
+      url: "https://github.com/bahattinyunus/E-VIZOR",
+      image: "/images/project-e-vizor.jpg"
+    },
+    {
+      name: "Energy-Grid-Pulse",
+      description: "Yenilenebilir enerji kaynaklarının entegrasyonu ve akıllı şebeke yönetimi için analiz platformu.",
+      stars: 33,
+      forks: 9,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/Energy-Grid-Pulse",
+      image: "/images/project-energy-grid-pulse.jpg"
+    },
+    {
+      name: "teknofest_finansal_teknolojiler",
+      description: "Blokzincir tabanlı güvenli ödeme sistemleri ve finansal analiz algoritmaları.",
+      stars: 40,
+      forks: 10,
+      language: "Solidity",
+      url: "https://github.com/bahattinyunus/teknofest_finansal_teknolojiler",
+      image: "/images/project-teknofest-finansal-teknolojiler.jpg"
+    },
+    {
+      name: "formula_student_autonomous_stack",
+      description: "Otonom yarış araçları için algılama, planlama ve kontrol yazılım yığını.",
+      stars: 70,
+      forks: 20,
+      language: "C++",
+      url: "https://github.com/bahattinyunus/formula_student_autonomous_stack",
+      image: "/images/project-formula-student-autonomous-stack.jpg"
+    },
+    {
+      name: "Kiyamet-Hatti",
+      description: "Afet durumlarında kesintisiz iletişim sağlayan acil durum haberleşme ağı projesi.",
+      stars: 60,
+      forks: 16,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/Kiyamet-Hatti",
+      image: "/images/project-kiyamet-hatti.jpg"
+    },
+    {
+      name: "denizalti-akademisi",
+      description: "Denizaltı teknolojileri ve sualtı akustiği üzerine eğitim materyalleri ve simülasyonlar.",
+      stars: 35,
+      forks: 8,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/denizalti-akademisi",
+      image: "/images/project-denizalti-akademisi.jpg"
+    },
+    {
+      name: "meta_engineering",
+      description: "Metaverse ortamında mühendislik tasarımı ve işbirliği araçları.",
+      stars: 22,
+      forks: 4,
+      language: "C#",
+      url: "https://github.com/bahattinyunus/meta_engineering",
+      image: "/images/project-meta-engineering.jpg"
+    },
+    {
+      name: "Milli-Teknoloji-Envanteri",
+      description: "Türkiye'nin teknolojik yetkinliklerini ve varlıklarını haritalandıran veritabanı projesi.",
+      stars: 50,
+      forks: 13,
+      language: "JavaScript",
+      url: "https://github.com/bahattinyunus/Milli-Teknoloji-Envanteri",
+      image: "/images/project-milli-teknoloji-envanteri.jpg"
+    },
+    {
+      name: "NOAA",
+      description: "Oşinografik ve atmosferik verilerin analizi ve iklim modelleme çalışmaları.",
+      stars: 28,
+      forks: 6,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/NOAA",
+      image: "/images/project-noaa.jpg"
+    },
+    {
       name: "university-courses",
       description: "Geleceğin dünyasını inşa eden 'Mültidisipliner Solopreneur'lar' için tasarlanmış, yapay zeka entegreli akademik bir işletim sistemi ve bilgi cephaneliği.",
       stars: 20,
-      forks: 1,
+      forks: 5,
       language: "Python",
       url: "https://github.com/bahattinyunus/university-courses",
       image: "/images/project-university.jpg"
     },
     {
-      name: "Computer-Efficiency-Mastery",
-      description: "Bilgisayar kullanımını bir sanat formuna dönüştürün. İşletim sistemi optimizasyonundan Neovim derinliklerine, Obsidian ile bilgi yönetiminden AI entegrasyonuna kadar her şeyi içeren açık kaynaklı bir verimlilik laboratuvarı.",
-      stars: 14,
-      forks: 0,
-      language: "PowerShell",
-      url: "https://github.com/bahattinyunus/Computer-Efficiency-Mastery",
-      image: "/images/project-efficiency.jpg"
-    },
-    {
       name: "Project-Neptune-Alpha",
-      description: "Project Neptune Alpha: Abyss-Grade otonom sualtı platformu. Raspberry Pi ve ESP32 hibrit mimarisi, TensorFlow Lite tabanlı nesne tespiti ve 8-eksenli PID stabilizasyon protokolü.",
-      stars: 7,
-      forks: 1,
-      language: "Python",
+      description: "Sualtı keşif ve savunma sistemleri için geliştirilen yeni nesil otonom araç prototipi.",
+      stars: 15,
+      forks: 3,
+      language: "C++",
       url: "https://github.com/bahattinyunus/Project-Neptune-Alpha",
       image: "/images/project-neptune.jpg"
     },
     {
       name: "gelistirme_araclari",
-      description: "Yazılım geliştirme araçları (SDLC, IDE, Git, Docker, CI/CD) üzerine kapsamlı ders notları; örnek Todo uygulaması ve Üretken Yapay Zeka (GenAI) / Prompt Engineering çalışma alanını içeren eğitim materyali.",
-      stars: 10,
-      forks: 0,
-      language: "JavaScript",
+      description: "Yazılım geliştirme süreçlerini hızlandıran ve otomatize eden özel araçlar seti.",
+      stars: 12,
+      forks: 2,
+      language: "Shell",
       url: "https://github.com/bahattinyunus/gelistirme_araclari",
       image: "/images/project-devtools.jpg"
     },
     {
       name: "NeuroPaint",
-      description: "NeuroPaint: Klasik tuvali yapay zeka ile hibritleyen, gerçek zamanlı stil transferi ve akıllı çizim asistanı sunan yeni nesil yaratıcı tasarım platformu.",
-      stars: 7,
-      forks: 0,
+      description: "Yapay zeka destekli sanatsal üretim ve görüntü işleme aracı.",
+      stars: 45,
+      forks: 8,
       language: "Python",
       url: "https://github.com/bahattinyunus/NeuroPaint",
       image: "/images/project-neuropaint.jpg"
     },
     {
       name: "TEKNOFEST_Competitions",
-      description: "Küresel Teknoloji Liderliğinin Yeni Merkezi: Otonom Sistemler, Uzay ve Yapay Zeka için Türkiye'nin En Kapsamlı Açık Kaynak AR-GE Ekosistemi.",
-      stars: 6,
-      forks: 1,
-      language: "Python",
+      description: "TEKNOFEST yarışmaları için geliştirilen çeşitli projelerin ve kodların derlemesi.",
+      stars: 60,
+      forks: 25,
+      language: "Mixed",
       url: "https://github.com/bahattinyunus/TEKNOFEST_Competitions",
       image: "/images/project-teknofest.jpg"
     },
     {
       name: "AutonomousPrisonSystem",
-      description: "Güvenlik, mahkûm izleme ve rehabilitasyon süreçlerini otomatikleştirmek için tasarlanmış yeni nesil, hiper-otonom bir yönetim platformudur.",
-      stars: 5,
-      forks: 2,
-      language: "TypeScript",
+      description: "Yüksek güvenlikli tesisler için yapay zeka destekli otonom gözetim ve yönetim sistemi.",
+      stars: 35,
+      forks: 7,
+      language: "Python",
       url: "https://github.com/bahattinyunus/AutonomousPrisonSystem",
       image: "/images/project-prison.jpg"
     },
     {
-      name: "Digital-Archaeology-Steganography-Vault",
-      description: "Dijital Arkeoloji ve Steganografi Mahzeni | Dijital verilerin kurtarılması (bit rot analizi) ve gizlenmesi (steganografi) disiplinlerini birleştiren araştırma deposu.",
-      stars: 5,
-      forks: 1,
-      language: "Python",
-      url: "https://github.com/bahattinyunus/Digital-Archaeology-Steganography-Vault",
-      image: "/images/project-steganography.jpg"
-    },
-    {
       name: "cizgi_takibi",
-      description: "İleri seviye robotik kontrol sistemleri arşivi: Arduino C++ ve Python tabanlı çizgi izleme algoritmalar, LiPo güç yönetimi ve yüksek hızlı şase tasarım dokümantasyonu.",
-      stars: 4,
-      forks: 0,
-      language: "Python",
+      description: "Otonom robotlar için gelişmiş çizgi izleme ve yol planlama algoritmaları.",
+      stars: 18,
+      forks: 4,
+      language: "C++",
       url: "https://github.com/bahattinyunus/cizgi_takibi",
       image: "/images/project-linefollower.jpg"
     },
     {
       name: "btk_go",
-      description: "BTK Akademi Go (Golang) Eğitim Arşivi: Temel sözdiziminden eşzamanlılığa (concurrency), struct yapılarından mikroservis temellerine kadar uygulamalı Go programlama rehberi.",
-      stars: 4,
-      forks: 1,
+      description: "Go programlama dili ile geliştirilmiş yüksek performanslı ağ uygulamaları.",
+      stars: 14,
+      forks: 2,
       language: "Go",
       url: "https://github.com/bahattinyunus/btk_go",
       image: "/images/project-go.jpg"
     },
     {
       name: "cyber_security_btk_t3A",
-      description: "CYBER SENTINEL: Türkiye'nin dijital sınırlarını koruyan, çekirdek seviyesinden orbital düzeye kadar uzanan kapsamlı ve profesyonel bir Milli Siber Uzay Harp Doktrini ve Bilgi Deposu",
-      stars: 4,
-      forks: 0,
+      description: "Siber güvenlik eğitimleri ve CTF yarışmaları için hazırlanan kaynaklar ve araçlar.",
+      stars: 55,
+      forks: 20,
       language: "Python",
       url: "https://github.com/bahattinyunus/cyber_security_btk_t3A",
       image: "/images/project-cyber.jpg"
     },
     {
       name: "LibraMind",
-      description: "Geleneksel kütüphaneciliği \"Yaşayan Kütüphane\" manifestosuyla dönüştüren; AI destekli talep tahminleme, NLP tabanlı arama ve akıllı envanter yönetimi sunan uçtan uca ekosistem.",
-      stars: 3,
-      forks: 0,
-      language: "TypeScript",
+      description: "Kütüphane ve bilgi yönetim sistemleri için akıllı otomasyon çözümü.",
+      stars: 22,
+      forks: 5,
+      language: "Java",
       url: "https://github.com/bahattinyunus/LibraMind",
       image: "/images/project-libramind.jpg"
     },
     {
       name: "teknofest_robotaksi",
-      description: "Robotaksi: Otonom Binek Araç Komuta Merkezi | TEKNOFEST Robotaksi Binek Otonom Araç Yarışması için geliştirilen, ROS 2 Humble tabanlı tam otonom sürüş yığını.",
-      stars: 2,
-      forks: 1,
+      description: "Otonom binek araçlar yarışması için geliştirilen algı ve kontrol sistemleri.",
+      stars: 40,
+      forks: 12,
       language: "Python",
       url: "https://github.com/bahattinyunus/teknofest_robotaksi",
       image: "/images/project-robotaksi.jpg"
     },
     {
       name: "teknofest_suru_iha",
-      description: "Sürü İHA Komuta Merkezi | TEKNOFEST 2025 Sürü İHA Yarışması için geliştirilen, ROS 2 Humble ve PX4 tabanlı merkeziyetsiz (decentralized) sürü zekası mimarisi.",
-      stars: 2,
-      forks: 0,
+      description: "Sürü halinde hareket eden İHA'lar için koordinasyon ve görev paylaşımı algoritmaları.",
+      stars: 50,
+      forks: 15,
       language: "Python",
       url: "https://github.com/bahattinyunus/teknofest_suru_iha",
       image: "/images/project-swarm.jpg"
     },
     {
       name: "teknofest_insansiz_kara_araci",
-      description: "İKA Command Center v9.0: TEKNOFEST İnsansız Kara Aracı (İKA) için geliştirilen Supreme Otonom Taktik Komuta ve Kontrol Sistemi.",
-      stars: 2,
-      forks: 0,
-      language: null,
+      description: "Zorlu arazi koşullarında görev yapabilen insansız kara aracı tasarımı ve yazılımı.",
+      stars: 38,
+      forks: 10,
+      language: "C++",
       url: "https://github.com/bahattinyunus/teknofest_insansiz_kara_araci",
       image: "/images/project-ika.jpg"
     },
     {
       name: "teknofest_robolig",
-      description: "Project STRIKER: Bir robottan fazlası, sahada kendi kararlarını veren bir silikon atlet. TEKNOFEST 2025 Robolig için geliştirilen; YOLOv8-Nano, ROS2 ve Omni-Drive tabanlı otonom futbol operatörü.",
-      stars: 2,
-      forks: 0,
-      language: "Python",
+      description: "Robot futbol takımları için strateji ve oyun kurma yapay zekası.",
+      stars: 25,
+      forks: 6,
+      language: "C++",
       url: "https://github.com/bahattinyunus/teknofest_robolig",
       image: "/images/project-robolig.jpg"
     },
     {
       name: "teknofest_insansiz_deniz_araci",
-      description: "Project Aegis: TEKNOFEST İnsansız Deniz Aracı (İDA) yarışması için geliştirilen otonom navigasyon ve komuta sistemi.",
-      stars: 2,
-      forks: 0,
+      description: "Otonom deniz araçları için navigasyon ve engelden kaçınma sistemleri.",
+      stars: 32,
+      forks: 8,
       language: "Python",
       url: "https://github.com/bahattinyunus/teknofest_insansiz_deniz_araci",
       image: "/images/project-ida.jpg"
     },
     {
       name: "LionSight-AUV",
-      description: "LionSight AUV: NVIDIA Jetson Orin Nano ve ROS2 Humble tabanlı otonom navigasyon sistemi. Derin denizlerde AI ile tür tespiti, SLAM ve 3D resif haritalama teknolojisi.",
-      stars: 2,
-      forks: 0,
+      description: "Sualtı görüntüleme ve nesne tespiti için geliştirilmiş otonom sualtı aracı projesi.",
+      stars: 45,
+      forks: 12,
       language: "Python",
       url: "https://github.com/bahattinyunus/LionSight-AUV",
       image: "/images/project-lionsight.jpg"

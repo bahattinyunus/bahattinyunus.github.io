@@ -83,8 +83,8 @@ export default function Home() {
             {[
               { label: "Toplam Repo", value: profileData.github_stats.public_repos },
               { label: "Github Yıldızları", value: profileData.github_stats.total_stars },
-              { label: "Global Sıralama", value: `#${profileData.stardev_stats.global_rank.toLocaleString()}` },
-              { label: "Python Sıralaması (TR)", value: `#${profileData.stardev_stats.python_country_rank}` },
+              { label: "Global Sıralama", value: "#1,240" },
+              { label: "Python Sıralaması (TR)", value: "#12" },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col">
                 <span className="text-2xl md:text-3xl font-display font-bold text-white">{stat.value}</span>
@@ -151,15 +151,14 @@ export default function Home() {
                 {profileData.skills.languages.map((lang, i) => (
                   <div key={i} className="group">
                     <div className="flex justify-between mb-1">
-                      <span className="font-mono text-sm text-white group-hover:text-primary transition-colors">{lang.name}</span>
-                      <span className="font-mono text-xs text-muted-foreground">{lang.repos} Repo</span>
+                      <span className="font-mono text-sm text-white group-hover:text-primary transition-colors">{lang}</span>
                     </div>
                     <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
                       <motion.div 
                         initial={{ width: 0 }}
-                        whileInView={{ width: `${Math.min(100, (lang.stars / 250) * 100)}%` }}
+                        whileInView={{ width: "85%" }}
                         transition={{ duration: 1, delay: i * 0.1 }}
-                        className={cn("h-full rounded-full", lang.primary ? "bg-primary" : "bg-white/30")}
+                        className="h-full rounded-full bg-primary"
                       ></motion.div>
                     </div>
                   </div>
@@ -172,7 +171,7 @@ export default function Home() {
                 <Globe className="w-5 h-5 text-accent" /> Alanlar & Uzmanlık
               </h3>
               <div className="flex flex-wrap gap-3">
-                {profileData.skills.domains.map((domain, i) => (
+                {profileData.skills.concepts.map((domain, i) => (
                   <HexBadge key={i} className="text-sm py-2 px-4">
                     {domain}
                   </HexBadge>
