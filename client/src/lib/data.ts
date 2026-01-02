@@ -53,57 +53,111 @@ export const profileData = {
   featured_projects: [
     {
       name: "bahattinyunus",
-      description: "Yapay Zeka, Siber Güvenlik ve Savunma Sistemleri alanlarına odaklanan bir öğrenciyim. Akıllı sistemler, güvenlik mimarileri ve savunma teknolojilerinde uzmanlaşıyorum.",
+      description: "Yapay Zeka, Siber Güvenlik ve Savunma Sistemleri alanlarına odaklanan bir öğrenciyim. Akıllı, güvenli ve sürdürülebilir sistemler geliştirmeyi hedefliyorum.",
       stars: 25,
       forks: 2,
       language: null,
       url: "https://github.com/bahattinyunus/bahattinyunus",
-      image: "/images/project-ai.jpg"
+      image: "/images/project-bahattinyunus.jpg"
     },
     {
       name: "university-courses",
-      description: "Geleceğin dünyasını inşa eden 'Mültidisipliner Solopreneur'lar' için tasarlanmış, yapay zeka entegreli üniversite ders notları",
+      description: "Geleceğin dünyasını inşa eden 'Mültidisipliner Solopreneur'lar' için tasarlanmış, yapay zeka entegreli akademik bir işletim sistemi ve bilgi cephaneliği.",
       stars: 20,
       forks: 1,
       language: "Python",
       url: "https://github.com/bahattinyunus/university-courses",
-      image: "/images/project-ai.jpg"
+      image: "/images/project-university.jpg"
     },
     {
       name: "Computer-Efficiency-Mastery",
-      description: "Bilgisayar kullanımını bir sanat formuna dönüştürün. İşletim sistemi optimizasyonundan Neovim derinliklerine uzanan kapsamlı rehber",
+      description: "Bilgisayar kullanımını bir sanat formuna dönüştürün. İşletim sistemi optimizasyonundan Neovim derinliklerine, Obsidian ile bilgi yönetiminden AI entegrasyonuna kadar her şeyi içeren açık kaynaklı bir verimlilik laboratuvarı.",
       stars: 14,
       forks: 0,
       language: "PowerShell",
       url: "https://github.com/bahattinyunus/Computer-Efficiency-Mastery",
-      image: "/images/project-security.jpg"
-    },
-    {
-      name: "gelistirme_araclari",
-      description: "Yazılım geliştirme araçları (SDLC, IDE, Git, Docker, CI/CD) üzerine kapsamlı ders notları",
-      stars: 10,
-      forks: 0,
-      language: "JavaScript",
-      url: "https://github.com/bahattinyunus/gelistirme_araclari",
-      image: "/images/project-security.jpg"
+      image: "/images/project-efficiency.jpg"
     },
     {
       name: "Project-Neptune-Alpha",
-      description: "Project Neptune Alpha: Abyss-Grade otonom sualtı platformu. Raspberry Pi ve ESP32 hibrit mimarisi",
+      description: "Project Neptune Alpha: Abyss-Grade otonom sualtı platformu. Raspberry Pi ve ESP32 hibrit mimarisi, TensorFlow Lite tabanlı nesne tespiti ve 8-eksenli PID stabilizasyon protokolü.",
       stars: 7,
       forks: 1,
       language: "Python",
       url: "https://github.com/bahattinyunus/Project-Neptune-Alpha",
-      image: "/images/project-ai.jpg"
+      image: "/images/project-neptune.jpg"
+    },
+    {
+      name: "gelistirme_araclari",
+      description: "Yazılım geliştirme araçları (SDLC, IDE, Git, Docker, CI/CD) üzerine kapsamlı ders notları; örnek Todo uygulaması ve Üretken Yapay Zeka (GenAI) / Prompt Engineering çalışma alanını içeren eğitim materyali.",
+      stars: 10,
+      forks: 0,
+      language: "JavaScript",
+      url: "https://github.com/bahattinyunus/gelistirme_araclari",
+      image: "/images/project-devtools.jpg"
+    },
+    {
+      name: "AutonomousPrisonSystem",
+      description: "Güvenlik, mahkûm izleme ve rehabilitasyon süreçlerini otomatikleştirmek için tasarlanmış yeni nesil, hiper-otonom bir yönetim platformudur.",
+      stars: 5,
+      forks: 2,
+      language: "TypeScript",
+      url: "https://github.com/bahattinyunus/AutonomousPrisonSystem",
+      image: "/images/project-prison.jpg"
+    },
+    {
+      name: "Digital-Archaeology-Steganography-Vault",
+      description: "Dijital Arkeoloji ve Steganografi Mahzeni | Dijital verilerin kurtarılması (bit rot analizi) ve gizlenmesi (steganografi) disiplinlerini birleştiren araştırma deposu.",
+      stars: 5,
+      forks: 1,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/Digital-Archaeology-Steganography-Vault",
+      image: "/images/project-steganography.jpg"
+    },
+    {
+      name: "teknofest_robotaksi",
+      description: "Robotaksi: Otonom Binek Araç Komuta Merkezi | TEKNOFEST Robotaksi Binek Otonom Araç Yarışması için geliştirilen, ROS 2 Humble tabanlı tam otonom sürüş yığını.",
+      stars: 2,
+      forks: 1,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/teknofest_robotaksi",
+      image: "/images/project-robotaksi.jpg"
+    },
+    {
+      name: "btk_go",
+      description: "BTK Akademi Go (Golang) Eğitim Arşivi: Temel sözdiziminden eşzamanlılığa (concurrency), struct yapılarından mikroservis temellerine kadar uygulamalı Go programlama rehberi.",
+      stars: 4,
+      forks: 1,
+      language: "Go",
+      url: "https://github.com/bahattinyunus/btk_go",
+      image: "/images/project-go.jpg"
     },
     {
       name: "NeuroPaint",
-      description: "NeuroPaint: Klasik tuvali yapay zeka ile hibritleyen, gerçek zamanlı stil transferi ve akıllı çizim asistanı",
+      description: "NeuroPaint: Klasik tuvali yapay zeka ile hibritleyen, gerçek zamanlı stil transferi ve akıllı çizim asistanı sunan yeni nesil yaratıcı tasarım platformu.",
       stars: 7,
       forks: 0,
       language: "Python",
       url: "https://github.com/bahattinyunus/NeuroPaint",
-      image: "/images/project-ai.jpg"
+      image: "/images/project-neuropaint.jpg"
+    },
+    {
+      name: "teknofest_suru_iha",
+      description: "Sürü İHA Komuta Merkezi | TEKNOFEST 2025 Sürü İHA Yarışması için geliştirilen, ROS 2 Humble ve PX4 tabanlı merkeziyetsiz (decentralized) sürü zekası mimarisi.",
+      stars: 2,
+      forks: 0,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/teknofest_suru_iha",
+      image: "/images/project-swarm.jpg"
+    },
+    {
+      name: "teknofest_insansiz_kara_araci",
+      description: "İKA Command Center v9.0: TEKNOFEST İnsansız Kara Aracı (İKA) için geliştirilen Supreme Otonom Taktik Komuta ve Kontrol Sistemi.",
+      stars: 2,
+      forks: 0,
+      language: null,
+      url: "https://github.com/bahattinyunus/teknofest_insansiz_kara_araci",
+      image: "/images/project-ika.jpg"
     }
   ]
 };
