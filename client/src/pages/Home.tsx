@@ -1,12 +1,21 @@
-import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { CyberCard, GlitchText, HexBadge, SectionHeader } from "@/components/ui-custom";
 import { profileData } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Terminal, Shield, Cpu, Code, ExternalLink, Globe, MapPin, Mail, ArrowUpRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  
+  const filteredProjects = selectedCategory
+    ? profileData.featured_projects.filter(project =>
+        profileData.categories[selectedCategory as keyof typeof profileData.categories]?.includes(project.name)
+      )
+    : profileData.featured_projects;
+  
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary-foreground">
       {/* Background Elements */}
@@ -192,8 +201,41 @@ export default function Home() {
         <section id="projects" className="container py-20">
           <SectionHeader title="Yayındaki Sistemler" subtitle="Mimari yetenekleri gösteren seçilmiş çalışmalar." />
           
+          {/* Category Filter */}
+          <div className="mb-10 overflow-x-auto pb-4">
+            <div className="flex gap-3 min-w-max">
+              <Button
+                onClick={() => setSelectedCategory(null)}
+                variant={selectedCategory === null ? "default" : "outline"}
+                size="sm"
+                className={`font-mono text-xs whitespace-nowrap ${
+                  selectedCategory === null
+                    ? "bg-primary text-white"
+                    : "border-primary/30 text-primary hover:bg-primary/10"
+                }`}
+              >
+                TÜM PROJELERİ GÖSTER
+              </Button>
+              {Object.keys(profileData.categories).map((category) => (
+                <Button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  size="sm"
+                  className={`font-mono text-xs whitespace-nowrap ${
+                    selectedCategory === category
+                      ? "bg-primary text-white"
+                      : "border-primary/30 text-primary hover:bg-primary/10"
+                  }`}
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
+          </div>
+          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {profileData.featured_projects.map((project, i) => (
+            {filteredProjects.map((project, i) => (
               <CyberCard key={i} className="flex flex-col h-full p-0 group">
                 <div className="relative h-48 overflow-hidden border-b border-white/5">
                   <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity"></div>

@@ -77,6 +77,21 @@ export const profileData = {
       date: "23 Aralık 2025"
     }
   ],
+
+  categories: {
+    "Yapay Zeka & LLM": ["Nexus-TRL-LLM", "ANKA-LLM", "NeuroPaint", "LibraMind", "Open-Textile-Intelligence", "TRL-Bio-Compute", "Math2Code-A-Practical-Guide-for-Developers"],
+    "Siber Güvenlik": ["SIGINT", "cyber_security_btk_t3A", "Digital-Archaeology-Steganography-Vault", "TRL-Quantum-Edge", "TRL-Hardware-Pulse"],
+    "Otonom Sistemler": ["Mars-Rover-Control-OS", "erc_rover_mission_control", "robotex_warrior_core", "teknofest_robotaksi", "teknofest_suru_iha", "teknofest_insansiz_kara_araci", "formula_student_autonomous_stack"],
+    "Deniz & Su Teknolojileri": ["LionSight-AUV", "AQUASYNC-Multi-Domain-Autonomous-Maritime-System", "PoseidonEye", "teknofest_insansiz_deniz_araci", "denizalti-akademisi"],
+    "Hava & Uzay Teknolojileri": ["teknofest_helikopter_tasarim", "teknofest_suru_iha", "Radiosonde-Hunting", "ktu-sarge-gokcen", "NOAA"],
+    "Robotik & Kompetisyon": ["teknofest_robolig", "robotex_warrior_core", "TEKNOFEST_Competitions", "BeeRouteANN-for-Antenna-Design"],
+    "Yazılım Mimarisi & Geliştirme": ["The-Craft-of-Tech-Architecture", "CodeVisualizer", "NovaChat-Real-Time-Messaging-App", "NexusBroker", "btk_go"],
+    "Sistem & Altyapı": ["Computer-Efficiency-Mastery", "Energy-Grid-Pulse", "PhysicEngine", "E-VIZOR"],
+    "Veri & Analiz": ["Milli-Teknoloji-Envanteri", "AkademikRadar", "Kiyamet-Hatti"],
+    "Endüstri 4.0 & Tarım": ["teknofest_sanayide_dijital_teknolojiler", "teknofest_tarim_teknolojileri", "teknofest_finansal_teknolojiler", "CivTech-Core"],
+    "Donanım & Elektronik": ["ANATOLIA-SILICON", "TRL-Hardware-Pulse", "meta_engineering"],
+    "Eğitim & Kaynaklar": ["Math2Code-A-Practical-Guide-for-Developers", "The-Craft-of-Tech-Architecture"],
+  },
   featured_projects: [
     {
       name: "erc_rover_mission_control",
