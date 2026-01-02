@@ -23,10 +23,10 @@ export default function Home() {
             <span>BAHATTIN<span className="text-primary">YUNUS</span></span>
           </div>
           <div className="hidden md:flex items-center gap-8 font-mono text-sm text-muted-foreground">
-            <a href="#about" className="hover:text-primary transition-colors">_ABOUT</a>
-            <a href="#skills" className="hover:text-primary transition-colors">_SKILLS</a>
-            <a href="#projects" className="hover:text-primary transition-colors">_PROJECTS</a>
-            <a href="#contact" className="hover:text-primary transition-colors">_CONTACT</a>
+            <a href="#about" className="hover:text-primary transition-colors">_HAKKINDA</a>
+            <a href="#skills" className="hover:text-primary transition-colors">_YETENEKLER</a>
+            <a href="#projects" className="hover:text-primary transition-colors">_PROJELER</a>
+            <a href="#contact" className="hover:text-primary transition-colors">_İLETİŞİM</a>
           </div>
           <Button variant="outline" size="sm" className="font-mono text-xs border-primary/50 text-primary hover:bg-primary/10" asChild>
             <a href={profileData.personal.github_url} target="_blank" rel="noopener noreferrer">
@@ -50,13 +50,13 @@ export default function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
               </span>
-              <span className="font-mono text-primary text-sm tracking-widest">SYSTEM ONLINE</span>
+              <span className="font-mono text-primary text-sm tracking-widest">SİSTEM ÇEVRİMİÇİ</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-tight mb-6">
-              <span className="block text-muted-foreground/50 text-2xl md:text-4xl mb-2 font-light">Architecting</span>
-              <GlitchText text="INTELLIGENT" /> <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-accent">ECOSYSTEMS</span>
+              <span className="block text-muted-foreground/50 text-2xl md:text-4xl mb-2 font-light">Mimari</span>
+              <GlitchText text="AKILLI" /> <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-accent">EKOSİSTEMLER</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 font-light leading-relaxed border-l-2 border-primary/30 pl-6">
@@ -66,12 +66,12 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-mono" asChild>
                 <a href="#projects">
-                  EXPLORE PROJECTS <Terminal className="w-4 h-4 ml-2" />
+                  PROJELERİ İNCELE <Terminal className="w-4 h-4 ml-2" />
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/10 hover:bg-white/5 font-mono" asChild>
                 <a href={profileData.personal.linkedin_url} target="_blank" rel="noopener noreferrer">
-                  LINKEDIN PROFILE <ExternalLink className="w-4 h-4 ml-2" />
+                  LINKEDIN PROFİLİ <ExternalLink className="w-4 h-4 ml-2" />
                 </a>
               </Button>
             </div>
@@ -80,10 +80,10 @@ export default function Home() {
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 w-full border-t border-white/5 pt-8">
             {[
-              { label: "Total Repos", value: profileData.github_stats.public_repos },
-              { label: "Github Stars", value: profileData.github_stats.total_stars },
-              { label: "Global Rank", value: `#${profileData.stardev_stats.global_rank.toLocaleString()}` },
-              { label: "Python Rank (TR)", value: `#${profileData.stardev_stats.python_country_rank}` },
+              { label: "Toplam Repo", value: profileData.github_stats.public_repos },
+              { label: "Github Yıldızları", value: profileData.github_stats.total_stars },
+              { label: "Global Sıralama", value: `#${profileData.stardev_stats.global_rank.toLocaleString()}` },
+              { label: "Python Sıralaması (TR)", value: `#${profileData.stardev_stats.python_country_rank}` },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col">
                 <span className="text-2xl md:text-3xl font-display font-bold text-white">{stat.value}</span>
@@ -95,7 +95,7 @@ export default function Home() {
 
         {/* About Section */}
         <section id="about" className="container py-20">
-          <SectionHeader title="System Architecture" subtitle="Pragmatic engineering philosophy prioritizing substantive expertise over academic bureaucracy." />
+          <SectionHeader title="Sistem Mimarisi" subtitle="Akademik bürokrasiden ziyade derin teknik uzmanlığı önceleyen pragmatik mühendislik felsefesi." />
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative group">
@@ -113,7 +113,7 @@ export default function Home() {
             <div className="space-y-6">
               <div className="prose prose-invert max-w-none">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  {profileData.personal.bio_en}
+                  {profileData.personal.bio}
                 </p>
               </div>
               
@@ -121,15 +121,15 @@ export default function Home() {
                 <CyberCard className="p-4 flex items-start gap-3">
                   <Shield className="w-6 h-6 text-accent mt-1" />
                   <div>
-                    <h4 className="font-bold text-white mb-1">Cyber Security</h4>
-                    <p className="text-xs text-muted-foreground">Proactive, AI-driven security frameworks that evolve in real-time.</p>
+                    <h4 className="font-bold text-white mb-1">Siber Güvenlik</h4>
+                    <p className="text-xs text-muted-foreground">Gerçek zamanlı evrilen, proaktif ve yapay zeka destekli güvenlik çerçeveleri.</p>
                   </div>
                 </CyberCard>
                 <CyberCard className="p-4 flex items-start gap-3">
                   <Cpu className="w-6 h-6 text-primary mt-1" />
                   <div>
-                    <h4 className="font-bold text-white mb-1">AI Systems</h4>
-                    <p className="text-xs text-muted-foreground">Self-defending and evolving intelligent ecosystems.</p>
+                    <h4 className="font-bold text-white mb-1">Yapay Zeka Sistemleri</h4>
+                    <p className="text-xs text-muted-foreground">Kendi kendini savunan ve gelişen akıllı ekosistemler.</p>
                   </div>
                 </CyberCard>
               </div>
@@ -139,19 +139,19 @@ export default function Home() {
 
         {/* Skills Section */}
         <section id="skills" className="container py-20 bg-white/5 rounded-3xl my-10 border border-white/5">
-          <SectionHeader title="Technical Arsenal" subtitle="Tools and technologies used to construct intelligent systems." />
+          <SectionHeader title="Teknik Cephanelik" subtitle="Akıllı sistemler inşa etmek için kullanılan araçlar ve teknolojiler." />
           
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-xl font-display font-bold mb-6 flex items-center gap-2">
-                <Code className="w-5 h-5 text-primary" /> Languages & Core
+                <Code className="w-5 h-5 text-primary" /> Diller & Çekirdek
               </h3>
               <div className="space-y-4">
                 {profileData.skills.languages.map((lang, i) => (
                   <div key={i} className="group">
                     <div className="flex justify-between mb-1">
                       <span className="font-mono text-sm text-white group-hover:text-primary transition-colors">{lang.name}</span>
-                      <span className="font-mono text-xs text-muted-foreground">{lang.repos} Repos</span>
+                      <span className="font-mono text-xs text-muted-foreground">{lang.repos} Repo</span>
                     </div>
                     <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
                       <motion.div 
@@ -168,7 +168,7 @@ export default function Home() {
             
             <div>
               <h3 className="text-xl font-display font-bold mb-6 flex items-center gap-2">
-                <Globe className="w-5 h-5 text-accent" /> Domains & Expertise
+                <Globe className="w-5 h-5 text-accent" /> Alanlar & Uzmanlık
               </h3>
               <div className="flex flex-wrap gap-3">
                 {profileData.skills.domains.map((domain, i) => (
@@ -179,9 +179,9 @@ export default function Home() {
               </div>
               
               <div className="mt-10 p-6 bg-card/50 rounded-lg border border-white/5">
-                <h4 className="font-bold text-white mb-2">Engineering Philosophy</h4>
+                <h4 className="font-bold text-white mb-2">Mühendislik Felsefesi</h4>
                 <p className="text-sm text-muted-foreground italic">
-                  "The ultimate validation is not a standardized diploma or a non-transparent assessment, but the architectural integrity of the systems I build."
+                  "Başarının nihai ölçütü standartlaştırılmış bir diploma veya şeffaf olmayan bir değerlendirme değil, inşa ettiğim sistemlerin mimari bütünlüğüdür."
                 </p>
               </div>
             </div>
@@ -190,7 +190,7 @@ export default function Home() {
 
         {/* Projects Section */}
         <section id="projects" className="container py-20">
-          <SectionHeader title="Deployed Systems" subtitle="Selected works demonstrating architectural capabilities." />
+          <SectionHeader title="Yayındaki Sistemler" subtitle="Mimari yetenekleri gösteren seçilmiş çalışmalar." />
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {profileData.featured_projects.map((project, i) => (
@@ -200,7 +200,7 @@ export default function Home() {
                   <img src={project.image} alt={project.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div className="absolute top-4 right-4 z-20">
                     <HexBadge className="bg-black/50 backdrop-blur-md border-white/20 text-xs">
-                      {project.language || "System"}
+                      {project.language || "Sistem"}
                     </HexBadge>
                   </div>
                 </div>
@@ -224,7 +224,7 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="text-xs font-mono text-primary hover:text-white transition-colors flex items-center gap-1"
                     >
-                      SOURCE_CODE <ExternalLink className="w-3 h-3" />
+                      KAYNAK_KODU <ExternalLink className="w-3 h-3" />
                     </a>
                   </div>
                 </div>
@@ -235,7 +235,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Button variant="outline" size="lg" className="font-mono border-primary/30 text-primary hover:bg-primary/10" asChild>
               <a href={profileData.personal.github_url} target="_blank" rel="noopener noreferrer">
-                VIEW ALL REPOSITORIES ON GITHUB
+                TÜM REPOLARI GITHUB'DA GÖRÜNTÜLE
               </a>
             </Button>
           </div>
@@ -249,10 +249,10 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 relative z-10">
               <div>
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
-                  Ready to <span className="text-primary">Collaborate?</span>
+                  İşbirliğine <span className="text-primary">Hazır mısınız?</span>
                 </h2>
                 <p className="text-muted-foreground mb-8 max-w-md">
-                  Open to discussing system architecture, AI security frameworks, and innovative engineering challenges.
+                  Sistem mimarisi, yapay zeka güvenlik çerçeveleri ve yenilikçi mühendislik zorluklarını tartışmaya açığım.
                 </p>
                 
                 <div className="space-y-4">
@@ -262,7 +262,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-white">LinkedIn</h4>
-                      <p className="text-xs text-muted-foreground">Connect professionally</p>
+                      <p className="text-xs text-muted-foreground">Profesyonel bağlantı kurun</p>
                     </div>
                   </a>
                   
@@ -272,7 +272,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h4 className="font-bold text-white">GitHub</h4>
-                      <p className="text-xs text-muted-foreground">Review code & contributions</p>
+                      <p className="text-xs text-muted-foreground">Kodları ve katkıları inceleyin</p>
                     </div>
                   </a>
 
@@ -281,7 +281,7 @@ export default function Home() {
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-white">Location</h4>
+                      <h4 className="font-bold text-white">Konum</h4>
                       <p className="text-xs text-muted-foreground">{profileData.personal.location}</p>
                     </div>
                   </div>
@@ -295,8 +295,8 @@ export default function Home() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center">
                       <Terminal className="w-12 h-12 text-primary mx-auto mb-4" />
-                      <h3 className="text-xl font-display font-bold text-white">SYSTEM STATUS</h3>
-                      <p className="text-primary font-mono text-sm mt-2 animate-pulse">● OPERATIONAL</p>
+                      <h3 className="text-xl font-display font-bold text-white">SİSTEM DURUMU</h3>
+                      <p className="text-primary font-mono text-sm mt-2 animate-pulse">● OPERASYONEL</p>
                     </div>
                   </div>
                 </div>
@@ -310,7 +310,7 @@ export default function Home() {
       <footer className="border-t border-white/5 bg-background py-8">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-xs text-muted-foreground font-mono">
-            © {new Date().getFullYear()} BAHATTIN YUNUS CETIN. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} BAHATTIN YUNUS CETIN. TÜM HAKLARI SAKLIDIR.
           </div>
           <div className="flex items-center gap-6">
             <a href={profileData.personal.github_url} className="text-muted-foreground hover:text-primary transition-colors">

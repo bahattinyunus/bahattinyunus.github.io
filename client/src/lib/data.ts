@@ -2,11 +2,10 @@ export const profileData = {
   personal: {
     name: "Bahattin Yunus Çetin",
     username: "bahattinyunus",
-    location: "Trabzon, Turkey",
-    company: "Karadeniz Technical University",
-    bio_en: "Driven by a pragmatic engineering philosophy, I prioritize substantive expertise over academic bureaucracy. Recognizing the systemic inefficiencies and lack of transparency in traditional programs, I have strategically delegated my formal degree process to OEF - Management Information Systems. This optimization allows me to leverage the full technical resources of Software Engineering while focusing my primary energy on the intersection of Artificial Intelligence, Cyber Security, and System Architecture at my own pace of production. I specialize in constructing proactive, AI-driven security frameworks that evolve in real-time. Guided by a firm belief in lifelong learning, continuously refine my skills to stay at the forefront of technological evolution. For me, the ultimate validation is not a standardized diploma or a non-transparent assessment, but the architectural integrity of the systems I build and the continuous growth of my intellectual capacity.",
-    bio_tr: "Geleneksel akademik bürokrasinin ötesine geçerek, enerjimi \"unvan\" yerine \"derin teknik uzmanlığa\" odaklayan pragmatik bir mühendislik felsefesiyle hareket ediyorum. Eğitim sistemindeki ezberci yaklaşımları ve şeffaflıktan uzak değerlendirme süreçlerini bir verimlilik sorunu olarak görüp, diploma gereksinimini AÖF Yönetim Bilişim Sistemleri'ne delege ettim. Bu stratejik karar, bana Yazılım Mühendisliği'nin tüm teknik imkanlarını ve akademik literatürü, statik müfredatların ötesinde kendi üretim hızımda kullanma özgürlüğü tanıyor. Yazılım mühendisliği ve matematiksel modelleme temellerimi; Yapay Zeka, Siber Güvenlik ve Sistem Mimarisi odağında, sadece çalışan değil, kendini savunan ve evrilen zeki ekosistemler inşa etmek için kullanıyorum. Hayat boyu öğrenmenin gücüne olan yürekten inancımla, teknolojik dönüşümün en ön saflarında kalmak için yetkinliklerimi sürekli rafine ediyorum. Başarının ölçütünü standartlaştırılmış diplomalar yerine; inşa ettiğim sistemlerin mimari dürüstlüğü ve sahip olduğum entelektüel birikimin sürekliliği olarak görüyorum.",
-    tagline: "IT Architect | Shaping the Future of Intelligent Systems | Secure Ecosystems Explorer & Entrepreneur",
+    location: "Trabzon, Türkiye",
+    company: "Karadeniz Teknik Üniversitesi",
+    bio: "Geleneksel akademik bürokrasinin ötesine geçerek, enerjimi \"unvan\" yerine \"derin teknik uzmanlığa\" odaklayan pragmatik bir mühendislik felsefesiyle hareket ediyorum. Eğitim sistemindeki ezberci yaklaşımları ve şeffaflıktan uzak değerlendirme süreçlerini bir verimlilik sorunu olarak görüp, diploma gereksinimini AÖF Yönetim Bilişim Sistemleri'ne delege ettim. Bu stratejik karar, bana Yazılım Mühendisliği'nin tüm teknik imkanlarını ve akademik literatürü, statik müfredatların ötesinde kendi üretim hızımda kullanma özgürlüğü tanıyor. Yazılım mühendisliği ve matematiksel modelleme temellerimi; Yapay Zeka, Siber Güvenlik ve Sistem Mimarisi odağında, sadece çalışan değil, kendini savunan ve evrilen zeki ekosistemler inşa etmek için kullanıyorum. Hayat boyu öğrenmenin gücüne olan yürekten inancımla, teknolojik dönüşümün en ön saflarında kalmak için yetkinliklerimi sürekli rafine ediyorum. Başarının ölçütünü standartlaştırılmış diplomalar yerine; inşa ettiğim sistemlerin mimari dürüstlüğü ve sahip olduğum entelektüel birikimin sürekliliği olarak görüyorum.",
+    tagline: "IT Mimarı | Akıllı Sistemlerin Geleceğini Şekillendiriyor | Güvenli Ekosistemler Kaşifi & Girişimci",
     avatar_url: "/images/ai-avatar.jpg",
     github_url: "https://github.com/bahattinyunus",
     linkedin_url: "https://www.linkedin.com/in/bahattinyunus",
@@ -42,19 +41,19 @@ export const profileData = {
       {name: "HTML/CSS", repos: 7, stars: 30}
     ],
     domains: [
-      "Artificial Intelligence",
-      "Cyber Security",
-      "System Architecture",
-      "Software Engineering",
-      "Mathematical Modeling",
-      "Autonomous Systems",
-      "IoT & Embedded Systems"
+      "Yapay Zeka",
+      "Siber Güvenlik",
+      "Sistem Mimarisi",
+      "Yazılım Mühendisliği",
+      "Matematiksel Modelleme",
+      "Otonom Sistemler",
+      "IoT & Gömülü Sistemler"
     ]
   },
   featured_projects: [
     {
       name: "bahattinyunus",
-      description: "Artificial Intelligence, Cybersecurity ve Defense Systems alanlarına odaklanan bir öğrenciyim. Akıllı sistemler, güvenlik mimarileri ve savunma teknolojilerinde uzmanlaşıyorum.",
+      description: "Yapay Zeka, Siber Güvenlik ve Savunma Sistemleri alanlarına odaklanan bir öğrenciyim. Akıllı sistemler, güvenlik mimarileri ve savunma teknolojilerinde uzmanlaşıyorum.",
       stars: 25,
       forks: 2,
       language: null,
