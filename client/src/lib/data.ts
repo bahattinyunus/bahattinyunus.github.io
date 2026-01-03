@@ -561,5 +561,357 @@ export const profileData = {
       url: "https://github.com/bahattinyunus/teknofest_helikopter_tasarim",
       image: "/images/project-teknofest-helikopter-tasarim.jpg"
     }
-  ]
+  ],
+  certificates: {
+    "Yapay Zeka & LLM": [
+      {
+        name: "Canva Magic Design",
+        issuer: "Canva",
+        date: "Ocak 2026",
+        credential_id: "ZA1UrdEkWO"
+      },
+      {
+        name: "DeepSeek",
+        issuer: "DeepSeek",
+        date: "Ocak 2026",
+        credential_id: "lK1hwey4xw"
+      },
+      {
+        name: "Gamma",
+        issuer: "Gamma",
+        date: "Ocak 2026",
+        credential_id: "GoDfm1rwNr"
+      },
+      {
+        name: "NotebookLM",
+        issuer: "Google",
+        date: "Ocak 2026",
+        credential_id: "8jmhNZeyk6"
+      },
+      {
+        name: "Perplexity",
+        issuer: "Perplexity AI",
+        date: "Ocak 2026",
+        credential_id: "Ko9fE4NpKx"
+      },
+      {
+        name: "Yapay Zeka Dünyasına Giriş",
+        issuer: "BTK Akademi",
+        date: "Ocak 2026",
+        credential_id: "7rptPBld1p"
+      },
+      {
+        name: "Yapay Zeka ve Algoritmalarına Giriş",
+        issuer: "BTK Akademi",
+        date: "Aralık 2025",
+        credential_id: "6mqFNkwJxA"
+      },
+      {
+        name: "Üretken Yapay Zekâya Giriş",
+        issuer: "BTK Akademi",
+        date: "Aralık 2025",
+        credential_id: "eK1hOjmKgG"
+      },
+      {
+        name: "Araştırmada Üretken Yapay Zekâ Kullanımı",
+        issuer: "BTK Akademi",
+        date: "Aralık 2025",
+        credential_id: "D2xhEEKoYN"
+      },
+      {
+        name: "Kişiselleştirilmiş GPT'ler (Custom GPTs)",
+        issuer: "BTK Akademi",
+        date: "Mart 2025",
+        credential_id: "ax1hDzvgrE"
+      },
+      {
+        name: "Yapay Zekâ Etiği",
+        issuer: "BTK Akademi",
+        date: "Aralık 2025",
+        credential_id: "MAZUE7xX2D"
+      },
+      {
+        name: "Yapay Zekaya Giriş",
+        issuer: "BTK Akademi",
+        date: "Aralık 2024",
+        credential_id: "zXztak2EeO"
+      },
+    ],
+    "Siber Güvenlik": [
+      {
+        name: "Multimedya Veri Güvenliğinde Yapay Zekâ Kullanımı",
+        issuer: "BTK Akademi",
+        date: "Aralık 2025",
+        credential_id: "WzBbI9py"
+      },
+      {
+        name: "DoS / DDoS Saldırıları ve Koruma",
+        issuer: "BTK Akademi",
+        date: "Aralık 2025",
+        credential_id: "XV1hBdNpMv"
+      },
+      {
+        name: "Sosyal Mühendislik ve Oltalama",
+        issuer: "BTK Akademi",
+        date: "Aralık 2025",
+        credential_id: "WJ1SkZbe4d"
+      },
+      {
+        name: "Temel Kriptografi",
+        issuer: "BTK Akademi",
+        date: "Mayıs 2025",
+        credential_id: "kK1hVD09dy"
+      },
+      {
+        name: "Siber Güvenliğe Giriş",
+        issuer: "BTK Akademi",
+        date: "Mayıs 2025",
+        credential_id: "XV1hWEow9j"
+      },
+      {
+        name: "İletişim ve Network Yönetimi",
+        issuer: "BTK Akademi",
+        date: "Aralık 2024",
+        credential_id: "yjahJpaPNz"
+      },
+    ],
+    "Yazılım & Programlama": [
+      {
+        name: "Python 2 (Python Programlama Dili)",
+        issuer: "BTK Akademi",
+        date: "Temmuz 2025",
+        credential_id: "dx1hAG0d1z"
+      },
+      {
+        name: "Python 1 (Yeni Başlayanlar için Python)",
+        issuer: "BTK Akademi",
+        date: "Mayıs 2025",
+        credential_id: "Yx1hPL1mGY"
+      },
+      {
+        name: "C++ ile Programlamaya Giriş",
+        issuer: "BTK Akademi",
+        date: "Haziran 2025",
+        credential_id: "6mqFNqLYdA"
+      },
+      {
+        name: "Go ile Programlamaya Giriş",
+        issuer: "BTK Akademi",
+        date: "Haziran 2025",
+        credential_id: "xr4t0Jeolm"
+      },
+      {
+        name: "C Programlama Dili",
+        issuer: "BTK Akademi",
+        date: "Aralık 2024",
+        credential_id: "GoDfn444BW"
+      },
+      {
+        name: "Javascript Temelleri",
+        issuer: "BTK Akademi",
+        date: "Haziran 2025",
+        credential_id: "gK2hoVBwj9"
+      },
+      {
+        name: "Small Basic ile Kodlama",
+        issuer: "BTK Akademi",
+        date: "Kasım 2024",
+        credential_id: "9Xrtq18yXl"
+      },
+      {
+        name: "Versiyon Kontrolleri: Git ve GitHub",
+        issuer: "BTK Akademi",
+        date: "Mayıs 2025",
+        credential_id: "NowfnNpDAz"
+      },
+      {
+        name: "Web Geliştirme (HTML5)",
+        issuer: "BTK Akademi",
+        date: "Nisan 2025",
+        credential_id: "rKjhGyp8LJ"
+      },
+      {
+        name: "CSS Temelleri",
+        issuer: "BTK Akademi",
+        date: "Nisan 2025",
+        credential_id: "7rptZAreZ1"
+      },
+    ],
+    "Donanım & Robotik": [
+      {
+        name: "İHA-1 Ticari/Sportif Pilot Sertifikası",
+        issuer: "Sivil Havacılık Genel Müdürlüğü",
+        date: "Mart 2023",
+        credential_id: "TR-IHA1H10609053"
+      },
+      {
+        name: "Tinkercad ile Arduino",
+        issuer: "BTK Akademi",
+        date: "Mayıs 2025",
+        credential_id: "BozfGwDZbx"
+      },
+      {
+        name: "MicroPython ile MicroBit Programlama",
+        issuer: "BTK Akademi",
+        date: "Mayıs 2025",
+        credential_id: "1kZCoxNdMM"
+      },
+      {
+        name: "Proteus ile Devre Tasarımı",
+        issuer: "BTK Akademi",
+        date: "Aralık 2024",
+        credential_id: "ax1hDAjV9N"
+      },
+      {
+        name: "Temel Elektronik ve Robotiğe Giriş",
+        issuer: "BTK Akademi",
+        date: "Aralık 2024",
+        credential_id: "1kZCozGVO7"
+      },
+      {
+        name: "İşletim Sistemlerine Giriş",
+        issuer: "BTK Akademi",
+        date: "Aralık 2024",
+        credential_id: "7rptZxqGKp"
+      },
+    ],
+    "Proje Yönetimi & İş": [
+      {
+        name: "Proje Yönetim Temelleri",
+        issuer: "BTK Akademi",
+        date: "Kasım 2025",
+        credential_id: "wmlFmJkB29"
+      },
+      {
+        name: "Proje ve Risk Yönetimi",
+        issuer: "BTK Akademi",
+        date: "Haziran 2025",
+        credential_id: "8jmhLX7yMG"
+      },
+      {
+        name: "Uygulamalı İş Modeli Üretimi",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "oJpS7m2kwM"
+      },
+      {
+        name: "Şirket Değerleme ve Yatırım Süreçleri",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "OKMhqpzgrp"
+      },
+      {
+        name: "Pazar Araştırması ve Fiyatlandırma Stratejileri",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "6mqFN8zGOM"
+      },
+      {
+        name: "Satış ve Pazarlama Yönetimi",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "WJ1SMLlqOO"
+      },
+      {
+        name: "Finansal Okuryazarlık",
+        issuer: "BTK Akademi",
+        date: "Aralık 2024",
+        credential_id: "AJaSdLzWW1"
+      },
+    ],
+    "Hukuk & Fikri Mülkiyet": [
+      {
+        name: "Bilişim Hukuku",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "2NwcJJnl84"
+      },
+      {
+        name: "Tasarımların Korunması",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "7rptZgnMXy"
+      },
+      {
+        name: "Patent ve Faydalı Modellerin Korunması",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "jK1hKrZEYN"
+      },
+      {
+        name: "Coğrafi İşaretlerin Korunması",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "wmlFJrZkJv"
+      },
+      {
+        name: "Bilgi İhbar Merkezi ve Sosyal Medya Şikayet Süreçleri",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "yjahzAKKW1"
+      },
+    ],
+    "Kişisel Gelişim & Soft Skills": [
+      {
+        name: "Etkili İletişim Stratejileri",
+        issuer: "BTK Akademi",
+        date: "Aralık 2024",
+        credential_id: "vpWc8Mb1Ao"
+      },
+      {
+        name: "İkna Becerileri",
+        issuer: "BTK Akademi",
+        date: "Aralık 2024",
+        credential_id: "pKmhKr9Xxj"
+      },
+      {
+        name: "Topluluk Önünde Konuşma ve Etkili Sunum",
+        issuer: "BTK Akademi",
+        date: "Aralık 2024",
+        credential_id: "GoDfn0V2xB"
+      },
+      {
+        name: "Ekip Kurma ve Yönetme",
+        issuer: "BTK Akademi",
+        date: "Aralık 2024",
+        credential_id: "7rptZxqG9P"
+      },
+      {
+        name: "Problem Çözme Teknikleri",
+        issuer: "BTK Akademi",
+        date: "Aralık 2024",
+        credential_id: "zXztak7gdZ"
+      },
+      {
+        name: "Kariyerde Hedef Belirleme",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "0KohzoGvkW"
+      },
+      {
+        name: "Mülakat Teknikleri",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "lK1h7nZOBZ"
+      },
+      {
+        name: "Stresle Başa Çıkma ve Bilinçli Farkındalık",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "MAZUNeOraZ"
+      },
+      {
+        name: "Genç Profesyoneller İçin Kariyeri Tehdit Eden Yaklaşımlar",
+        issuer: "BTK Akademi",
+        date: "Tarih Belirtilmemiş",
+        credential_id: "MAZUENAJ9z"
+      },
+      {
+        name: "Dijital Okuryazarlık",
+        issuer: "BTK Akademi",
+        date: "Temmuz 2025",
+        credential_id: "OKMhqeyObw"
+      },
+    ],
+  }
 };

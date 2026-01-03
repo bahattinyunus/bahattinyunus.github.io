@@ -190,7 +190,7 @@ export default function Home() {
               <div className="mt-10 p-6 bg-card/50 rounded-lg border border-white/5">
                 <h4 className="font-bold text-white mb-2">Mühendislik Felsefesi</h4>
                 <p className="text-sm text-muted-foreground italic">
-                  "Başarının nihai ölçütü standartlaştırılmış bir diploma veya şeffaf olmayan bir değerlendirme değil, inşa ettiğim sistemlerin mimari bütünlüğüdür."
+                  Akademik bürokrasiyi teknik derinlikle bypass eden pragmatik bir mühendislik anlayışını benimsiyorum. Mimari vizyonum; Yapay Zeka, Siber Güvenlik ve Savunma Sistemleri kesişiminde, statik yapılar yerine kendi kendini savunan, öğrenen ve sürekli evrilen zeki ekosistemler inşa etmektir. IoT'den bulut mimarisine kadar her teknolojiyi birer operasyonel araç olarak görüyor; 'Ayılar asla pes etmez' mottosuyla, en zorlu şartlarda dahi mukavemet gösteren dijital organizmalar tasarlıyorum.
                 </p>
               </div>
             </div>
@@ -347,6 +347,38 @@ export default function Home() {
                   <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </Button>
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Certificates Section */}
+        <section id="certificates" className="py-20 relative z-10">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center gap-4 mb-12">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+              <h2 className="text-3xl md:text-4xl font-bold text-center font-display">
+                <span className="text-primary">_</span>SERTİFİKALAR
+              </h2>
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {Object.entries(profileData.certificates).map(([category, certs]) => (
+                <div key={category} className="space-y-3">
+                  <h3 className="font-display font-bold text-lg text-primary mb-4 flex items-center gap-2">
+                    <span className="text-primary">▸</span> {category}
+                  </h3>
+                  <div className="space-y-2">
+                    {certs.map((cert, idx) => (
+                      <div key={idx} className="p-3 bg-card/30 backdrop-blur-sm border border-white/5 rounded-lg hover:border-primary/30 transition-colors group">
+                        <p className="text-sm font-medium text-white group-hover:text-primary transition-colors">{cert.name}</p>
+                        <p className="text-xs text-muted-foreground mt-1">{cert.issuer}</p>
+                        <p className="text-xs text-muted-foreground/60 mt-1">{cert.date}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
