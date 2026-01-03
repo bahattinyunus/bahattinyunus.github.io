@@ -190,7 +190,7 @@ export default function Home() {
               <div className="mt-10 p-6 bg-card/50 rounded-lg border border-white/5">
                 <h4 className="font-bold text-white mb-2">Mühendislik Felsefesi</h4>
                 <p className="text-sm text-muted-foreground italic">
-                  Akademik bürokrasiyi teknik derinlikle bypass eden pragmatik bir mühendislik anlayışını benimsiyorum. Mimari vizyonum; Yapay Zeka, Siber Güvenlik ve Savunma Sistemleri kesişiminde, statik yapılar yerine kendi kendini savunan, öğrenen ve sürekli evrilen zeki ekosistemler inşa etmektir. IoT'den bulut mimarisine kadar her teknolojiyi birer operasyonel araç olarak görüyor; 'Ayılar asla pes etmez' mottosuyla, en zorlu şartlarda dahi mukavemet gösteren dijital organizmalar tasarlıyorum.
+                  Pragmatik mühendislik felsefesini teknik uzmanlığın merkezine koyarak, akademik bürokrasi yerine ölçeklenebilir ve yüksek performanslı çözümlere odaklanıyorum. Yapay Zeka, Siber Güvenlik ve Savunma Sistemleri disiplinlerini entegre ederek; yalnızca çalışan değil, aynı zamanda kendi kendini savunan ve dinamik koşullara uyum sağlayarak evrilen zeki ekosistemler inşa ediyorum. Sistem mimarisine olan bütünsel yaklaşımımı, 'asla pes etmeyen' bir operasyonel disiplinle birleştirerek, teknolojik dönüşümün geleceğinde dayanıklı ve otonom dijital altyapılar tasarlamayı hedefliyorum.
                 </p>
               </div>
             </div>
