@@ -190,7 +190,9 @@ export default function Home() {
               <div className="mt-10 p-6 bg-card/50 rounded-lg border border-white/5">
                 <h4 className="font-bold text-white mb-2">Mühendislik Felsefesi</h4>
                 <p className="text-sm text-muted-foreground italic">
-                  Pragmatik mühendislik felsefesini teknik uzmanlığın merkezine koyarak, akademik bürokrasi yerine ölçeklenebilir ve yüksek performanslı çözümlere odaklanıyorum. Yapay Zeka, Siber Güvenlik ve Savunma Sistemleri disiplinlerini entegre ederek; yalnızca çalışan değil, aynı zamanda kendi kendini savunan ve dinamik koşullara uyum sağlayarak evrilen zeki ekosistemler inşa ediyorum. Sistem mimarisine olan bütünsel yaklaşımımı, 'asla pes etmeyen' bir operasyonel disiplinle birleştirerek, teknolojik dönüşümün geleceğinde dayanıklı ve otonom dijital altyapılar tasarlamayı hedefliyorum.
+                  Benim mühendislik anlayışım, kodun derlenip çalışmasıyla bitmez; o sadece başlangıçtır. Ben, akademik bürokrasinin teorik güvenliğinde değil, teknik uzmanlığın sert gerçekliğinde sistemler inşa ediyorum. Felsefem; bir sistemi sadece 'çalışır' kılmak değil, onu dış dünyadan gelecek her türlü kaosa karşı kendi savunmasını kurgulayan bir organizmaya dönüştürmektir.
+
+Yapay Zeka benim için bir araç değil, sistemin beynidir; Siber Güvenlik ise bir eklenti değil, sistemin bağışıklık sistemidir. Mühendisliği bir 'iş' olarak değil, bir operasyonel disiplin olarak görüyorum. Ayılar asla pes etmez ve benim tasarladığım mimariler de pes etmeyecek şekilde kurgulanır: Eğer bir sistem, mimarına ihtiyaç duymadan saldırılara göğüs geremiyor ve değişen şartlara adapte olamıyorsa, o sistem henüz bitmemiştir.
                 </p>
               </div>
             </div>
