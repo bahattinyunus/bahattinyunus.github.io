@@ -79,32 +79,60 @@ export const profileData = {
   ],
   timeline: [
     {
-      year: "2026",
-      title: "Senior IT Architect & Visionary",
-      company: "StarDev",
-      description: "Yapay zeka ve siber güvenlik odaklı yeni nesil sistem mimarileri geliştirme. 'Cyber-Organic' ekosistemler üzerine Ar-Ge çalışmaları.",
+      year: "2023 - 2027",
+      title: "Yazılım Mühendisliği (Lisans)",
+      company: "Karadeniz Teknik Üniversitesi",
+      description: "KTÜ POST-AI STRATEJİK KOMUTA MERKEZİ. Mevcut müfredatı 'Base Layer' kabul edip, yapay zekayı 100x güç çarpanı olarak konumlandırarak kendi 'Modern Yazılım Mühendisliği' müfredatımı inşa ediyorum. Odak: AI Integration, Systems Design ve Prompt Engineering.",
       icon: "Terminal"
     },
     {
-      year: "2025",
-      title: "AI & Cybersecurity Specialist",
-      company: "Bağımsız Geliştirici",
-      description: "BTK Akademi ve çeşitli platformlarda derin teknik eğitimler. TEKNOFEST ve ulusal yarışmalarda stratejik proje liderlikleri.",
-      icon: "Shield"
+      year: "2025 - 2029",
+      title: "Yönetim Bilişim Sistemleri (Lisans)",
+      company: "İstanbul Üniversitesi",
+      description: "Statik bir diploma yerine, işletme vizyonu ile mühendislik disiplinini birleştiren hibrit bir yetkinlik seti. Veri analitiği ve iş süreçlerinin dijitalleşmesi üzerine odaklı stratejik gelişim.",
+      icon: "Layers"
     },
     {
-      year: "2023 - 2025",
-      title: "Yazılım Mühendisliği Öğrencisi",
-      company: "Karadeniz Teknik Üniversitesi",
-      description: "Temel mühendislik disiplini ve akademik projeler. İHA, Otonom Sistemler ve Gömülü Yazılım üzerine yoğunlaşma.",
+      year: "2025 - 2027",
+      title: "Bilgisayar Programcılığı (Önlisans)",
+      company: "Anadolu Üniversitesi",
+      description: "Operasyonel çeviklik ve teknik uygulama derinliği kazanmak için 'çok boyutlu risk yönetimi' prensibiyle yapılandırılmış akademik süreç.",
+      icon: "Code2"
+    },
+    {
+      year: "2024 - 2026",
+      title: "Önlisans Eğitimi",
+      company: "Recep Tayyip Erdoğan Üniversitesi",
+      description: "KTÜ ekosistemine coğrafi yakınlığı optimize ederek laboratuvar ve teknik network imkanlarından yararlanılan stratejik akademik hamle.",
       icon: "Book"
     },
     {
-      year: "2020 - 2023",
-      title: "Erken Dönem Kâşif",
-      company: "Self-Taught",
-      description: "Programlama dünyasına ilk adımlar. Python, C++ ve Web teknolojileri ile tanışma ve ilk projeler.",
-      icon: "Code"
+      year: "2022 - 2024",
+      title: "Önlisans Eğitimi",
+      company: "Akdeniz Üniversitesi",
+      description: "Kamu görevindeki sorumluluklarla eş zamanlı yürütülen, üniversite imkanlarının bir 'hub' olarak kullanıldığı self-learning dönemi.",
+      icon: "Book"
+    },
+    {
+      year: "2021 - 2023",
+      title: "Maden Mühendisliği (Lisans)",
+      company: "Muğla Sıtkı Koçman Üniversitesi",
+      description: "'Cevherimiz Sensin' projesiyle bölüm birincisi olarak yerleşildiği, ardından profesyonel hayata (memuriyet) geçiş yapılan dönem.",
+      icon: "Activity"
+    },
+    {
+      year: "2019 - 2021",
+      title: "Stratejik Üniversite Hazırlık",
+      company: "Bireysel Gelişim",
+      description: "Sıralamanın 198k -> 104k -> 68k şeklinde sistematik olarak yükseltildiği, 'continuous improvement' (sürekli iyileştirme) disiplininin kazanıldığı dönem.",
+      icon: "Zap"
+    },
+    {
+      year: "2015 - 2019",
+      title: "Lise Eğitimi & Açık Lise",
+      company: "Şereflikoçhisar Anadolu & AÖL",
+      description: "Zaman yönetimini optimize etmek için son sınıfta Açık Lise'ye geçiş. Kısıtlı imkanlarla temel bilimlerde (Matematik, Biyoloji) derinlemesine bireysel araştırma.",
+      icon: "Book"
     }
   ],
   ai_tools: [

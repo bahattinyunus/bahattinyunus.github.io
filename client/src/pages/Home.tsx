@@ -4,7 +4,7 @@ import { CyberCard, GlitchText, HexBadge, SectionHeader } from "@/components/ui-
 import { profileData } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Terminal, Shield, Cpu, Code, ExternalLink, Globe, MapPin, Mail, ArrowUpRight, Activity, Database, Zap, Brain, Book, Layers } from "lucide-react";
+import { Github, Linkedin, Terminal, Shield, Cpu, Code, Code2, ExternalLink, Globe, MapPin, Mail, ArrowUpRight, Activity, Database, Zap, Brain, Book, Layers } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -213,29 +213,32 @@ export default function Home() {
 
                   <div className="w-full md:w-[45%] pl-8 md:pl-0">
                     <CyberCard className="p-6 relative overflow-hidden group-hover:border-primary/50 transition-colors">
-                      <div className="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
-                        {item.icon === "Terminal" && <Terminal className="w-12 h-12" />}
-                        {item.icon === "Shield" && <Shield className="w-12 h-12" />}
-                        {item.icon === "Book" && <Book className="w-12 h-12" />}
-                        {item.icon === "Code" && <Code className="w-12 h-12" />}
-                      </div>
-                      <span className="text-primary font-mono text-sm mb-2 block">{item.year}</span>
-                      <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
-                      <h4 className="text-sm font-mono text-muted-foreground mb-4">{item.company}</h4>
-                      <p className="text-sm text-muted-foreground/80 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </CyberCard>
+                      {item.icon === "Terminal" && <Terminal className="w-12 h-12" />}
+                      {item.icon === "Shield" && <Shield className="w-12 h-12" />}
+                      {item.icon === "Book" && <Book className="w-12 h-12" />}
+                      {item.icon === "Code" && <Code className="w-12 h-12" />}
+                      {item.icon === "Code2" && <Code2 className="w-12 h-12" />}
+                      {item.icon === "Layers" && <Layers className="w-12 h-12" />}
+                      {item.icon === "Zap" && <Zap className="w-12 h-12" />}
+                      {item.icon === "Activity" && <Activity className="w-12 h-12" />}
                   </div>
-                  <div className="hidden md:block w-[45%]"></div>
-                </motion.div>
+                  <span className="text-primary font-mono text-sm mb-2 block">{item.year}</span>
+                  <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
+                  <h4 className="text-sm font-mono text-muted-foreground mb-4">{item.company}</h4>
+                  <p className="text-sm text-muted-foreground/80 leading-relaxed">
+                    {item.description}
+                  </p>
+                </CyberCard>
+                  </div>
+            <div className="hidden md:block w-[45%]"></div>
+          </motion.div>
               ))}
-            </div>
-          </div>
-        </section>
+        </div>
+    </div>
+        </section >
 
-        {/* Skills Section */}
-        <section id="skills" className="container py-20 bg-white/5 rounded-3xl my-10 border border-white/5">
+    {/* Skills Section */ }
+    < section id = "skills" className = "container py-20 bg-white/5 rounded-3xl my-10 border border-white/5" >
           <SectionHeader title="Teknik Cephanelik" subtitle="Akıllı sistemler inşa etmek için kullanılan araçlar ve teknolojiler." />
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -284,10 +287,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section >
 
-        {/* AI Arsenal (Neural Extensions) */}
-        <section className="container py-20 bg-background/50">
+    {/* AI Arsenal (Neural Extensions) */ }
+    < section className = "container py-20 bg-background/50" >
           <SectionHeader title="Nöral Uzantılar" subtitle="Üretkenliğimi ve yeteneklerimi artıran yapay zeka araçları." />
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -311,13 +314,13 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </section>
+        </section >
 
-        {/* Projects Section */}
-        <section id="projects" className="container py-20">
-          <SectionHeader title="Yayındaki Sistemler" subtitle="Mimari yetenekleri gösteren seçilmiş çalışmalar." />
+    {/* Projects Section */ }
+    < section id = "projects" className = "container py-20" >
+      <SectionHeader title="Yayındaki Sistemler" subtitle="Mimari yetenekleri gösteren seçilmiş çalışmalar." />
 
-          {/* Category Filter */}
+  {/* Category Filter */ }
           <div className="mb-10 overflow-x-auto pb-4">
             <div className="flex gap-3 min-w-max">
               <Button
@@ -395,189 +398,189 @@ export default function Home() {
               </a>
             </Button>
           </div>
-        </section>
+        </section >
 
-        {/* Blog Section */}
-        <section id="blog" className="py-20 relative z-10">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center gap-4 mb-12">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-              <h2 className="text-3xl md:text-4xl font-bold text-center font-display">
-                <span className="text-primary">_</span>YAZILARIM
-              </h2>
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-            </div>
+    {/* Blog Section */ }
+    < section id = "blog" className = "py-20 relative z-10" >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center gap-4 mb-12">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+          <h2 className="text-3xl md:text-4xl font-bold text-center font-display">
+            <span className="text-primary">_</span>YAZILARIM
+          </h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {profileData.blog_posts.map((post, index) => (
-                <a
-                  key={index}
-                  href={post.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative bg-card/30 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="aspect-video w-full overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 opacity-60" />
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute top-3 right-3 z-20">
-                      <Badge variant="secondary" className="bg-background/80 backdrop-blur text-xs border-primary/20">
-                        Medium
-                      </Badge>
-                    </div>
-                  </div>
-
-                  <div className="p-6 relative z-20">
-                    <div className="text-xs text-muted-foreground mb-2 font-mono flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                      {post.date}
-                    </div>
-                    <h3 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors font-display">
-                      {post.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
-                      {post.summary}
-                    </p>
-                    <div className="flex items-center text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
-                      OKUMAYA DEVAM ET <ArrowUpRight className="w-3 h-3 ml-1" />
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <a
-                href={profileData.personal.medium_url || "https://medium.com/@bahattinyunus"}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outline" className="border-primary/20 hover:bg-primary/10 hover:text-primary group">
-                  TÜM YAZILARI GÖR
-                  <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </Button>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* Certificates Section */}
-        <section id="certificates" className="py-20 relative z-10">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center gap-4 mb-12">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-              <h2 className="text-3xl md:text-4xl font-bold text-center font-display">
-                <span className="text-primary">_</span>SERTİFİKALAR
-              </h2>
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Object.entries(profileData.certificates).map(([category, certs]) => (
-                <div key={category} className="space-y-3">
-                  <h3 className="font-display font-bold text-lg text-primary mb-4 flex items-center gap-2">
-                    <span className="text-primary">▸</span> {category}
-                  </h3>
-                  <div className="space-y-2">
-                    {certs.map((cert, idx) => (
-                      <div key={idx} className="p-3 bg-card/30 backdrop-blur-sm border border-white/5 rounded-lg hover:border-primary/30 transition-colors group">
-                        <p className="text-sm font-medium text-white group-hover:text-primary transition-colors">{cert.name}</p>
-                        <p className="text-xs text-muted-foreground mt-1">{cert.issuer}</p>
-                        <p className="text-xs text-muted-foreground/60 mt-1">{cert.date}</p>
-                      </div>
-                    ))}
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {profileData.blog_posts.map((post, index) => (
+            <a
+              key={index}
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-card/30 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="aspect-video w-full overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 opacity-60" />
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute top-3 right-3 z-20">
+                  <Badge variant="secondary" className="bg-background/80 backdrop-blur text-xs border-primary/20">
+                    Medium
+                  </Badge>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
+              </div>
 
-        {/* Contact Section */}
-        <section id="contact" className="container py-20 mb-20">
-          <div className="bg-gradient-to-br from-card to-background border border-white/10 rounded-2xl p-8 md:p-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-
-            <div className="grid md:grid-cols-2 gap-12 relative z-10">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
-                  İşbirliğine <span className="text-primary">Hazır mısınız?</span>
-                </h2>
-                <p className="text-muted-foreground mb-8 max-w-md">
-                  Sistem mimarisi, yapay zeka güvenlik çerçeveleri ve yenilikçi mühendislik zorluklarını tartışmaya açığım.
+              <div className="p-6 relative z-20">
+                <div className="text-xs text-muted-foreground mb-2 font-mono flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                  {post.date}
+                </div>
+                <h3 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors font-display">
+                  {post.title}
+                </h3>
+                <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
+                  {post.summary}
                 </p>
-
-                <div className="space-y-4">
-                  <a href={profileData.personal.linkedin_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group">
-                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                      <Linkedin className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white">LinkedIn</h4>
-                      <p className="text-xs text-muted-foreground">Profesyonel bağlantı kurun</p>
-                    </div>
-                  </a>
-
-                  <a href={profileData.personal.github_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group">
-                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                      <Github className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white">GitHub</h4>
-                      <p className="text-xs text-muted-foreground">Kodları ve katkıları inceleyin</p>
-                    </div>
-                  </a>
-
-                  <div className="flex items-center gap-4 p-4 bg-white/5 rounded-lg">
-                    <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
-                      <MapPin className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white">Konum</h4>
-                      <p className="text-xs text-muted-foreground">{profileData.personal.location}</p>
-                    </div>
-                  </div>
+                <div className="flex items-center text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
+                  OKUMAYA DEVAM ET <ArrowUpRight className="w-3 h-3 ml-1" />
                 </div>
               </div>
+            </a>
+          ))}
+        </div>
 
-              <div className="flex items-center justify-center">
-                <div className="relative w-full max-w-sm aspect-square">
-                  <div className="absolute inset-0 border border-primary/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
-                  <div className="absolute inset-4 border border-accent/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <Terminal className="w-12 h-12 text-primary mx-auto mb-4" />
-                      <h3 className="text-xl font-display font-bold text-white">SİSTEM DURUMU</h3>
-                      <p className="text-primary font-mono text-sm mt-2 animate-pulse">● OPERASYONEL</p>
-                    </div>
+        <div className="mt-12 text-center">
+          <a
+            href={profileData.personal.medium_url || "https://medium.com/@bahattinyunus"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="outline" className="border-primary/20 hover:bg-primary/10 hover:text-primary group">
+              TÜM YAZILARI GÖR
+              <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </Button>
+          </a>
+        </div>
+      </div>
+        </section >
+
+    {/* Certificates Section */ }
+    < section id = "certificates" className = "py-20 relative z-10" >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center gap-4 mb-12">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+          <h2 className="text-3xl md:text-4xl font-bold text-center font-display">
+            <span className="text-primary">_</span>SERTİFİKALAR
+          </h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Object.entries(profileData.certificates).map(([category, certs]) => (
+            <div key={category} className="space-y-3">
+              <h3 className="font-display font-bold text-lg text-primary mb-4 flex items-center gap-2">
+                <span className="text-primary">▸</span> {category}
+              </h3>
+              <div className="space-y-2">
+                {certs.map((cert, idx) => (
+                  <div key={idx} className="p-3 bg-card/30 backdrop-blur-sm border border-white/5 rounded-lg hover:border-primary/30 transition-colors group">
+                    <p className="text-sm font-medium text-white group-hover:text-primary transition-colors">{cert.name}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{cert.issuer}</p>
+                    <p className="text-xs text-muted-foreground/60 mt-1">{cert.date}</p>
                   </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+        </section >
+
+    {/* Contact Section */ }
+    < section id = "contact" className = "container py-20 mb-20" >
+      <div className="bg-gradient-to-br from-card to-background border border-white/10 rounded-2xl p-8 md:p-12 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+
+        <div className="grid md:grid-cols-2 gap-12 relative z-10">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+              İşbirliğine <span className="text-primary">Hazır mısınız?</span>
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-md">
+              Sistem mimarisi, yapay zeka güvenlik çerçeveleri ve yenilikçi mühendislik zorluklarını tartışmaya açığım.
+            </p>
+
+            <div className="space-y-4">
+              <a href={profileData.personal.linkedin_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <Linkedin className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white">LinkedIn</h4>
+                  <p className="text-xs text-muted-foreground">Profesyonel bağlantı kurun</p>
+                </div>
+              </a>
+
+              <a href={profileData.personal.github_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                  <Github className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white">GitHub</h4>
+                  <p className="text-xs text-muted-foreground">Kodları ve katkıları inceleyin</p>
+                </div>
+              </a>
+
+              <div className="flex items-center gap-4 p-4 bg-white/5 rounded-lg">
+                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white">Konum</h4>
+                  <p className="text-xs text-muted-foreground">{profileData.personal.location}</p>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      </main>
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 bg-background py-8">
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-xs text-muted-foreground font-mono">
-            © {new Date().getFullYear()} BAHATTIN YUNUS CETIN. TÜM HAKLARI SAKLIDIR.
-          </div>
-          <div className="flex items-center gap-6">
-            <a href={profileData.personal.github_url} className="text-muted-foreground hover:text-primary transition-colors">
-              <Github className="w-4 h-4" />
-            </a>
-            <a href={profileData.personal.linkedin_url} className="text-muted-foreground hover:text-primary transition-colors">
-              <Linkedin className="w-4 h-4" />
-            </a>
+          <div className="flex items-center justify-center">
+            <div className="relative w-full max-w-sm aspect-square">
+              <div className="absolute inset-0 border border-primary/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+              <div className="absolute inset-4 border border-accent/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <Terminal className="w-12 h-12 text-primary mx-auto mb-4" />
+                  <h3 className="text-xl font-display font-bold text-white">SİSTEM DURUMU</h3>
+                  <p className="text-primary font-mono text-sm mt-2 animate-pulse">● OPERASYONEL</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+        </section >
+      </main >
+
+    {/* Footer */ }
+    < footer className = "border-t border-white/5 bg-background py-8" >
+      <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="text-xs text-muted-foreground font-mono">
+          © {new Date().getFullYear()} BAHATTIN YUNUS CETIN. TÜM HAKLARI SAKLIDIR.
+        </div>
+        <div className="flex items-center gap-6">
+          <a href={profileData.personal.github_url} className="text-muted-foreground hover:text-primary transition-colors">
+            <Github className="w-4 h-4" />
+          </a>
+          <a href={profileData.personal.linkedin_url} className="text-muted-foreground hover:text-primary transition-colors">
+            <Linkedin className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+      </footer >
+    </div >
   );
 }
