@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { useState } from "react";
-import { CyberCard, GlitchText, HexBadge, SectionHeader } from "@/components/ui-custom";
+import { CyberCard, GlitchText, HexBadge, SectionHeader, TypewriterText } from "@/components/ui-custom";
 import { profileData } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -23,7 +23,8 @@ export default function Home() {
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-20 mix-blend-screen"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#0a0f1c_1px,transparent_1px),linear-gradient(to_bottom,#0a0f1c_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#0a0f1c_1px,transparent_1px),linear-gradient(to_bottom,#0a0f1c_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 animate-pulse"></div>
+        <div className="fixed inset-0 z-50 pointer-events-none animate-scanline"></div>
       </div>
 
       {/* Navigation */}
@@ -166,9 +167,9 @@ export default function Home() {
 
             <div className="space-y-6">
               <div className="prose prose-invert max-w-none">
-                <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-                  {profileData.personal.bio}
-                </p>
+                <div className="text-xl md:text-2xl text-muted-foreground font-mono mb-8 h-16 md:h-auto">
+                  <TypewriterText text={profileData.personal.bio} delay={30} />
+                </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

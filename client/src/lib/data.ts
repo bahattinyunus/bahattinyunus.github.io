@@ -216,7 +216,7 @@ Milli Teknoloji Hamlesi'nin bir neferi olarak, sadece kod yazmayı değil; strat
       forks: 24,
       language: "Python",
       url: "https://github.com/bahattinyunus/BeeRouteANN-for-Antenna-Design",
-      image: "/images/project-beeroute.jpg"
+      image: "/images/project-efficiency.jpg"
     },
     {
       name: "PoseidonEye",
@@ -234,7 +234,7 @@ Milli Teknoloji Hamlesi'nin bir neferi olarak, sadece kod yazmayı değil; strat
       forks: 15,
       language: "Matlab/Python",
       url: "https://github.com/bahattinyunus/DeepAntenna",
-      image: "/images/project-deepantenna.jpg"
+      image: "/images/project-ai.jpg"
     },
     {
       name: "erc_rover_mission_control",
