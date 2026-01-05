@@ -180,3 +180,205 @@
     }
   }
 }
+
+/* ===== ANIMASYONLAR VE AFILLI EFEKTLER ===== */
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3), 0 0 40px rgba(255, 77, 77, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.6), 0 0 60px rgba(255, 77, 77, 0.3);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Animasyon Sınıfları */
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.float-up {
+  animation: float-up 0.6s ease-out;
+}
+
+.shimmer-effect {
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.3), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+}
+
+.slide-in {
+  animation: slide-in-right 0.8s ease-out;
+}
+
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Hover Efektleri */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), 0 0 40px rgba(255, 77, 77, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Card Animasyonları */
+.card-animate {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-animate:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 240, 255, 0.2);
+}
+
+/* Button Efektleri */
+.button-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.button-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.button-glow:hover::before {
+  left: 100%;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #00f0ff, #ff4d4d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* Pulse Border */
+.pulse-border {
+  border: 2px solid #00f0ff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3) inset, 0 0 15px rgba(0, 240, 255, 0.1);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Scroll Animasyonları */
+@keyframes scroll-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-animate {
+  opacity: 0;
+  animation: scroll-fade 0.8s ease-out forwards;
+}
+
+/* Neon Metin Efekti */
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+  }
+  20%, 24%, 55% {
+    text-shadow: 0 0 5px #00f0ff;
+  }
+}
+
+.neon-text {
+  animation: neon-flicker 3s infinite;
+}
+
+/* Smooth Transitions */
+a, button, input, select, textarea {
+  transition: all 0.2s ease;
+}
+
+/* Backdrop Blur Efekti */
+.backdrop-blur-custom {
+  backdrop-filter: blur(10px);
+  background-color: rgba(10, 15, 28, 0.8);
+}
+
+/* Glow Effect for Cards */
+.glow-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(255, 77, 77, 0.05));
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glow-card:hover {
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.3), 0 0 60px rgba(255, 77, 77, 0.1);
+  border-color: rgba(0, 240, 255, 0.4);
+}
