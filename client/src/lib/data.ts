@@ -6,7 +6,7 @@ export const profileData = {
     username: "bahattinyunus",
     location: "Türkiye",
     company: "StarDev",
-    bio: "Pragmatik mühendislik disiplinini teknik derinlikle harmanlayan, yüksek mukavemetli sistemlerin inşasına odaklanmış bir Sistem Mimarı adayı. Teorik sınırların ötesinde; Yapay Zeka, Siber Güvenlik ve Savunma Sistemleri dikeyinde kendi kendini yöneten, proaktif savunma kabiliyetine sahip ve dinamik adaptasyon yeteneği yüksek zeki ekosistemler tasarlıyorum. Operasyonel mükemmelliği ve teknolojik çevikliği merkeze alarak, geleceğin dirençli ve otonom dijital altyapılarını kurgulama vizyonuyla hareket ediyorum.",
+    bio: "",
     tagline: "IT Architect | Shaping the Future of Intelligent Systems | Secure Ecosystems Explorer & Entrepreneur",
     avatar_url: "/images/ai-avatar.jpg",
     github_url: "https://github.com/bahattinyunus",
