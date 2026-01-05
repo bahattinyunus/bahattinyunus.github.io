@@ -6,8 +6,28 @@ export const profileData = {
     username: "bahattinyunus",
     location: "Türkiye",
     company: "StarDev",
-    bio: "",
-    tagline: "IT Architect | Shaping the Future of Intelligent Systems | Secure Ecosystems Explorer & Entrepreneur",
+    bio: `Ben Bahattin Yunus ÇETİN; Karadeniz Teknik Üniversitesi'nde Yazılım Mühendisliği öğrencisi, Anka Silicon Dynamics'in kurucusu ve dijital sınırların korunmasına adanmış bir Siber Vatanseverim. Kariyer yolculuğum, disiplinli bir geçmişten (Adalet Bakanlığı) teknik uzmanlığa uzanan asimetrik bir gelişim çizgisidir.
+    
+Bugün, yapay zeka sistemlerinin sadece kullanıcısı değil, mimarı olma vizyonuyla; LLM optimizasyonu, siber güvenlik ve karmaşık sistem mimarileri üzerine odaklanıyorum.
+
+🚀 Neler Yapıyorum?
+
+Anka Silicon Dynamics: Türkiye'nin yapay zeka alanındaki dijital egemenliğini tesis etmek amacıyla, "donanım bağımsız" bir zeka ekosistemi inşa ediyorum. Yerli donanımlar banttan çıkana kadar, düşük parametreli modelleri (7B/8B) devasa modellerin yetenekleriyle donatan Knowledge Distillation süreçlerini yönetiyorum.
+
+Stokastik Optimizasyon: NP-Hard problemlerine biyo-mimetik çözümler sunan, O(G·S·n²) karmaşıklıkta çalışan ve "Trabzon Protokolü" katmanını içeren BeeRoute projesiyle endüstriyel rotalama süreçlerini modernize ediyorum.
+
+Siber Güvenlik: T.C. Savunma Sanayii Başkanlığı ve Sanayi ve Teknoloji Bakanlığı himayesindeki Siber Vatan programı kapsamında, CTF dereceleriyle tescillenmiş teknik yetkinliğimle ulusal siber güvenlik vizyonuna katkı sağlıyorum.
+
+Derin Mühendislik: Mikroşerit anten tasarımından (DeepAntenna), denizcilikte AI destekli kestirimci bakıma (PoseidonEye) kadar geniş bir yelpazede, yapay sinir ağlarını (ANN) fizik ve mühendislik disiplinleriyle buluşturuyorum.
+
+🛠 Teknik Cephaneliğim
+AI & ML: PyTorch, HuggingFace, Unsloth, vLLM, QLoRA, Knowledge Distillation.
+Siber Güvenlik: Ethical Hacking, CTF, Tehdit Analizi, Sistem Dayanıklılığı.
+Yazılım & Mimari: Python (NumPy, SciPy), IoT (MQTT), Blockchain (Smart Contracts), Teknik Doktrin Oluşturma.
+
+🌐 Vizyonum
+Milli Teknoloji Hamlesi'nin bir neferi olarak, sadece kod yazmayı değil; stratejik düşünen, etik değerlere bağlı ve küresel standartlarda teknoloji üreten bir mühendislik kültürü oluşturmayı hedefliyorum. Uzay araştırmalarından denizaltı savunma sistemlerine kadar, teknolojinin dokunduğu her alanda "tam bağımsızlık" ilkesini savunuyorum.`,
+    tagline: "Founder & Chief Architect @ Anka Silicon Dynamics & Budak | IT Architect, LLM & AI Systems",
     avatar_url: "/images/ai-avatar.jpg",
     github_url: "https://github.com/bahattinyunus",
     linkedin_url: "https://www.linkedin.com/in/bahattinyunus",
@@ -189,6 +209,33 @@ export const profileData = {
     "Eğitim & Kaynaklar": ["Math2Code-A-Practical-Guide-for-Developers", "The-Craft-of-Tech-Architecture"],
   },
   featured_projects: [
+    {
+      name: "BeeRoute",
+      description: "NP-Hard problemlerine biyo-mimetik çözümler sunan, stokastik optimizasyon ve 'Trabzon Protokolü' ile endüstriyel rotalama süreçlerini modernize eden AI sistemi.",
+      stars: 95,
+      forks: 24,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/BeeRouteANN-for-Antenna-Design",
+      image: "/images/project-beeroute.jpg"
+    },
+    {
+      name: "PoseidonEye",
+      description: "Denizcilikte yapay zeka destekli kestirimci bakım ve anomali tespiti sağlayan derin öğrenme sistemi.",
+      stars: 88,
+      forks: 19,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/PoseidonEye",
+      image: "/images/project-poseidoneye.jpg"
+    },
+    {
+      name: "DeepAntenna",
+      description: "Yapay sinir ağları (ANN) ile mikroşerit anten tasarımını optimize eden derin mühendislik projesi.",
+      stars: 76,
+      forks: 15,
+      language: "Matlab/Python",
+      url: "https://github.com/bahattinyunus/DeepAntenna",
+      image: "/images/project-deepantenna.jpg"
+    },
     {
       name: "erc_rover_mission_control",
       description: "Mars keşif araçları için geliştirilmiş, gerçek zamanlı telemetri ve kontrol sağlayan görev kontrol arayüzü.",

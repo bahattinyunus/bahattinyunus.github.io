@@ -166,7 +166,7 @@ export default function Home() {
 
             <div className="space-y-6">
               <div className="prose prose-invert max-w-none">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
                   {profileData.personal.bio}
                 </p>
               </div>
