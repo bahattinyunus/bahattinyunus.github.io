@@ -4,7 +4,7 @@ import { CyberCard, GlitchText, HexBadge, SectionHeader } from "@/components/ui-
 import { profileData } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Terminal, Shield, Cpu, Code, Code2, ExternalLink, Globe, MapPin, Mail, ArrowUpRight, Activity, Database, Zap, Brain, Book, Layers } from "lucide-react";
+import { Github, Linkedin, Terminal, Shield, Cpu, Code, Code2, ExternalLink, Globe, MapPin, Mail, ArrowUpRight, Activity, Database, Zap, Brain, Book, Layers, Briefcase } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -222,6 +222,8 @@ export default function Home() {
                         {item.icon === "Layers" && <Layers className="w-12 h-12" />}
                         {item.icon === "Zap" && <Zap className="w-12 h-12" />}
                         {item.icon === "Activity" && <Activity className="w-12 h-12" />}
+                        {item.icon === "Briefcase" && <Briefcase className="w-12 h-12" />}
+                        {item.icon === "Cpu" && <Cpu className="w-12 h-12" />}
                       </div>
                       <span className="text-primary font-mono text-sm mb-2 block">{item.year}</span>
                       <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>

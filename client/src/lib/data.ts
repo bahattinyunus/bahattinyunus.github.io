@@ -79,6 +79,27 @@ export const profileData = {
   ],
   timeline: [
     {
+      year: "2026 - Halen",
+      title: "Founder, CEO & Chief Architect",
+      company: "Anka Silicon Dynamics",
+      description: "Türkiye’nin yapay zeka alanındaki dijital egemenliğini tesis etmek ve 'donanım bağımsız' bir zeka ekosistemi inşa etmek. ANKA-LLM Mimarisi, Knowledge Distillation ve Stratejik Optimizasyon üzerine Ar-Ge. Motto: 'Donanımı beklemiyoruz, donanım geldiğinde üzerinde koşacak zekayı hazırlıyoruz.'",
+      icon: "Cpu"
+    },
+    {
+      year: "2026 - Halen",
+      title: "Founder",
+      company: "Budak | Edge-AI Optimization",
+      description: "Yapay zeka modellerini uç cihazlara (Edge) entegre etmek için optimizasyon. Model Pruning, Quantization ve Edge-AI Deployment ile bulut bağımlılığını ortadan kaldıran sürdürülebilir, düşük gecikmeli AI çözümleri.",
+      icon: "Zap"
+    },
+    {
+      year: "2025 - Halen",
+      title: "Student (Siber Vatan)",
+      company: "Siber Vatan Programı",
+      description: "Siber güvenlik ve yapay zeka alanında ileri düzey yetenek geliştirme programı. Mentörlük ve CTF yarışmalarıyla desteklenen, global endüstri standartlarında teknik yetkinlik kazanımı.",
+      icon: "Shield"
+    },
+    {
       year: "2023 - 2027",
       title: "Yazılım Mühendisliği (Lisans)",
       company: "Karadeniz Teknik Üniversitesi",
@@ -105,6 +126,13 @@ export const profileData = {
       company: "Recep Tayyip Erdoğan Üniversitesi",
       description: "KTÜ ekosistemine coğrafi yakınlığı optimize ederek laboratuvar ve teknik network imkanlarından yararlanılan stratejik akademik hamle.",
       icon: "Book"
+    },
+    {
+      year: "2022 - 2023",
+      title: "Correctional Officer",
+      company: "Adalet Bakanlığı",
+      description: "Kriz yönetimi, baskı altında odaklanma ve yüksek riskli durumlarda sistematik yaklaşım. Karmaşık sorunlarla başa çıkma ve dinamik ortamlarda etkili iş birliği yeteneklerinin kazanımı.",
+      icon: "Briefcase"
     },
     {
       year: "2022 - 2024",
