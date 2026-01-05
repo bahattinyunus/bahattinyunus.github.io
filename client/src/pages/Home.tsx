@@ -4,7 +4,7 @@ import { CyberCard, GlitchText, HexBadge, SectionHeader } from "@/components/ui-
 import { profileData } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Terminal, Shield, Cpu, Code, ExternalLink, Globe, MapPin, Mail, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Terminal, Shield, Cpu, Code, ExternalLink, Globe, MapPin, Mail, ArrowUpRight, Activity, Database, Zap, Brain, Book, Layers } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -89,19 +89,61 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 w-full border-t border-white/5 pt-8">
-            {[
-              { label: "Toplam Repo", value: profileData.github_stats.public_repos },
-              { label: "Github Yıldızları", value: profileData.github_stats.total_stars },
-              { label: "Global Sıralama", value: "#1,240" },
-              { label: "Python Sıralaması (TR)", value: "#12" },
-            ].map((stat, i) => (
-              <div key={i} className="flex flex-col">
-                <span className="text-2xl md:text-3xl font-display font-bold text-white">{stat.value}</span>
-                <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">{stat.label}</span>
+          {/* System Status Dashboard */}
+          <div className="w-full mt-20 border-t border-white/5 pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className="p-4 rounded-lg bg-card/30 border border-white/5 backdrop-blur-sm relative overflow-hidden group hover:border-primary/30 transition-colors">
+                <div className="absolute top-0 right-0 p-2 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <Activity className="w-4 h-4 text-primary animate-pulse" />
+                </div>
+                <h3 className="text-xs font-mono text-muted-foreground mb-1">SİSTEM DURUMU</h3>
+                <div className="text-2xl font-display font-bold text-white flex items-center gap-2">
+                  ONLINE <span className="flex h-2 w-2 rounded-full bg-green-500"></span>
+                </div>
+                <div className="mt-2 text-xs font-mono text-primary/70">
+                  Uptime: 24Y 7M 12D
+                </div>
               </div>
-            ))}
+
+              <div className="p-4 rounded-lg bg-card/30 border border-white/5 backdrop-blur-sm relative overflow-hidden group hover:border-primary/30 transition-colors">
+                <div className="absolute top-0 right-0 p-2 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <Cpu className="w-4 h-4 text-accent" />
+                </div>
+                <h3 className="text-xs font-mono text-muted-foreground mb-1">İŞLEMCİ YÜKÜ</h3>
+                <div className="text-2xl font-display font-bold text-white">
+                  %98.4
+                </div>
+                <div className="mt-2 w-full bg-white/10 rounded-full h-1">
+                  <div className="bg-accent h-full rounded-full w-[98%] animate-pulse"></div>
+                </div>
+              </div>
+
+              <div className="p-4 rounded-lg bg-card/30 border border-white/5 backdrop-blur-sm relative overflow-hidden group hover:border-primary/30 transition-colors">
+                <div className="absolute top-0 right-0 p-2 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <Database className="w-4 h-4 text-blue-400" />
+                </div>
+                <h3 className="text-xs font-mono text-muted-foreground mb-1">DATA AKIŞI</h3>
+                <div className="text-2xl font-display font-bold text-white">
+                  {profileData.github_stats.total_stars} <span className="text-sm text-muted-foreground font-normal">Stars</span>
+                </div>
+                <div className="mt-2 text-xs font-mono text-blue-400/70">
+                  Total Repos: {profileData.github_stats.public_repos}
+                </div>
+              </div>
+
+              <div className="p-4 rounded-lg bg-card/30 border border-white/5 backdrop-blur-sm relative overflow-hidden group hover:border-primary/30 transition-colors">
+                <div className="absolute top-0 right-0 p-2 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <Zap className="w-4 h-4 text-yellow-400" />
+                </div>
+                <h3 className="text-xs font-mono text-muted-foreground mb-1">GÜÇ KAYNAĞI</h3>
+                <div className="text-2xl font-display font-bold text-white">
+                  KAHVE
+                </div>
+                <div className="mt-2 text-xs font-mono text-yellow-400/70">
+                  Seviye: Kritik
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -145,6 +187,49 @@ export default function Home() {
                   </div>
                 </CyberCard>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Experience Timeline */}
+        <section id="experience" className="container py-20 relative">
+          <SectionHeader title="Sistem Günlükleri" subtitle="Profesyonel gelişim ve evrim süreci." />
+
+          <div className="relative max-w-4xl mx-auto">
+            {/* Vertical Line */}
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/50 to-transparent"></div>
+
+            <div className="space-y-12">
+              {profileData.timeline?.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className={`relative flex items-center justify-between md:even:flex-row-reverse group ${i % 2 === 0 ? 'md:flex-row' : ''}`}
+                >
+                  {/* Timeline Dot */}
+                  <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-background border-2 border-primary rounded-full -translate-x-[7px] md:-translate-x-1/2 z-10 group-hover:bg-primary group-hover:scale-125 transition-all"></div>
+
+                  <div className="w-full md:w-[45%] pl-8 md:pl-0">
+                    <CyberCard className="p-6 relative overflow-hidden group-hover:border-primary/50 transition-colors">
+                      <div className="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+                        {item.icon === "Terminal" && <Terminal className="w-12 h-12" />}
+                        {item.icon === "Shield" && <Shield className="w-12 h-12" />}
+                        {item.icon === "Book" && <Book className="w-12 h-12" />}
+                        {item.icon === "Code" && <Code className="w-12 h-12" />}
+                      </div>
+                      <span className="text-primary font-mono text-sm mb-2 block">{item.year}</span>
+                      <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
+                      <h4 className="text-sm font-mono text-muted-foreground mb-4">{item.company}</h4>
+                      <p className="text-sm text-muted-foreground/80 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </CyberCard>
+                  </div>
+                  <div className="hidden md:block w-[45%]"></div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -201,6 +286,33 @@ export default function Home() {
           </div>
         </section>
 
+        {/* AI Arsenal (Neural Extensions) */}
+        <section className="container py-20 bg-background/50">
+          <SectionHeader title="Nöral Uzantılar" subtitle="Üretkenliğimi ve yeteneklerimi artıran yapay zeka araçları." />
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {profileData.ai_tools?.map((tool, i) => (
+              <div key={i} className="group relative bg-card/20 border border-white/5 rounded-xl p-4 hover:bg-card/40 hover:border-primary/30 transition-all duration-300">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="p-2 bg-white/5 rounded-lg text-primary group-hover:bg-primary/20 transition-colors">
+                    <Brain className="w-5 h-5" />
+                  </div>
+                  <span className="text-xs font-mono text-muted-foreground px-2 py-1 bg-white/5 rounded">
+                    {tool.category}
+                  </span>
+                </div>
+                <h3 className="font-bold text-white mb-2 group-hover:text-primary transition-colors">{tool.name}</h3>
+                <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                  <div
+                    className="bg-primary h-full rounded-full transition-all duration-1000 ease-out group-hover:bg-accent"
+                    style={{ width: `${tool.level}%` }}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Projects Section */}
         <section id="projects" className="container py-20">
           <SectionHeader title="Yayındaki Sistemler" subtitle="Mimari yetenekleri gösteren seçilmiş çalışmalar." />
@@ -213,8 +325,8 @@ export default function Home() {
                 variant={selectedCategory === null ? "default" : "outline"}
                 size="sm"
                 className={`font-mono text-xs whitespace-nowrap ${selectedCategory === null
-                    ? "bg-primary text-white"
-                    : "border-primary/30 text-primary hover:bg-primary/10"
+                  ? "bg-primary text-white"
+                  : "border-primary/30 text-primary hover:bg-primary/10"
                   }`}
               >
                 TÜM PROJELERİ GÖSTER
@@ -226,8 +338,8 @@ export default function Home() {
                   variant={selectedCategory === category ? "default" : "outline"}
                   size="sm"
                   className={`font-mono text-xs whitespace-nowrap ${selectedCategory === category
-                      ? "bg-primary text-white"
-                      : "border-primary/30 text-primary hover:bg-primary/10"
+                    ? "bg-primary text-white"
+                    : "border-primary/30 text-primary hover:bg-primary/10"
                     }`}
                 >
                   {category}
