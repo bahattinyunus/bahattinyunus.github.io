@@ -1,86 +1,333 @@
-# Bahattin Yunus Çetin | Cyber-Organic Portfolio
+<div align="center">
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Cairo&weight=700&size=40&duration=4000&pause=1500&color=E74C3C&center=true&vCenter=true&width=1000&lines=فَإِنَّ+مَعَ+الْعُسْرِ+يُسْرًا;With+hardship+comes+ease.;Şüphesiz+her+zorlukla+beraber+bir+kolaylık+vardır." />
+</p>
 
-![Sistem Durumu](https://img.shields.io/badge/Sistem_Durumu-Operasyonel-success?style=for-the-badge&logo=prometheus)
-![Tech Stack](https://img.shields.io/badge/Tech_Stack-React_|_Vite_|_Tailwind-blue?style=for-the-badge&logo=react)
-![License](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)
+<p align="center">
+  <img src="https://img.shields.io/badge/SURAH-AL--INSHIRAH-1a1a1a?style=for-the-badge&logo=codeforces&logoColor=E74C3C" />
+  <img src="https://img.shields.io/badge/PROBLEM-SOLVING-E74C3C?style=for-the-badge&logo=git&logoColor=white" />
+</p>
 
-> *"Akademik bürokrasiden ziyade derin teknik uzmanlığı önceleyen pragmatik mühendislik felsefesi."*
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=E74C3C&height=2&section=footer&width=400" />
+</p>
 
-## 🌐 Proje Vizyonu
+  <h1 align="center">
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Orbitron&size=30&duration=3500&pause=1000&color=556B2F&center=true&vCenter=true&width=750&lines=COMMAND+PROTOCOL+INITIATED...;+Disiplin+Şiarımız+Görev+Aşkımız+Feda+Canımız+" />
+  </h1>
 
-Bu proje sıradan bir portföy sitesi değildir; **"Cyber-Organic Intelligence" (Siber-Organik Zeka)** felsefesiyle tasarlanmış, yaşayan bir dijital kimliktir. 
 
-**Tasarım Manifestosu:**
-- **Living System:** Statik bir sayfa değil, nefes alan, tepki veren bir organizma.
-- **Transparency:** Kodun ve mimarinin şeffaf, görünür katmanları.
-- **Adaptive Intelligence:** Siber güvenlik soğukluğu ile biyolojik adaptasyonun estetik birleşimi.
 
-## 🛠️ Teknik Mimari
+<div align="center">
+<h1 align="center">
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Orbitron&size=35&center=true&vCenter=true&width=600&height=70&duration=4000&color=556B2F&lines=OPERATIVE+STATUS+ACTIVE;+Bahattin+Yunus+Çetin;" />
+</h1>
+<h3 align="center">  Data Science | AI | Cybersecurity | Defense Systems</h3>
 
-Proje, modern web teknolojilerinin en güncel ve performanslı araçlarıyla inşa edilmiştir:
 
-| Bileşen | Teknoloji | Açıklama |
-|---------|-----------|-----------|
-| **Core** | [React 18](https://reactjs.org/) | Bileşen tabanlı UI mimarisi |
-| **Build Tool** | [Vite](https://vitejs.dev/) | Yıldırım hızında HMR ve build süreçleri |
-| **Language** | [TypeScript](https://www.typescriptlang.org/) | Tip güvenli, ölçeklenebilir kod tabanı |
-| **Styling** | [Tailwind CSS](https://tailwindcss.com/) | Utility-first CSS framework |
-| **Motion** | [Framer Motion](https://www.framer.com/motion/) | Akışkan ve kompleks animasyonlar |
+<p align="center">
+  <img src="https://img.shields.io/badge/RANK-Cyber%20Lieutenant%20(3rd%20Year)-556B2F?style=for-the-badge&logo=shield&logoColor=white" alt="Rank"/>
+  <img src="https://img.shields.io/badge/STATUS-OPERATIONAL-6B8E23?style=for-the-badge&logo=check-circle&logoColor=white" alt="Status"/>
+  <img src="https://img.shields.io/badge/CLEARANCE-TOP%20SECRET-2F4F2F?style=for-the-badge&logo=lock&logoColor=white" alt="Clearance"/>
+</p>
 
-## 🚀 Kurulum ve Çalıştırma
+ <p align="center">
+  <img src="https://img.shields.io/badge/CHARACTER-Revolutionary-8B4513?style=for-the-badge&logo=target&logoColor=white"/>
+   <img src="https://img.shields.io/badge/VALUES-Faith%20Driven-6B8E23?style=for-the-badge&logo=mosque&logoColor=white"/>
+  <img src="https://img.shields.io/badge/STANCE-Independent-2F4F2F?style=for-the-badge&logo=libreoffice&logoColor=white"/>
+ </p>
 
-Bu fütüristik deneyimi kendi local ortamınızda ayağa kaldırmak için aşağıdaki adımları izleyin:
+<!---
 
-### Ön Gereksinimler
-- Node.js (v18+)
-- npm veya pnpm
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=bahattinyunus&label=Profile%20Views&color=556B2F&style=flat-square" alt="Profile Views" />
+</p>
+--->
+<p align="center"> <img src="https://komarev.com/ghpvc/?username=bahattinyunus&label=Profile%20views&color=556B2F&style=flat" alt="asomania" /> </p>
 
-### Adımlar
 
-1. **Repoyu Klonlayın:**
-   ```bash
-   git clone https://github.com/bahattinyunus/bahattinyunus.github.io.git
-   cd bahattinyunus.github.io
-   ```
+<h1 align="center">
+  <img  src="https://readme-typing-svg.herokuapp.com/?font=Orbitron&size=30&center=true&vCenter=true&width=850&height=60&color=8B4513&duration=3500&lines=Yalnız%20iman%20ve%20fikir,%20ne%20sevgili%20ne%20kardeş.;Bir%20akıl%20gelecek%20ki,%20akıllar%20delirecek.;Ve%20bir%20devrim,%20evvela%20devrimi%20devirecek.;Her%20şey%20birbirine%20denk,%20her%20şey%20birbirine%20eş." />
+</h1>
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=kYgiZrbJwk4" target="_blank">
+    <img 
+      src="https://img.youtube.com/vi/kYgiZrbJwk4/maxresdefault.jpg" 
+      alt="Unutulmayanlar - YouTube Video"
+    />
+  </a>
+</div>
+<!---
+ </img>
+ <div align="center">
+  <a href="https://www.youtube.com/watch?v=LHSqugPjeFg">
+    <img src="https://img.youtube.com/vi/LHSqugPjeFg/0.jpg" alt="Ölmez Bekçileriz - (Sat-Sas Komandoları)">
+  </a>
+</div>
+---->
 
-2. **Bağımlılıkları Yükleyin:**
-   ```bash
-   npm install
-   # veya
-   pnpm install
-   ```
 
-3. **Geliştirme Sunucusunu Başlatın:**
-   ```bash
-   npm run dev
-   ```
-   Tarayıcınızda `http://localhost:5173` adresine giderek sistemi görebilirsiniz.
+<!---
+### 🎖️ Operative Briefing
+ 🎓 **Rank**: Cyber Lieutenant (Senior Grade) | **Service**: 3+ Years in Software Operations  
+ 🔍 **Tactical Capabilities**: Advanced AI-ML Defense, Cyber Warfare Systems, Embedded Intelligence  
+ 🎯 **Primary Mission**: Developing robust neural networks and sovereign cybersecurity defense solutions  
+ ⚡ **Deployment**: Active in Large-Scale Data Analytics & Intelligence Operations
 
-4. **Production Build Alın:**
-   ```bash
-   npm run build
-   ```
 
-## 👨‍💻 Geliştirici Hakkında
+--->
 
-**Bahattin Yunus Çetin**
-*IT Architect | Yapay Zeka Uzmanı | Siber Güvenlik Araştırmacısı*
-
-Of, Trabzon'da yaşayan ve global teknoloji standartlarını yeniden tanımlayan bir vizyoner. Üniversite diplomasının bir kağıt parçası olduğuna, asıl değerin **"üretilen kod ve çözülen problemde"** yattığına inanan bir mühendis.
-
-**Odak Alanları:**
-- **Yapay Zeka & LLM:** Kendi kendini eğiten ve geliştiren modeller (ANKA-LLM, Nexus-TRL).
-- **Siber Güvenlik:** Ofansif ve defansif güvenlik stratejileri, istihbarat sistemleri.
-- **Otonom Sistemler:** İHA, İKA ve Sualtı araçları için otonom kontrol yazılımları.
+### 🔗 Connect with Me
+<p align="center">
+  <a href="https://www.linkedin.com/in/bahattin-yunus-%C3%A7etin/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="https://github.com/bahattinyunus" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-2F4F2F?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+</p>
 
 ---
 
-## 🤝 Katkıda Bulunma
+### 🏆 GitHub Trophies
+<p align="center">
+  <img src="https://github-profile-trophy-git-master.ryo-ma.vercel.app/?username=bahattinyunus&theme=onedark&no-frame=true&no-bg=true&margin-w=4" />
+</p>
 
-Bu "yaşayan sisteme" katkıda bulunmak isterseniz, lütfen [CONTRIBUTING.md](CONTRIBUTING.md) dosyasını inceleyin. Her türlü Issue ve Pull Request'e açığız.
+---
+
+### 🛠️ Languages & Tools
+<p align="center">
+  <!-- Programming Languages -->
+  <a href="https://www.python.org"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/></a>
+  <a href="https://isocpp.org/"><img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white"/></a>
+  <a href="https://go.dev/"><img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white"/></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/></a>
+  <a href="https://en.cppreference.com/w/c/language"><img src="https://img.shields.io/badge/C-555555?style=for-the-badge&logo=c&logoColor=white"/></a>
+  <!-- Web Technologies -->
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/></a>
+  <!-- AI/ML Tools -->
+  <a href="https://www.tensorflow.org/"><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"/></a>
+  <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/></a>
+  <!-- DevOps & Tools -->
+  <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/></a>
+  <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/></a>
+  <a href="https://www.linux.org/"><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"/></a>
+  <!-- Hardware & IoT -->
+  <a href="https://www.arduino.cc/"><img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white"/></a>
+  <a href="https://www.raspberrypi.org/"><img src="https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=raspberrypi&logoColor=white"/></a>
+  <a href="https://micropython.org/"><img src="https://img.shields.io/badge/MicroPython-2D2D2D?style=for-the-badge&logo=micropython&logoColor=white"/></a>
+  <!-- Other Tools -->
+  <a href="https://smallbasic.github.io/"><img src="https://img.shields.io/badge/Small%20Basic-68217A?style=for-the-badge&logo=small-basic&logoColor=white"/></a>
+  <a href="https://mblock.makeblock.com/"><img src="https://img.shields.io/badge/mBlock-0096D6?style=for-the-badge&logo=makeblock&logoColor=white"/></a>
+</p>
+
+---
+
+### 🎖️ Training Records & Qualifications
+<p align="center">Certifications earned through specialized training programs</p>
+
+#### 🐍 Programming Languages
+<p align="center">
+  <img src="https://img.shields.io/badge/Python%201-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 1"/>
+  <img src="https://img.shields.io/badge/Python%202-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 2"/>
+  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++"/>
+  <img src="https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go"/>
+  <img src="https://img.shields.io/badge/C-555555?style=flat-square&logo=c&logoColor=white" alt="C"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript"/>
+</p>
+
+#### 🌐 Web Development
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3"/>
+  <img src="https://img.shields.io/badge/Web%20Development-E34F26?style=flat-square&logo=html5&logoColor=white" alt="Web Dev"/>
+</p>
+
+#### 🤖 Artificial Intelligence & Machine Learning
+<p align="center">
+  <img src="https://img.shields.io/badge/AI%20Introduction-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="AI Intro"/>
+  <img src="https://img.shields.io/badge/Custom%20GPTs-10A37F?style=flat-square&logo=openai&logoColor=white" alt="Custom GPTs"/>
+</p>
+
+#### 🔒 Cybersecurity & Cryptography
+<p align="center">
+  <img src="https://img.shields.io/badge/Cybersecurity-2F4F2F?style=flat-square&logo=shield&logoColor=white" alt="Cybersecurity"/>
+  <img src="https://img.shields.io/badge/Cryptography-556B2F?style=flat-square&logo=key&logoColor=white" alt="Cryptography"/>
+</p>
+
+#### 🔧 Development Tools & Version Control
+<p align="center">
+  <img src="https://img.shields.io/badge/Git%20%26%20GitHub-F05032?style=flat-square&logo=git&logoColor=white" alt="Git"/>
+  <img src="https://img.shields.io/badge/IT%20Fundamentals-007ACC?style=flat-square&logo=microsoft&logoColor=white" alt="IT"/>
+  <img src="https://img.shields.io/badge/Operating%20Systems-0078D4?style=flat-square&logo=windows&logoColor=white" alt="OS"/>
+</p>
+
+#### ⚡ Hardware & IoT
+<p align="center">
+  <img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=white" alt="Arduino"/>
+  <img src="https://img.shields.io/badge/MicroPython-2D2D2D?style=flat-square&logo=python&logoColor=white" alt="MicroPython"/>
+  <img src="https://img.shields.io/badge/Proteus-00A8E8?style=flat-square&logo=circuit&logoColor=white" alt="Proteus"/>
+  <img src="https://img.shields.io/badge/Small%20Basic-68217A?style=flat-square&logo=microsoft&logoColor=white" alt="Small Basic"/>
+</p>
+
+<details>
+<summary><b>📋 Detailed Certification Records</b></summary>
+
+| 🎖️ Certification | 🏢 Provider | 🆔 Credential ID | 📊 Status |
+|:---|:---|:---|:---|
+| Python 1 | BTK Akademi | `Yx1hPL1mGY` | ✅ Verified |
+| Python 2 | BTK Akademi | `dx1hAG0d1z` | ✅ Verified |
+| C++ | BTK Akademi | `6mqFNqLYdA` | ✅ Verified |
+| Go | BTK Akademi | `xr4t0Jeolm` | ✅ Verified |
+| JavaScript Basics | BTK Akademi | `gK2hoVBwj9` | ✅ Verified |
+| Version Control: Git and GitHub | BTK Akademi | `NowfnNpDAz` | ✅ Verified |
+| CSS Fundamentals | BTK Akademi | `7rptZAreZ1` | ✅ Verified |
+| Web Development with HTML5 | BTK Akademi | `rKjhGyp8LJ` | ✅ Verified |
+| Arduino Programming with Tinkercad | BTK Akademi | `BozfGwDZbx` | ✅ Verified |
+| MicroBit Programming with MicroPython | BTK Akademi | `1kZCoxNdMM` | ✅ Verified |
+| Introduction to Artificial Intelligence | BTK Akademi | `zXztak2EeO` | ✅ Verified |
+| Custom GPTs | BTK Akademi | `ax1hDzvgrE` | ✅ Verified |
+| Introduction to Cybersecurity | BTK Akademi | `XV1hWEow9j` | ✅ Verified |
+| Fundamentals of Cryptography | BTK Akademi | `kK1hVD09dy` | ✅ Verified |
+| Circuit Design with Proteus | BTK Akademi | `ax1hDAjV9N` | ✅ Verified |
+| C Programming Language | BTK Akademi | `GoDfn444BW` | ✅ Verified |
+| Small Basic | BTK Akademi | `9Xrtq18yXl` | ✅ Verified |
+| Introduction to Information Technology | BTK Akademi | `gK2hoD7Lqj` | ✅ Verified |
+| Operating Systems - Giriş | BTK Akademi | `7rptZxqGKp` | ✅ Verified |
+
+</details>
+
+---
+<!---
+### 📊 GitHub Stats
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=bahattinyunus&show_icons=true&theme=tokyonight" height="160"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bahattinyunus&layout=compact&theme=tokyonight" height="160"/>
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=bahattinyunus&theme=tokyonight" height="180"/>
+</p>
+---->
+
+### 📈 GitHub Activity Graph
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=bahattinyunus&theme=react-dark&bg_color=0D1117&color=6B8E23&line=556B2F&point=8B7355&area=true&hide_border=true" alt="GitHub Activity Graph" />
+</p>
+
+---
+
+### 🐍 Contribution Snake
+<p align="center">
+  <img src="https://raw.githubusercontent.com/bahattinyunus/bahattinyunus/output/github-contribution-grid-snake.svg" alt="snake animation"/>
+</p>
+
+---
+
+### 💡 Random Dev Quote
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Random Dev Quote" />
+</p>
+
+
+
+---
+
+### 📈 Currently Learning
+<p align="center">
+  <img src="https://img.shields.io/badge/Machine%20Learning-556B2F?style=for-the-badge&logo=tensorflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Deep%20Learning-6B8E23?style=for-the-badge&logo=pytorch&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Cybersecurity-2F4F2F?style=for-the-badge&logo=shield&logoColor=white"/>
+</p>
+
+---
+
+### 📝 GitHub Metrics
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=bahattinyunus&theme=2077" alt="GitHub Metrics" />
+</p>
+
+### 📊 Detailed GitHub Stats
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=bahattinyunus&theme=2077" alt="Repos Per Language" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=bahattinyunus&theme=2077" alt="Most Commit Language" />
+</p>
+<!---
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=bahattinyunus&theme=2077" alt="Stats" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=bahattinyunus&theme=2077&utcOffset=3" alt="Productive Time" />
+</p>
+--->
+
+
+### ⚡ Mission Status
+<p align="center">
+  <img src="https://readme-typing-svg.vercel.app/api?font=Orbitron&pause=1000&color=6B8E23&center=true&vCenter=true&width=435&lines=OPERATIONAL+STATUS+ACTIVE;Continuous+learning+in+progress;AI+%26+ML+defense+systems;Open+to+strategic+collaboration" alt="Typing SVG" />
+
+
+
+### 🎨 Tech Stack Icons
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,cpp,go,js,html,css,git,docker,linux,tensorflow,pytorch,arduino,raspberrypi" alt="Tech Stack Icons" />
+</p>
+
+---
+
+### 🎖️ Tactical Skills & Specializations
+<p align="center">
+  <img src="https://img.shields.io/badge/COMBAT%20READY-Data%20Science-556B2F?style=flat-square&logo=chart-line&logoColor=white" alt="Data Science"/>
+  <img src="https://img.shields.io/badge/OPERATIONAL-AI%20%26%20ML-6B8E23?style=flat-square&logo=brain&logoColor=white" alt="AI/ML"/>
+  <img src="https://img.shields.io/badge/DEFENSE%20ACTIVE-Cybersecurity-2F4F2F?style=flat-square&logo=shield&logoColor=white" alt="Cybersecurity"/>
+  <img src="https://img.shields.io/badge/DEPLOYED-Web%20Development-8B7355?style=flat-square&logo=code&logoColor=white" alt="Web Dev"/>
+  <img src="https://img.shields.io/badge/TACTICAL-IoT%20%26%20Hardware-556B2F?style=flat-square&logo=chip&logoColor=white" alt="IoT"/>
+</p>
+
+---
+
+### 📡 Operational Command Center
+<p align="center">
+  <img src="https://img.shields.io/badge/MISSION%20CONTROL-GitHub-2F4F2F?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  <img src="https://img.shields.io/badge/COMMUNICATIONS-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  <img src="https://img.shields.io/badge/INTEL%20NETWORK-Active-6B8E23?style=for-the-badge&logo=network&logoColor=white" alt="Network"/>
+</p>
 
 ---
 
 <div align="center">
-  <sub>© 2026 Bahattin Yunus Çetin. MIT Lisansı ile korunmaktadır.</sub>
+  <a href="https://www.youtube.com/watch?v=9xADNPEu4eY" target="_blank">
+    <img src="https://img.youtube.com/vi/9xADNPEu4eY/maxresdefault.jpg" width="700" style="border: 4px solid #8B0000; border-radius: 20px; box-shadow: 0px 0px 20px #FF0000;" alt="SAT Motivasyon" />
+  </a>
+  <h2 style="color: #FF0000;">Ayılar asla PES ETMEZ!</h2>
 </div>
+
+---
+
+<h3 align="center">📡 Secondary Operational Unit</h3>
+<p align="center">
+  <a href="https://github.com/dijitalseyyah" target="_blank">
+    <img src="https://img.shields.io/badge/AFFILIATED_WITH-THE_GUARDIAN-8B0000?style=for-the-badge&logo=fortinet&logoColor=white" alt="The Guardian"/>
+  </a>
+  <a href="https://github.com/dijitalseyyah" target="_blank">
+    <img src="https://img.shields.io/badge/UNIT_STATUS-RESERVE-556B2F?style=for-the-badge&logo=github&logoColor=white" alt="Unit Status"/>
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Orbitron&size=22&duration=4000&pause=1000&color=8B0000&center=true&vCenter=true&width=600&lines=CONNECTING+TO+THE+GUARDIAN+BACKUP...;SYNCHRONIZING+OPERATIONAL+DATA;ESTABLISHING+SECONDARY+ENCRYPTION" />
+</p>
+
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Orbitron&weight=700&size=38&duration=4000&pause=1500&color=6B8E23&center=true&vCenter=true&width=1000&lines=STAY+CALM...+TRUST+THE+PLAN.;SAKİN+OL...+PLANA+GÜVEN.;SYSTEM+STABILIZATION+IN+PROGRESS...;STRES+YOK,+ALGORİTMA+VAR." />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/PULSE-STABLE-success?style=for-the-badge&logo=heartbeat&logoColor=white" />
+  <img src="https://img.shields.io/badge/MINDSET-STRATEGIC-blue?style=for-the-badge&logo=cachet&logoColor=white" />
+  <img src="https://img.shields.io/badge/EXECUTION-COLD_BLOODED-8B0000?style=for-the-badge&logo=target&logoColor=white" />
+</p>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=6B8E23&height=3&section=footer&width=600" />
+</p>
