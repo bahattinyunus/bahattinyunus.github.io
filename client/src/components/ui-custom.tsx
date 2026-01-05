@@ -59,7 +59,7 @@ export const SectionHeader = ({ title, subtitle }: { title: string; subtitle?: s
       </div>
       {subtitle && (
         <p className="text-muted-foreground font-mono text-sm md:text-base pl-16 max-w-2xl">
-          ""
+          
         </p>
       )}
     </div>
