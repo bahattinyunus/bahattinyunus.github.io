@@ -211,12 +211,12 @@ Milli Teknoloji Hamlesi'nin bir neferi olarak, sadece kod yazmayı değil; strat
   featured_projects: [
     {
       name: "BeeRoute",
-      description: "NP-Hard problemlerine biyo-mimetik çözümler sunan, stokastik optimizasyon ve 'Trabzon Protokolü' ile endüstriyel rotalama süreçlerini modernize eden AI sistemi.",
-      stars: 95,
+      description: "Yapay zeka ve sürü algoritmaları ile optimize edilmiş dinamik rota planlama ve lojistik optimizasyon sistemi.",
+      stars: 12,
       forks: 24,
       language: "Python",
       url: "https://github.com/bahattinyunus/BeeRouteANN-for-Antenna-Design",
-      image: "/images/project-beeroute.jpg"
+      image: "/images/project-beeroute.png"
     },
     {
       name: "PoseidonEye",
@@ -229,12 +229,12 @@ Milli Teknoloji Hamlesi'nin bir neferi olarak, sadece kod yazmayı değil; strat
     },
     {
       name: "DeepAntenna",
-      description: "Yapay sinir ağları (ANN) ile mikroşerit anten tasarımını optimize eden derin mühendislik projesi.",
-      stars: 76,
-      forks: 15,
-      language: "Matlab/Python",
+      description: "Derin öğrenme tabanlı anten tasarımı ve optimizasyonu sağlayan yapay zeka destekli mühendislik aracı.",
+      stars: 25,
+      forks: 8,
+      language: "Python",
       url: "https://github.com/bahattinyunus/DeepAntenna",
-      image: "/images/project-ai.jpg"
+      image: "/images/project-deepantenna.png"
     },
     {
       name: "erc_rover_mission_control",
