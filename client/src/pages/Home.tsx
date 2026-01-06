@@ -357,16 +357,23 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project, i) => (
-              <CyberCard key={i} className="flex flex-col h-full p-0 group">
-                <div className="relative h-48 overflow-hidden border-b border-white/5">
-                  <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity"></div>
-                  <img src={project.image} alt={project.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                  <div className="absolute top-4 right-4 z-20">
-                    <HexBadge className="bg-black/50 backdrop-blur-md border-white/20 text-xs">
-                      {project.language || "Sistem"}
-                    </HexBadge>
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
+                viewport={{ once: true }}
+              >
+                <CyberCard key={i} className="flex flex-col h-full p-0 group card-animate hover-glow">
+                  <div className="relative h-48 overflow-hidden border-b border-white/5">
+                    <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity"></div>
+                    <img src={project.image} alt={project.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <div className="absolute top-4 right-4 z-20">
+                      <HexBadge className="bg-black/50 backdrop-blur-md border-white/20 text-xs">
+                        {project.language || "Sistem"}
+                      </HexBadge>
+                    </div>
                   </div>
-                </div>
 
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-display font-bold text-white mb-2 group-hover:text-primary transition-colors">
@@ -391,7 +398,8 @@ export default function Home() {
                     </a>
                   </div>
                 </div>
-              </CyberCard>
+                </CyberCard>
+              </motion.div>
             ))}
           </div>
 
@@ -417,13 +425,19 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {profileData.blog_posts.map((post, index) => (
-                <a
+                <motion.div
                   key={index}
-                  href={post.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative bg-card/30 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  viewport={{ once: true }}
                 >
+                  <a
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative bg-card/30 backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden hover:border-primary/50 transition-all duration-300 hover:-translate-y-1 card-animate hover-glow block h-full"
+                  >
                   <div className="aspect-video w-full overflow-hidden relative">
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 opacity-60" />
                     <img
@@ -454,6 +468,7 @@ export default function Home() {
                     </div>
                   </div>
                 </a>
+                </motion.div>
               ))}
             </div>
 
@@ -484,21 +499,35 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {Object.entries(profileData.certificates).map(([category, certs]) => (
-                <div key={category} className="space-y-3">
-                  <h3 className="font-display font-bold text-lg text-primary mb-4 flex items-center gap-2">
+              {Object.entries(profileData.certificates).map(([category, certs], catIdx) => (
+                <motion.div
+                  key={category}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: catIdx * 0.1 }}
+                  viewport={{ once: true }}
+                  className="space-y-3"
+                >
+                  <h3 className="font-display font-bold text-lg text-primary mb-4 flex items-center gap-2 gradient-text">
                     <span className="text-primary">▸</span> {category}
                   </h3>
                   <div className="space-y-2">
                     {certs.map((cert, idx) => (
-                      <div key={idx} className="p-3 bg-card/30 backdrop-blur-sm border border-white/5 rounded-lg hover:border-primary/30 transition-colors group">
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, delay: idx * 0.05 }}
+                        viewport={{ once: true }}
+                        className="p-3 bg-card/30 backdrop-blur-sm border border-white/5 rounded-lg hover:border-primary/30 transition-all duration-300 group hover-glow"
+                      >
                         <p className="text-sm font-medium text-white group-hover:text-primary transition-colors">{cert.name}</p>
                         <p className="text-xs text-muted-foreground mt-1">{cert.issuer}</p>
                         <p className="text-xs text-muted-foreground/60 mt-1">{cert.date}</p>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -509,9 +538,15 @@ export default function Home() {
           <div className="bg-gradient-to-br from-card to-background border border-white/10 rounded-2xl p-8 md:p-12 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
 
-            <div className="grid md:grid-cols-2 gap-12 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="grid md:grid-cols-2 gap-12 relative z-10"
+            >
               <div>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6 gradient-text">
                   İşbirliğine <span className="text-primary">Hazır mısınız?</span>
                 </h2>
                 <p className="text-muted-foreground mb-8 max-w-md">
@@ -564,27 +599,43 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section >
       </main >
 
       {/* Footer */}
-      < footer className="border-t border-white/5 bg-background py-8" >
+      <motion.footer
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="border-t border-white/5 bg-background py-8"
+      >
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-xs text-muted-foreground font-mono">
             © {new Date().getFullYear()} BAHATTIN YUNUS CETIN. TÜM HAKLARI SAKLIDIR.
           </div>
           <div className="flex items-center gap-6">
-            <a href={profileData.personal.github_url} className="text-muted-foreground hover:text-primary transition-colors">
+            <motion.a
+              href={profileData.personal.github_url}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
               <Github className="w-4 h-4" />
-            </a>
-            <a href={profileData.personal.linkedin_url} className="text-muted-foreground hover:text-primary transition-colors">
+            </motion.a>
+            <motion.a
+              href={profileData.personal.linkedin_url}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
               <Linkedin className="w-4 h-4" />
-            </a>
+            </motion.a>
           </div>
         </div>
-      </footer >
+      </motion.footer>
     </div >
   );
 }
