@@ -200,7 +200,7 @@ Milli Teknoloji Hamlesi'nin bir neferi olarak, sadece kod yazmayı değil; strat
     "Otonom Sistemler": ["Mars-Rover-Control-OS", "erc_rover_mission_control", "robotex_warrior_core", "teknofest_robotaksi", "teknofest_suru_iha", "teknofest_insansiz_kara_araci", "formula_student_autonomous_stack"],
     "Deniz & Su Teknolojileri": ["LionSight-AUV", "AQUASYNC-Multi-Domain-Autonomous-Maritime-System", "PoseidonEye", "teknofest_insansiz_deniz_araci", "denizalti-akademisi"],
     "Hava & Uzay Teknolojileri": ["teknofest_helikopter_tasarim", "teknofest_suru_iha", "Radiosonde-Hunting", "ktu-sarge-gokcen", "NOAA"],
-    "Robotik & Kompetisyon": ["teknofest_robolig", "robotex_warrior_core", "TEKNOFEST_Competitions", "BeeRouteANN-for-Antenna-Design"],
+    "Robotik & Kompetisyon": ["teknofest_robolig", "robotex_warrior_core", "TEKNOFEST_Competitions", "BeeRoute"],
     "Yazılım Mimarisi & Geliştirme": ["The-Craft-of-Tech-Architecture", "CodeVisualizer", "NovaChat-Real-Time-Messaging-App", "NexusBroker", "btk_go"],
     "Sistem & Altyapı": ["Computer-Efficiency-Mastery", "Energy-Grid-Pulse", "PhysicEngine", "E-VIZOR"],
     "Veri & Analiz": ["Milli-Teknoloji-Envanteri", "AkademikRadar", "Kiyamet-Hatti"],
@@ -216,7 +216,7 @@ Milli Teknoloji Hamlesi'nin bir neferi olarak, sadece kod yazmayı değil; strat
       forks: 24,
       language: "Python",
       url: "https://github.com/bahattinyunus/BeeRouteANN-for-Antenna-Design",
-      image: "/images/project-efficiency.jpg"
+      image: "/images/project-beeroute.jpg"
     },
     {
       name: "PoseidonEye",
@@ -703,6 +703,24 @@ Milli Teknoloji Hamlesi'nin bir neferi olarak, sadece kod yazmayı değil; strat
       language: "Python",
       url: "https://github.com/bahattinyunus/teknofest_helikopter_tasarim",
       image: "/images/project-teknofest-helikopter-tasarim.jpg"
+    },
+    {
+      name: "Computer-Efficiency-Mastery",
+      description: "Bilgisayar mimarisi verimliliği ve performans optimizasyonu üzerine kapsamlı çalışma ve kod kütüphanesi.",
+      stars: 15,
+      forks: 3,
+      language: "C/Assembly",
+      url: "https://github.com/bahattinyunus/Computer-Efficiency-Mastery",
+      image: "/images/project-efficiency.jpg"
+    },
+    {
+      name: "Digital-Archaeology-Steganography-Vault",
+      description: "Dijital arkeoloji ve steganografi teknikleri ile veri gizleme ve analiz vault projesi.",
+      stars: 20,
+      forks: 5,
+      language: "Python",
+      url: "https://github.com/bahattinyunus/Digital-Archaeology-Steganography-Vault",
+      image: "/images/project-steganography.jpg"
     }
   ],
   certificates: {
