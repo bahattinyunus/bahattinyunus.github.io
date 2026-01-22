@@ -1,0 +1,104 @@
+
+// @ts-nocheck
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "wouter";
+import { Shield, Cpu, Radio, Target, Terminal } from "lucide-react";
+
+interface CyberShellProps {
+    children: React.ReactNode;
+}
+
+export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
+    const [location] = useLocation();
+    const [time, setTime] = useState(new Date());
+
+    useEffect(() => {
+        const timer = setInterval(() => setTime(new Date()), 1000);
+        return () => clearInterval(timer);
+    }, []);
+
+    const navItems = [
+        { path: "/", label: "MISSION CONTROL", icon: Shield },
+        { path: "/arsenal", label: "ARSENAL", icon: Cpu },
+        { path: "/operations", label: "OPERATIONS", icon: Target },
+        { path: "/comms", label: "COMMS", icon: Radio },
+    ];
+
+    return (
+        <div className="min-h-screen bg-[var(--color-cyber-black)] text-foreground font-[family-name:var(--font-body)] overflow-hidden flex flex-col relative selection:bg-neon-blue selection:text-black">
+            {/* Background Effects */}
+            <div className="fixed inset-0 bg-scanlines opacity-20 pointer-events-none z-50"></div>
+            <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#000_90%)] pointer-events-none z-40"></div>
+
+            {/* Top HUD Bar */}
+            <header className="h-16 border-b border-white/10 flex items-center justify-between px-6 bg-black/40 backdrop-blur-md z-30 relative">
+                <div className="flex items-center gap-4">
+                    <Terminal className="text-neon-blue w-6 h-6 animate-pulse" />
+                    <h1 className="text-xl font-[family-name:var(--font-display)] tracking-[0.2em] text-neon-blue">
+                        METAL YAKA <span className="text-white/50 text-sm">v4.0.1</span>
+                    </h1>
+                </div>
+
+                <div className="hidden md:flex items-center gap-8">
+                    <div className="text-xs text-neon-green/80 font-mono flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse"></span>
+                        SYSTEM ONLINE
+                    </div>
+                    <div className="text-2xl font-[family-name:var(--font-display)] text-white/80">
+                        {time.toLocaleTimeString([], { hour12: false })}
+                    </div>
+                </div>
+            </header>
+
+            {/* Main Content Area */}
+            <main className="flex-1 relative overflow-y-auto overflow-x-hidden scrollbar-hide">
+                <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+                    {/* Grid for depth */}
+                    <div className="w-full h-full"
+                        style={{
+                            backgroundImage: 'linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px)',
+                            backgroundSize: '100px 100px'
+                        }}>
+                    </div>
+                </div>
+
+                {/* Actual Content */}
+                <div className="relative z-10 p-6 md:p-12 max-w-7xl mx-auto min-h-full flex flex-col">
+                    {children}
+                </div>
+            </main>
+
+            {/* Bottom HUD / Navigation */}
+            <footer className="h-20 border-t border-white/10 bg-black/60 backdrop-blur-md z-30 relative px-6 flex items-center justify-between">
+                <nav className="flex items-center gap-1 md:gap-4 overflow-x-auto w-full md:w-auto p-1">
+                    {navItems.map((item) => {
+                        const isActive = location === item.path;
+                        const Icon = item.icon;
+                        return (
+                            <Link key={item.path} href={item.path}>
+                                <a className={`
+                  relative px-6 py-2 flex items-center gap-3 font-[family-name:var(--font-display)] tracking-wider text-sm transition-all duration-300
+                  ${isActive
+                                        ? 'text-black bg-neon-blue clip-path-hexagon shadow-[0_0_20px_rgba(0,243,255,0.4)]'
+                                        : 'text-white/60 hover:text-neon-blue hover:bg-white/5'
+                                    }
+                `}>
+                                    {isActive && (
+                                        <span className="absolute left-0 bottom-0 top-0 w-1 bg-white/50 animate-pulse"></span>
+                                    )}
+                                    <Icon className="w-4 h-4" />
+                                    {item.label}
+                                </a>
+                            </Link>
+                        );
+                    })}
+                </nav>
+
+                <div className="hidden md:flex flex-col items-end text-xs text-white/30 font-mono">
+                    <span>COORDINATES: 41.0082° N, 28.9784° E</span>
+                    <span>SECURE CONNECTION ESTABLISHED</span>
+                </div>
+            </footer>
+        </div>
+    );
+};

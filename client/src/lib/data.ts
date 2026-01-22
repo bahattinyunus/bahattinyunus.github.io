@@ -6,7 +6,7 @@ export const profileData = {
     username: "bahattinyunus",
     location: "Türkiye",
     company: "StarDev",
-    bio: `Ben Bahattin Yunus ÇETİN; Karadeniz Teknik Üniversitesi'nde Yazılım Mühendisliği öğrencisi, Anka Silicon Dynamics'in kurucusu ve dijital sınırların korunmasına adanmış bir Siber Vatanseverim. Kariyer yolculuğum, disiplinli bir geçmişten (Adalet Bakanlığı) teknik uzmanlığa uzanan asimetrik bir gelişim çizgisidir.
+    bio: `Ben Bahattin Yunus ÇETİN; Karadeniz Teknik Üniversitesi'nde Yazılım Mühendisliği öğrencisi, Anka Silicon Dynamics'in kurucusu ve dijital sınırların korunmasına adanmış bir Siber Vatanseverim. Kariyer yolculuğum, disiplinli bir operasyonel geçmişten teknik uzmanlığa uzanan asimetrik bir gelişim çizgisidir.
     
 Bugün, yapay zeka sistemlerinin sadece kullanıcısı değil, mimarı olma vizyonuyla; LLM optimizasyonu, siber güvenlik ve karmaşık sistem mimarileri üzerine odaklanıyorum.
 
@@ -147,13 +147,7 @@ Milli Teknoloji Hamlesi'nin bir neferi olarak, sadece kod yazmayı değil; strat
       description: "KTÜ ekosistemine coğrafi yakınlığı optimize ederek laboratuvar ve teknik network imkanlarından yararlanılan stratejik akademik hamle.",
       icon: "Book"
     },
-    {
-      year: "2022 - 2023",
-      title: "Correctional Officer",
-      company: "Adalet Bakanlığı",
-      description: "Kriz yönetimi, baskı altında odaklanma ve yüksek riskli durumlarda sistematik yaklaşım. Karmaşık sorunlarla başa çıkma ve dinamik ortamlarda etkili iş birliği yeteneklerinin kazanımı.",
-      icon: "Briefcase"
-    },
+
     {
       year: "2022 - 2024",
       title: "Önlisans Eğitimi",
