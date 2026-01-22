@@ -5,6 +5,7 @@ import { Shield, Cpu, Radio, Target, Terminal, Power } from "lucide-react";
 import { CommandTerminal } from "../cyber-ui/CommandTerminal";
 import { ForceField } from "../cyber-ui/ForceField";
 import { useCyberSound } from "@/hooks/use-cyber-sound";
+import { useKonamiCode } from "@/hooks/use-konami-code";
 
 interface CyberShellProps {
     children: React.ReactNode;
@@ -14,6 +15,7 @@ export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
     const [location] = useLocation();
     const [time, setTime] = useState(new Date());
     const { playSound } = useCyberSound();
+    const isMatrixMode = useKonamiCode();
 
     useEffect(() => {
         const timer = setInterval(() => setTime(new Date()), 1000);
@@ -24,13 +26,20 @@ export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
         { path: "/", label: "MISSION CONTROL", icon: Shield },
         { path: "/arsenal", label: "ARSENAL", icon: Cpu },
         { path: "/operations", label: "OPERATIONS", icon: Target },
+        { path: "/intelligence", label: "INTELLIGENCE", icon: Terminal },
         { path: "/comms", label: "COMMS", icon: Radio },
     ];
 
     return (
-        <div className="min-h-screen bg-[var(--color-cyber-black)] text-foreground font-[family-name:var(--font-body)] overflow-hidden flex flex-col relative selection:bg-neon-blue selection:text-black">
+        <div className={`min-h-screen bg-[var(--color-cyber-black)] text-foreground font-[family-name:var(--font-body)] overflow-hidden flex flex-col relative selection:bg-neon-blue selection:text-black ${isMatrixMode ? 'matrix-mode' : ''}`}>
             {/* Interactive Background */}
-            <ForceField />
+            {isMatrixMode ? (
+                <div className="fixed inset-0 z-0 bg-black pointer-events-none font-mono text-green-500 text-xs opacity-20 overflow-hidden break-all leading-3">
+                    MATRIX MODE ACTIVE - SYSTEM OVERRIDE
+                </div>
+            ) : (
+                <ForceField />
+            )}
 
             {/* Background Effects */}
             <div className="fixed inset-0 bg-scanlines opacity-20 pointer-events-none z-50"></div>

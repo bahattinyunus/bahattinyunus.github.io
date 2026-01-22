@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Arsenal from "./pages/Arsenal";
 import Operations from "./pages/Operations";
 import Comms from "./pages/Comms";
+import Intelligence from "./pages/Intelligence";
 import { CyberShell } from "./components/layout/CyberShell";
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
         <Route path={"/"} component={Home} />
         <Route path={"/arsenal"} component={Arsenal} />
         <Route path={"/operations"} component={Operations} />
+        <Route path={"/intelligence"} component={Intelligence} />
         <Route path={"/comms"} component={Comms} />
 
         {/* Legacy redirects or catch-all */}
