@@ -3,14 +3,16 @@
 import { profileData } from "@/lib/data";
 import { motion } from "framer-motion";
 import { Cpu, Terminal, Shield, Zap, Book, Code } from "lucide-react";
+import { useVault } from "@/contexts/VaultContext";
 
 export default function Arsenal() {
+    const { isSecureMode } = useVault();
     return (
         <div className="space-y-12">
             <div className="flex items-center gap-4 mb-8">
                 <Cpu className="w-8 h-8 text-neon-red animate-pulse" />
                 <h2 className="text-3xl font-[family-name:var(--font-display)] tracking-wider">
-                    ARSENAL <span className="text-neon-red">//</span> TECHNICAL CAPABILITIES
+                    {isSecureMode ? 'SECURE_ARSENAL' : 'ARSENAL'} <span className={isSecureMode ? 'text-yellow-500' : 'text-neon-red'}>//</span> TECHNICAL CAPABILITIES
                 </h2>
             </div>
 
@@ -34,7 +36,7 @@ export default function Arsenal() {
                                         initial={{ width: 0 }}
                                         whileInView={{ width: `${Math.random() * 20 + 80}%` }}
                                         transition={{ duration: 0.8, delay: i * 0.1 }}
-                                        className="h-full bg-neon-blue shadow-[0_0_10px_rgba(0,243,255,0.5)]"
+                                        className={`h-full shadow-[0_0_10px_rgba(0,243,255,0.5)] ${isSecureMode ? 'bg-yellow-500 shadow-yellow-500/50' : 'bg-neon-blue shadow-neon-blue/50'}`}
                                     />
                                 </div>
                             </div>
@@ -51,7 +53,7 @@ export default function Arsenal() {
                         {profileData.skills.concepts.map((concept, i) => (
                             <div
                                 key={i}
-                                className="px-4 py-2 border border-neon-green/30 bg-neon-green/5 text-neon-green text-sm font-mono tracking-wide hover:bg-neon-green/20 hover:border-neon-green transition-all cursor-crosshair clip-path-hexagon"
+                                className={`px-4 py-2 border text-sm font-mono tracking-wide transition-all cursor-crosshair clip-path-hexagon ${isSecureMode ? 'border-yellow-500/30 bg-yellow-500/5 text-yellow-500 hover:bg-yellow-500/20 hover:border-yellow-500' : 'border-neon-green/30 bg-neon-green/5 text-neon-green hover:bg-neon-green/20 hover:border-neon-green'}`}
                             >
                                 {concept}
                             </div>
@@ -82,7 +84,7 @@ export default function Arsenal() {
                             <h4 className="font-bold text-white group-hover:text-neon-red transition-colors">{tool.name}</h4>
                             <div className="w-full h-1 bg-white/10 mt-3">
                                 <div
-                                    className="h-full bg-neon-red"
+                                    className={`h-full ${isSecureMode ? 'bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.5)]' : 'bg-neon-red'}`}
                                     style={{ width: `${tool.level}%` }}
                                 />
                             </div>

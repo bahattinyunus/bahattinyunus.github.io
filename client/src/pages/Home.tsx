@@ -5,10 +5,14 @@ import { motion } from "framer-motion";
 import { Terminal, Shield, Cpu, ExternalLink, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { useState, useEffect } from "react";
+import { useVault } from "@/contexts/VaultContext";
+import { Zap, Activity, Microscope } from "lucide-react";
 
 export default function Home() {
   const [typedText, setTypedText] = useState("");
   const FullText = "INITIALIZING OPERATOR PROFILE...";
+
+  const { isSecureMode, metrics } = useVault();
 
   useEffect(() => {
     let i = 0;
@@ -68,19 +72,71 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="p-6 border border-white/10 bg-white/5 cyber-clip-br group hover:bg-neon-blue/5 transition-all">
+        <div className={`p-6 border cyber-clip-br group transition-all ${isSecureMode ? 'border-yellow-500/20 bg-yellow-500/5 hover:bg-yellow-500/10' : 'border-white/10 bg-white/5 hover:bg-neon-blue/5'}`}>
           <div className="flex items-center justify-between mb-4">
-            <Terminal className="w-6 h-6 text-neon-blue" />
-            <span className="font-mono text-xs text-neon-blue">DEPLOYED</span>
+            <Terminal className={`w-6 h-6 ${isSecureMode ? 'text-yellow-500' : 'text-neon-blue'}`} />
+            <span className={`font-mono text-xs ${isSecureMode ? 'text-yellow-500' : 'text-neon-blue'}`}>{isSecureMode ? 'SECURE_UPLINK' : 'DEPLOYED'}</span>
           </div>
           <h3 className="text-2xl font-[family-name:var(--font-display)] text-white mb-1">
             OPERATIONS
           </h3>
           <p className="text-sm text-white/50 font-mono">
-            {profileData.github_stats.public_repos} systems accessible via public uplink.
+            {profileData.github_stats.public_repos} systems accessible via {isSecureMode ? 'encrypted' : 'public'} uplink.
           </p>
         </div>
       </div>
+
+      {/* Vanguard Dashboard (Secure Mode Only) */}
+      {isSecureMode && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="grid grid-cols-1 md:grid-cols-4 gap-4 p-6 bg-yellow-500/5 border border-yellow-500/20 relative overflow-hidden group"
+        >
+          <div className="absolute inset-0 bg-scanlines opacity-5 pointer-events-none"></div>
+
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 text-[10px] font-mono text-yellow-500/60 uppercase">
+              <Zap className="w-3 h-3" /> Core_Frequency
+            </div>
+            <div className="text-2xl font-[family-name:var(--font-display)] text-white">
+              5.2 <span className="text-xs text-white/40 italic">GHz</span>
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 text-[10px] font-mono text-yellow-500/60 uppercase">
+              <Activity className="w-3 h-3" /> Neural_Latency
+            </div>
+            <div className="text-2xl font-[family-name:var(--font-display)] text-white">
+              {metrics?.latency || '12ms'}
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 text-[10px] font-mono text-yellow-500/60 uppercase">
+              <Microscope className="w-3 h-3" /> Threat_Level
+            </div>
+            <div className="text-2xl font-[family-name:var(--font-display)] text-white">
+              {metrics?.threatLevel || 'LOW'}
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <div className="flex items-center gap-2 text-[10px] font-mono text-yellow-500/60 uppercase">
+              <Shield className="w-3 h-3" /> Integrity
+            </div>
+            <div className="text-2xl font-[family-name:var(--font-display)] text-white">
+              {metrics?.shieldStatus || '98.4%'}
+            </div>
+          </div>
+
+          {/* Decorative Corner */}
+          <div className="absolute top-0 right-0 p-2">
+            <div className="w-1 h-1 bg-yellow-500 animate-ping"></div>
+          </div>
+        </motion.div>
+      )}
 
       {/* Action Buttons */}
       <div className="flex flex-wrap gap-4 pt-6">
