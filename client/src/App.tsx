@@ -9,8 +9,9 @@ import Home from "./pages/Home";
 import Arsenal from "./pages/Arsenal";
 import Operations from "./pages/Operations";
 import Comms from "./pages/Comms";
-import Intelligence from "./pages/Intelligence";
+import { Intelligence } from "./pages/Intelligence";
 import { CyberShell } from "./components/layout/CyberShell";
+import { VaultProvider } from "./contexts/VaultContext";
 
 function Router() {
   return (
@@ -33,10 +34,12 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+        <VaultProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </VaultProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );

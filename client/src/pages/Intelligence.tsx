@@ -2,12 +2,32 @@
 import { profileData } from "@/lib/data";
 import { motion } from "framer-motion";
 import { Book, Calendar, ExternalLink, Brain, FileText, Search, SortAsc } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCyberSound } from "@/hooks/use-cyber-sound";
+import { useVault } from "@/contexts/VaultContext";
 
-export default function Intelligence() {
+export const Intelligence = () => {
     const [searchTerm, setSearchTerm] = useState("");
+    const [regulatoryResults, setRegulatoryResults] = useState([]);
+    const [isSearching, setIsSearching] = useState(false);
     const { playSound } = useCyberSound();
+    const { isSecureMode, searchRegulatory } = useVault();
+
+    useEffect(() => {
+        const handleRegulatorySearch = async () => {
+            if (isSecureMode && searchTerm.length > 2) {
+                setIsSearching(true);
+                const results = await searchRegulatory(searchTerm);
+                setRegulatoryResults(results);
+                setIsSearching(false);
+            } else {
+                setRegulatoryResults([]);
+            }
+        };
+
+        const timer = setTimeout(handleRegulatorySearch, 500);
+        return () => clearTimeout(timer);
+    }, [searchTerm, isSecureMode]);
 
     const filteredPosts = profileData.blog_posts.filter(post =>
         post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -20,7 +40,7 @@ export default function Intelligence() {
                 <div className="flex items-center gap-4">
                     <Brain className="w-8 h-8 text-yellow-500 animate-pulse" />
                     <h2 className="text-3xl font-[family-name:var(--font-display)] tracking-wider">
-                        INTELLIGENCE <span className="text-yellow-500">//</span> KNOWLEDGE BASE
+                        {isSecureMode ? 'SECURE_INTELLIGENCE' : 'INTELLIGENCE'} <span className={isSecureMode ? 'text-yellow-500' : 'text-blue-500'}>//</span> KNOWLEDGE BASE
                     </h2>
                 </div>
 
@@ -28,13 +48,40 @@ export default function Intelligence() {
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50 group-hover:text-yellow-500 transition-colors" />
                     <input
                         type="text"
-                        placeholder="SEARCH_DB..."
+                        placeholder={isSecureMode ? "SEARCH_SECURE_DB..." : "SEARCH_DB..."}
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="bg-black/40 border border-white/20 pl-10 pr-4 py-2 text-sm font-mono text-white focus:outline-none focus:border-yellow-500 w-full md:w-64 transition-all"
+                        className={`bg-black/40 border pl-10 pr-4 py-2 text-sm font-mono text-white focus:outline-none w-full md:w-64 transition-all ${isSecureMode ? 'border-yellow-500/20 focus:border-yellow-500' : 'border-white/20 focus:border-neon-blue'}`}
                     />
                 </div>
             </div>
+
+            {isSecureMode && regulatoryResults.length > 0 && (
+                <div className="space-y-4 animate-in fade-in slide-in-from-top-4 duration-500">
+                    <div className="flex items-center gap-2 text-yellow-500/60 font-mono text-xs mb-2">
+                        <SortAsc className="w-3 h-3" />
+                        <span>REGULATORY_INTELLIGENCE_FOUND: {regulatoryResults.length}</span>
+                    </div>
+                    {regulatoryResults.map((reg) => (
+                        <div key={reg.id} className="p-4 bg-yellow-500/5 border border-yellow-500/20 flex items-center justify-between group hover:border-yellow-500/50 transition-colors">
+                            <div className="flex items-center gap-4">
+                                <div className="p-2 bg-yellow-500/10 rounded">
+                                    <FileText className="w-4 h-4 text-yellow-500" />
+                                </div>
+                                <div>
+                                    <div className="text-xs font-mono text-yellow-500/40">{reg.code}</div>
+                                    <div className="text-sm font-bold text-white tracking-wide">{reg.title}</div>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <span className="text-[10px] font-mono px-2 py-0.5 border border-yellow-500/30 text-yellow-500 rounded-full">{reg.status}</span>
+                                <span className="text-[10px] font-mono text-white/40">{reg.date}</span>
+                            </div>
+                        </div>
+                    ))}
+                    <div className="h-px bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent my-8"></div>
+                </div>
+            )}
 
             <div className="space-y-4">
                 {filteredPosts.map((post, i) => (

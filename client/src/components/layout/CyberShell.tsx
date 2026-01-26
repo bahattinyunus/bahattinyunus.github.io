@@ -6,6 +6,8 @@ import { CommandTerminal } from "../cyber-ui/CommandTerminal";
 import { ForceField } from "../cyber-ui/ForceField";
 import { useCyberSound } from "@/hooks/use-cyber-sound";
 import { useKonamiCode } from "@/hooks/use-konami-code";
+import { useVault } from "@/contexts/VaultContext";
+import { VaultShell } from "./VaultShell";
 
 interface CyberShellProps {
     children: React.ReactNode;
@@ -16,6 +18,7 @@ export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
     const [time, setTime] = useState(new Date());
     const { playSound } = useCyberSound();
     const isMatrixMode = useKonamiCode();
+    const { isSecureMode, toggleSecureMode } = useVault();
 
     useEffect(() => {
         const timer = setInterval(() => setTime(new Date()), 1000);
@@ -41,6 +44,8 @@ export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
                 <ForceField />
             )}
 
+            <VaultShell />
+
             {/* Background Effects */}
             <div className="fixed inset-0 bg-scanlines opacity-20 pointer-events-none z-50"></div>
             <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#000_90%)] pointer-events-none z-40"></div>
@@ -58,9 +63,17 @@ export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
                 </div>
 
                 <div className="hidden md:flex items-center gap-8">
-                    <div className="group flex items-center gap-2 px-3 py-1 bg-white/5 rounded border border-white/10 hover:border-neon-green/50 transition-colors cursor-pointer" onClick={() => playSound('access')}>
-                        <div className="w-1.5 h-1.5 rounded-full bg-neon-green animate-pulse"></div>
-                        <span className="text-xs text-neon-green/80 font-mono group-hover:text-neon-green">SYSTEM: STABLE</span>
+                    <div
+                        className={`group flex items-center gap-2 px-3 py-1 bg-white/5 rounded border transition-colors cursor-pointer ${isSecureMode ? 'border-yellow-500/50 bg-yellow-500/5' : 'border-white/10 hover:border-neon-green/50'}`}
+                        onClick={() => {
+                            toggleSecureMode();
+                            playSound(isSecureMode ? 'click' : 'access');
+                        }}
+                    >
+                        <div className={`w-1.5 h-1.5 rounded-full animate-pulse ${isSecureMode ? 'bg-yellow-500' : 'bg-neon-green'}`}></div>
+                        <span className={`text-xs font-mono group-hover:text-opacity-100 transition-colors ${isSecureMode ? 'text-yellow-500' : 'text-neon-green/80 text-neon-green'}`}>
+                            {isSecureMode ? 'SECURE_MODE: ON' : 'SYSTEM: STABLE'}
+                        </span>
                     </div>
 
                     <div className="text-2xl font-[family-name:var(--font-display)] text-white/80">
