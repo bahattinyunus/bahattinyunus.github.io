@@ -20325,6 +20325,14 @@ const MapPin = createLucideIcon("MapPin", [
   ],
   ["circle", { cx: "12", cy: "10", r: "3", key: "ilqhr7" }]
 ]);
+const Microscope = createLucideIcon("Microscope", [
+  ["path", { d: "M6 18h8", key: "1borvv" }],
+  ["path", { d: "M3 22h18", key: "8prr45" }],
+  ["path", { d: "M14 22a7 7 0 1 0 0-14h-1", key: "1jwaiy" }],
+  ["path", { d: "M9 14h2", key: "197e7h" }],
+  ["path", { d: "M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z", key: "1bmzmy" }],
+  ["path", { d: "M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3", key: "1drr47" }]
+]);
 const Power = createLucideIcon("Power", [
   ["path", { d: "M12 2v10", key: "mnfbl" }],
   ["path", { d: "M18.4 6.6a9 9 0 1 1-12.77.04", key: "obofu9" }]
@@ -21484,75 +21492,6 @@ const profileData = {
     ]
   }
 };
-function Home() {
-  const [typedText, setTypedText] = reactExports.useState("");
-  const FullText = "INITIALIZING OPERATOR PROFILE...";
-  reactExports.useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      setTypedText(FullText.slice(0, i + 1));
-      i++;
-      if (i > FullText.length) clearInterval(interval);
-    }, 50);
-    return () => clearInterval(interval);
-  }, []);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col justify-center min-h-[60vh] gap-12", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "font-mono text-neon-blue/80 text-sm tracking-widest flex items-center gap-2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 bg-neon-blue animate-pulse" }),
-        typedText,
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "animate-blink", children: "_" })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "text-5xl md:text-7xl lg:text-8xl font-[family-name:var(--font-display)] font-bold leading-none text-white mix-blend-screen", children: [
-        "ARCHITECT.",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        "STRATEGIST.",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-red animate-gradient-x", children: "METAL YAKA." })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-2xl text-lg text-white/60 font-mono leading-relaxed border-l-2 border-neon-blue/30 pl-6", children: profileData.personal.tagline })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 border border-white/10 bg-white/5 cyber-clip-tl group hover:bg-neon-blue/5 transition-all", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-6 h-6 text-neon-green" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-xs text-neon-green", children: "ACTIVE" })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-2xl font-[family-name:var(--font-display)] text-white mb-1", children: "CYBERNETICS" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-white/50 font-mono", children: "System architecture & AI Defense protocols online." })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 border border-white/10 bg-white/5 group hover:bg-neon-red/5 transition-all", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Cpu, { className: "w-6 h-6 text-neon-red" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-xs text-neon-red", children: "OVERCLOCKED" })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-2xl font-[family-name:var(--font-display)] text-white mb-1", children: "INTELLIGENCE" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-white/50 font-mono", children: "Neural networks & Optimization algorithms running." })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 border border-white/10 bg-white/5 cyber-clip-br group hover:bg-neon-blue/5 transition-all", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Terminal, { className: "w-6 h-6 text-neon-blue" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-xs text-neon-blue", children: "DEPLOYED" })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-2xl font-[family-name:var(--font-display)] text-white mb-1", children: "OPERATIONS" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-white/50 font-mono", children: [
-          profileData.github_stats.public_repos,
-          " systems accessible via public uplink."
-        ] })
-      ] })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-4 pt-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { href: "/operations", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { className: "px-8 py-4 bg-neon-blue text-black font-bold font-[family-name:var(--font-display)] tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all flex items-center gap-2", children: [
-        "INITIATE PROTOCOLS ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-4 h-4" })
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: profileData.personal.github_url, target: "_blank", className: "px-8 py-4 border border-white/20 text-white font-mono tracking-wider hover:bg-white/10 transition-all flex items-center gap-2", children: [
-        "GITHUB LINK ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { className: "w-4 h-4" })
-      ] })
-    ] })
-  ] });
-}
 function createDOMMotionComponentProxy(componentFactory) {
   if (typeof Proxy === "undefined") {
     return componentFactory;
@@ -28777,13 +28716,177 @@ const AnimatePresence = ({ children, exitBeforeEnter, custom, initial = true, on
     return jsxRuntimeExports.jsx(PresenceChild, { isPresent, initial: !isInitialRender.current || initial ? void 0 : false, custom: isPresent ? void 0 : custom, presenceAffectsLayout, mode, onExitComplete: isPresent ? void 0 : onExit, children: child }, key);
   }) });
 };
+const VaultContext = reactExports.createContext(void 0);
+const VaultProvider = ({ children }) => {
+  const [isSecureMode, setIsSecureMode] = reactExports.useState(false);
+  const [metrics2, setMetrics] = reactExports.useState(null);
+  const fetchMetrics = async () => {
+    try {
+      const response = await fetch("/api/system/metrics");
+      const data = await response.json();
+      setMetrics(data);
+    } catch (error) {
+      console.error("Failed to fetch metrics:", error);
+    }
+  };
+  reactExports.useEffect(() => {
+    if (isSecureMode) {
+      fetchMetrics();
+      const interval = setInterval(fetchMetrics, 5e3);
+      return () => clearInterval(interval);
+    }
+  }, [isSecureMode]);
+  const searchRegulatory = async (query) => {
+    try {
+      const response = await fetch(`/api/intelligence/search?q=${encodeURIComponent(query)}`);
+      return await response.json();
+    } catch (error) {
+      console.error("Search failed:", error);
+      return [];
+    }
+  };
+  const toggleSecureMode = () => {
+    setIsSecureMode((prev) => !prev);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(VaultContext.Provider, { value: {
+    isSecureMode,
+    setSecureMode: setIsSecureMode,
+    metrics: metrics2,
+    searchRegulatory,
+    toggleSecureMode
+  }, children });
+};
+const useVault = () => {
+  const context = reactExports.useContext(VaultContext);
+  if (context === void 0) {
+    throw new Error("useVault must be used within a VaultProvider");
+  }
+  return context;
+};
+function Home() {
+  const [typedText, setTypedText] = reactExports.useState("");
+  const FullText = "INITIALIZING OPERATOR PROFILE...";
+  const { isSecureMode, metrics: metrics2 } = useVault();
+  reactExports.useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setTypedText(FullText.slice(0, i + 1));
+      i++;
+      if (i > FullText.length) clearInterval(interval);
+    }, 50);
+    return () => clearInterval(interval);
+  }, []);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col justify-center min-h-[60vh] gap-12", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "font-mono text-neon-blue/80 text-sm tracking-widest flex items-center gap-2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 bg-neon-blue animate-pulse" }),
+        typedText,
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "animate-blink", children: "_" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "text-5xl md:text-7xl lg:text-8xl font-[family-name:var(--font-display)] font-bold leading-none text-white mix-blend-screen", children: [
+        "ARCHITECT.",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        "STRATEGIST.",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-red animate-gradient-x", children: "METAL YAKA." })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-2xl text-lg text-white/60 font-mono leading-relaxed border-l-2 border-neon-blue/30 pl-6", children: profileData.personal.tagline })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 border border-white/10 bg-white/5 cyber-clip-tl group hover:bg-neon-blue/5 transition-all", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-6 h-6 text-neon-green" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-xs text-neon-green", children: "ACTIVE" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-2xl font-[family-name:var(--font-display)] text-white mb-1", children: "CYBERNETICS" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-white/50 font-mono", children: "System architecture & AI Defense protocols online." })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 border border-white/10 bg-white/5 group hover:bg-neon-red/5 transition-all", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Cpu, { className: "w-6 h-6 text-neon-red" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-xs text-neon-red", children: "OVERCLOCKED" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-2xl font-[family-name:var(--font-display)] text-white mb-1", children: "INTELLIGENCE" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-white/50 font-mono", children: "Neural networks & Optimization algorithms running." })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `p-6 border cyber-clip-br group transition-all ${isSecureMode ? "border-yellow-500/20 bg-yellow-500/5 hover:bg-yellow-500/10" : "border-white/10 bg-white/5 hover:bg-neon-blue/5"}`, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Terminal, { className: `w-6 h-6 ${isSecureMode ? "text-yellow-500" : "text-neon-blue"}` }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `font-mono text-xs ${isSecureMode ? "text-yellow-500" : "text-neon-blue"}`, children: isSecureMode ? "SECURE_UPLINK" : "DEPLOYED" })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-2xl font-[family-name:var(--font-display)] text-white mb-1", children: "OPERATIONS" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-white/50 font-mono", children: [
+          profileData.github_stats.public_repos,
+          " systems accessible via ",
+          isSecureMode ? "encrypted" : "public",
+          " uplink."
+        ] })
+      ] })
+    ] }),
+    isSecureMode && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        initial: { opacity: 0, scale: 0.95 },
+        animate: { opacity: 1, scale: 1 },
+        className: "grid grid-cols-1 md:grid-cols-4 gap-4 p-6 bg-yellow-500/5 border border-yellow-500/20 relative overflow-hidden group",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-scanlines opacity-5 pointer-events-none" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-[10px] font-mono text-yellow-500/60 uppercase", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-3 h-3" }),
+              " Core_Frequency"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-2xl font-[family-name:var(--font-display)] text-white", children: [
+              "5.2 ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs text-white/40 italic", children: "GHz" })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-[10px] font-mono text-yellow-500/60 uppercase", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-3 h-3" }),
+              " Neural_Latency"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-[family-name:var(--font-display)] text-white", children: metrics2?.latency || "12ms" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-[10px] font-mono text-yellow-500/60 uppercase", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Microscope, { className: "w-3 h-3" }),
+              " Threat_Level"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-[family-name:var(--font-display)] text-white", children: metrics2?.threatLevel || "LOW" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-[10px] font-mono text-yellow-500/60 uppercase", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-3 h-3" }),
+              " Integrity"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-[family-name:var(--font-display)] text-white", children: metrics2?.shieldStatus || "98.4%" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 right-0 p-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1 h-1 bg-yellow-500 animate-ping" }) })
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-4 pt-6", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { href: "/operations", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { className: "px-8 py-4 bg-neon-blue text-black font-bold font-[family-name:var(--font-display)] tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all flex items-center gap-2", children: [
+        "INITIATE PROTOCOLS ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-4 h-4" })
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: profileData.personal.github_url, target: "_blank", className: "px-8 py-4 border border-white/20 text-white font-mono tracking-wider hover:bg-white/10 transition-all flex items-center gap-2", children: [
+        "GITHUB LINK ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { className: "w-4 h-4" })
+      ] })
+    ] })
+  ] });
+}
 function Arsenal() {
+  const { isSecureMode } = useVault();
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-12", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 mb-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Cpu, { className: "w-8 h-8 text-neon-red animate-pulse" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-3xl font-[family-name:var(--font-display)] tracking-wider", children: [
-        "ARSENAL ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-neon-red", children: "//" }),
+        isSecureMode ? "SECURE_ARSENAL" : "ARSENAL",
+        " ",
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: isSecureMode ? "text-yellow-500" : "text-neon-red", children: "//" }),
         " TECHNICAL CAPABILITIES"
       ] })
     ] }),
@@ -28804,7 +28907,7 @@ function Arsenal() {
               initial: { width: 0 },
               whileInView: { width: `${Math.random() * 20 + 80}%` },
               transition: { duration: 0.8, delay: i * 0.1 },
-              className: "h-full bg-neon-blue shadow-[0_0_10px_rgba(0,243,255,0.5)]"
+              className: `h-full shadow-[0_0_10px_rgba(0,243,255,0.5)] ${isSecureMode ? "bg-yellow-500 shadow-yellow-500/50" : "bg-neon-blue shadow-neon-blue/50"}`
             }
           ) })
         ] }, i)) })
@@ -28817,7 +28920,7 @@ function Arsenal() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-4", children: profileData.skills.concepts.map((concept, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: "px-4 py-2 border border-neon-green/30 bg-neon-green/5 text-neon-green text-sm font-mono tracking-wide hover:bg-neon-green/20 hover:border-neon-green transition-all cursor-crosshair clip-path-hexagon",
+            className: `px-4 py-2 border text-sm font-mono tracking-wide transition-all cursor-crosshair clip-path-hexagon ${isSecureMode ? "border-yellow-500/30 bg-yellow-500/5 text-yellow-500 hover:bg-yellow-500/20 hover:border-yellow-500" : "border-neon-green/30 bg-neon-green/5 text-neon-green hover:bg-neon-green/20 hover:border-neon-green"}`,
             children: concept
           },
           i
@@ -28849,7 +28952,7 @@ function Arsenal() {
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-1 bg-white/10 mt-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
               "div",
               {
-                className: "h-full bg-neon-red",
+                className: `h-full ${isSecureMode ? "bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.5)]" : "bg-neon-red"}`,
                 style: { width: `${tool.level}%` }
               }
             ) })
@@ -29103,53 +29206,6 @@ const useCyberSound = () => {
     }
   }, []);
   return { playSound };
-};
-const VaultContext = reactExports.createContext(void 0);
-const VaultProvider = ({ children }) => {
-  const [isSecureMode, setIsSecureMode] = reactExports.useState(false);
-  const [metrics2, setMetrics] = reactExports.useState(null);
-  const fetchMetrics = async () => {
-    try {
-      const response = await fetch("/api/system/metrics");
-      const data = await response.json();
-      setMetrics(data);
-    } catch (error) {
-      console.error("Failed to fetch metrics:", error);
-    }
-  };
-  reactExports.useEffect(() => {
-    if (isSecureMode) {
-      fetchMetrics();
-      const interval = setInterval(fetchMetrics, 5e3);
-      return () => clearInterval(interval);
-    }
-  }, [isSecureMode]);
-  const searchRegulatory = async (query) => {
-    try {
-      const response = await fetch(`/api/intelligence/search?q=${encodeURIComponent(query)}`);
-      return await response.json();
-    } catch (error) {
-      console.error("Search failed:", error);
-      return [];
-    }
-  };
-  const toggleSecureMode = () => {
-    setIsSecureMode((prev) => !prev);
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(VaultContext.Provider, { value: {
-    isSecureMode,
-    setSecureMode: setIsSecureMode,
-    metrics: metrics2,
-    searchRegulatory,
-    toggleSecureMode
-  }, children });
-};
-const useVault = () => {
-  const context = reactExports.useContext(VaultContext);
-  if (context === void 0) {
-    throw new Error("useVault must be used within a VaultProvider");
-  }
-  return context;
 };
 const Intelligence = () => {
   const [searchTerm, setSearchTerm] = reactExports.useState("");
@@ -31468,4 +31524,4 @@ function App() {
   ] }) }) }) });
 }
 clientExports.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(App, {}));
-//# sourceMappingURL=index-ytA5uRuT.js.map
+//# sourceMappingURL=index-q96MSX7K.js.map
