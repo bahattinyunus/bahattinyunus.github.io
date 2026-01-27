@@ -20209,15 +20209,6 @@ const ArrowUpNarrowWide = createLucideIcon("ArrowUpNarrowWide", [
   ["path", { d: "M11 16h7", key: "uosisv" }],
   ["path", { d: "M11 20h10", key: "jvxblo" }]
 ]);
-const Book = createLucideIcon("Book", [
-  [
-    "path",
-    {
-      d: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20",
-      key: "k3hazp"
-    }
-  ]
-]);
 const Brain = createLucideIcon("Brain", [
   [
     "path",
@@ -20251,10 +20242,6 @@ const CircleAlert = createLucideIcon("CircleAlert", [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
   ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
-]);
-const Code = createLucideIcon("Code", [
-  ["polyline", { points: "16 18 22 12 16 6", key: "z7tu5w" }],
-  ["polyline", { points: "8 6 2 12 8 18", key: "1eg1df" }]
 ]);
 const Cpu = createLucideIcon("Cpu", [
   ["rect", { width: "16", height: "16", x: "4", y: "4", rx: "2", key: "14l7u7" }],
@@ -20876,16 +20863,6 @@ const profileData = {
       date: "23 Aralık 2025"
     }
   ],
-  ai_tools: [
-    { name: "ChatGPT 4o", level: 95, category: "Model" },
-    { name: "Claude 3.5 Sonnet", level: 90, category: "Model" },
-    { name: "GitHub Copilot", level: 98, category: "Coding" },
-    { name: "Midjourney v6", level: 85, category: "Creative" },
-    { name: "TensorFlow", level: 80, category: "Framework" },
-    { name: "PyTorch", level: 75, category: "Framework" },
-    { name: "LangChain", level: 85, category: "Framework" },
-    { name: "Hugging Face", level: 88, category: "Platform" }
-  ],
   categories: {
     "Yapay Zeka & LLM": ["Nexus-TRL-LLM", "ANKA-LLM", "NeuroPaint", "LibraMind", "Open-Textile-Intelligence", "TRL-Bio-Compute", "Math2Code-A-Practical-Guide-for-Developers"],
     "Siber Güvenlik": ["SIGINT", "cyber_security_btk_t3A", "Digital-Archaeology-Steganography-Vault", "TRL-Quantum-Edge", "TRL-Hardware-Pulse"],
@@ -21414,83 +21391,7 @@ const profileData = {
       url: "https://github.com/bahattinyunus/Digital-Archaeology-Steganography-Vault",
       image: "/images/project-steganography.jpg"
     }
-  ],
-  certificates: {
-    "Yapay Zeka & LLM": [
-      {
-        name: "Canva Magic Design",
-        issuer: "Canva",
-        date: "Ocak 2026",
-        credential_id: "ZA1UrdEkWO"
-      },
-      {
-        name: "DeepSeek",
-        issuer: "DeepSeek",
-        date: "Ocak 2026",
-        credential_id: "lK1hwey4xw"
-      },
-      {
-        name: "Gamma",
-        issuer: "Gamma",
-        date: "Ocak 2026",
-        credential_id: "GoDfm1rwNr"
-      },
-      {
-        name: "NotebookLM",
-        issuer: "Google",
-        date: "Ocak 2026",
-        credential_id: "8jmhNZeyk6"
-      },
-      {
-        name: "Perplexity",
-        issuer: "Perplexity AI",
-        date: "Ocak 2026",
-        credential_id: "Ko9fE4NpKx"
-      },
-      {
-        name: "Yapay Zeka Dünyasına Giriş",
-        issuer: "BTK Akademi",
-        date: "Ocak 2026",
-        credential_id: "7rptPBld1p"
-      },
-      {
-        name: "Yapay Zeka ve Algoritmalarına Giriş",
-        issuer: "BTK Akademi",
-        date: "Aralık 2025",
-        credential_id: "6mqFNkwJxA"
-      },
-      {
-        name: "Üretken Yapay Zekâya Giriş",
-        issuer: "BTK Akademi",
-        date: "Aralık 2025",
-        credential_id: "eK1hOjmKgG"
-      },
-      {
-        name: "Araştırmada Üretken Yapay Zekâ Kullanımı",
-        issuer: "BTK Akademi",
-        date: "Aralık 2025",
-        credential_id: "D2xhEEKoYN"
-      },
-      {
-        name: "Kişiselleştirilmiş GPT'ler (Custom GPTs)",
-        issuer: "BTK Akademi",
-        date: "Mart 2025",
-        credential_id: "ax1hDzvgrE"
-      },
-      {
-        name: "Yapay Zekâ Etiği",
-        issuer: "BTK Akademi",
-        date: "Aralık 2025",
-        credential_id: "MAZUE7xX2D"
-      },
-      {
-        name: "Yapay Zekaya Giriş",
-        issuer: "BTK Akademi",
-        date: "Aralık 2024",
-        credential_id: "zXztak2EeO"
-      }
-    ]
-  }
+  ]
 };
 function createDOMMotionComponentProxy(componentFactory) {
   if (typeof Proxy === "undefined") {
@@ -28763,6 +28664,58 @@ const useVault = () => {
   }
   return context;
 };
+const LOG_MESSAGES = [
+  "UPLINK ESTABLISHED",
+  "NEURAL SYNC 98%",
+  "INTEGRITY CHECK PASSED",
+  "FIREWALL: STANDBY",
+  "PROTOCOL: METAL YAKA",
+  "SCANNING SECTORS...",
+  "DATA FLOW OPTIMIZED",
+  "ENCRYPTION: AES-256",
+  "KERNEL: STABLE",
+  "MISSION_CONTROL: READY",
+  "ANALYST_PROFILE: LOADED",
+  "SUBSYSTEMS: ONLINE"
+];
+const OperationLogs = () => {
+  const [logs, setLogs] = reactExports.useState([]);
+  const scrollRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    const interval = setInterval(() => {
+      const randomMsg = LOG_MESSAGES[Math.floor(Math.random() * LOG_MESSAGES.length)];
+      setLogs((prev) => [...prev.slice(-15), `${(/* @__PURE__ */ new Date()).toLocaleTimeString()} > ${randomMsg}`]);
+    }, 3e3);
+    return () => clearInterval(interval);
+  }, []);
+  reactExports.useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [logs]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "bg-black/40 border border-white/10 p-4 h-[200px] flex flex-col font-mono text-[10px] overflow-hidden group hover:border-neon-blue/40 transition-colors", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-2 text-neon-blue/60 border-b border-white/5 pb-1 uppercase tracking-widest text-[8px]", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Operation_Logs" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-1", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1 h-1 bg-neon-blue animate-pulse" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-1 h-1 bg-neon-blue/40" })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: scrollRef, className: "flex-1 overflow-y-auto space-y-1 scrollbar-hide py-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { mode: "popLayout", children: logs.map((log, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        initial: { opacity: 0, x: -10 },
+        animate: { opacity: 1, x: 0 },
+        className: "text-white/40 group-hover:text-white/60 transition-colors",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-neon-blue/40 mr-2", children: "_" }),
+          log
+        ]
+      },
+      log + i
+    )) }) })
+  ] });
+};
 function Home() {
   const [typedText, setTypedText] = reactExports.useState("");
   const FullText = "INITIALIZING OPERATOR PROFILE...";
@@ -28875,104 +28828,111 @@ function Home() {
         "GITHUB LINK ",
         /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { className: "w-4 h-4" })
       ] })
-    ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed bottom-24 right-6 w-64 hidden xl:block pointer-events-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsx(OperationLogs, {}) })
   ] });
 }
 function Arsenal() {
   const { isSecureMode } = useVault();
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-12", children: [
+  const skillTree = [
+    { id: "python", label: "PYTHON", x: 200, y: 100, connections: ["ai", "security"] },
+    { id: "ai", label: "AI/ML", x: 100, y: 300, connections: ["llm"] },
+    { id: "security", label: "SECURITY", x: 300, y: 300, connections: ["sysarch"] },
+    { id: "llm", label: "LLM ARCH", x: 50, y: 500, connections: [] },
+    { id: "sysarch", label: "SYS_ARCH", x: 350, y: 500, connections: [] },
+    { id: "js", label: "JS/TS", x: 500, y: 100, connections: ["web"] },
+    { id: "web", label: "WEB_STACK", x: 500, y: 400, connections: [] }
+  ];
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-12 pb-20", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 mb-8", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Cpu, { className: "w-8 h-8 text-neon-red animate-pulse" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Cpu, { className: `w-8 h-8 animate-pulse ${isSecureMode ? "text-yellow-500" : "text-neon-red"}` }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-3xl font-[family-name:var(--font-display)] tracking-wider", children: [
-        isSecureMode ? "SECURE_ARSENAL" : "ARSENAL",
+        isSecureMode ? "SECURE_CONNECTOME" : "ARSENAL",
         " ",
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: isSecureMode ? "text-yellow-500" : "text-neon-red", children: "//" }),
-        " TECHNICAL CAPABILITIES"
+        " NEURAL_SKILL_TREE"
       ] })
     ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative bg-black/40 border border-white/10 p-4 md:p-8 overflow-hidden min-h-[600px] cyber-clip-both group", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-scanlines opacity-5 pointer-events-none" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { className: "absolute inset-0 w-full h-full pointer-events-none opacity-20", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("defs", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("marker", { id: "arrow", viewBox: "0 0 10 10", refX: "5", refY: "5", markerWidth: "6", markerHeight: "6", orient: "auto-start-reverse", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M 0 0 L 10 5 L 0 10 z", fill: "currentColor" }) }) }),
+        skillTree.map((skill) => skill.connections.map((targetId) => {
+          const target = skillTree.find((s) => s.id === targetId);
+          if (!target) return null;
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.line,
+            {
+              x1: `${skill.x / 600 * 100}%`,
+              y1: `${skill.y / 600 * 100}%`,
+              x2: `${target.x / 600 * 100}%`,
+              y2: `${target.y / 600 * 100}%`,
+              stroke: isSecureMode ? "#eab308" : "#00f3ff",
+              strokeWidth: "1",
+              initial: { pathLength: 0 },
+              animate: { pathLength: 1 },
+              transition: { duration: 1.5 }
+            },
+            `${skill.id}-${targetId}`
+          );
+        }))
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 w-full h-[500px]", children: skillTree.map((skill, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        motion.div,
+        {
+          initial: { scale: 0 },
+          animate: { scale: 1 },
+          transition: { delay: i * 0.1 },
+          className: "absolute flex flex-col items-center gap-2 group/node",
+          style: {
+            left: `${skill.x / 600 * 100}%`,
+            top: `${skill.y / 600 * 100}%`,
+            transform: "translate(-50%, -50%)"
+          },
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `w-3 h-3 rounded-full animate-pulse ${isSecureMode ? "bg-yellow-500 shadow-[0_0_10px_rgba(234,179,8,1)]" : "bg-neon-blue shadow-[0_0_10px_rgba(0,243,255,1)]"}` }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-[10px] font-mono tracking-tighter px-2 py-0.5 border bg-black/80 whitespace-nowrap group-hover/node:scale-110 transition-transform ${isSecureMode ? "border-yellow-500/40 text-yellow-500" : "border-neon-blue/40 text-neon-blue"}`, children: skill.label })
+          ]
+        },
+        skill.id
+      )) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-4 right-4 text-[8px] font-mono text-white/20 uppercase tracking-[0.2em] pointer-events-none", children: "Connection_Protocol: v1.02 // Neural_Sync_Active" })
+    ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-2 gap-12", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "bg-white/5 p-6 rounded-lg border border-white/10 cyber-clip-tl", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-xl font-[family-name:var(--font-display)] text-neon-blue mb-6 flex items-center gap-2", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `bg-white/5 p-6 rounded-lg border cyber-clip-tl ${isSecureMode ? "border-yellow-500/20" : "border-white/10"}`, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: `text-xl font-[family-name:var(--font-display)] mb-6 flex items-center gap-2 ${isSecureMode ? "text-yellow-500" : "text-neon-blue"}`, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Terminal, { className: "w-5 h-5" }),
-          " CORE LANGUAGES"
+          " REFINED_STACK"
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-6", children: profileData.skills.languages.map((lang, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between mb-2", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-sm text-gray-300", children: lang }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-xs text-neon-blue opacity-0 group-hover:opacity-100 transition-opacity", children: "READY" })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between mb-2 text-xs", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-gray-300", children: lang }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `font-mono opacity-0 group-hover:opacity-100 transition-opacity ${isSecureMode ? "text-yellow-500" : "text-neon-blue"}`, children: "OPTIMIZED" })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-2 w-full bg-black border border-white/10 rounded-full overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-0.5 w-full bg-black border border-white/5 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             motion.div,
             {
               initial: { width: 0 },
               whileInView: { width: `${Math.random() * 20 + 80}%` },
-              transition: { duration: 0.8, delay: i * 0.1 },
-              className: `h-full shadow-[0_0_10px_rgba(0,243,255,0.5)] ${isSecureMode ? "bg-yellow-500 shadow-yellow-500/50" : "bg-neon-blue shadow-neon-blue/50"}`
+              className: `h-full ${isSecureMode ? "bg-yellow-500" : "bg-neon-blue"}`
             }
           ) })
         ] }, i)) })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "bg-white/5 p-6 rounded-lg border border-white/10 cyber-clip-br", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-xl font-[family-name:var(--font-display)] text-neon-green mb-6 flex items-center gap-2", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `bg-white/5 p-6 rounded-lg border cyber-clip-br ${isSecureMode ? "border-yellow-500/20" : "border-white/10"}`, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: `text-xl font-[family-name:var(--font-display)] mb-6 flex items-center gap-2 ${isSecureMode ? "text-yellow-500" : "text-neon-green"}`, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-5 h-5" }),
-          " DOMAIN EXPERTISE"
+          " DOMAIN_INTEL"
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-4", children: profileData.skills.concepts.map((concept, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2", children: profileData.skills.concepts.map((concept, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
           "div",
           {
-            className: `px-4 py-2 border text-sm font-mono tracking-wide transition-all cursor-crosshair clip-path-hexagon ${isSecureMode ? "border-yellow-500/30 bg-yellow-500/5 text-yellow-500 hover:bg-yellow-500/20 hover:border-yellow-500" : "border-neon-green/30 bg-neon-green/5 text-neon-green hover:bg-neon-green/20 hover:border-neon-green"}`,
+            className: `px-2 py-1 border text-[9px] font-mono tracking-wide transition-all clip-path-hexagon ${isSecureMode ? "border-yellow-500/30 bg-yellow-500/5 text-yellow-500" : "border-neon-green/30 bg-neon-green/5 text-neon-green"}`,
             children: concept
           },
           i
         )) })
       ] })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-xl font-[family-name:var(--font-display)] text-neon-red mb-6 flex items-center gap-2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-5 h-5" }),
-        " NEURAL EXTENSIONS"
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4", children: profileData.ai_tools.map((tool, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
-        {
-          initial: { opacity: 0, y: 20 },
-          whileInView: { opacity: 1, y: 0 },
-          transition: { delay: i * 0.05 },
-          viewport: { once: true },
-          className: "p-4 border border-white/10 bg-black/40 hover:border-neon-red/50 hover:bg-neon-red/5 transition-all group",
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-start mb-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-xs font-mono text-white/50", children: tool.category }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-xs font-mono text-neon-red", children: [
-                tool.level,
-                "% EFFICIENCY"
-              ] })
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "font-bold text-white group-hover:text-neon-red transition-colors", children: tool.name }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-full h-1 bg-white/10 mt-3", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "div",
-              {
-                className: `h-full ${isSecureMode ? "bg-yellow-500 shadow-[0_0_8px_rgba(234,179,8,0.5)]" : "bg-neon-red"}`,
-                style: { width: `${tool.level}%` }
-              }
-            ) })
-          ]
-        },
-        i
-      )) })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "border-t border-white/10 pt-8", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-xl font-[family-name:var(--font-display)] text-white/70 mb-6 flex items-center gap-2", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Book, { className: "w-5 h-5" }),
-        " CERTIFIED PROTOCOLS"
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid md:grid-cols-2 lg:grid-cols-3 gap-4", children: profileData.certificates["Yapay Zeka & LLM"].slice(0, 6).map((cert, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 p-3 border border-white/5 bg-white/5 hover:border-neon-blue/30 transition-colors", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-6 h-6 flex items-center justify-center bg-black rounded text-neon-blue", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Code, { className: "w-3 h-3" }) }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-bold text-white/90", children: cert.name }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-white/40", children: cert.issuer })
-        ] })
-      ] }, i)) })
     ] })
   ] });
 }
@@ -31414,6 +31374,79 @@ const VaultShell = () => {
     }
   ) });
 };
+const NeuralBackground = () => {
+  const canvasRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    let animationFrameId;
+    let nodes = [];
+    const nodeCount = 60;
+    const connectionDistance = 150;
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initNodes();
+    };
+    const initNodes = () => {
+      nodes = [];
+      for (let i = 0; i < nodeCount; i++) {
+        nodes.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: Math.random() * 2 + 1
+        });
+      }
+    };
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(0, 243, 255, 0.4)";
+      ctx.strokeStyle = "rgba(0, 243, 255, 0.1)";
+      ctx.lineWidth = 1;
+      nodes.forEach((node, i) => {
+        node.x += node.vx;
+        node.y += node.vy;
+        if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+        if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+        ctx.fill();
+        for (let j = i + 1; j < nodes.length; j++) {
+          const other = nodes[j];
+          const dx = node.x - other.x;
+          const dy = node.y - other.y;
+          const distance2 = Math.sqrt(dx * dx + dy * dy);
+          if (distance2 < connectionDistance) {
+            ctx.beginPath();
+            ctx.moveTo(node.x, node.y);
+            ctx.lineTo(other.x, other.y);
+            ctx.stroke();
+          }
+        }
+      });
+      animationFrameId = requestAnimationFrame(draw);
+    };
+    window.addEventListener("resize", resize);
+    resize();
+    draw();
+    return () => {
+      window.removeEventListener("resize", resize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "canvas",
+    {
+      ref: canvasRef,
+      className: "fixed inset-0 z-0 pointer-events-none opacity-40",
+      style: { filter: "blur(1px)" }
+    }
+  );
+};
 const CyberShell = ({ children }) => {
   const [location2] = useLocation();
   const [time2, setTime] = reactExports.useState(/* @__PURE__ */ new Date());
@@ -31432,7 +31465,10 @@ const CyberShell = ({ children }) => {
     { path: "/comms", label: "COMMS", icon: Radio }
   ];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-h-screen bg-[var(--color-cyber-black)] text-foreground font-[family-name:var(--font-body)] overflow-hidden flex flex-col relative selection:bg-neon-blue selection:text-black ${isMatrixMode ? "matrix-mode" : ""}`, children: [
-    isMatrixMode ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-0 bg-black pointer-events-none font-mono text-green-500 text-xs opacity-20 overflow-hidden break-all leading-3", children: "MATRIX MODE ACTIVE - SYSTEM OVERRIDE" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(ForceField, {}),
+    isMatrixMode ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-0 bg-black pointer-events-none font-mono text-green-500 text-xs opacity-20 overflow-hidden break-all leading-3", children: "MATRIX MODE ACTIVE - SYSTEM OVERRIDE" }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ForceField, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(NeuralBackground, {})
+    ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(VaultShell, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 bg-scanlines opacity-20 pointer-events-none z-50" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#000_90%)] pointer-events-none z-40" }),
@@ -31524,4 +31560,4 @@ function App() {
   ] }) }) }) });
 }
 clientExports.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(App, {}));
-//# sourceMappingURL=index-q96MSX7K.js.map
+//# sourceMappingURL=index-Bx1nKJAz.js.map
