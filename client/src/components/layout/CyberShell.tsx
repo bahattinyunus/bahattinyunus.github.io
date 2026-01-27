@@ -8,6 +8,7 @@ import { useCyberSound } from "@/hooks/use-cyber-sound";
 import { useKonamiCode } from "@/hooks/use-konami-code";
 import { useVault } from "@/contexts/VaultContext";
 import { VaultShell } from "./VaultShell";
+import { NeuralBackground } from "../cyber-ui/NeuralBackground";
 
 interface CyberShellProps {
     children: React.ReactNode;
@@ -41,7 +42,10 @@ export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
                     MATRIX MODE ACTIVE - SYSTEM OVERRIDE
                 </div>
             ) : (
-                <ForceField />
+                <>
+                    <ForceField />
+                    <NeuralBackground />
+                </>
             )}
 
             <VaultShell />

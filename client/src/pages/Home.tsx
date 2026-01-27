@@ -7,6 +7,7 @@ import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { useVault } from "@/contexts/VaultContext";
 import { Zap, Activity, Microscope } from "lucide-react";
+import { OperationLogs } from "@/components/cyber-ui/OperationLogs";
 
 export default function Home() {
   const [typedText, setTypedText] = useState("");
@@ -149,6 +150,11 @@ export default function Home() {
         <a href={profileData.personal.github_url} target="_blank" className="px-8 py-4 border border-white/20 text-white font-mono tracking-wider hover:bg-white/10 transition-all flex items-center gap-2">
           GITHUB LINK <ExternalLink className="w-4 h-4" />
         </a>
+      </div>
+
+      {/* Operation Logs Overlay */}
+      <div className="fixed bottom-24 right-6 w-64 hidden xl:block pointer-events-auto">
+        <OperationLogs />
       </div>
     </div>
   );
