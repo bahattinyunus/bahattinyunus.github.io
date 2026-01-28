@@ -20267,6 +20267,17 @@ const FileText = createLucideIcon("FileText", [
   ["path", { d: "M16 13H8", key: "t4e002" }],
   ["path", { d: "M16 17H8", key: "z1uh3a" }]
 ]);
+const Fingerprint = createLucideIcon("Fingerprint", [
+  ["path", { d: "M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4", key: "1nerag" }],
+  ["path", { d: "M14 13.12c0 2.38 0 6.38-1 8.88", key: "o46ks0" }],
+  ["path", { d: "M17.29 21.02c.12-.6.43-2.3.5-3.02", key: "ptglia" }],
+  ["path", { d: "M2 12a10 10 0 0 1 18-6", key: "ydlgp0" }],
+  ["path", { d: "M2 16h.01", key: "1gqxmh" }],
+  ["path", { d: "M21.8 16c.2-2 .131-5.354 0-6", key: "drycrb" }],
+  ["path", { d: "M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2", key: "1tidbn" }],
+  ["path", { d: "M8.65 22c.21-.66.45-1.32.57-2", key: "13wd9y" }],
+  ["path", { d: "M9 6.8a6 6 0 0 1 9 5.2v2", key: "1fr1j5" }]
+]);
 const Github = createLucideIcon("Github", [
   [
     "path",
@@ -20286,6 +20297,11 @@ const House = createLucideIcon("House", [
       key: "1d0kgt"
     }
   ]
+]);
+const Info = createLucideIcon("Info", [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 16v-4", key: "1dtifu" }],
+  ["path", { d: "M12 8h.01", key: "e9boi3" }]
 ]);
 const Linkedin = createLucideIcon("Linkedin", [
   [
@@ -20349,6 +20365,16 @@ const Send = createLucideIcon("Send", [
   ],
   ["path", { d: "m21.854 2.147-10.94 10.939", key: "12cjpa" }]
 ]);
+const ShieldCheck = createLucideIcon("ShieldCheck", [
+  [
+    "path",
+    {
+      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+      key: "oel41y"
+    }
+  ],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+]);
 const Shield = createLucideIcon("Shield", [
   [
     "path",
@@ -20377,6 +20403,10 @@ const TriangleAlert = createLucideIcon("TriangleAlert", [
   ],
   ["path", { d: "M12 9v4", key: "juzpu7" }],
   ["path", { d: "M12 17h.01", key: "p32p05" }]
+]);
+const X$1 = createLucideIcon("X", [
+  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
 ]);
 const Zap = createLucideIcon("Zap", [
   [
@@ -28442,7 +28472,7 @@ const createMotionComponent = /* @__PURE__ */ createMotionComponentFactory({
   ...drag,
   ...layout
 }, createDomVisualElement);
-const motion = /* @__PURE__ */ createDOMMotionComponentProxy(createMotionComponent);
+const motion$1 = /* @__PURE__ */ createDOMMotionComponentProxy(createMotionComponent);
 class PopChildMeasure extends reactExports.Component {
   getSnapshotBeforeUpdate(prevProps) {
     const element = this.props.childRef.current;
@@ -28702,7 +28732,7 @@ const OperationLogs = () => {
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: scrollRef, className: "flex-1 overflow-y-auto space-y-1 scrollbar-hide py-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { mode: "popLayout", children: logs.map((log, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      motion.div,
+      motion$1.div,
       {
         initial: { opacity: 0, x: -10 },
         animate: { opacity: 1, x: 0 },
@@ -28777,7 +28807,7 @@ function Home() {
       ] })
     ] }),
     isSecureMode && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      motion.div,
+      motion$1.div,
       {
         initial: { opacity: 0, scale: 0.95 },
         animate: { opacity: 1, scale: 1 },
@@ -28861,7 +28891,7 @@ function Arsenal() {
           const target = skillTree.find((s) => s.id === targetId);
           if (!target) return null;
           return /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.line,
+            motion$1.line,
             {
               x1: `${skill.x / 600 * 100}%`,
               y1: `${skill.y / 600 * 100}%`,
@@ -28878,7 +28908,7 @@ function Arsenal() {
         }))
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 w-full h-[500px]", children: skillTree.map((skill, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
+        motion$1.div,
         {
           initial: { scale: 0 },
           animate: { scale: 1 },
@@ -28910,7 +28940,7 @@ function Arsenal() {
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `font-mono opacity-0 group-hover:opacity-100 transition-opacity ${isSecureMode ? "text-yellow-500" : "text-neon-blue"}`, children: "OPTIMIZED" })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-0.5 w-full bg-black border border-white/5 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
+            motion$1.div,
             {
               initial: { width: 0 },
               whileInView: { width: `${Math.random() * 20 + 80}%` },
@@ -28936,11 +28966,182 @@ function Arsenal() {
     ] })
   ] });
 }
+const ProjectModal = ({ project, onClose }) => {
+  if (!project) return null;
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-12 pointer-events-none", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      motion$1.div,
+      {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        exit: { opacity: 0 },
+        className: "absolute inset-0 bg-black/90 backdrop-blur-xl pointer-events-auto",
+        onClick: onClose
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion$1.div,
+      {
+        initial: { opacity: 0, scale: 0.9, y: 20 },
+        animate: { opacity: 1, scale: 1, y: 0 },
+        exit: { opacity: 0, scale: 0.9, y: 20 },
+        className: "relative w-full max-w-4xl bg-cyber-gray border border-white/10 cyber-clip-both pointer-events-auto overflow-hidden flex flex-col md:flex-row",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-scanlines opacity-10 pointer-events-none z-50" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-full md:w-1/2 h-48 md:h-auto relative border-b md:border-b-0 md:border-r border-white/10", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: project.image, alt: project.name, className: "w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-cyber-gray via-transparent to-transparent" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 p-6 md:p-10 flex flex-col relative", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                onClick: onClose,
+                className: "absolute top-4 right-4 p-2 text-white/40 hover:text-neon-blue transition-colors",
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { className: "w-6 h-6" })
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-neon-blue font-mono text-xs mb-2 uppercase tracking-widest", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-3 h-3" }),
+                  " Technical_Intel_Report"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl md:text-5xl font-[family-name:var(--font-display)] font-bold text-white tracking-tighter", children: project.name.toUpperCase() })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-white/60 font-mono text-sm leading-relaxed border-l-2 border-neon-blue/30 pl-4", children: project.description }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 bg-white/5 border border-white/5 space-y-1", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[10px] font-mono text-white/30 uppercase flex items-center gap-1", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Cpu, { className: "w-3 h-3" }),
+                    " Base_Stack"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-neon-blue font-bold", children: project.language })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 bg-white/5 border border-white/5 space-y-1", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[10px] font-mono text-white/30 uppercase flex items-center gap-1", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-3 h-3" }),
+                    " Performance"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-neon-green font-bold", children: "STABLE" })
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-8 text-xs font-mono text-white/40 border-y border-white/10 py-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-4 h-4 text-neon-red" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                    "STAR_NODES: ",
+                    project.stars
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-4 h-4 text-neon-red" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                    "FORK_NODES: ",
+                    project.forks
+                  ] })
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pt-4 flex flex-wrap gap-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "a",
+                {
+                  href: project.url,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  className: "flex-1 min-w-[200px] px-8 py-4 bg-neon-blue text-black font-bold font-[family-name:var(--font-display)] tracking-wider hover:bg-white transition-all flex items-center justify-center gap-2",
+                  children: [
+                    "ACCESS_REPOSITORY ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { className: "w-4 h-4" })
+                  ]
+                }
+              ) })
+            ] })
+          ] })
+        ]
+      }
+    )
+  ] }) });
+};
+const useCyberSound = () => {
+  const audioContext = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    const initAudio = () => {
+      if (!audioContext.current) {
+        audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    };
+    window.addEventListener("click", initAudio, { once: true });
+    window.addEventListener("keydown", initAudio, { once: true });
+    return () => {
+      window.removeEventListener("click", initAudio);
+      window.removeEventListener("keydown", initAudio);
+    };
+  }, []);
+  const playSound = reactExports.useCallback((type) => {
+    if (!audioContext.current) return;
+    const ctx = audioContext.current;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    const now2 = ctx.currentTime;
+    switch (type) {
+      case "hover":
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(800, now2);
+        osc.frequency.exponentialRampToValueAtTime(1200, now2 + 0.05);
+        gain.gain.setValueAtTime(0.05, now2);
+        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.05);
+        osc.start(now2);
+        osc.stop(now2 + 0.05);
+        break;
+      case "click":
+        osc.type = "square";
+        osc.frequency.setValueAtTime(200, now2);
+        osc.frequency.exponentialRampToValueAtTime(100, now2 + 0.1);
+        gain.gain.setValueAtTime(0.1, now2);
+        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.1);
+        osc.start(now2);
+        osc.stop(now2 + 0.1);
+        break;
+      case "type":
+        osc.type = "triangle";
+        osc.frequency.setValueAtTime(600, now2);
+        gain.gain.setValueAtTime(0.02, now2);
+        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.03);
+        osc.start(now2);
+        osc.stop(now2 + 0.03);
+        break;
+      case "access":
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(440, now2);
+        osc.frequency.exponentialRampToValueAtTime(880, now2 + 0.2);
+        gain.gain.setValueAtTime(0.1, now2);
+        gain.gain.linearRampToValueAtTime(0, now2 + 0.5);
+        osc.start(now2);
+        osc.stop(now2 + 0.5);
+        break;
+      case "alert":
+        osc.type = "sawtooth";
+        osc.frequency.setValueAtTime(150, now2);
+        osc.frequency.setValueAtTime(250, now2 + 0.1);
+        gain.gain.setValueAtTime(0.05, now2);
+        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.2);
+        osc.start(now2);
+        osc.stop(now2 + 0.2);
+        break;
+    }
+  }, []);
+  return { playSound };
+};
 function Operations() {
   const [filter2, setFilter] = reactExports.useState(null);
+  const [selectedProject, setSelectedProject] = reactExports.useState(null);
+  const { playSound } = useCyberSound();
   const categories = Object.keys(profileData.categories);
   const filteredProjects = filter2 ? profileData.featured_projects.filter((p2) => profileData.categories[filter2]?.includes(p2.name)) : profileData.featured_projects;
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-8", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-8 pb-12", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ProjectModal, { project: selectedProject, onClose: () => setSelectedProject(null) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/10", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(Target, { className: "w-8 h-8 text-neon-green animate-pulse" }),
@@ -28971,48 +29172,68 @@ function Operations() {
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid md:grid-cols-2 lg:grid-cols-3 gap-6", children: filteredProjects.map((project, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-      motion.div,
+      motion$1.div,
       {
         initial: { opacity: 0, scale: 0.95 },
         whileInView: { opacity: 1, scale: 1 },
         transition: { delay: i * 0.05 },
         className: "group relative h-full",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "h-full bg-black/40 border border-white/10 group-hover:border-neon-blue/50 group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all duration-300 flex flex-col cyber-clip-br", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative h-48 overflow-hidden", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: project.image, alt: project.name, className: "w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-2 right-2 px-2 py-1 bg-black/80 border border-white/20 text-[10px] font-mono text-neon-blue backdrop-blur-sm", children: project.language })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 flex-1 flex flex-col", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-[family-name:var(--font-display)] font-bold mb-2 text-white group-hover:text-neon-blue transition-colors", children: project.name }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-white/60 mb-6 flex-1 line-clamp-3 font-mono", children: project.description }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-t border-white/10 pt-4 flex items-center justify-between text-xs font-mono", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 text-white/40", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-                  "★ ",
-                  project.stars
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-                  "⑂ ",
-                  project.forks
-                ] })
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            onClick: () => {
+              setSelectedProject(project);
+              playSound("click");
+            },
+            className: "h-full bg-black/40 border border-white/10 group-hover:border-neon-blue/50 group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all duration-300 flex flex-col cyber-clip-br cursor-pointer",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative h-48 overflow-hidden", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: project.image, alt: project.name, className: "w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-2 right-2 px-2 py-1 bg-black/80 border border-white/20 text-[10px] font-mono text-neon-blue backdrop-blur-sm", children: project.language })
               ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "a",
-                {
-                  href: project.url,
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                  className: "flex items-center gap-1 text-neon-blue hover:text-white transition-colors",
-                  children: [
-                    "SOURCE_LINK ",
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { className: "w-3 h-3" })
-                  ]
-                }
-              )
-            ] })
-          ] })
-        ] })
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 flex-1 flex flex-col", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-[family-name:var(--font-display)] font-bold mb-2 text-white group-hover:text-neon-blue transition-colors", children: project.name }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-white/60 mb-6 flex-1 line-clamp-3 font-mono", children: project.description }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-t border-white/10 pt-4 flex items-center justify-between text-xs font-mono", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 text-white/40", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                      "★ ",
+                      project.stars
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                      "⑂ ",
+                      project.forks
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "a",
+                    {
+                      href: project.url,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      className: "flex items-center gap-1 text-neon-blue hover:text-white transition-colors",
+                      children: [
+                        "SOURCE ",
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { className: "w-3 h-3" })
+                      ]
+                    }
+                  ),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    "button",
+                    {
+                      className: "flex items-center gap-1 text-neon-green/60 hover:text-neon-green transition-colors",
+                      children: [
+                        "INTEL ",
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(Info, { className: "w-3 h-3" })
+                      ]
+                    }
+                  )
+                ] })
+              ] })
+            ]
+          }
+        )
       },
       i
     )) })
@@ -29020,10 +29241,20 @@ function Operations() {
 }
 function Comms() {
   const [status, setStatus] = reactExports.useState("idle");
+  const { playSound } = useCyberSound();
   const handlePing = (e) => {
     e.preventDefault();
-    setStatus("sending");
-    setTimeout(() => setStatus("sent"), 1500);
+    playSound("access");
+    setStatus("scanning");
+    setTimeout(() => {
+      playSound("alert");
+      setStatus("transmitting");
+      setTimeout(() => {
+        playSound("click");
+        setStatus("sent");
+        setTimeout(() => setStatus("idle"), 5e3);
+      }, 2e3);
+    }, 1500);
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-4xl mx-auto space-y-12", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 mb-8 border-b border-white/10 pb-6", children: [
@@ -29085,18 +29316,39 @@ function Comms() {
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "button",
           {
-            disabled: status === "sending" || status === "sent",
+            disabled: status !== "idle",
             className: `
-                        w-full py-4 font-bold font-[family-name:var(--font-display)] tracking-widest flex items-center justify-center gap-2 transition-all
+                        w-full py-4 font-bold font-[family-name:var(--font-display)] tracking-widest flex items-center justify-center gap-2 transition-all relative overflow-hidden
                         ${status === "sent" ? "bg-neon-green text-black" : "bg-neon-blue text-black hover:bg-white hover:text-black"}
+                        ${status !== "idle" ? "cursor-wait opacity-80" : ""}
                     `,
             children: [
-              status === "idle" && /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-                "INITIATE UPLINK ",
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "w-4 h-4" })
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(AnimatePresence, { mode: "wait", children: [
+                status === "idle" && /* @__PURE__ */ jsxRuntimeExports.jsxs(motion$1.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "flex items-center gap-2", children: [
+                  "INITIATE UPLINK ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "w-4 h-4" })
+                ] }, "idle"),
+                status === "scanning" && /* @__PURE__ */ jsxRuntimeExports.jsxs(motion$1.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Fingerprint, { className: "w-4 h-4 animate-pulse" }),
+                  " SCANNING_BIOMETRICS..."
+                ] }, "scanning"),
+                status === "transmitting" && /* @__PURE__ */ jsxRuntimeExports.jsxs(motion$1.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { className: "w-4 h-4 animate-spin" }),
+                  " ENCRYPTING_PAYLOAD..."
+                ] }, "transmitting"),
+                status === "sent" && /* @__PURE__ */ jsxRuntimeExports.jsxs(motion$1.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldCheck, { className: "w-4 h-4" }),
+                  " TRANSMISSION COMPLETE"
+                ] }, "sent")
               ] }),
-              status === "sending" && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "animate-pulse", children: "TRANSMITTING..." }),
-              status === "sent" && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "TRANSMISSION COMPLETE" })
+              status === "scanning" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion$1.div,
+                {
+                  className: "absolute inset-x-0 h-1 bg-white/50 z-10",
+                  animate: { top: ["0%", "100%", "0%"] },
+                  transition: { duration: 0.5, repeat: Infinity }
+                }
+              )
             ]
           }
         )
@@ -29104,69 +29356,6 @@ function Comms() {
     ] })
   ] });
 }
-const useCyberSound = () => {
-  const audioContext = reactExports.useRef(null);
-  reactExports.useEffect(() => {
-    const initAudio = () => {
-      if (!audioContext.current) {
-        audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
-      }
-    };
-    window.addEventListener("click", initAudio, { once: true });
-    window.addEventListener("keydown", initAudio, { once: true });
-    return () => {
-      window.removeEventListener("click", initAudio);
-      window.removeEventListener("keydown", initAudio);
-    };
-  }, []);
-  const playSound = reactExports.useCallback((type) => {
-    if (!audioContext.current) return;
-    const ctx = audioContext.current;
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    const now2 = ctx.currentTime;
-    switch (type) {
-      case "hover":
-        osc.type = "sine";
-        osc.frequency.setValueAtTime(800, now2);
-        osc.frequency.exponentialRampToValueAtTime(1200, now2 + 0.05);
-        gain.gain.setValueAtTime(0.05, now2);
-        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.05);
-        osc.start(now2);
-        osc.stop(now2 + 0.05);
-        break;
-      case "click":
-        osc.type = "square";
-        osc.frequency.setValueAtTime(200, now2);
-        osc.frequency.exponentialRampToValueAtTime(100, now2 + 0.1);
-        gain.gain.setValueAtTime(0.1, now2);
-        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.1);
-        osc.start(now2);
-        osc.stop(now2 + 0.1);
-        break;
-      case "type":
-        osc.type = "triangle";
-        osc.frequency.setValueAtTime(600, now2);
-        gain.gain.setValueAtTime(0.02, now2);
-        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.03);
-        osc.start(now2);
-        osc.stop(now2 + 0.03);
-        break;
-      case "access":
-        osc.type = "sine";
-        osc.frequency.setValueAtTime(440, now2);
-        osc.frequency.exponentialRampToValueAtTime(880, now2 + 0.2);
-        gain.gain.setValueAtTime(0.1, now2);
-        gain.gain.linearRampToValueAtTime(0, now2 + 0.5);
-        osc.start(now2);
-        osc.stop(now2 + 0.5);
-        break;
-    }
-  }, []);
-  return { playSound };
-};
 const Intelligence = () => {
   const [searchTerm, setSearchTerm] = reactExports.useState("");
   const [regulatoryResults, setRegulatoryResults] = reactExports.useState([]);
@@ -29240,7 +29429,7 @@ const Intelligence = () => {
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
       filteredPosts.map((post, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-        motion.a,
+        motion$1.a,
         {
           href: post.url,
           target: "_blank",
@@ -31248,7 +31437,7 @@ const VaultShell = () => {
   const { isSecureMode, metrics: metrics2 } = useVault();
   if (!isSecureMode) return null;
   return /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    motion.div,
+    motion$1.div,
     {
       initial: { opacity: 0 },
       animate: { opacity: 1 },
@@ -31258,7 +31447,7 @@ const VaultShell = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-scanlines opacity-[0.15] mix-blend-overlay" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-20 left-6 space-y-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            motion.div,
+            motion$1.div,
             {
               initial: { x: -100 },
               animate: { x: 0 },
@@ -31286,7 +31475,7 @@ const VaultShell = () => {
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            motion.div,
+            motion$1.div,
             {
               initial: { x: -100 },
               animate: { x: 0 },
@@ -31307,7 +31496,7 @@ const VaultShell = () => {
                       ] })
                     ] }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-1 bg-white/10 w-32 relative overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      motion.div,
+                      motion$1.div,
                       {
                         className: "absolute inset-y-0 left-0 bg-neon-blue",
                         animate: { width: `${metrics2?.cpu}%` }
@@ -31323,7 +31512,7 @@ const VaultShell = () => {
                       ] })
                     ] }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-1 bg-white/10 w-32 relative overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      motion.div,
+                      motion$1.div,
                       {
                         className: "absolute inset-y-0 left-0 bg-neon-green",
                         animate: { width: `${metrics2?.memory}%` }
@@ -31336,7 +31525,7 @@ const VaultShell = () => {
           )
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-20 right-6 space-y-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
+          motion$1.div,
           {
             initial: { x: 100 },
             animate: { x: 0 },
@@ -31450,6 +31639,7 @@ const NeuralBackground = () => {
 const CyberShell = ({ children }) => {
   const [location2] = useLocation();
   const [time2, setTime] = reactExports.useState(/* @__PURE__ */ new Date());
+  const [visitedPaths, setVisitedPaths] = reactExports.useState(/* @__PURE__ */ new Set([location2]));
   const { playSound } = useCyberSound();
   const isMatrixMode = useKonamiCode();
   const { isSecureMode, toggleSecureMode } = useVault();
@@ -31457,6 +31647,9 @@ const CyberShell = ({ children }) => {
     const timer = setInterval(() => setTime(/* @__PURE__ */ new Date()), 1e3);
     return () => clearInterval(timer);
   }, []);
+  reactExports.useEffect(() => {
+    setVisitedPaths((prev) => /* @__PURE__ */ new Set([...prev, location2]));
+  }, [location2]);
   const navItems = [
     { path: "/", label: "MISSION CONTROL", icon: Shield },
     { path: "/arsenal", label: "ARSENAL", icon: Cpu },
@@ -31533,6 +31726,22 @@ const CyberShell = ({ children }) => {
           }
         ) }, item.path);
       }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden lg:flex items-center gap-4 px-6 border-x border-white/10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-1 w-48", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[8px] font-mono text-white/40 uppercase tracking-widest", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Sector_Stabilization" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+            Math.round(visitedPaths.size / navItems.length * 100),
+            "%"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-1 bg-white/5 w-full relative overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.div,
+          {
+            className: "absolute inset-y-0 left-0 bg-neon-green shadow-[0_0_5px_rgba(0,255,157,0.5)]",
+            animate: { width: `${visitedPaths.size / navItems.length * 100}%` }
+          }
+        ) })
+      ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden md:flex flex-col items-end text-xs text-white/30 font-mono", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-neon-blue/50", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Power, { className: "w-3 h-3" }),
@@ -31560,4 +31769,4 @@ function App() {
   ] }) }) }) });
 }
 clientExports.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(App, {}));
-//# sourceMappingURL=index-Bx1nKJAz.js.map
+//# sourceMappingURL=index-BESj63Z2.js.map
