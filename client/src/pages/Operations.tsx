@@ -2,11 +2,15 @@
 // @ts-nocheck
 import { profileData } from "@/lib/data";
 import { motion } from "framer-motion";
-import { Target, ExternalLink } from "lucide-react";
+import { Target, ExternalLink, Info } from "lucide-react";
 import { useState } from "react";
+import { ProjectModal } from "@/components/cyber-ui/ProjectModal";
+import { useCyberSound } from "@/hooks/use-cyber-sound";
 
 export default function Operations() {
     const [filter, setFilter] = useState<string | null>(null);
+    const [selectedProject, setSelectedProject] = useState<any | null>(null);
+    const { playSound } = useCyberSound();
 
     const categories = Object.keys(profileData.categories);
 
@@ -15,7 +19,8 @@ export default function Operations() {
         : profileData.featured_projects;
 
     return (
-        <div className="space-y-8">
+        <div className="space-y-8 pb-12">
+            <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/10">
                 <div className="flex items-center gap-4">
                     <Target className="w-8 h-8 text-neon-green animate-pulse" />
@@ -53,7 +58,13 @@ export default function Operations() {
                         className="group relative h-full"
                     >
                         {/* Cyber Card Container */}
-                        <div className="h-full bg-black/40 border border-white/10 group-hover:border-neon-blue/50 group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all duration-300 flex flex-col cyber-clip-br">
+                        <div
+                            onClick={() => {
+                                setSelectedProject(project);
+                                playSound('click');
+                            }}
+                            className="h-full bg-black/40 border border-white/10 group-hover:border-neon-blue/50 group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all duration-300 flex flex-col cyber-clip-br cursor-pointer"
+                        >
                             <div className="relative h-48 overflow-hidden">
                                 <img src={project.image} alt={project.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
@@ -81,8 +92,13 @@ export default function Operations() {
                                         rel="noopener noreferrer"
                                         className="flex items-center gap-1 text-neon-blue hover:text-white transition-colors"
                                     >
-                                        SOURCE_LINK <ExternalLink className="w-3 h-3" />
+                                        SOURCE <ExternalLink className="w-3 h-3" />
                                     </a>
+                                    <button
+                                        className="flex items-center gap-1 text-neon-green/60 hover:text-neon-green transition-colors"
+                                    >
+                                        INTEL <Info className="w-3 h-3" />
+                                    </button>
                                 </div>
                             </div>
                         </div>

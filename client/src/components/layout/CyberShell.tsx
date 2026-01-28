@@ -17,6 +17,7 @@ interface CyberShellProps {
 export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
     const [location] = useLocation();
     const [time, setTime] = useState(new Date());
+    const [visitedPaths, setVisitedPaths] = useState<Set<string>>(new Set([location]));
     const { playSound } = useCyberSound();
     const isMatrixMode = useKonamiCode();
     const { isSecureMode, toggleSecureMode } = useVault();
@@ -25,6 +26,10 @@ export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
         const timer = setInterval(() => setTime(new Date()), 1000);
         return () => clearInterval(timer);
     }, []);
+
+    useEffect(() => {
+        setVisitedPaths(prev => new Set([...prev, location]));
+    }, [location]);
 
     const navItems = [
         { path: "/", label: "MISSION CONTROL", icon: Shield },
@@ -132,6 +137,21 @@ export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
                         );
                     })}
                 </nav>
+
+                <div className="hidden lg:flex items-center gap-4 px-6 border-x border-white/10">
+                    <div className="flex flex-col gap-1 w-48">
+                        <div className="flex justify-between text-[8px] font-mono text-white/40 uppercase tracking-widest">
+                            <span>Sector_Stabilization</span>
+                            <span>{Math.round((visitedPaths.size / navItems.length) * 100)}%</span>
+                        </div>
+                        <div className="h-1 bg-white/5 w-full relative overflow-hidden">
+                            <motion.div
+                                className="absolute inset-y-0 left-0 bg-neon-green shadow-[0_0_5px_rgba(0,255,157,0.5)]"
+                                animate={{ width: `${(visitedPaths.size / navItems.length) * 100}%` }}
+                            />
+                        </div>
+                    </div>
+                </div>
 
                 <div className="hidden md:flex flex-col items-end text-xs text-white/30 font-mono">
                     <div className="flex items-center gap-2 text-neon-blue/50">

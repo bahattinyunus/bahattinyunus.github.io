@@ -1,16 +1,31 @@
 
 import { profileData } from "@/lib/data";
-import { Radio, Mail, Linkedin, Github, MapPin, Send } from "lucide-react";
-import React, { useState } from "react";
+import { Radio, Mail, Linkedin, Github, MapPin, Send, ShieldCheck, Fingerprint, Lock } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useCyberSound } from "@/hooks/use-cyber-sound";
 
 export default function Comms() {
-    const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
+    const [status, setStatus] = useState<'idle' | 'scanning' | 'transmitting' | 'sent'>('idle');
+    const { playSound } = useCyberSound();
 
     const handlePing = (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus('sending');
-        // Simulate sending
-        setTimeout(() => setStatus('sent'), 1500);
+        playSound('access');
+        setStatus('scanning');
+
+        // Scan Sequence
+        setTimeout(() => {
+            playSound('alert');
+            setStatus('transmitting');
+
+            // Transmit Sequence
+            setTimeout(() => {
+                playSound('click');
+                setStatus('sent');
+                setTimeout(() => setStatus('idle'), 5000);
+            }, 2000);
+        }, 1500);
     }
 
     return (
@@ -86,15 +101,44 @@ export default function Comms() {
                         </div>
 
                         <button
-                            disabled={status === 'sending' || status === 'sent'}
+                            disabled={status !== 'idle'}
                             className={`
-                        w-full py-4 font-bold font-[family-name:var(--font-display)] tracking-widest flex items-center justify-center gap-2 transition-all
+                        w-full py-4 font-bold font-[family-name:var(--font-display)] tracking-widest flex items-center justify-center gap-2 transition-all relative overflow-hidden
                         ${status === 'sent' ? 'bg-neon-green text-black' : 'bg-neon-blue text-black hover:bg-white hover:text-black'}
+                        ${status !== 'idle' ? 'cursor-wait opacity-80' : ''}
                     `}
                         >
-                            {status === 'idle' && <>INITIATE UPLINK <Send className="w-4 h-4" /></>}
-                            {status === 'sending' && <span className="animate-pulse">TRANSMITTING...</span>}
-                            {status === 'sent' && <span>TRANSMISSION COMPLETE</span>}
+                            <AnimatePresence mode="wait">
+                                {status === 'idle' && (
+                                    <motion.div key="idle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-2">
+                                        INITIATE UPLINK <Send className="w-4 h-4" />
+                                    </motion.div>
+                                )}
+                                {status === 'scanning' && (
+                                    <motion.div key="scanning" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-2">
+                                        <Fingerprint className="w-4 h-4 animate-pulse" /> SCANNING_BIOMETRICS...
+                                    </motion.div>
+                                )}
+                                {status === 'transmitting' && (
+                                    <motion.div key="transmitting" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-2">
+                                        <Lock className="w-4 h-4 animate-spin" /> ENCRYPTING_PAYLOAD...
+                                    </motion.div>
+                                )}
+                                {status === 'sent' && (
+                                    <motion.div key="sent" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-2">
+                                        <ShieldCheck className="w-4 h-4" /> TRANSMISSION COMPLETE
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+
+                            {/* Scanning bar effect during scan */}
+                            {status === 'scanning' && (
+                                <motion.div
+                                    className="absolute inset-x-0 h-1 bg-white/50 z-10"
+                                    animate={{ top: ['0%', '100%', '0%'] }}
+                                    transition={{ duration: 0.5, repeat: Infinity }}
+                                />
+                            )}
                         </button>
                     </form>
                 </div>
