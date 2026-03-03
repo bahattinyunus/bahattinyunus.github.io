@@ -141,10 +141,8 @@ export default function Home() {
 
       {/* Action Buttons */}
       <div className="flex flex-wrap gap-4 pt-6">
-        <Link href="/operations">
-          <a className="px-8 py-4 bg-neon-blue text-black font-bold font-[family-name:var(--font-display)] tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all flex items-center gap-2">
-            INITIATE PROTOCOLS <ArrowRight className="w-4 h-4" />
-          </a>
+        <Link href="/operations" className="px-8 py-4 bg-neon-blue text-black font-bold font-[family-name:var(--font-display)] tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all flex items-center gap-2">
+          INITIATE PROTOCOLS <ArrowRight className="w-4 h-4" />
         </Link>
 
         <a href={profileData.personal.github_url} target="_blank" className="px-8 py-4 border border-white/20 text-white font-mono tracking-wider hover:bg-white/10 transition-all flex items-center gap-2">

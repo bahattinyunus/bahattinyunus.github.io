@@ -117,23 +117,23 @@ export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
                         const isActive = location === item.path;
                         const Icon = item.icon;
                         return (
-                            <Link key={item.path} href={item.path}>
-                                <a
-                                    onClick={() => playSound('click')}
-                                    onMouseEnter={() => playSound('hover')}
-                                    className={`
+                            <Link
+                                key={item.path}
+                                href={item.path}
+                                onClick={() => playSound('click')}
+                                onMouseEnter={() => playSound('hover')}
+                                className={`
                   relative px-6 py-2 flex items-center gap-3 font-[family-name:var(--font-display)] tracking-wider text-sm transition-all duration-300
                   ${isActive
-                                            ? 'text-black bg-neon-blue clip-path-hexagon shadow-[0_0_20px_rgba(0,243,255,0.4)]'
-                                            : 'text-white/60 hover:text-neon-blue hover:bg-white/5'
-                                        }
+                                        ? 'text-black bg-neon-blue clip-path-hexagon shadow-[0_0_20px_rgba(0,243,255,0.4)]'
+                                        : 'text-white/60 hover:text-neon-blue hover:bg-white/5'
+                                    }
                 `}>
-                                    {isActive && (
-                                        <span className="absolute left-0 bottom-0 top-0 w-1 bg-white/50 animate-pulse"></span>
-                                    )}
-                                    <Icon className="w-4 h-4" />
-                                    {item.label}
-                                </a>
+                                {isActive && (
+                                    <span className="absolute left-0 bottom-0 top-0 w-1 bg-white/50 animate-pulse"></span>
+                                )}
+                                <Icon className="w-4 h-4" />
+                                {item.label}
                             </Link>
                         );
                     })}
