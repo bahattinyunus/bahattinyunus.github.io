@@ -28472,7 +28472,7 @@ const createMotionComponent = /* @__PURE__ */ createMotionComponentFactory({
   ...drag,
   ...layout
 }, createDomVisualElement);
-const motion$1 = /* @__PURE__ */ createDOMMotionComponentProxy(createMotionComponent);
+const motion = /* @__PURE__ */ createDOMMotionComponentProxy(createMotionComponent);
 class PopChildMeasure extends reactExports.Component {
   getSnapshotBeforeUpdate(prevProps) {
     const element = this.props.childRef.current;
@@ -28732,7 +28732,7 @@ const OperationLogs = () => {
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: scrollRef, className: "flex-1 overflow-y-auto space-y-1 scrollbar-hide py-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { mode: "popLayout", children: logs.map((log, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      motion$1.div,
+      motion.div,
       {
         initial: { opacity: 0, x: -10 },
         animate: { opacity: 1, x: 0 },
@@ -28807,7 +28807,7 @@ function Home() {
       ] })
     ] }),
     isSecureMode && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      motion$1.div,
+      motion.div,
       {
         initial: { opacity: 0, scale: 0.95 },
         animate: { opacity: 1, scale: 1 },
@@ -28891,7 +28891,7 @@ function Arsenal() {
           const target = skillTree.find((s) => s.id === targetId);
           if (!target) return null;
           return /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion$1.line,
+            motion.line,
             {
               x1: `${skill.x / 600 * 100}%`,
               y1: `${skill.y / 600 * 100}%`,
@@ -28908,7 +28908,7 @@ function Arsenal() {
         }))
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 w-full h-[500px]", children: skillTree.map((skill, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion$1.div,
+        motion.div,
         {
           initial: { scale: 0 },
           animate: { scale: 1 },
@@ -28940,7 +28940,7 @@ function Arsenal() {
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `font-mono opacity-0 group-hover:opacity-100 transition-opacity ${isSecureMode ? "text-yellow-500" : "text-neon-blue"}`, children: "OPTIMIZED" })
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-0.5 w-full bg-black border border-white/5 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion$1.div,
+            motion.div,
             {
               initial: { width: 0 },
               whileInView: { width: `${Math.random() * 20 + 80}%` },
@@ -28970,7 +28970,7 @@ const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
   return /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-12 pointer-events-none", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(
-      motion$1.div,
+      motion.div,
       {
         initial: { opacity: 0 },
         animate: { opacity: 1 },
@@ -28980,7 +28980,7 @@ const ProjectModal = ({ project, onClose }) => {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      motion$1.div,
+      motion.div,
       {
         initial: { opacity: 0, scale: 0.9, y: 20 },
         animate: { opacity: 1, scale: 1, y: 0 },
@@ -29172,7 +29172,7 @@ function Operations() {
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid md:grid-cols-2 lg:grid-cols-3 gap-6", children: filteredProjects.map((project, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-      motion$1.div,
+      motion.div,
       {
         initial: { opacity: 0, scale: 0.95 },
         whileInView: { opacity: 1, scale: 1 },
@@ -29324,25 +29324,25 @@ function Comms() {
                     `,
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs(AnimatePresence, { mode: "wait", children: [
-                status === "idle" && /* @__PURE__ */ jsxRuntimeExports.jsxs(motion$1.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "flex items-center gap-2", children: [
+                status === "idle" && /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "flex items-center gap-2", children: [
                   "INITIATE UPLINK ",
                   /* @__PURE__ */ jsxRuntimeExports.jsx(Send, { className: "w-4 h-4" })
                 ] }, "idle"),
-                status === "scanning" && /* @__PURE__ */ jsxRuntimeExports.jsxs(motion$1.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "flex items-center gap-2", children: [
+                status === "scanning" && /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "flex items-center gap-2", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(Fingerprint, { className: "w-4 h-4 animate-pulse" }),
                   " SCANNING_BIOMETRICS..."
                 ] }, "scanning"),
-                status === "transmitting" && /* @__PURE__ */ jsxRuntimeExports.jsxs(motion$1.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "flex items-center gap-2", children: [
+                status === "transmitting" && /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "flex items-center gap-2", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { className: "w-4 h-4 animate-spin" }),
                   " ENCRYPTING_PAYLOAD..."
                 ] }, "transmitting"),
-                status === "sent" && /* @__PURE__ */ jsxRuntimeExports.jsxs(motion$1.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "flex items-center gap-2", children: [
+                status === "sent" && /* @__PURE__ */ jsxRuntimeExports.jsxs(motion.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "flex items-center gap-2", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldCheck, { className: "w-4 h-4" }),
                   " TRANSMISSION COMPLETE"
                 ] }, "sent")
               ] }),
               status === "scanning" && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                motion$1.div,
+                motion.div,
                 {
                   className: "absolute inset-x-0 h-1 bg-white/50 z-10",
                   animate: { top: ["0%", "100%", "0%"] },
@@ -29429,7 +29429,7 @@ const Intelligence = () => {
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
       filteredPosts.map((post, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-        motion$1.a,
+        motion.a,
         {
           href: post.url,
           target: "_blank",
@@ -31437,7 +31437,7 @@ const VaultShell = () => {
   const { isSecureMode, metrics: metrics2 } = useVault();
   if (!isSecureMode) return null;
   return /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    motion$1.div,
+    motion.div,
     {
       initial: { opacity: 0 },
       animate: { opacity: 1 },
@@ -31447,7 +31447,7 @@ const VaultShell = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-scanlines opacity-[0.15] mix-blend-overlay" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-20 left-6 space-y-4", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            motion$1.div,
+            motion.div,
             {
               initial: { x: -100 },
               animate: { x: 0 },
@@ -31475,7 +31475,7 @@ const VaultShell = () => {
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            motion$1.div,
+            motion.div,
             {
               initial: { x: -100 },
               animate: { x: 0 },
@@ -31496,7 +31496,7 @@ const VaultShell = () => {
                       ] })
                     ] }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-1 bg-white/10 w-32 relative overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      motion$1.div,
+                      motion.div,
                       {
                         className: "absolute inset-y-0 left-0 bg-neon-blue",
                         animate: { width: `${metrics2?.cpu}%` }
@@ -31512,7 +31512,7 @@ const VaultShell = () => {
                       ] })
                     ] }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-1 bg-white/10 w-32 relative overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      motion$1.div,
+                      motion.div,
                       {
                         className: "absolute inset-y-0 left-0 bg-neon-green",
                         animate: { width: `${metrics2?.memory}%` }
@@ -31525,7 +31525,7 @@ const VaultShell = () => {
           )
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-20 right-6 space-y-4", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion$1.div,
+          motion.div,
           {
             initial: { x: 100 },
             animate: { x: 0 },
@@ -31769,4 +31769,4 @@ function App() {
   ] }) }) }) });
 }
 clientExports.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(App, {}));
-//# sourceMappingURL=index-BESj63Z2.js.map
+//# sourceMappingURL=index-B3eQd3el.js.map
