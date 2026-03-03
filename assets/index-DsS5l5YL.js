@@ -28850,10 +28850,10 @@ function Home() {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-4 pt-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { href: "/operations", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { className: "px-8 py-4 bg-neon-blue text-black font-bold font-[family-name:var(--font-display)] tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all flex items-center gap-2", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { href: "/operations", className: "px-8 py-4 bg-neon-blue text-black font-bold font-[family-name:var(--font-display)] tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all flex items-center gap-2", children: [
         "INITIATE PROTOCOLS ",
         /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-4 h-4" })
-      ] }) }),
+      ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: profileData.personal.github_url, target: "_blank", className: "px-8 py-4 border border-white/20 text-white font-mono tracking-wider hover:bg-white/10 transition-all flex items-center gap-2", children: [
         "GITHUB LINK ",
         /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { className: "w-4 h-4" })
@@ -31709,9 +31709,10 @@ const CyberShell = ({ children }) => {
       /* @__PURE__ */ jsxRuntimeExports.jsx("nav", { className: "flex items-center gap-1 md:gap-4 overflow-x-auto w-full md:w-auto p-1", children: navItems.map((item) => {
         const isActive = location2 === item.path;
         const Icon2 = item.icon;
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { href: item.path, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          "a",
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          Link,
           {
+            href: item.path,
             onClick: () => playSound("click"),
             onMouseEnter: () => playSound("hover"),
             className: `
@@ -31723,8 +31724,9 @@ const CyberShell = ({ children }) => {
               /* @__PURE__ */ jsxRuntimeExports.jsx(Icon2, { className: "w-4 h-4" }),
               item.label
             ]
-          }
-        ) }, item.path);
+          },
+          item.path
+        );
       }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "hidden lg:flex items-center gap-4 px-6 border-x border-white/10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-1 w-48", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[8px] font-mono text-white/40 uppercase tracking-widest", children: [
@@ -31769,4 +31771,4 @@ function App() {
   ] }) }) }) });
 }
 clientExports.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(App, {}));
-//# sourceMappingURL=index-B3eQd3el.js.map
+//# sourceMappingURL=index-DsS5l5YL.js.map
