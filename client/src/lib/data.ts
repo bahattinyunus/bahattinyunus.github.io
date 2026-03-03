@@ -210,7 +210,18 @@ Milli Teknoloji Hamlesi'nin bir neferi olarak, sadece kod yazmayı değil; strat
       forks: 24,
       language: "Python",
       url: "https://github.com/bahattinyunus/BeeRouteANN-for-Antenna-Design",
-      image: "/images/project-beeroute.png"
+      image: "/images/project-beeroute.png",
+      architecture: [
+        "Sürü Zekası (Ant Colony Optimization)",
+        "Stokastik Karar Mekanizmaları",
+        "Trabzon Protokolü Veri Katmanı",
+        "O(G·S·n²) Karmaşıklık Optimizasyonu"
+      ],
+      security: [
+        "Gerçek Zamanlı Anomali Tespiti",
+        "Şifreli Telemetri Kanalları",
+        "Merkeziyetçi Olmayan Veri Bütünlüğü"
+      ]
     },
     {
       name: "PoseidonEye",
@@ -264,7 +275,18 @@ Milli Teknoloji Hamlesi'nin bir neferi olarak, sadece kod yazmayı değil; strat
       forks: 35,
       language: "Python",
       url: "https://github.com/bahattinyunus/ANKA-LLM",
-      image: "/images/project-anka-llm.jpg"
+      image: "/images/project-anka-llm.jpg",
+      architecture: [
+        "Knowledge Distillation (Öğretmen-Öğrenci Modeli)",
+        "Düşük Parametreli (7B/8B) Verimli Mimari",
+        "Donanım Bağımsız Çıkarım Çekirdeği",
+        "Türkçe Semantik Vektör Uzayı"
+      ],
+      security: [
+        "Prompt Injection Koruması",
+        "Hassas Veri Maskeleme",
+        "Model Poisoning Tespiti"
+      ]
     },
     {
       name: "Radiosonde-Hunting",

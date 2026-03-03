@@ -53,7 +53,7 @@ export default function ProjectDetail() {
                             <div className="space-y-4">
                                 <h3 className="text-sm font-mono text-neon-blue">TECH_STACK</h3>
                                 <ul className="space-y-2">
-                                    {['Modular Kernel', 'Neural Processing Unit', 'Distributed Database', 'End-to-End Encryption'].map(item => (
+                                    {(project.architecture || ['Modular Kernel', 'Neural Processing Unit', 'Distributed Database', 'End-to-End Encryption']).map(item => (
                                         <li key={item} className="flex items-center gap-2 text-xs text-white/50 font-mono">
                                             <Zap className="w-3 h-3 text-neon-green" /> {item}
                                         </li>
@@ -63,7 +63,7 @@ export default function ProjectDetail() {
                             <div className="space-y-4">
                                 <h3 className="text-sm font-mono text-neon-green">SECURITY_PROTOCOLS</h3>
                                 <ul className="space-y-2">
-                                    {['Zero Trust Architecture', 'Anomaly Detection', 'Hardware-level Security', 'Real-time Monitoring'].map(item => (
+                                    {(project.security || ['Zero Trust Architecture', 'Anomaly Detection', 'Hardware-level Security', 'Real-time Monitoring']).map(item => (
                                         <li key={item} className="flex items-center gap-2 text-xs text-white/50 font-mono">
                                             <Shield className="w-3 h-3 text-neon-red" /> {item}
                                         </li>

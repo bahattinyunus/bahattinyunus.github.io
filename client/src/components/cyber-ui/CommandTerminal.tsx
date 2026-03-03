@@ -3,12 +3,17 @@
 import React, { useEffect, useState } from "react";
 import { Command } from "cmdk";
 import { useLocation } from "wouter";
-import { Shield, Cpu, Terminal, Target, Radio, Search, ExternalLink } from "lucide-react";
+import { Shield, Cpu, Terminal, Target, Radio, Search, ExternalLink, Activity, Lock, Unlock, User } from "lucide-react";
 import { profileData } from "@/lib/data";
+import { useVault } from "@/contexts/VaultContext";
+import { useCyberSound } from "@/hooks/use-cyber-sound";
 
 export const CommandTerminal = () => {
     const [open, setOpen] = useState(false);
+    const [inputValue, setInputValue] = useState("");
     const [, setLocation] = useLocation();
+    const { isSecureMode, toggleSecureMode } = useVault();
+    const { playSound } = useCyberSound();
 
     useEffect(() => {
         const down = (e: KeyboardEvent) => {
@@ -26,6 +31,20 @@ export const CommandTerminal = () => {
         command();
     };
 
+    const handleSystemCommand = (cmd: string) => {
+        const normalized = cmd.toLowerCase().trim();
+        if (normalized === "locks" || normalized === "secure") {
+            toggleSecureMode();
+            playSound('access');
+            setOpen(false);
+        } else if (normalized === "whoami") {
+            // Potentially show a toast or custom notification
+            playSound('click');
+        } else if (normalized === "clear") {
+            setInputValue("");
+        }
+    };
+
     return (
         <Command.Dialog
             open={open}
@@ -37,7 +56,17 @@ export const CommandTerminal = () => {
                 <Search className="w-5 h-5 text-neon-blue mr-3" />
                 <Command.Input
                     autoFocus
-                    placeholder="Type a command or search..."
+                    value={inputValue}
+                    onValueChange={(val) => {
+                        setInputValue(val);
+                        if (['locks', 'whoami', 'clear'].includes(val.toLowerCase())) {
+                            // visual cue for system command
+                        }
+                    }}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') handleSystemCommand(inputValue);
+                    }}
+                    placeholder="Type a command (locks, whoami, clear) or search..."
                     className="flex-1 bg-transparent text-white font-mono outline-none placeholder:text-white/30 text-lg"
                 />
                 <div className="flex items-center gap-1 text-xs font-mono text-white/40">
@@ -50,75 +79,71 @@ export const CommandTerminal = () => {
                     No matching protocols found.
                 </Command.Empty>
 
-                <Command.Group heading="NAVIGATION" className="text-xs font-mono text-neon-blue/70 mb-2 px-2 mt-2">
+                <Command.Group heading="SYSTEM COMMANDS" className="text-xs font-mono text-neon-blue/70 mb-2 px-2 mt-2">
                     <Command.Item
-                        onSelect={() => runCommand(() => setLocation("/"))}
+                        onSelect={() => runCommand(() => toggleSecureMode())}
                         className="flex items-center gap-3 px-3 py-3 text-white hover:bg-neon-blue/20 rounded cursor-pointer group transition-colors data-[selected=true]:bg-neon-blue/20"
                     >
-                        <Shield className="w-4 h-4 text-neon-blue group-hover:animate-pulse" />
-                        <span className="font-bold">MISSION CONTROL</span>
+                        {isSecureMode ? <Unlock className="w-4 h-4 text-yellow-500" /> : <Lock className="w-4 h-4 text-neon-blue" />}
+                        <span className="font-bold">{isSecureMode ? 'DEACTIVATE_SECURE_MODE' : 'INITIALIZE_SECURE_MODE'}</span>
+                        <kbd className="ml-auto text-[10px] bg-white/5 px-1.5 py-0.5 rounded border border-white/10">Type 'locks'</kbd>
+                    </Command.Item>
+                    <Command.Item
+                        className="flex items-center gap-3 px-3 py-3 text-white hover:bg-neon-blue/20 rounded cursor-pointer group transition-colors data-[selected=true]:bg-neon-blue/20"
+                    >
+                        <User className="w-4 h-4 text-neon-green" />
+                        <span className="font-bold">WHOAMI</span>
+                        <kbd className="ml-auto text-[10px] bg-white/5 px-1.5 py-0.5 rounded border border-white/10">Type 'whoami'</kbd>
+                    </Command.Item>
+                </Command.Group>
+
+                <Command.Group heading="NAVIGATION" className="text-[10px] font-mono text-white/20 mb-2 px-2 mt-4 uppercase tracking-widest">
+                    <Command.Item
+                        onSelect={() => runCommand(() => setLocation("/"))}
+                        className="flex items-center gap-3 px-3 py-3 text-white/80 hover:bg-white/5 rounded cursor-pointer transition-colors data-[selected=true]:bg-white/5"
+                    >
+                        <Shield className="w-4 h-4 text-white/40" />
+                        <span>MISSION_CONTROL</span>
                     </Command.Item>
                     <Command.Item
                         onSelect={() => runCommand(() => setLocation("/arsenal"))}
-                        className="flex items-center gap-3 px-3 py-3 text-white hover:bg-neon-blue/20 rounded cursor-pointer group transition-colors data-[selected=true]:bg-neon-blue/20"
+                        className="flex items-center gap-3 px-3 py-3 text-white/80 hover:bg-white/5 rounded cursor-pointer transition-colors data-[selected=true]:bg-white/5"
                     >
-                        <Cpu className="w-4 h-4 text-neon-red group-hover:animate-pulse" />
-                        <span className="font-bold">ARSENAL</span>
+                        <Cpu className="w-4 h-4 text-white/40" />
+                        <span>ARSENAL</span>
                     </Command.Item>
                     <Command.Item
                         onSelect={() => runCommand(() => setLocation("/operations"))}
-                        className="flex items-center gap-3 px-3 py-3 text-white hover:bg-neon-blue/20 rounded cursor-pointer group transition-colors data-[selected=true]:bg-neon-blue/20"
+                        className="flex items-center gap-3 px-3 py-3 text-white/80 hover:bg-white/5 rounded cursor-pointer transition-colors data-[selected=true]:bg-white/5"
                     >
-                        <Target className="w-4 h-4 text-neon-green group-hover:animate-pulse" />
-                        <span className="font-bold">OPERATIONS</span>
-                    </Command.Item>
-                    <Command.Item
-                        onSelect={() => runCommand(() => setLocation("/comms"))}
-                        className="flex items-center gap-3 px-3 py-3 text-white hover:bg-neon-blue/20 rounded cursor-pointer group transition-colors data-[selected=true]:bg-neon-blue/20"
-                    >
-                        <Radio className="w-4 h-4 text-yellow-500 group-hover:animate-pulse" />
-                        <span className="font-bold">COMMS UPLINK</span>
+                        <Target className="w-4 h-4 text-white/40" />
+                        <span>OPERATIONS</span>
                     </Command.Item>
                 </Command.Group>
 
-                <Command.Group heading="SYSTEM LINKS" className="text-xs font-mono text-neon-blue/70 mb-2 px-2 mt-4">
-                    <Command.Item
-                        onSelect={() => runCommand(() => window.open(profileData.personal.github_url, "_blank"))}
-                        className="flex items-center gap-3 px-3 py-3 text-white hover:bg-white/10 rounded cursor-pointer group transition-colors data-[selected=true]:bg-white/10"
-                    >
-                        <div className="w-4 h-4 flex items-center justify-center">
-                            <ExternalLink className="w-3 h-3 text-white/50" />
-                        </div>
-                        <span>GitHub Repository</span>
-                    </Command.Item>
-                    <Command.Item
-                        onSelect={() => runCommand(() => window.open(profileData.personal.linkedin_url, "_blank"))}
-                        className="flex items-center gap-3 px-3 py-3 text-white hover:bg-white/10 rounded cursor-pointer group transition-colors data-[selected=true]:bg-white/10"
-                    >
-                        <div className="w-4 h-4 flex items-center justify-center">
-                            <ExternalLink className="w-3 h-3 text-white/50" />
-                        </div>
-                        <span>LinkedIn Network</span>
-                    </Command.Item>
-                </Command.Group>
-
-                <Command.Group heading="FEATURED OPERATIONS" className="text-xs font-mono text-neon-blue/70 mb-2 px-2 mt-4">
-                    {profileData.featured_projects.slice(0, 5).map(project => (
+                <Command.Group heading="QUICK ASSETS" className="text-[10px] font-mono text-white/20 mb-2 px-2 mt-4 uppercase tracking-widest">
+                    {profileData.featured_projects.slice(0, 3).map(project => (
                         <Command.Item
                             key={project.name}
-                            onSelect={() => runCommand(() => window.open(project.url, "_blank"))}
-                            className="flex items-center gap-3 px-3 py-3 text-white hover:bg-white/10 rounded cursor-pointer group transition-colors data-[selected=true]:bg-white/10"
+                            onSelect={() => runCommand(() => setLocation(`/operations/${project.name.toLowerCase()}`))}
+                            className="flex items-center gap-3 px-3 py-3 text-white/80 hover:bg-white/5 rounded cursor-pointer transition-colors data-[selected=true]:bg-white/5"
                         >
-                            <Terminal className="w-4 h-4 text-neon-green/50" />
-                            <span>{project.name}</span>
+                            <Terminal className="w-4 h-4 text-neon-blue/30" />
+                            <span>{project.name.toUpperCase()}</span>
                         </Command.Item>
                     ))}
                 </Command.Group>
             </Command.List>
 
-            <div className="border-t border-white/10 p-2 bg-black/50 text-[10px] font-mono text-white/30 flex justify-between px-4">
-                <span>COMMAND LINE INTERFACE v2.4</span>
-                <span>SECURE//ENCRYPTED</span>
+            <div className="border-t border-white/10 p-3 bg-black/50 text-[10px] font-mono text-white/30 flex justify-between px-4 items-center">
+                <div className="flex items-center gap-4">
+                    <span className="flex items-center gap-1"><Activity className="w-3 h-3 text-neon-green" /> NODE_ONLINE</span>
+                    <span>OS_V4.5.STRATO</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <kbd className="bg-white/5 px-1 py-0.5 rounded">↑↓</kbd>
+                    <kbd className="bg-white/5 px-1 py-0.5 rounded">ENTER</kbd>
+                </div>
             </div>
         </Command.Dialog>
     );

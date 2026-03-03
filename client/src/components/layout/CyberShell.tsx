@@ -10,6 +10,7 @@ import { useKonamiCode } from "@/hooks/use-konami-code";
 import { useVault } from "@/contexts/VaultContext";
 import { VaultShell } from "./VaultShell";
 import { NeuralBackground } from "../cyber-ui/NeuralBackground";
+import { VanguardAI } from "../cyber-ui/VanguardAI";
 
 interface CyberShellProps {
     children: React.ReactNode;
@@ -63,6 +64,9 @@ export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
 
             {/* Command Palette */}
             <CommandTerminal />
+
+            {/* AI Assistant */}
+            <VanguardAI />
 
             {/* Top HUD Bar */}
             <header className="h-16 border-b border-white/10 flex items-center justify-between px-6 bg-black/40 backdrop-blur-md z-30 relative">
