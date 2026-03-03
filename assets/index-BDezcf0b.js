@@ -20198,6 +20198,10 @@ const Activity = createLucideIcon("Activity", [
     }
   ]
 ]);
+const ArrowLeft = createLucideIcon("ArrowLeft", [
+  ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
+  ["path", { d: "M19 12H5", key: "x3x0zl" }]
+]);
 const ArrowRight = createLucideIcon("ArrowRight", [
   ["path", { d: "M5 12h14", key: "1ays0h" }],
   ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
@@ -20208,6 +20212,16 @@ const ArrowUpNarrowWide = createLucideIcon("ArrowUpNarrowWide", [
   ["path", { d: "M11 12h4", key: "q8tih4" }],
   ["path", { d: "M11 16h7", key: "uosisv" }],
   ["path", { d: "M11 20h10", key: "jvxblo" }]
+]);
+const BookOpen = createLucideIcon("BookOpen", [
+  ["path", { d: "M12 7v14", key: "1akyts" }],
+  [
+    "path",
+    {
+      d: "M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z",
+      key: "ruj8y"
+    }
+  ]
 ]);
 const Brain = createLucideIcon("Brain", [
   [
@@ -20242,6 +20256,14 @@ const CircleAlert = createLucideIcon("CircleAlert", [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
   ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
+]);
+const CircleCheck = createLucideIcon("CircleCheck", [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
+]);
+const Clock = createLucideIcon("Clock", [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["polyline", { points: "12 6 12 12 16 14", key: "68esgv" }]
 ]);
 const Cpu = createLucideIcon("Cpu", [
   ["rect", { width: "16", height: "16", x: "4", y: "4", rx: "2", key: "14l7u7" }],
@@ -20278,6 +20300,12 @@ const Fingerprint = createLucideIcon("Fingerprint", [
   ["path", { d: "M8.65 22c.21-.66.45-1.32.57-2", key: "13wd9y" }],
   ["path", { d: "M9 6.8a6 6 0 0 1 9 5.2v2", key: "1fr1j5" }]
 ]);
+const GitBranch = createLucideIcon("GitBranch", [
+  ["line", { x1: "6", x2: "6", y1: "3", y2: "15", key: "17qcm7" }],
+  ["circle", { cx: "18", cy: "6", r: "3", key: "1h7g24" }],
+  ["circle", { cx: "6", cy: "18", r: "3", key: "fqmcym" }],
+  ["path", { d: "M18 9a9 9 0 0 1-9 9", key: "n2h4wq" }]
+]);
 const Github = createLucideIcon("Github", [
   [
     "path",
@@ -20302,6 +20330,17 @@ const Info = createLucideIcon("Info", [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["path", { d: "M12 16v-4", key: "1dtifu" }],
   ["path", { d: "M12 8h.01", key: "e9boi3" }]
+]);
+const Layers = createLucideIcon("Layers", [
+  [
+    "path",
+    {
+      d: "m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z",
+      key: "8b97xw"
+    }
+  ],
+  ["path", { d: "m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65", key: "dd6zsq" }],
+  ["path", { d: "m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65", key: "ep9fru" }]
 ]);
 const Linkedin = createLucideIcon("Linkedin", [
   [
@@ -20340,6 +20379,22 @@ const Power = createLucideIcon("Power", [
   ["path", { d: "M12 2v10", key: "mnfbl" }],
   ["path", { d: "M18.4 6.6a9 9 0 1 1-12.77.04", key: "obofu9" }]
 ]);
+const Quote = createLucideIcon("Quote", [
+  [
+    "path",
+    {
+      d: "M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z",
+      key: "rib7q0"
+    }
+  ],
+  [
+    "path",
+    {
+      d: "M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z",
+      key: "1ymkrd"
+    }
+  ]
+]);
 const Radio = createLucideIcon("Radio", [
   ["path", { d: "M4.9 19.1C1 15.2 1 8.8 4.9 4.9", key: "1vaf9d" }],
   ["path", { d: "M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5", key: "u1ii0m" }],
@@ -20364,6 +20419,17 @@ const Send = createLucideIcon("Send", [
     }
   ],
   ["path", { d: "m21.854 2.147-10.94 10.939", key: "12cjpa" }]
+]);
+const ShieldAlert = createLucideIcon("ShieldAlert", [
+  [
+    "path",
+    {
+      d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+      key: "oel41y"
+    }
+  ],
+  ["path", { d: "M12 8v4", key: "1got3b" }],
+  ["path", { d: "M12 16h.01", key: "1drbdi" }]
 ]);
 const ShieldCheck = createLucideIcon("ShieldCheck", [
   [
@@ -20622,6 +20688,7 @@ const matchRoute = (parser, route, path, loose) => {
     ...loose ? [$base] : []
   ] : [false, null];
 };
+const useRoute = (pattern) => matchRoute(useRouter().parser, pattern, useLocation()[0]);
 const Router$1 = ({ children, ...props }) => {
   const parent_ = useRouter();
   const parent = props.hook ? defaultRouter : parent_;
@@ -20667,7 +20734,7 @@ const Route = ({ path, nest, match, ...renderProps }) => {
   const children = base ? reactExports.createElement(Router$1, { base }, h_route(renderProps, params)) : h_route(renderProps, params);
   return reactExports.createElement(ParamsCtx.Provider, { value: params, children });
 };
-const Link = reactExports.forwardRef((props, ref) => {
+const Link$1 = reactExports.forwardRef((props, ref) => {
   const router = useRouter();
   const [currentPath, navigate2] = useLocationFromRouter(router);
   const {
@@ -28850,7 +28917,7 @@ function Home() {
       }
     ),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap gap-4 pt-6", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { href: "/operations", className: "px-8 py-4 bg-neon-blue text-black font-bold font-[family-name:var(--font-display)] tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all flex items-center gap-2", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(Link$1, { href: "/operations", className: "px-8 py-4 bg-neon-blue text-black font-bold font-[family-name:var(--font-display)] tracking-wider hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all flex items-center gap-2", children: [
         "INITIATE PROTOCOLS ",
         /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-4 h-4" })
       ] }),
@@ -28920,8 +28987,8 @@ function Arsenal() {
             transform: "translate(-50%, -50%)"
           },
           children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `w-3 h-3 rounded-full animate-pulse ${isSecureMode ? "bg-yellow-500 shadow-[0_0_10px_rgba(234,179,8,1)]" : "bg-neon-blue shadow-[0_0_10px_rgba(0,243,255,1)]"}` }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-[10px] font-mono tracking-tighter px-2 py-0.5 border bg-black/80 whitespace-nowrap group-hover/node:scale-110 transition-transform ${isSecureMode ? "border-yellow-500/40 text-yellow-500" : "border-neon-blue/40 text-neon-blue"}`, children: skill.label })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `w-4 h-4 cyber-hexagon animate-pulse ${isSecureMode ? "bg-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.5)]" : "bg-neon-blue shadow-[0_0_15px_rgba(0,243,255,0.5)]"}` }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-[10px] font-mono tracking-tighter px-2 py-0.5 border bg-black/80 whitespace-nowrap group-hover/node:scale-110 transition-transform cyber-clip-br ${isSecureMode ? "border-yellow-500/40 text-yellow-500" : "border-neon-blue/40 text-neon-blue"}`, children: skill.label })
           ]
         },
         skill.id
@@ -29134,6 +29201,45 @@ const useCyberSound = () => {
   }, []);
   return { playSound };
 };
+const MissionLogs = () => {
+  const missions = [
+    { id: 1, title: "ANKA-LLM Core Optimization", type: "COMPLETED", date: "2026-03-01", branch: "main", status: "success" },
+    { id: 2, title: "BeeRoute Kernel Distribution", type: "DEPLOYED", date: "2026-02-25", branch: "dev/opt-1", status: "success" },
+    { id: 3, title: "Quantum-Edge Security Audit", type: "IN_PROGRESS", date: "2026-02-20", branch: "feat/crypto", status: "pending" },
+    { id: 4, title: "PoseidonEye Sensor Fusion", type: "COMPLETED", date: "2026-02-15", branch: "main", status: "success" }
+  ];
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "mt-12 space-y-6", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "text-xl font-[family-name:var(--font-display)] flex items-center gap-2 text-white", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Clock, { className: "w-5 h-5 text-neon-blue" }),
+      " RECENT_MISSIONS // LOG_FILE"
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent", children: missions.map((mission, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        transition: { delay: i * 0.1 },
+        className: "relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `flex items-center justify-center w-10 h-10 rounded-full border bg-black shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 ${mission.status === "success" ? "border-neon-green/30 text-neon-green" : "border-neon-blue/30 text-neon-blue"}`, children: mission.status === "success" ? /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-5 h-5" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(CircleAlert, { className: "w-5 h-5 animate-pulse" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 bg-white/5 border border-white/10 cyber-clip-br hover:bg-white/10 transition-all", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("time", { className: "font-mono text-[10px] text-white/40", children: mission.date }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 text-[8px] font-mono text-neon-blue/60 group-hover:text-neon-blue transition-colors", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(GitBranch, { className: "w-3 h-3" }),
+                " ",
+                mission.branch.toUpperCase()
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] font-mono text-neon-green/60 mb-1", children: mission.type }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h4", { className: "font-bold text-white tracking-wide", children: mission.title })
+          ] })
+        ]
+      },
+      mission.id
+    )) })
+  ] });
+};
 function Operations() {
   const [filter2, setFilter] = reactExports.useState(null);
   const [selectedProject, setSelectedProject] = reactExports.useState(null);
@@ -29172,20 +29278,15 @@ function Operations() {
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid md:grid-cols-2 lg:grid-cols-3 gap-6", children: filteredProjects.map((project, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-      motion.div,
+      Link,
       {
-        initial: { opacity: 0, scale: 0.95 },
-        whileInView: { opacity: 1, scale: 1 },
-        transition: { delay: i * 0.05 },
-        className: "group relative h-full",
+        href: `/operations/${project.name.toLowerCase()}`,
+        className: "group relative h-full cursor-pointer",
         children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
-            onClick: () => {
-              setSelectedProject(project);
-              playSound("click");
-            },
-            className: "h-full bg-black/40 border border-white/10 group-hover:border-neon-blue/50 group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all duration-300 flex flex-col cyber-clip-br cursor-pointer",
+            onClick: () => playSound("click"),
+            className: "h-full bg-black/40 border border-white/10 group-hover:border-neon-blue/50 group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all duration-300 flex flex-col cyber-clip-br",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative h-48 overflow-hidden", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: project.image, alt: project.name, className: "w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" }),
@@ -29236,7 +29337,8 @@ function Operations() {
         )
       },
       i
-    )) })
+    )) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(MissionLogs, {})
   ] });
 }
 function Comms() {
@@ -29390,7 +29492,22 @@ const Intelligence = () => {
           " KNOWLEDGE BASE"
         ] })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative group", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6 mb-12", children: [
+        { label: "NEURAL_LATENCY", value: "12ms", icon: Activity, color: "text-neon-blue" },
+        { label: "CORE_INTEGRITY", value: "98.4%", icon: Shield, color: "text-neon-green" },
+        { label: "THREAT_LEVEL", value: "LOW", icon: Zap, color: "text-neon-red" }
+      ].map((stat, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 bg-white/5 border border-white/10 cyber-clip-br group hover:bg-white/10 transition-all", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between mb-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(stat.icon, { className: `w-4 h-4 ${stat.color}` }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] font-mono text-white/40", children: [
+            "SYSTEM_METRIC_",
+            i + 1
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs font-mono text-white/60 mb-1", children: stat.label }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-2xl font-bold font-[family-name:var(--font-display)] text-white", children: stat.value })
+      ] }, i)) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative group mb-12", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { className: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50 group-hover:text-yellow-500 transition-colors" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "input",
@@ -29399,7 +29516,7 @@ const Intelligence = () => {
             placeholder: isSecureMode ? "SEARCH_SECURE_DB..." : "SEARCH_DB...",
             value: searchTerm,
             onChange: (e) => setSearchTerm(e.target.value),
-            className: `bg-black/40 border pl-10 pr-4 py-2 text-sm font-mono text-white focus:outline-none w-full md:w-64 transition-all ${isSecureMode ? "border-yellow-500/20 focus:border-yellow-500" : "border-white/20 focus:border-neon-blue"}`
+            className: `bg-black/40 border pl-10 pr-4 py-3 text-sm font-mono text-white focus:outline-none w-full transition-all group-hover:animate-glitch-sm ${isSecureMode ? "border-yellow-500/20 focus:border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.1)]" : "border-white/20 focus:border-neon-blue shadow-[0_0_15px_rgba(0,243,255,0.1)]"}`
           }
         )
       ] })
@@ -29469,6 +29586,159 @@ const Intelligence = () => {
     ] })
   ] });
 };
+function Doctrine() {
+  const doctrines = [
+    {
+      title: "PRAGMATIC_ENGINEERING",
+      content: "Sadece çalışan değil, yaşayan sistemler inşa et. Karmaşıklık, sistemin en büyük düşmanıdır. En iyi kod, yazılmasına gerek kalmayan koddur.",
+      icon: Cpu
+    },
+    {
+      title: "SOVEREIGN_INTELLIGENCE",
+      content: "Teknoloji bir araç değil, stratejik bir varlıktır. Milli teknoloji hamlesi, sadece bir slogan değil, mühendislik etiğimizin temel taşıdır.",
+      icon: ShieldAlert
+    },
+    {
+      title: "ASYMMETRIC_GROWTH",
+      content: "Diploma bir başlangıçtır, yetkinlik ise bir varış noktası. Akademik sınırların ötesinde, kendi müfredatını inşa et ve 'Base Layer'ı her gün güncelle.",
+      icon: Zap
+    }
+  ];
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-5xl mx-auto space-y-16 pb-20", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-4 border-l-4 border-neon-blue pl-8 py-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 text-neon-blue", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(BookOpen, { className: "w-8 h-8 animate-pulse" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-sm tracking-[0.3em]", children: "OPERATIONAL_DOCTRINE_V1.0" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-5xl md:text-7xl font-[family-name:var(--font-display)] font-bold text-white tracking-tighter", children: "THE_MANIFESTO." }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-white/40 font-mono italic max-w-2xl", children: '"Mimar, en zor kodu yazan değil; sistem entropisine karşı durarak yazılması gereken kod miktarını en aza indiren zanaatkardır."' })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid md:grid-cols-2 lg:grid-cols-3 gap-8", children: doctrines.map((pillar, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        transition: { delay: i * 0.1 },
+        className: "p-8 bg-black/40 border border-white/10 cyber-clip-tl hover:border-neon-blue/40 transition-all group",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(pillar.icon, { className: "w-6 h-6 text-neon-blue mb-6 group-hover:scale-110 transition-transform" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-bold font-[family-name:var(--font-display)] text-white mb-4 tracking-wider", children: pillar.title }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm font-mono text-white/60 leading-relaxed", children: pillar.content })
+        ]
+      },
+      pillar.title
+    )) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "space-y-12", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px bg-gradient-to-r from-neon-blue/50 via-white/10 to-transparent" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-2 gap-16", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-3xl font-[family-name:var(--font-display)] text-white", children: "VISION_PROTOCOL" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 font-mono text-sm text-white/50 leading-loose", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Yapay zeka sistemlerinin sadece kullanıcısı değil, mimarı olma vizyonuyla; LLM optimizasyonu, siber güvenlik ve karmaşık sistem mimarileri üzerine odaklanıyoruz." }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "Yerli donanımlar banttan çıkana kadar, düşük parametreli modelleri (7B/8B) devasa modellerin yetenekleriyle donatan Knowledge Distillation süreçlerini yönetiyoruz." })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative p-12 bg-white/5 cyber-clip-br border border-white/10 overflow-hidden group", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Quote, { className: "absolute top-4 left-4 w-12 h-12 text-neon-blue/10 group-hover:text-neon-blue/20 transition-colors" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 font-mono text-lg text-white/80 italic leading-relaxed", children: `"Milli Teknoloji Hamlesi'nin bir neferi olarak, sadece kod yazmayı değil; stratejik düşünen, etik değerlere bağlı ve küresel standartlarda teknoloji üreten bir mühendislik kültürü oluşturmayı hedefliyorum."` }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-8 font-[family-name:var(--font-display)] text-neon-blue", children: "BYC // FOUNDER @ ANKA_SILICON" })
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("footer", { className: "pt-12 flex items-center justify-between border-t border-white/5 text-[10px] font-mono text-white/20", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "REVISION: 13.04.26" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "AUTHOR: B.Y.C." })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "animate-pulse flex items-center gap-2 text-neon-green", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-1.5 h-1.5 bg-neon-green rounded-full" }),
+        "DOCTRINE_SECURED"
+      ] })
+    ] })
+  ] });
+}
+function ProjectDetail() {
+  const [, params] = useRoute("/operations/:projectId");
+  const project = profileData.featured_projects.find((p2) => p2.name.toLowerCase() === params?.projectId?.toLowerCase());
+  if (!project) return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center py-20", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-2xl text-white font-mono", children: "PROJECT_NOT_FOUND" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Link$1, { href: "/operations", className: "text-neon-blue hover:underline mt-4 inline-block font-mono", children: "RETURN_TO_BASE" })
+  ] });
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-12 pb-20", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(Link$1, { href: "/operations", className: "flex items-center gap-2 text-white/40 hover:text-white transition-colors font-mono text-sm group", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-4 h-4 group-hover:-translate-x-1 transition-transform" }),
+      " BACK_TO_OPERATIONS"
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "grid md:grid-cols-2 gap-12 items-end", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-3", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "px-3 py-1 bg-neon-blue/10 border border-neon-blue/30 text-neon-blue text-[10px] font-mono", children: [
+          "ACTIVE_MISSION // ",
+          project.language.toUpperCase()
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-5xl md:text-7xl font-[family-name:var(--font-display)] font-bold text-white tracking-tighter", children: project.name.toUpperCase() }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xl text-white/60 font-mono leading-relaxed", children: project.description })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative group overflow-hidden border border-white/10 cyber-clip-br", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: project.image, alt: project.name, className: "w-full aspect-video object-cover grayscale group-hover:grayscale-0 transition-all duration-700" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid lg:grid-cols-3 gap-12", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "lg:col-span-2 space-y-12", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "p-8 bg-white/5 border border-white/10 cyber-clip-tl space-y-8", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-2xl font-[family-name:var(--font-display)] text-white flex items-center gap-3", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Layers, { className: "w-6 h-6 text-neon-blue" }),
+          " SYSTEM_ARCHITECTURE"
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-2 gap-8", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-mono text-neon-blue", children: "TECH_STACK" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: ["Modular Kernel", "Neural Processing Unit", "Distributed Database", "End-to-End Encryption"].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center gap-2 text-xs text-white/50 font-mono", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-3 h-3 text-neon-green" }),
+              " ",
+              item
+            ] }, item)) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-mono text-neon-green", children: "SECURITY_PROTOCOLS" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: ["Zero Trust Architecture", "Anomaly Detection", "Hardware-level Security", "Real-time Monitoring"].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center gap-2 text-xs text-white/50 font-mono", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-3 h-3 text-neon-red" }),
+              " ",
+              item
+            ] }, item)) })
+          ] })
+        ] })
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("aside", { className: "space-y-8", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-8 bg-black/40 border border-white/10 cyber-clip-br space-y-6", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-lg font-[family-name:var(--font-display)] text-white", children: "MISSION_CONTROL" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("a", { href: project.url, target: "_blank", className: "w-full py-4 bg-neon-blue text-black font-bold font-[family-name:var(--font-display)] tracking-wider hover:bg-white transition-all flex items-center justify-center gap-2", children: [
+              "GITHUB_REPOSITORY ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Github, { className: "w-4 h-4" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: "w-full py-4 border border-white/20 text-white font-mono tracking-wider hover:bg-white/10 transition-all flex items-center justify-center gap-2", children: [
+              "LIVE_DEMO ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { className: "w-4 h-4" })
+            ] })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 border border-dashed border-white/10 rounded-lg", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-[10px] font-mono text-white/30 mb-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Cpu, { className: "w-3 h-3" }),
+            " NODE_STATUS"
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-end", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-white/50 font-mono", children: "STABILITY" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xl font-bold text-white uppercase", children: "OPTIMAL" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-neon-green font-mono text-xs", children: "99.8%" })
+          ] })
+        ] })
+      ] })
+    ] })
+  ] });
+}
 var U = 1, Y$1 = 0.9, H = 0.8, J = 0.17, p = 0.1, u = 0.999, $ = 0.9999;
 var k$1 = 0.99, m = /[\\\/_+.#"@\[\(\{&]/, B$1 = /[\\\/_+.#"@\[\(\{&]/g, K$1 = /[\s-]/, X = /[\s-]/g;
 function G(_, C, h, P2, A, f, O) {
@@ -31655,6 +31925,7 @@ const CyberShell = ({ children }) => {
     { path: "/arsenal", label: "ARSENAL", icon: Cpu },
     { path: "/operations", label: "OPERATIONS", icon: Target },
     { path: "/intelligence", label: "INTELLIGENCE", icon: Terminal },
+    { path: "/doctrine", label: "DOCTRINE", icon: BookOpen },
     { path: "/comms", label: "COMMS", icon: Radio }
   ];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-h-screen bg-[var(--color-cyber-black)] text-foreground font-[family-name:var(--font-body)] overflow-hidden flex flex-col relative selection:bg-neon-blue selection:text-black ${isMatrixMode ? "matrix-mode" : ""}`, children: [
@@ -31710,7 +31981,7 @@ const CyberShell = ({ children }) => {
         const isActive = location2 === item.path;
         const Icon2 = item.icon;
         return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          Link,
+          Link$1,
           {
             href: item.path,
             onClick: () => playSound("click"),
@@ -31754,21 +32025,116 @@ const CyberShell = ({ children }) => {
     ] })
   ] });
 };
+const BootSequence = ({ onComplete }) => {
+  const [lines, setLines] = reactExports.useState([]);
+  const [phase, setPhase] = reactExports.useState("booting");
+  const bootLogs = [
+    "BOOTING_SEQ: 0x7FF8A90",
+    "KERNEL_INITIALIZING...",
+    "NEURAL_MAP_V4_LOADED",
+    "CHECKING_QUANTUM_STABILITY: [OK]",
+    "ESTABLISHING_SECURE_UPLINK...",
+    "DECRYPTING_OPERATOR_MANIFEST...",
+    "ACCESS_GRANTED: 127.0.0.1",
+    "INITIALIZING_VORTEX_ENGINE...",
+    "READY_FOR_COMMAND."
+  ];
+  reactExports.useEffect(() => {
+    let currentLine = 0;
+    const interval = setInterval(() => {
+      if (currentLine < bootLogs.length) {
+        setLines((prev) => [...prev, bootLogs[currentLine]]);
+        currentLine++;
+      } else {
+        clearInterval(interval);
+        setTimeout(() => setPhase("unlocking"), 1e3);
+        setTimeout(onComplete, 2500);
+      }
+    }, 150);
+    return () => clearInterval(interval);
+  }, []);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      initial: { opacity: 1 },
+      exit: { opacity: 0 },
+      transition: { duration: 0.8 },
+      className: "fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center p-6 font-mono overflow-hidden",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-scanlines opacity-10 pointer-events-none" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-2xl w-full space-y-2", children: [
+          lines.map((line, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            motion.div,
+            {
+              initial: { opacity: 0, x: -10 },
+              animate: { opacity: 1, x: 0 },
+              className: `text-sm ${line.includes("[OK]") ? "text-neon-green" : line.includes("READY") ? "text-neon-blue font-bold" : "text-white/60"}`,
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-neon-blue mr-2", children: ">" }),
+                " ",
+                line
+              ]
+            },
+            i
+          )),
+          phase === "booting" && /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              animate: { opacity: [0, 1, 0] },
+              transition: { repeat: Infinity, duration: 0.8 },
+              className: "bg-neon-blue w-2 h-4 inline-block align-middle ml-1"
+            }
+          )
+        ] }),
+        phase === "unlocking" && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          motion.div,
+          {
+            initial: { opacity: 0, scale: 0.8 },
+            animate: { opacity: 1, scale: 1 },
+            className: "mt-12 text-center",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-4xl font-[family-name:var(--font-display)] text-white tracking-[0.5em] animate-pulse", children: "STRATO_OS" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "mt-2 text-[10px] text-white/20 tracking-[1em]", children: "SYSTEM_VERIFIED_V4.5" })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-10 left-10 w-20 h-20 border-t-2 border-l-2 border-white/5" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-10 right-10 w-20 h-20 border-t-2 border-r-2 border-white/5" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-10 left-10 w-20 h-20 border-b-2 border-l-2 border-white/5" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-10 right-10 w-20 h-20 border-b-2 border-r-2 border-white/5" })
+      ]
+    }
+  ) });
+};
 function Router() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(CyberShell, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Switch, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/", component: Home }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/arsenal", component: Arsenal }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/operations", component: Operations }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/intelligence", component: Intelligence }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/doctrine", component: Doctrine }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/operations/:projectId", component: ProjectDetail }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { path: "/comms", component: Comms }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Route, { component: NotFound })
   ] }) });
 }
 function App() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ErrorBoundary, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeProvider, { defaultTheme: "dark", children: /* @__PURE__ */ jsxRuntimeExports.jsx(VaultProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(TooltipProvider, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Toaster2, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Router, {})
-  ] }) }) }) });
+  const [bootCompleted, setBootCompleted] = reactExports.useState(false);
+  reactExports.useEffect(() => {
+    const isBooted = sessionStorage.getItem("system_booted");
+    if (isBooted) setBootCompleted(true);
+  }, []);
+  const handleBootComplete = () => {
+    sessionStorage.setItem("system_booted", "true");
+    setBootCompleted(true);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ErrorBoundary, { children: [
+    !bootCompleted && /* @__PURE__ */ jsxRuntimeExports.jsx(BootSequence, { onComplete: handleBootComplete }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeProvider, { defaultTheme: "dark", children: /* @__PURE__ */ jsxRuntimeExports.jsx(VaultProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(TooltipProvider, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Toaster2, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Router, {})
+    ] }) }) })
+  ] });
 }
 clientExports.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(App, {}));
-//# sourceMappingURL=index-DsS5l5YL.js.map
+//# sourceMappingURL=index-BDezcf0b.js.map
