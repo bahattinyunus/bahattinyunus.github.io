@@ -1,0 +1,5 @@
+
+> bahattinyunus.github.io@1.0.0 check
+> tsc --noEmit
+
+Terminate batch job (Y/N)? 

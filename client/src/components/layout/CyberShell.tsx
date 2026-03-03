@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Link, useLocation } from "wouter";
 import { Shield, Cpu, Radio, Target, Terminal, Power } from "lucide-react";
 import { CommandTerminal } from "../cyber-ui/CommandTerminal";
