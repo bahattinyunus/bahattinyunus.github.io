@@ -20353,6 +20353,10 @@ const Linkedin = createLucideIcon("Linkedin", [
   ["rect", { width: "4", height: "12", x: "2", y: "9", key: "mk3on5" }],
   ["circle", { cx: "4", cy: "4", r: "2", key: "bt5ra8" }]
 ]);
+const LockOpen = createLucideIcon("LockOpen", [
+  ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
+  ["path", { d: "M7 11V7a5 5 0 0 1 9.9-1", key: "1mm8w8" }]
+]);
 const Lock = createLucideIcon("Lock", [
   ["rect", { width: "18", height: "11", x: "3", y: "11", rx: "2", ry: "2", key: "1w4ew1" }],
   ["path", { d: "M7 11V7a5 5 0 0 1 10 0v4", key: "fwvmzm" }]
@@ -20450,6 +20454,19 @@ const Shield = createLucideIcon("Shield", [
     }
   ]
 ]);
+const Sparkles = createLucideIcon("Sparkles", [
+  [
+    "path",
+    {
+      d: "M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z",
+      key: "4pj2yx"
+    }
+  ],
+  ["path", { d: "M20 3v4", key: "1olli1" }],
+  ["path", { d: "M22 5h-4", key: "1gvqau" }],
+  ["path", { d: "M4 17v2", key: "vumght" }],
+  ["path", { d: "M5 18H3", key: "zchphs" }]
+]);
 const Target = createLucideIcon("Target", [
   ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
   ["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }],
@@ -20469,6 +20486,10 @@ const TriangleAlert = createLucideIcon("TriangleAlert", [
   ],
   ["path", { d: "M12 9v4", key: "juzpu7" }],
   ["path", { d: "M12 17h.01", key: "p32p05" }]
+]);
+const User = createLucideIcon("User", [
+  ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
+  ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
 ]);
 const X$1 = createLucideIcon("X", [
   ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
@@ -20982,7 +21003,18 @@ const profileData = {
       forks: 24,
       language: "Python",
       url: "https://github.com/bahattinyunus/BeeRouteANN-for-Antenna-Design",
-      image: "/images/project-beeroute.png"
+      image: "/images/project-beeroute.png",
+      architecture: [
+        "Sürü Zekası (Ant Colony Optimization)",
+        "Stokastik Karar Mekanizmaları",
+        "Trabzon Protokolü Veri Katmanı",
+        "O(G·S·n²) Karmaşıklık Optimizasyonu"
+      ],
+      security: [
+        "Gerçek Zamanlı Anomali Tespiti",
+        "Şifreli Telemetri Kanalları",
+        "Merkeziyetçi Olmayan Veri Bütünlüğü"
+      ]
     },
     {
       name: "PoseidonEye",
@@ -21036,7 +21068,18 @@ const profileData = {
       forks: 35,
       language: "Python",
       url: "https://github.com/bahattinyunus/ANKA-LLM",
-      image: "/images/project-anka-llm.jpg"
+      image: "/images/project-anka-llm.jpg",
+      architecture: [
+        "Knowledge Distillation (Öğretmen-Öğrenci Modeli)",
+        "Düşük Parametreli (7B/8B) Verimli Mimari",
+        "Donanım Bağımsız Çıkarım Çekirdeği",
+        "Türkçe Semantik Vektör Uzayı"
+      ],
+      security: [
+        "Prompt Injection Koruması",
+        "Hassas Veri Maskeleme",
+        "Model Poisoning Tespiti"
+      ]
     },
     {
       name: "Radiosonde-Hunting",
@@ -29692,7 +29735,7 @@ function ProjectDetail() {
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-2 gap-8", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-mono text-neon-blue", children: "TECH_STACK" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: ["Modular Kernel", "Neural Processing Unit", "Distributed Database", "End-to-End Encryption"].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center gap-2 text-xs text-white/50 font-mono", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: (project.architecture || ["Modular Kernel", "Neural Processing Unit", "Distributed Database", "End-to-End Encryption"]).map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center gap-2 text-xs text-white/50 font-mono", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Zap, { className: "w-3 h-3 text-neon-green" }),
               " ",
               item
@@ -29700,7 +29743,7 @@ function ProjectDetail() {
           ] }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-mono text-neon-green", children: "SECURITY_PROTOCOLS" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: ["Zero Trust Architecture", "Anomaly Detection", "Hardware-level Security", "Real-time Monitoring"].map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center gap-2 text-xs text-white/50 font-mono", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: (project.security || ["Zero Trust Architecture", "Anomaly Detection", "Hardware-level Security", "Real-time Monitoring"]).map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center gap-2 text-xs text-white/50 font-mono", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-3 h-3 text-neon-red" }),
               " ",
               item
@@ -31431,7 +31474,10 @@ function B({ asChild: r2, children: o }, n) {
 var Te = { position: "absolute", width: "1px", height: "1px", padding: "0", margin: "-1px", overflow: "hidden", clip: "rect(0, 0, 0, 0)", whiteSpace: "nowrap", borderWidth: "0" };
 const CommandTerminal = () => {
   const [open, setOpen] = reactExports.useState(false);
+  const [inputValue, setInputValue] = reactExports.useState("");
   const [, setLocation] = useLocation();
+  const { isSecureMode, toggleSecureMode } = useVault();
+  const { playSound } = useCyberSound();
   reactExports.useEffect(() => {
     const down = (e) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -31445,6 +31491,18 @@ const CommandTerminal = () => {
   const runCommand = (command) => {
     setOpen(false);
     command();
+  };
+  const handleSystemCommand = (cmd) => {
+    const normalized = cmd.toLowerCase().trim();
+    if (normalized === "locks" || normalized === "secure") {
+      toggleSecureMode();
+      playSound("access");
+      setOpen(false);
+    } else if (normalized === "whoami") {
+      playSound("click");
+    } else if (normalized === "clear") {
+      setInputValue("");
+    }
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(
     _e.Dialog,
@@ -31460,7 +31518,15 @@ const CommandTerminal = () => {
             _e.Input,
             {
               autoFocus: true,
-              placeholder: "Type a command or search...",
+              value: inputValue,
+              onValueChange: (val) => {
+                setInputValue(val);
+                if (["locks", "whoami", "clear"].includes(val.toLowerCase())) ;
+              },
+              onKeyDown: (e) => {
+                if (e.key === "Enter") handleSystemCommand(inputValue);
+              },
+              placeholder: "Type a command (locks, whoami, clear) or search...",
               className: "flex-1 bg-transparent text-white font-mono outline-none placeholder:text-white/30 text-lg"
             }
           ),
@@ -31471,15 +31537,40 @@ const CommandTerminal = () => {
         ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(_e.List, { className: "max-h-[400px] overflow-y-auto p-2 scrollbar-hide", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(_e.Empty, { className: "py-6 text-center text-white/50 font-mono", children: "No matching protocols found." }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(_e.Group, { heading: "NAVIGATION", className: "text-xs font-mono text-neon-blue/70 mb-2 px-2 mt-2", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(_e.Group, { heading: "SYSTEM COMMANDS", className: "text-xs font-mono text-neon-blue/70 mb-2 px-2 mt-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              _e.Item,
+              {
+                onSelect: () => runCommand(() => toggleSecureMode()),
+                className: "flex items-center gap-3 px-3 py-3 text-white hover:bg-neon-blue/20 rounded cursor-pointer group transition-colors data-[selected=true]:bg-neon-blue/20",
+                children: [
+                  isSecureMode ? /* @__PURE__ */ jsxRuntimeExports.jsx(LockOpen, { className: "w-4 h-4 text-yellow-500" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { className: "w-4 h-4 text-neon-blue" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold", children: isSecureMode ? "DEACTIVATE_SECURE_MODE" : "INITIALIZE_SECURE_MODE" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("kbd", { className: "ml-auto text-[10px] bg-white/5 px-1.5 py-0.5 rounded border border-white/10", children: "Type 'locks'" })
+                ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              _e.Item,
+              {
+                className: "flex items-center gap-3 px-3 py-3 text-white hover:bg-neon-blue/20 rounded cursor-pointer group transition-colors data-[selected=true]:bg-neon-blue/20",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(User, { className: "w-4 h-4 text-neon-green" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold", children: "WHOAMI" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("kbd", { className: "ml-auto text-[10px] bg-white/5 px-1.5 py-0.5 rounded border border-white/10", children: "Type 'whoami'" })
+                ]
+              }
+            )
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(_e.Group, { heading: "NAVIGATION", className: "text-[10px] font-mono text-white/20 mb-2 px-2 mt-4 uppercase tracking-widest", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               _e.Item,
               {
                 onSelect: () => runCommand(() => setLocation("/")),
-                className: "flex items-center gap-3 px-3 py-3 text-white hover:bg-neon-blue/20 rounded cursor-pointer group transition-colors data-[selected=true]:bg-neon-blue/20",
+                className: "flex items-center gap-3 px-3 py-3 text-white/80 hover:bg-white/5 rounded cursor-pointer transition-colors data-[selected=true]:bg-white/5",
                 children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-4 h-4 text-neon-blue group-hover:animate-pulse" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold", children: "MISSION CONTROL" })
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-4 h-4 text-white/40" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "MISSION_CONTROL" })
                 ]
               }
             ),
@@ -31487,10 +31578,10 @@ const CommandTerminal = () => {
               _e.Item,
               {
                 onSelect: () => runCommand(() => setLocation("/arsenal")),
-                className: "flex items-center gap-3 px-3 py-3 text-white hover:bg-neon-blue/20 rounded cursor-pointer group transition-colors data-[selected=true]:bg-neon-blue/20",
+                className: "flex items-center gap-3 px-3 py-3 text-white/80 hover:bg-white/5 rounded cursor-pointer transition-colors data-[selected=true]:bg-white/5",
                 children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Cpu, { className: "w-4 h-4 text-neon-red group-hover:animate-pulse" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold", children: "ARSENAL" })
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Cpu, { className: "w-4 h-4 text-white/40" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "ARSENAL" })
                 ]
               }
             ),
@@ -31498,65 +31589,39 @@ const CommandTerminal = () => {
               _e.Item,
               {
                 onSelect: () => runCommand(() => setLocation("/operations")),
-                className: "flex items-center gap-3 px-3 py-3 text-white hover:bg-neon-blue/20 rounded cursor-pointer group transition-colors data-[selected=true]:bg-neon-blue/20",
+                className: "flex items-center gap-3 px-3 py-3 text-white/80 hover:bg-white/5 rounded cursor-pointer transition-colors data-[selected=true]:bg-white/5",
                 children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Target, { className: "w-4 h-4 text-neon-green group-hover:animate-pulse" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold", children: "OPERATIONS" })
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              _e.Item,
-              {
-                onSelect: () => runCommand(() => setLocation("/comms")),
-                className: "flex items-center gap-3 px-3 py-3 text-white hover:bg-neon-blue/20 rounded cursor-pointer group transition-colors data-[selected=true]:bg-neon-blue/20",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Radio, { className: "w-4 h-4 text-yellow-500 group-hover:animate-pulse" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-bold", children: "COMMS UPLINK" })
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Target, { className: "w-4 h-4 text-white/40" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "OPERATIONS" })
                 ]
               }
             )
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(_e.Group, { heading: "SYSTEM LINKS", className: "text-xs font-mono text-neon-blue/70 mb-2 px-2 mt-4", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              _e.Item,
-              {
-                onSelect: () => runCommand(() => window.open(profileData.personal.github_url, "_blank")),
-                className: "flex items-center gap-3 px-3 py-3 text-white hover:bg-white/10 rounded cursor-pointer group transition-colors data-[selected=true]:bg-white/10",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-4 h-4 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { className: "w-3 h-3 text-white/50" }) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "GitHub Repository" })
-                ]
-              }
-            ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              _e.Item,
-              {
-                onSelect: () => runCommand(() => window.open(profileData.personal.linkedin_url, "_blank")),
-                className: "flex items-center gap-3 px-3 py-3 text-white hover:bg-white/10 rounded cursor-pointer group transition-colors data-[selected=true]:bg-white/10",
-                children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-4 h-4 flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(ExternalLink, { className: "w-3 h-3 text-white/50" }) }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "LinkedIn Network" })
-                ]
-              }
-            )
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(_e.Group, { heading: "FEATURED OPERATIONS", className: "text-xs font-mono text-neon-blue/70 mb-2 px-2 mt-4", children: profileData.featured_projects.slice(0, 5).map((project) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          /* @__PURE__ */ jsxRuntimeExports.jsx(_e.Group, { heading: "QUICK ASSETS", className: "text-[10px] font-mono text-white/20 mb-2 px-2 mt-4 uppercase tracking-widest", children: profileData.featured_projects.slice(0, 3).map((project) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
             _e.Item,
             {
-              onSelect: () => runCommand(() => window.open(project.url, "_blank")),
-              className: "flex items-center gap-3 px-3 py-3 text-white hover:bg-white/10 rounded cursor-pointer group transition-colors data-[selected=true]:bg-white/10",
+              onSelect: () => runCommand(() => setLocation(`/operations/${project.name.toLowerCase()}`)),
+              className: "flex items-center gap-3 px-3 py-3 text-white/80 hover:bg-white/5 rounded cursor-pointer transition-colors data-[selected=true]:bg-white/5",
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Terminal, { className: "w-4 h-4 text-neon-green/50" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: project.name })
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Terminal, { className: "w-4 h-4 text-neon-blue/30" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: project.name.toUpperCase() })
               ]
             },
             project.name
           )) })
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-t border-white/10 p-2 bg-black/50 text-[10px] font-mono text-white/30 flex justify-between px-4", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "COMMAND LINE INTERFACE v2.4" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "SECURE//ENCRYPTED" })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-t border-white/10 p-3 bg-black/50 text-[10px] font-mono text-white/30 flex justify-between px-4 items-center", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "flex items-center gap-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Activity, { className: "w-3 h-3 text-neon-green" }),
+              " NODE_ONLINE"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "OS_V4.5.STRATO" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("kbd", { className: "bg-white/5 px-1 py-0.5 rounded", children: "↑↓" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("kbd", { className: "bg-white/5 px-1 py-0.5 rounded", children: "ENTER" })
+          ] })
         ] })
       ]
     }
@@ -31906,6 +31971,78 @@ const NeuralBackground = () => {
     }
   );
 };
+const VanguardAI = () => {
+  const [isOpen, setIsOpen] = reactExports.useState(false);
+  const [intel, setIntel] = reactExports.useState(null);
+  const { playSound } = useCyberSound();
+  const intelPills = [
+    "SYSTEM_STABLE: All nodes reporting optimal throughput.",
+    "THREAT_ANALYSIS: No active breaches detected in this sector.",
+    "ENCRYPTION: AES-256-GCM active on all communication channels.",
+    "OPTIMIZATION: Neural networks refined for sub-ms latency.",
+    "STRATEGY: Focusing on modular kernel architectures for v5.0."
+  ];
+  reactExports.useEffect(() => {
+    if (isOpen) {
+      setIntel(intelPills[Math.floor(Math.random() * intelPills.length)]);
+    }
+  }, [isOpen]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "fixed bottom-24 right-8 z-[100]", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: isOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        initial: { opacity: 0, scale: 0.8, x: 20 },
+        animate: { opacity: 1, scale: 1, x: 0 },
+        exit: { opacity: 0, scale: 0.8, x: 20 },
+        className: "absolute bottom-16 right-0 w-72 p-6 bg-black/90 border border-neon-blue/40 backdrop-blur-xl cyber-clip-br shadow-[0_0_30px_rgba(0,243,255,0.15)]",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-start mb-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2 text-neon-blue", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-4 h-4 animate-pulse" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[10px] tracking-widest uppercase", children: "Vanguard_Intel" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("button", { onClick: () => setIsOpen(false), className: "text-white/30 hover:text-white", children: /* @__PURE__ */ jsxRuntimeExports.jsx(X$1, { className: "w-4 h-4" }) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-mono text-xs text-white/80 leading-relaxed italic", children: [
+              '"',
+              intel,
+              '"'
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px bg-white/10" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between items-center text-[8px] font-mono text-white/20", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "UID: VANGUARD_01" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "LATENCY: 4ms" })
+            ] })
+          ] })
+        ]
+      }
+    ) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.button,
+      {
+        whileHover: { scale: 1.1 },
+        whileTap: { scale: 0.95 },
+        onClick: () => {
+          setIsOpen(!isOpen);
+          playSound("access");
+        },
+        className: `
+                    w-12 h-12 rounded-full flex items-center justify-center relative group
+                    ${isOpen ? "bg-neon-blue text-black" : "bg-black border border-neon-blue/50 text-neon-blue shadow-[0_0_15px_rgba(0,243,255,0.2)]"}
+                    transition-all duration-300
+                `,
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Brain, { className: `w-6 h-6 ${isOpen ? "" : "animate-pulse"}` }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 border border-neon-blue/20 rounded-full animate-[spin_8s_linear_infinite]" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -inset-2 border border-neon-blue/10 rounded-full animate-[spin_12s_linear_infinite_reverse]" }),
+          !isOpen && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -inset-1 bg-neon-blue/20 rounded-full animate-ping opacity-50" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -top-1 -right-1 w-3 h-3 bg-neon-green rounded-full border-2 border-black animate-pulse" })
+        ]
+      }
+    )
+  ] });
+};
 const CyberShell = ({ children }) => {
   const [location2] = useLocation();
   const [time2, setTime] = reactExports.useState(/* @__PURE__ */ new Date());
@@ -31937,6 +32074,7 @@ const CyberShell = ({ children }) => {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 bg-scanlines opacity-20 pointer-events-none z-50" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#000_90%)] pointer-events-none z-40" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(CommandTerminal, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(VanguardAI, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "h-16 border-b border-white/10 flex items-center justify-between px-6 bg-black/40 backdrop-blur-md z-30 relative", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(Terminal, { className: "text-neon-blue w-6 h-6 animate-pulse" }),
@@ -32137,4 +32275,4 @@ function App() {
   ] });
 }
 clientExports.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(App, {}));
-//# sourceMappingURL=index-BDezcf0b.js.map
+//# sourceMappingURL=index-a_J7uemZ.js.map
