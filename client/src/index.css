@@ -106,7 +106,11 @@
     box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
   }
 
-  .bg-scanlines {
+  .cyber-hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.bg-scanlines {
     background: linear-gradient(to bottom,
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 0) 50%,

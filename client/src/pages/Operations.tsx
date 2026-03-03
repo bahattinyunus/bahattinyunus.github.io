@@ -6,6 +6,7 @@ import { Target, ExternalLink, Info } from "lucide-react";
 import { useState } from "react";
 import { ProjectModal } from "@/components/cyber-ui/ProjectModal";
 import { useCyberSound } from "@/hooks/use-cyber-sound";
+import { MissionLogs } from "@/components/cyber-ui/MissionLogs";
 
 export default function Operations() {
     const [filter, setFilter] = useState<string | null>(null);
@@ -50,20 +51,15 @@ export default function Operations() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredProjects.map((project, i) => (
-                    <motion.div
+                    <Link
                         key={i}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: i * 0.05 }}
-                        className="group relative h-full"
+                        href={`/operations/${project.name.toLowerCase()}`}
+                        className="group relative h-full cursor-pointer"
                     >
                         {/* Cyber Card Container */}
                         <div
-                            onClick={() => {
-                                setSelectedProject(project);
-                                playSound('click');
-                            }}
-                            className="h-full bg-black/40 border border-white/10 group-hover:border-neon-blue/50 group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all duration-300 flex flex-col cyber-clip-br cursor-pointer"
+                            onClick={() => playSound('click')}
+                            className="h-full bg-black/40 border border-white/10 group-hover:border-neon-blue/50 group-hover:shadow-[0_0_20px_rgba(0,243,255,0.2)] transition-all duration-300 flex flex-col cyber-clip-br"
                         >
                             <div className="relative h-48 overflow-hidden">
                                 <img src={project.image} alt={project.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" />
@@ -102,9 +98,11 @@ export default function Operations() {
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
+                    </Link>
                 ))}
             </div>
+
+            <MissionLogs />
         </div>
     );
 }

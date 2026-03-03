@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "wouter";
-import { Shield, Cpu, Radio, Target, Terminal, Power } from "lucide-react";
+import { Shield, Cpu, Radio, Target, Terminal, Power, BookOpen } from "lucide-react";
 import { CommandTerminal } from "../cyber-ui/CommandTerminal";
 import { ForceField } from "../cyber-ui/ForceField";
 import { useCyberSound } from "@/hooks/use-cyber-sound";
@@ -37,6 +37,7 @@ export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
         { path: "/arsenal", label: "ARSENAL", icon: Cpu },
         { path: "/operations", label: "OPERATIONS", icon: Target },
         { path: "/intelligence", label: "INTELLIGENCE", icon: Terminal },
+        { path: "/doctrine", label: "DOCTRINE", icon: BookOpen },
         { path: "/comms", label: "COMMS", icon: Radio },
     ];
 

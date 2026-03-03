@@ -75,8 +75,8 @@ export default function Arsenal() {
                                 transform: 'translate(-50%, -50%)'
                             }}
                         >
-                            <div className={`w-3 h-3 rounded-full animate-pulse ${isSecureMode ? 'bg-yellow-500 shadow-[0_0_10px_rgba(234,179,8,1)]' : 'bg-neon-blue shadow-[0_0_10px_rgba(0,243,255,1)]'}`}></div>
-                            <div className={`text-[10px] font-mono tracking-tighter px-2 py-0.5 border bg-black/80 whitespace-nowrap group-hover/node:scale-110 transition-transform ${isSecureMode ? 'border-yellow-500/40 text-yellow-500' : 'border-neon-blue/40 text-neon-blue'}`}>
+                            <div className={`w-4 h-4 cyber-hexagon animate-pulse ${isSecureMode ? 'bg-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.5)]' : 'bg-neon-blue shadow-[0_0_15px_rgba(0,243,255,0.5)]'}`}></div>
+                            <div className={`text-[10px] font-mono tracking-tighter px-2 py-0.5 border bg-black/80 whitespace-nowrap group-hover/node:scale-110 transition-transform cyber-clip-br ${isSecureMode ? 'border-yellow-500/40 text-yellow-500' : 'border-neon-blue/40 text-neon-blue'}`}>
                                 {skill.label}
                             </div>
                         </motion.div>

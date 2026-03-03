@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { profileData } from "@/lib/data";
 import { motion } from "framer-motion";
-import { Book, Calendar, ExternalLink, Brain, FileText, Search, SortAsc } from "lucide-react";
+import { Book, Calendar, ExternalLink, Brain, FileText, Search, SortAsc, Zap, Activity, Shield as ShieldIcon } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCyberSound } from "@/hooks/use-cyber-sound";
 import { useVault } from "@/contexts/VaultContext";
@@ -44,14 +44,32 @@ export const Intelligence = () => {
                     </h2>
                 </div>
 
-                <div className="relative group">
+                {/* System Status Dashboard */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    {[
+                        { label: 'NEURAL_LATENCY', value: '12ms', icon: Activity, color: 'text-neon-blue' },
+                        { label: 'CORE_INTEGRITY', value: '98.4%', icon: ShieldIcon, color: 'text-neon-green' },
+                        { label: 'THREAT_LEVEL', value: 'LOW', icon: Zap, color: 'text-neon-red' }
+                    ].map((stat, i) => (
+                        <div key={i} className="p-4 bg-white/5 border border-white/10 cyber-clip-br group hover:bg-white/10 transition-all">
+                            <div className="flex items-center justify-between mb-2">
+                                <stat.icon className={`w-4 h-4 ${stat.color}`} />
+                                <span className="text-[10px] font-mono text-white/40">SYSTEM_METRIC_{i + 1}</span>
+                            </div>
+                            <div className="text-xs font-mono text-white/60 mb-1">{stat.label}</div>
+                            <div className="text-2xl font-bold font-[family-name:var(--font-display)] text-white">{stat.value}</div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="relative group mb-12">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50 group-hover:text-yellow-500 transition-colors" />
                     <input
                         type="text"
                         placeholder={isSecureMode ? "SEARCH_SECURE_DB..." : "SEARCH_DB..."}
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className={`bg-black/40 border pl-10 pr-4 py-2 text-sm font-mono text-white focus:outline-none w-full md:w-64 transition-all ${isSecureMode ? 'border-yellow-500/20 focus:border-yellow-500' : 'border-white/20 focus:border-neon-blue'}`}
+                        className={`bg-black/40 border pl-10 pr-4 py-3 text-sm font-mono text-white focus:outline-none w-full transition-all group-hover:animate-glitch-sm ${isSecureMode ? 'border-yellow-500/20 focus:border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.1)]' : 'border-white/20 focus:border-neon-blue shadow-[0_0_15px_rgba(0,243,255,0.1)]'}`}
                     />
                 </div>
             </div>
