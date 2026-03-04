@@ -20487,6 +20487,14 @@ const TriangleAlert = createLucideIcon("TriangleAlert", [
   ["path", { d: "M12 9v4", key: "juzpu7" }],
   ["path", { d: "M12 17h.01", key: "p32p05" }]
 ]);
+const Trophy = createLucideIcon("Trophy", [
+  ["path", { d: "M6 9H4.5a2.5 2.5 0 0 1 0-5H6", key: "17hqa7" }],
+  ["path", { d: "M18 9h1.5a2.5 2.5 0 0 0 0-5H18", key: "lmptdp" }],
+  ["path", { d: "M4 22h16", key: "57wxv0" }],
+  ["path", { d: "M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22", key: "1nw9bq" }],
+  ["path", { d: "M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22", key: "1np0yb" }],
+  ["path", { d: "M18 2H6v7a6 6 0 0 0 12 0V2Z", key: "u46fv3" }]
+]);
 const User = createLucideIcon("User", [
   ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
   ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
@@ -20929,6 +20937,8 @@ const profileData = {
   },
   skills: {
     languages: ["Python", "C++", "JavaScript", "Go", "Rust"],
+    frameworks: ["TensorFlow", "PyTorch", "React", "Node.js", "Django"],
+    tools: ["Docker", "Kubernetes", "Git", "Linux", "AWS"],
     concepts: [
       "Yapay Zeka & Makine Öğrenmesi",
       "Siber Güvenlik",
@@ -20980,6 +20990,16 @@ const profileData = {
       image: "/images/blog/finans.jpg",
       date: "23 Aralık 2025"
     }
+  ],
+  ai_tools: [
+    { name: "ChatGPT 4o", level: 95, category: "Model" },
+    { name: "Claude 3.5 Sonnet", level: 90, category: "Model" },
+    { name: "GitHub Copilot", level: 98, category: "Coding" },
+    { name: "Midjourney v6", level: 85, category: "Creative" },
+    { name: "TensorFlow", level: 80, category: "Framework" },
+    { name: "PyTorch", level: 75, category: "Framework" },
+    { name: "LangChain", level: 85, category: "Framework" },
+    { name: "Hugging Face", level: 88, category: "Platform" }
   ],
   categories: {
     "Yapay Zeka & LLM": ["Nexus-TRL-LLM", "ANKA-LLM", "NeuroPaint", "LibraMind", "Open-Textile-Intelligence", "TRL-Bio-Compute", "Math2Code-A-Practical-Guide-for-Developers"],
@@ -28856,6 +28876,81 @@ const OperationLogs = () => {
     )) }) })
   ] });
 };
+const CyberGlobe = () => {
+  const nodes = reactExports.useMemo(() => {
+    return Array.from({ length: 40 }).map((_, i) => ({
+      id: i,
+      lat: Math.random() * 180 - 90,
+      lng: Math.random() * 360 - 180,
+      size: Math.random() * 2 + 1,
+      delay: Math.random() * 2
+    }));
+  }, []);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center perspective-1000", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 rounded-full border border-neon-blue/20 bg-gradient-to-br from-neon-blue/5 to-black shadow-[inset_0_0_50px_rgba(0,243,255,0.1)]" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        animate: { rotateY: 360 },
+        transition: { duration: 20, repeat: Infinity, ease: "linear" },
+        className: "absolute inset-0 preserve-3d",
+        children: [
+          [...Array(6)].map((_, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "absolute inset-0 border border-white/5 rounded-full",
+              style: { transform: `rotateX(${i * 30}deg)` }
+            },
+            i
+          )),
+          [...Array(6)].map((_, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "absolute inset-0 border border-white/5 rounded-full",
+              style: { transform: `rotateY(${i * 30}deg)` }
+            },
+            i
+          )),
+          nodes.map((node) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "absolute w-1 h-1 bg-neon-blue rounded-full shadow-[0_0_5px_rgba(0,243,255,0.8)]",
+              style: {
+                transform: `rotateY(${node.lng}deg) rotateX(${node.lat}deg) translateZ(120px)`
+              },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                motion.div,
+                {
+                  animate: { opacity: [0.2, 1, 0.2] },
+                  transition: { duration: 2, repeat: Infinity, delay: node.delay },
+                  className: "absolute -inset-1 bg-neon-blue/50 rounded-full"
+                }
+              )
+            },
+            node.id
+          ))
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      motion.div,
+      {
+        animate: { scale: [0.8, 1.2, 0.8], opacity: [0.1, 0.3, 0.1] },
+        transition: { duration: 4, repeat: Infinity },
+        className: "absolute w-32 h-32 bg-neon-blue/20 rounded-full blur-2xl"
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -bottom-8 left-1/2 -translate-x-1/2 w-full text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] font-mono text-neon-blue/40 tracking-[0.2em] uppercase whitespace-nowrap", children: "GLOBAL_LATENCY_MAP // 41.0082° N, 28.9784° E" }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 rounded-full border-2 border-neon-blue/3 overflow-hidden pointer-events-none", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      motion.div,
+      {
+        animate: { top: ["-100%", "200%"] },
+        transition: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+        className: "absolute inset-x-0 h-10 bg-gradient-to-b from-transparent via-neon-blue/10 to-transparent blur-sm"
+      }
+    ) })
+  ] });
+};
 function Home() {
   const [typedText, setTypedText] = reactExports.useState("");
   const FullText = "INITIALIZING OPERATOR PROFILE...";
@@ -28883,7 +28978,8 @@ function Home() {
         /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-white to-neon-red animate-gradient-x", children: "METAL YAKA." })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-2xl text-lg text-white/60 font-mono leading-relaxed border-l-2 border-neon-blue/30 pl-6", children: profileData.personal.tagline })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "max-w-2xl text-lg text-white/60 font-mono leading-relaxed border-l-2 border-neon-blue/30 pl-6", children: profileData.personal.tagline }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex justify-center py-12", children: /* @__PURE__ */ jsxRuntimeExports.jsx(CyberGlobe, {}) })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-6 border border-white/10 bg-white/5 cyber-clip-tl group hover:bg-neon-blue/5 transition-all", children: [
@@ -28972,17 +29068,134 @@ function Home() {
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed bottom-24 right-6 w-64 hidden xl:block pointer-events-auto", children: /* @__PURE__ */ jsxRuntimeExports.jsx(OperationLogs, {}) })
   ] });
 }
+const useCyberSound = () => {
+  const audioContext = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    const initAudio = () => {
+      if (!audioContext.current) {
+        audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    };
+    window.addEventListener("click", initAudio, { once: true });
+    window.addEventListener("keydown", initAudio, { once: true });
+    return () => {
+      window.removeEventListener("click", initAudio);
+      window.removeEventListener("keydown", initAudio);
+    };
+  }, []);
+  const playSound = reactExports.useCallback((type) => {
+    if (!audioContext.current) return;
+    const ctx = audioContext.current;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    const now2 = ctx.currentTime;
+    switch (type) {
+      case "hover":
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(800, now2);
+        osc.frequency.exponentialRampToValueAtTime(1200, now2 + 0.05);
+        gain.gain.setValueAtTime(0.05, now2);
+        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.05);
+        osc.start(now2);
+        osc.stop(now2 + 0.05);
+        break;
+      case "click":
+        osc.type = "square";
+        osc.frequency.setValueAtTime(200, now2);
+        osc.frequency.exponentialRampToValueAtTime(100, now2 + 0.1);
+        gain.gain.setValueAtTime(0.1, now2);
+        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.1);
+        osc.start(now2);
+        osc.stop(now2 + 0.1);
+        break;
+      case "type":
+        osc.type = "triangle";
+        osc.frequency.setValueAtTime(600, now2);
+        gain.gain.setValueAtTime(0.02, now2);
+        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.03);
+        osc.start(now2);
+        osc.stop(now2 + 0.03);
+        break;
+      case "access":
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(440, now2);
+        osc.frequency.exponentialRampToValueAtTime(880, now2 + 0.2);
+        gain.gain.setValueAtTime(0.1, now2);
+        gain.gain.linearRampToValueAtTime(0, now2 + 0.5);
+        osc.start(now2);
+        osc.stop(now2 + 0.5);
+        break;
+      case "alert":
+        osc.type = "sawtooth";
+        osc.frequency.setValueAtTime(150, now2);
+        osc.frequency.setValueAtTime(250, now2 + 0.1);
+        gain.gain.setValueAtTime(0.05, now2);
+        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.2);
+        osc.start(now2);
+        osc.stop(now2 + 0.2);
+        break;
+      case "scan":
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(300, now2);
+        osc.frequency.linearRampToValueAtTime(600, now2 + 0.3);
+        gain.gain.setValueAtTime(0.04, now2);
+        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.3);
+        osc.start(now2);
+        osc.stop(now2 + 0.3);
+        break;
+    }
+  }, []);
+  return { playSound };
+};
+const SkillHexGrid = ({
+  skills,
+  color: color2 = "var(--color-neon-blue)"
+}) => {
+  const { playSound } = useCyberSound();
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 p-4", children: skills.map((skill, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      initial: { opacity: 0, scale: 0.8 },
+      whileInView: { opacity: 1, scale: 1 },
+      transition: { delay: i * 0.05 },
+      onMouseEnter: () => playSound("hover"),
+      className: "relative group cursor-pointer",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "aspect-square relative flex items-center justify-center p-4 overflow-hidden", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-white/5 clip-path-hexagon group-hover:bg-white/10 transition-all duration-300 border border-white/10 group-hover:border-neon-blue/50" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            motion.div,
+            {
+              initial: { height: 0 },
+              whileInView: { height: `${skill.level}%` },
+              className: "absolute bottom-0 left-0 right-0 bg-neon-blue/20 pointer-events-none",
+              style: { clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)" }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 text-center space-y-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] font-mono text-white/40 uppercase tracking-tighter", children: skill.category }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-sm font-bold font-[family-name:var(--font-display)] text-white group-hover:text-neon-blue transition-colors leading-tight", children: skill.name }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-0.5 w-12 mx-auto bg-white/10 relative overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              motion.div,
+              {
+                initial: { width: 0 },
+                whileInView: { width: "100%" },
+                transition: { duration: 1 },
+                className: "absolute inset-y-0 left-0 bg-neon-blue"
+              }
+            ) })
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-neon-blue/5 animate-glitch-sm" }) })
+      ]
+    },
+    skill.name
+  )) });
+};
 function Arsenal() {
   const { isSecureMode } = useVault();
-  const skillTree = [
-    { id: "python", label: "PYTHON", x: 200, y: 100, connections: ["ai", "security"] },
-    { id: "ai", label: "AI/ML", x: 100, y: 300, connections: ["llm"] },
-    { id: "security", label: "SECURITY", x: 300, y: 300, connections: ["sysarch"] },
-    { id: "llm", label: "LLM ARCH", x: 50, y: 500, connections: [] },
-    { id: "sysarch", label: "SYS_ARCH", x: 350, y: 500, connections: [] },
-    { id: "js", label: "JS/TS", x: 500, y: 100, connections: ["web"] },
-    { id: "web", label: "WEB_STACK", x: 500, y: 400, connections: [] }
-  ];
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-12 pb-20", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 mb-8", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Cpu, { className: `w-8 h-8 animate-pulse ${isSecureMode ? "text-yellow-500" : "text-neon-red"}` }),
@@ -28990,90 +29203,39 @@ function Arsenal() {
         isSecureMode ? "SECURE_CONNECTOME" : "ARSENAL",
         " ",
         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: isSecureMode ? "text-yellow-500" : "text-neon-red", children: "//" }),
-        " NEURAL_SKILL_TREE"
+        " BIOLUMINESCENT_SKILL_GRID"
       ] })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative bg-black/40 border border-white/10 p-4 md:p-8 overflow-hidden min-h-[600px] cyber-clip-both group", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-scanlines opacity-5 pointer-events-none" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { className: "absolute inset-0 w-full h-full pointer-events-none opacity-20", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("defs", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("marker", { id: "arrow", viewBox: "0 0 10 10", refX: "5", refY: "5", markerWidth: "6", markerHeight: "6", orient: "auto-start-reverse", children: /* @__PURE__ */ jsxRuntimeExports.jsx("path", { d: "M 0 0 L 10 5 L 0 10 z", fill: "currentColor" }) }) }),
-        skillTree.map((skill) => skill.connections.map((targetId) => {
-          const target = skillTree.find((s) => s.id === targetId);
-          if (!target) return null;
-          return /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.line,
-            {
-              x1: `${skill.x / 600 * 100}%`,
-              y1: `${skill.y / 600 * 100}%`,
-              x2: `${target.x / 600 * 100}%`,
-              y2: `${target.y / 600 * 100}%`,
-              stroke: isSecureMode ? "#eab308" : "#00f3ff",
-              strokeWidth: "1",
-              initial: { pathLength: 0 },
-              animate: { pathLength: 1 },
-              transition: { duration: 1.5 }
-            },
-            `${skill.id}-${targetId}`
-          );
-        }))
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "space-y-8", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 px-4 border-l-2 border-neon-blue/50", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Terminal, { className: "w-5 h-5 text-neon-blue" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-[family-name:var(--font-display)] tracking-tight", children: "AI & FORWARD_INTELLIGENCE" })
       ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "relative z-10 w-full h-[500px]", children: skillTree.map((skill, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-        motion.div,
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SkillHexGrid, { skills: profileData.ai_tools }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 px-4 border-l-2 border-neon-green/50", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-5 h-5 text-neon-green" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xl font-[family-name:var(--font-display)] tracking-tight", children: "SYSTEMS & ARCHITECTURE" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SkillHexGrid, { skills: [
+        ...profileData.skills.languages.map((l) => ({ name: l, level: 90, category: "Language" })),
+        ...profileData.skills.frameworks.map((f) => ({ name: f, level: 85, category: "Framework" })),
+        ...profileData.skills.tools.map((t) => ({ name: t, level: 80, category: "Tool" }))
+      ], color: "var(--color-neon-green)" })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid md:grid-cols-2 gap-12", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `bg-white/5 p-6 rounded-lg border cyber-clip-br ${isSecureMode ? "border-yellow-500/20" : "border-white/10"}`, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: `text-xl font-[family-name:var(--font-display)] mb-6 flex items-center gap-2 ${isSecureMode ? "text-yellow-500" : "text-neon-green"}`, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-5 h-5" }),
+        " DOMAIN_INTEL"
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2", children: profileData.skills.concepts.map((concept, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+        "div",
         {
-          initial: { scale: 0 },
-          animate: { scale: 1 },
-          transition: { delay: i * 0.1 },
-          className: "absolute flex flex-col items-center gap-2 group/node",
-          style: {
-            left: `${skill.x / 600 * 100}%`,
-            top: `${skill.y / 600 * 100}%`,
-            transform: "translate(-50%, -50%)"
-          },
-          children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `w-4 h-4 cyber-hexagon animate-pulse ${isSecureMode ? "bg-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.5)]" : "bg-neon-blue shadow-[0_0_15px_rgba(0,243,255,0.5)]"}` }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: `text-[10px] font-mono tracking-tighter px-2 py-0.5 border bg-black/80 whitespace-nowrap group-hover/node:scale-110 transition-transform cyber-clip-br ${isSecureMode ? "border-yellow-500/40 text-yellow-500" : "border-neon-blue/40 text-neon-blue"}`, children: skill.label })
-          ]
+          className: `px-2 py-1 border text-[9px] font-mono tracking-wide transition-all clip-path-hexagon ${isSecureMode ? "border-yellow-500/30 bg-yellow-500/5 text-yellow-500" : "border-neon-green/30 bg-neon-green/5 text-neon-green"}`,
+          children: concept
         },
-        skill.id
-      )) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute bottom-4 right-4 text-[8px] font-mono text-white/20 uppercase tracking-[0.2em] pointer-events-none", children: "Connection_Protocol: v1.02 // Neural_Sync_Active" })
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-2 gap-12", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `bg-white/5 p-6 rounded-lg border cyber-clip-tl ${isSecureMode ? "border-yellow-500/20" : "border-white/10"}`, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: `text-xl font-[family-name:var(--font-display)] mb-6 flex items-center gap-2 ${isSecureMode ? "text-yellow-500" : "text-neon-blue"}`, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Terminal, { className: "w-5 h-5" }),
-          " REFINED_STACK"
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-6", children: profileData.skills.languages.map((lang, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "group", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between mb-2 text-xs", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-gray-300", children: lang }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: `font-mono opacity-0 group-hover:opacity-100 transition-opacity ${isSecureMode ? "text-yellow-500" : "text-neon-blue"}`, children: "OPTIMIZED" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-0.5 w-full bg-black border border-white/5 overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            motion.div,
-            {
-              initial: { width: 0 },
-              whileInView: { width: `${Math.random() * 20 + 80}%` },
-              className: `h-full ${isSecureMode ? "bg-yellow-500" : "bg-neon-blue"}`
-            }
-          ) })
-        ] }, i)) })
-      ] }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: `bg-white/5 p-6 rounded-lg border cyber-clip-br ${isSecureMode ? "border-yellow-500/20" : "border-white/10"}`, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: `text-xl font-[family-name:var(--font-display)] mb-6 flex items-center gap-2 ${isSecureMode ? "text-yellow-500" : "text-neon-green"}`, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-5 h-5" }),
-          " DOMAIN_INTEL"
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap gap-2", children: profileData.skills.concepts.map((concept, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: `px-2 py-1 border text-[9px] font-mono tracking-wide transition-all clip-path-hexagon ${isSecureMode ? "border-yellow-500/30 bg-yellow-500/5 text-yellow-500" : "border-neon-green/30 bg-neon-green/5 text-neon-green"}`,
-            children: concept
-          },
-          i
-        )) })
-      ] })
-    ] })
+        i
+      )) })
+    ] }) })
   ] });
 }
 const ProjectModal = ({ project, onClose }) => {
@@ -29171,78 +29333,6 @@ const ProjectModal = ({ project, onClose }) => {
       }
     )
   ] }) });
-};
-const useCyberSound = () => {
-  const audioContext = reactExports.useRef(null);
-  reactExports.useEffect(() => {
-    const initAudio = () => {
-      if (!audioContext.current) {
-        audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
-      }
-    };
-    window.addEventListener("click", initAudio, { once: true });
-    window.addEventListener("keydown", initAudio, { once: true });
-    return () => {
-      window.removeEventListener("click", initAudio);
-      window.removeEventListener("keydown", initAudio);
-    };
-  }, []);
-  const playSound = reactExports.useCallback((type) => {
-    if (!audioContext.current) return;
-    const ctx = audioContext.current;
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-    const now2 = ctx.currentTime;
-    switch (type) {
-      case "hover":
-        osc.type = "sine";
-        osc.frequency.setValueAtTime(800, now2);
-        osc.frequency.exponentialRampToValueAtTime(1200, now2 + 0.05);
-        gain.gain.setValueAtTime(0.05, now2);
-        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.05);
-        osc.start(now2);
-        osc.stop(now2 + 0.05);
-        break;
-      case "click":
-        osc.type = "square";
-        osc.frequency.setValueAtTime(200, now2);
-        osc.frequency.exponentialRampToValueAtTime(100, now2 + 0.1);
-        gain.gain.setValueAtTime(0.1, now2);
-        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.1);
-        osc.start(now2);
-        osc.stop(now2 + 0.1);
-        break;
-      case "type":
-        osc.type = "triangle";
-        osc.frequency.setValueAtTime(600, now2);
-        gain.gain.setValueAtTime(0.02, now2);
-        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.03);
-        osc.start(now2);
-        osc.stop(now2 + 0.03);
-        break;
-      case "access":
-        osc.type = "sine";
-        osc.frequency.setValueAtTime(440, now2);
-        osc.frequency.exponentialRampToValueAtTime(880, now2 + 0.2);
-        gain.gain.setValueAtTime(0.1, now2);
-        gain.gain.linearRampToValueAtTime(0, now2 + 0.5);
-        osc.start(now2);
-        osc.stop(now2 + 0.5);
-        break;
-      case "alert":
-        osc.type = "sawtooth";
-        osc.frequency.setValueAtTime(150, now2);
-        osc.frequency.setValueAtTime(250, now2 + 0.1);
-        gain.gain.setValueAtTime(0.05, now2);
-        gain.gain.exponentialRampToValueAtTime(1e-3, now2 + 0.2);
-        osc.start(now2);
-        osc.stop(now2 + 0.2);
-        break;
-    }
-  }, []);
-  return { playSound };
 };
 const MissionLogs = () => {
   const missions = [
@@ -29700,9 +29790,128 @@ function Doctrine() {
     ] })
   ] });
 }
+const ClearanceContext = reactExports.createContext(void 0);
+const ClearanceProvider = ({ children }) => {
+  const [clearance, setClearance] = reactExports.useState(1);
+  useCyberSound();
+  reactExports.useEffect(() => {
+    const saved = localStorage.getItem("security_clearance");
+    if (saved) setClearance(parseInt(saved));
+  }, []);
+  const incrementClearance = (amount) => {
+    setClearance((prev) => {
+      const next = Math.min(prev + amount, 5);
+      if (next > prev) {
+        localStorage.setItem("security_clearance", next.toString());
+      }
+      return next;
+    });
+  };
+  const checkAccess = (required) => clearance >= required;
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(ClearanceContext.Provider, { value: { clearance, incrementClearance, checkAccess }, children: [
+    children,
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ClearanceHUD, { level: clearance })
+  ] });
+};
+const useClearance = () => {
+  const context = reactExports.useContext(ClearanceContext);
+  if (!context) throw new Error("useClearance must be used within ClearanceProvider");
+  return context;
+};
+const ClearanceHUD = ({ level }) => {
+  const [showPromo, setShowPromo] = reactExports.useState(false);
+  reactExports.useEffect(() => {
+    if (level > 1) {
+      setShowPromo(true);
+      const timer = setTimeout(() => setShowPromo(false), 5e3);
+      return () => clearTimeout(timer);
+    }
+  }, [level]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "fixed bottom-8 left-8 z-[90]", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(AnimatePresence, { children: showPromo && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      motion.div,
+      {
+        initial: { opacity: 0, x: -20 },
+        animate: { opacity: 1, x: 0 },
+        exit: { opacity: 0, x: -20 },
+        className: "mb-4 p-4 bg-neon-blue/10 border border-neon-blue/40 backdrop-blur-md cyber-clip-tl flex items-center gap-4",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Trophy, { className: "w-6 h-6 text-neon-blue animate-bounce" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[10px] font-mono text-neon-blue uppercase", children: "Clearance_Updated" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-sm font-bold text-white uppercase tracking-widest", children: [
+              "Level ",
+              level,
+              " Access Granted"
+            ] })
+          ] })
+        ]
+      }
+    ) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-4 bg-black/60 border border-white/5 backdrop-blur-sm rounded-lg flex items-center gap-4 group", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: `w-8 h-8 ${level >= 3 ? "text-neon-blue" : "text-white/20"}` }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "absolute inset-0 flex items-center justify-center text-[10px] font-bold text-white", children: level })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "hidden lg:block space-y-1", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex justify-between text-[8px] font-mono text-white/40", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "CLEARANCE_STATUS" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+            level,
+            "/5"
+          ] })
+        ] }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-32 h-1 bg-white/5 relative overflow-hidden", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.div,
+          {
+            className: "absolute inset-y-0 left-0 bg-neon-blue",
+            animate: { width: `${level / 5 * 100}%` }
+          }
+        ) })
+      ] })
+    ] })
+  ] });
+};
+const SecureLock = ({ level, children }) => {
+  const { clearance } = useClearance();
+  const isLocked = clearance < level;
+  if (isLocked) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative group grayscale cursor-not-allowed opacity-50", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { className: "w-8 h-8 text-neon-blue/80 mb-2" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "text-[10px] font-mono text-neon-blue tracking-[0.2em]", children: [
+          "LEVEL_",
+          level,
+          "_REQUIRED"
+        ] })
+      ] }),
+      children
+    ] });
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    motion.div,
+    {
+      initial: { opacity: 0 },
+      animate: { opacity: 1 },
+      className: "relative",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute -top-2 -right-2 bg-neon-blue/20 p-1 rounded-full z-10", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LockOpen, { className: "w-3 h-3 text-neon-blue" }) }),
+        children
+      ]
+    }
+  );
+};
 function ProjectDetail() {
   const [, params] = useRoute("/operations/:projectId");
   const project = profileData.featured_projects.find((p2) => p2.name.toLowerCase() === params?.projectId?.toLowerCase());
+  const { incrementClearance } = useClearance();
+  const { playSound } = useCyberSound();
+  reactExports.useEffect(() => {
+    if (project) {
+      incrementClearance(1);
+      playSound("scan");
+    }
+  }, [params?.projectId]);
   if (!project) return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center py-20", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "text-2xl text-white font-mono", children: "PROJECT_NOT_FOUND" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Link$1, { href: "/operations", className: "text-neon-blue hover:underline mt-4 inline-block font-mono", children: "RETURN_TO_BASE" })
@@ -29741,14 +29950,14 @@ function ProjectDetail() {
               item
             ] }, item)) })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(SecureLock, { level: 3, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm font-mono text-neon-green", children: "SECURITY_PROTOCOLS" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-2", children: (project.security || ["Zero Trust Architecture", "Anomaly Detection", "Hardware-level Security", "Real-time Monitoring"]).map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { className: "flex items-center gap-2 text-xs text-white/50 font-mono", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { className: "w-3 h-3 text-neon-red" }),
               " ",
               item
             ] }, item)) })
-          ] })
+          ] }) })
         ] })
       ] }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("aside", { className: "space-y-8", children: [
@@ -31971,6 +32180,80 @@ const NeuralBackground = () => {
     }
   );
 };
+const DataStreamBackground = () => {
+  const canvasRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    let animationFrameId;
+    let particles = [];
+    const particleCount = 100;
+    const colors = [
+      "rgba(0, 240, 255, ",
+      // Bioluminescence Blue
+      "rgba(255, 77, 77, ",
+      // Bright Coral
+      "rgba(255, 255, 255, "
+      // White sparks
+    ];
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initParticles();
+    };
+    const initParticles = () => {
+      particles = [];
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(createParticle());
+      }
+    };
+    const createParticle = () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 2 + 1,
+      speedY: Math.random() * 1 + 0.5,
+      opacity: Math.random() * 0.5 + 0.1,
+      color: colors[Math.floor(Math.random() * colors.length)]
+    });
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(5, 5, 5, 0.1)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p2) => {
+        ctx.beginPath();
+        ctx.arc(p2.x, p2.y, p2.size, 0, Math.PI * 2);
+        ctx.fillStyle = `${p2.color}${p2.opacity})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = `${p2.color}0.5)`;
+        ctx.fill();
+        p2.y += p2.speedY;
+        p2.x += Math.sin(p2.y / 50) * 0.5;
+        if (p2.y > canvas.height) {
+          p2.y = -10;
+          p2.x = Math.random() * canvas.width;
+        }
+      });
+      animationFrameId = requestAnimationFrame(draw);
+    };
+    window.addEventListener("resize", resize);
+    resize();
+    draw();
+    return () => {
+      window.removeEventListener("resize", resize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(
+    "canvas",
+    {
+      ref: canvasRef,
+      className: "fixed inset-0 z-0 pointer-events-none opacity-30",
+      style: { mixBlendMode: "screen" }
+    }
+  );
+};
 const VanguardAI = () => {
   const [isOpen, setIsOpen] = reactExports.useState(false);
   const [intel, setIntel] = reactExports.useState(null);
@@ -32068,10 +32351,11 @@ const CyberShell = ({ children }) => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: `min-h-screen bg-[var(--color-cyber-black)] text-foreground font-[family-name:var(--font-body)] overflow-hidden flex flex-col relative selection:bg-neon-blue selection:text-black ${isMatrixMode ? "matrix-mode" : ""}`, children: [
     isMatrixMode ? /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 z-0 bg-black pointer-events-none font-mono text-green-500 text-xs opacity-20 overflow-hidden break-all leading-3", children: "MATRIX MODE ACTIVE - SYSTEM OVERRIDE" }) : /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ForceField, {}),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(NeuralBackground, {})
+      /* @__PURE__ */ jsxRuntimeExports.jsx(NeuralBackground, {}),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(DataStreamBackground, {})
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(VaultShell, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 bg-scanlines opacity-20 pointer-events-none z-50" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 bg-scanlines opacity-20 pointer-events-none z-50 animate-glitch-sm" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "fixed inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#000_90%)] pointer-events-none z-40" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(CommandTerminal, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(VanguardAI, {}),
@@ -32268,11 +32552,11 @@ function App() {
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(ErrorBoundary, { children: [
     !bootCompleted && /* @__PURE__ */ jsxRuntimeExports.jsx(BootSequence, { onComplete: handleBootComplete }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeProvider, { defaultTheme: "dark", children: /* @__PURE__ */ jsxRuntimeExports.jsx(VaultProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(TooltipProvider, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ThemeProvider, { defaultTheme: "dark", children: /* @__PURE__ */ jsxRuntimeExports.jsx(VaultProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(ClearanceProvider, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(TooltipProvider, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(Toaster2, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Router, {})
-    ] }) }) })
+    ] }) }) }) })
   ] });
 }
 clientExports.createRoot(document.getElementById("root")).render(/* @__PURE__ */ jsxRuntimeExports.jsx(App, {}));
-//# sourceMappingURL=index-a_J7uemZ.js.map
+//# sourceMappingURL=index-D6GTwssh.js.map
