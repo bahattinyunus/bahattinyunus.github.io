@@ -15,6 +15,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import { CyberShell } from "./components/layout/CyberShell";
 import { VaultProvider } from "./contexts/VaultContext";
 import { BootSequence } from "./components/cyber-ui/BootSequence";
+import { ClearanceProvider } from "./components/cyber-ui/SecurityClearance";
 import { useState, useEffect } from "react";
 
 function Router() {
@@ -54,10 +55,12 @@ function App() {
       {!bootCompleted && <BootSequence onComplete={handleBootComplete} />}
       <ThemeProvider defaultTheme="dark">
         <VaultProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Router />
-          </TooltipProvider>
+          <ClearanceProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Router />
+            </TooltipProvider>
+          </ClearanceProvider>
         </VaultProvider>
       </ThemeProvider>
     </ErrorBoundary>

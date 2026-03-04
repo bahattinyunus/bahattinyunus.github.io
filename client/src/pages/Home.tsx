@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { useVault } from "@/contexts/VaultContext";
 import { Zap, Activity, Microscope } from "lucide-react";
 import { OperationLogs } from "@/components/cyber-ui/OperationLogs";
+import { CyberGlobe } from "@/components/cyber-ui/CyberGlobe";
 
 export default function Home() {
   const [typedText, setTypedText] = useState("");
@@ -43,6 +44,10 @@ export default function Home() {
         <p className="max-w-2xl text-lg text-white/60 font-mono leading-relaxed border-l-2 border-neon-blue/30 pl-6">
           {profileData.personal.tagline}
         </p>
+
+        <div className="flex justify-center py-12">
+          <CyberGlobe />
+        </div>
       </div>
 
       {/* Status Grid */}

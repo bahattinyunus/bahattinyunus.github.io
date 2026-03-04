@@ -2,11 +2,23 @@
 import { useRoute, Link } from "wouter";
 import { profileData } from "@/lib/data";
 import { motion } from "framer-motion";
-import { ArrowLeft, ExternalLink, Github, Zap, Shield, Cpu, Layers } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Zap, Shield, Cpu, Layers, Lock, Activity } from "lucide-react";
+import { SecureLock, useClearance } from "@/components/cyber-ui/SecurityClearance";
+import { useEffect } from "react";
+import { useCyberSound } from "@/hooks/use-cyber-sound";
 
 export default function ProjectDetail() {
     const [, params] = useRoute("/operations/:projectId");
     const project = profileData.featured_projects.find(p => p.name.toLowerCase() === params?.projectId?.toLowerCase());
+    const { incrementClearance } = useClearance();
+    const { playSound } = useCyberSound();
+
+    useEffect(() => {
+        if (project) {
+            incrementClearance(1);
+            playSound('scan');
+        }
+    }, [params?.projectId]);
 
     if (!project) return (
         <div className="text-center py-20">
@@ -60,16 +72,18 @@ export default function ProjectDetail() {
                                     ))}
                                 </ul>
                             </div>
-                            <div className="space-y-4">
-                                <h3 className="text-sm font-mono text-neon-green">SECURITY_PROTOCOLS</h3>
-                                <ul className="space-y-2">
-                                    {(project.security || ['Zero Trust Architecture', 'Anomaly Detection', 'Hardware-level Security', 'Real-time Monitoring']).map(item => (
-                                        <li key={item} className="flex items-center gap-2 text-xs text-white/50 font-mono">
-                                            <Shield className="w-3 h-3 text-neon-red" /> {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                            <SecureLock level={3}>
+                                <div className="space-y-4">
+                                    <h3 className="text-sm font-mono text-neon-green">SECURITY_PROTOCOLS</h3>
+                                    <ul className="space-y-2">
+                                        {(project.security || ['Zero Trust Architecture', 'Anomaly Detection', 'Hardware-level Security', 'Real-time Monitoring']).map(item => (
+                                            <li key={item} className="flex items-center gap-2 text-xs text-white/50 font-mono">
+                                                <Shield className="w-3 h-3 text-neon-red" /> {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </SecureLock>
                         </div>
                     </section>
                 </div>

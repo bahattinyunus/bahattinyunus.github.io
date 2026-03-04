@@ -10,6 +10,7 @@ import { useKonamiCode } from "@/hooks/use-konami-code";
 import { useVault } from "@/contexts/VaultContext";
 import { VaultShell } from "./VaultShell";
 import { NeuralBackground } from "../cyber-ui/NeuralBackground";
+import { DataStreamBackground } from "../cyber-ui/DataStreamBackground";
 import { VanguardAI } from "../cyber-ui/VanguardAI";
 
 interface CyberShellProps {
@@ -53,14 +54,16 @@ export const CyberShell: React.FC<CyberShellProps> = ({ children }) => {
                 <>
                     <ForceField />
                     <NeuralBackground />
+                    <DataStreamBackground />
                 </>
             )}
 
             <VaultShell />
 
             {/* Background Effects */}
-            <div className="fixed inset-0 bg-scanlines opacity-20 pointer-events-none z-50"></div>
+            <div className="fixed inset-0 bg-scanlines opacity-20 pointer-events-none z-50 animate-glitch-sm"></div>
             <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#000_90%)] pointer-events-none z-40"></div>
+
 
             {/* Command Palette */}
             <CommandTerminal />

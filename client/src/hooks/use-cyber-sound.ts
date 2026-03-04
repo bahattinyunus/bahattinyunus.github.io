@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef } from "react";
 // Using native AudioContext for generated sounds to avoid external asset dependencies
 // This creates "bleep", "bloop", and "click" sounds synthetically.
 
-type SoundType = 'hover' | 'click' | 'type' | 'access' | 'alert';
+type SoundType = 'hover' | 'click' | 'type' | 'access' | 'alert' | 'scan';
 
 export const useCyberSound = () => {
     const audioContext = useRef<AudioContext | null>(null);
@@ -89,6 +89,16 @@ export const useCyberSound = () => {
                 gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
                 osc.start(now);
                 osc.stop(now + 0.2);
+                break;
+            case 'scan':
+                // Radar sweep sound
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(300, now);
+                osc.frequency.linearRampToValueAtTime(600, now + 0.3);
+                gain.gain.setValueAtTime(0.04, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+                osc.start(now);
+                osc.stop(now + 0.3);
                 break;
         }
     }, []);
