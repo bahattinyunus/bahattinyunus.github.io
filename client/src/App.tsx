@@ -19,9 +19,9 @@ const ProjectDetail = lazy(() => import("@/pages/ProjectDetail"));
 
 function CyberLoading() {
   return (
-    <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4 text-neon-blue font-mono text-xs">
-      <div className="w-10 h-10 border-2 border-neon-blue/20 border-t-neon-blue rounded-full animate-spin" />
-      <span className="tracking-widest animate-pulse">DECRYPTING_TACTICAL_INTERFACE...</span>
+    <div className="min-h-[60vh] flex flex-col items-center justify-center gap-3 text-white/60 font-mono text-xs">
+      <div className="w-8 h-8 border-2 border-white/10 border-t-accent rounded-full animate-spin" />
+      <span className="tracking-wider">Yükleniyor...</span>
     </div>
   );
 }
