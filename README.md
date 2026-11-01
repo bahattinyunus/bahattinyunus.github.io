@@ -1,192 +1,82 @@
 <div align="center">
 
-# ⚡ BAHATTİN YUNUS ÇETİN
-### **AI Developer · UAV Systems Architect · Embedded Systems Engineer**
-**Founder @ Arat Labs · Tulpar Aero-Dynamics · Arkıl Games · MERL · Budak · Anka Silicon Dynamics**
+# ⚡ Bahattin Yunus Çetin — Portfolyo & Mühendislik Vitrini
 
-[![Live Demo](https://img.shields.io/badge/LIVE_SYSTEM-bahattinyunus.github.io-00f3ff?style=for-the-badge&logo=google-chrome&logoColor=black)](https://bahattinyunus.github.io/)
+### **Yapay Zekâ · Otonom Sistemler · Gömülü Yazılım Mühendisi**
+**ODTÜ (BÖTE / CEIT) & Hacettepe Üniversitesi**
+
+[![Canlı Site](https://img.shields.io/badge/CANLI_SİTE-bahattinyunus.github.io-2dd4bf?style=for-the-badge&logo=google-chrome&logoColor=black)](https://bahattinyunus.github.io/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-12.6K+-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bahattinyunus/)
-[![GitHub Repos](https://img.shields.io/badge/GitHub_Repos-231+-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bahattinyunus)
-[![Medium](https://img.shields.io/badge/Medium-Articles-black?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@bahattinyunus)
-[![Type-Safe](https://img.shields.io/badge/TypeScript-100%25_Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![PWA Ready](https://img.shields.io/badge/PWA-Installable-d6ff3f?style=for-the-badge&logo=pwa&logoColor=black)](https://bahattinyunus.github.io/)
-
-<br/>
-
-```text
-  ██████╗ ███████╗████████╗██████╗  ██████╗ ███████╗ ██████╗ ██╗      ██╗███████╗
- ██╔════╝ ██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗██╔════╝██╔═══██╗██║      ██║██╔════╝
- ██║  ███╗█████╗     ██║   ██████╔╝██║   ██║███████╗██║   ██║██║      ██║███████╗
- ██║   ██║██╔══╝     ██║   ██╔══██╗██║   ██║╚════██║██║   ██║██║      ██║╚════██║
- ╚██████╔╝███████╗   ██║   ██████╔╝╚██████╔╝███████║╚██████╔╝███████╗██║███████║
-  ╚═════╝ ╚══════╝   ╚═╝   ╚═════╝  ╚═════╝ ╚══════╝ ╚═════╝ ╚══════╝╚═╝╚══════╝
-                            METAL YAKA // PROTOCOL v5.0
-```
+[![GitHub Repoları](https://img.shields.io/badge/GitHub_Repos-231+-18181b?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bahattinyunus)
+[![CV İndir](https://img.shields.io/badge/Özgeçmiş-CV_(PDF)-teal?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://bahattinyunus.github.io/cv3.pdf)
+[![TypeScript](https://img.shields.io/badge/TypeScript-100%25_Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React 19](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 
 </div>
 
 ---
 
-## 🌌 Genel Bakış (Overview)
+## 📌 Genel Bakış
 
-Bu repo; **Otonom İHA/SİHA Sistemleri**, **Büyük Dil Modelleri (LLM/Knowledge Distillation)**, **Edge-AI Optimizasyonu (%80 Pruning)**, **Gömülü Sistemler (RTOS/RISC-V)** ve **Siber Savunma** disiplinlerinde geliştirilen yüksek teknolojili Ar-Ge projelerini, girişimleri, interaktif telemetri simülatörlerini ve akademik faaliyetleri sergileyen yeni nesil **Cyberpunk / Metal Yaka v5.0** portföy sistemidir.
+Bu depo; **Bahattin Yunus Çetin**'in yapay zekâ model optimizasyonu (%80 pruning & quantization), ROS2/PX4 otonom İHA aviyonikleri, gömülü sistemler ve siber savunma alanlarındaki Ar-Ge çalışmalarını, açık kaynak projelerini ve 270'ten fazla akredite sertifikasını sergileyen resmi kişisel portfolyo web sitesidir.
 
-🔗 **Canlı Sistem:** [https://bahattinyunus.github.io/](https://bahattinyunus.github.io/)
+Dünya çapında en saygın açık kaynak geliştirici portfolyolarından (Brittany Chiang formatı) ilham alınarak **iki sütunlu (split-screen sticky navigation)**, fare takipli **spotlight cursor** ve yüksek performanslı modern koyu tema ile geliştirilmiştir.
 
----
-
-## 🏗️ Sistem Mimarisi (Architecture Flow)
-
-```mermaid
-flowchart TD
-    Client["🌐 İstemci Katmanı (React 19 + TypeScript + Tailwind CSS 4)"]
-    
-    subgraph AI_Engine["🧠 Dual-Engine Zeka Katmanı"]
-        LocalEngine["Local Neural Engine (Zero-Latency Semantic Intent)"]
-        WebGPU_LLM["WebLLM WebGPU (Cihaz Üstü Qwen2.5 1.5B Instruct)"]
-    end
-    
-    subgraph Simulators["🛸 İnteraktif Taktik Simülatörler"]
-        Tulpar["🛫 Tulpar UAV Flight Deck (Yapay Ufuk + FLIR + NVG + MAVLink2)"]
-        Budak["⚡ Budak Edge Lab (%80 Pruning + INT8/INT4 VRAM Hesaplayıcı)"]
-        BeeRoute["🐝 BeeRoute ABC Simülatörü (Bio-mimetic Koloni TSP Çözücü)"]
-        Vault["📜 Certification Vault (266+ Filtrelenebilir & Doğrulanabilir Belge)"]
-    end
-    
-    subgraph Hardware_HAL["💻 Gömülü & Aviyonik Katman"]
-        ROS2["ROS2 Humble / Foxy & PX4 SITL Telemetrisi"]
-        RISCV["Çelik MCU RISC-V C++20 SDK & FreeRTOS HAL"]
-        Trabzon["Trabzon Protocol (İkili Asenkron MQTT)"]
-    end
-
-    Client --> AI_Engine
-    Client --> Simulators
-    Simulators --> Hardware_HAL
-```
+🔗 **Canlı Bağlantı:** [https://bahattinyunus.github.io/](https://bahattinyunus.github.io/)
 
 ---
 
-## 🛸 Temel İnteraktif Modüller & Özellikler
+## ✨ Öne Çıkan Özellikler
 
-### 1. 🛫 Tulpar UAV Flight Deck (`TulparFlightDeck.tsx`)
-- **Fiziksel Uçuş Telemetrisi:** Gerçek zamanlı yapay ufuk (artificial horizon), pitch/roll dinamikleri, dijital airspeed ve barometrik irtifa göstergeleri.
-- **Sensör Görüntüleme Modları:** `CYBER_HUD`, `FLIR_THERMAL` (kızılötesi termal kamera modu) ve `NVG_GREEN` (gece görüş simülasyonu).
-- **Hedef Kilitleme (Target Lock):** Dinamik hedef mesafe ve koordinat HUD retikülü ile sesli ikaz simülasyonu.
-- **Manuel Manüvra Kontrolleri:** Taktik butonlarla burun kaldırma (pitch), yatış (roll) ve otomatik yatay düzleme.
-- **Saha Protokolleri:** ROS2 Humble, MAVLink2 çift yönlü telemetri köprüsü ve gerçek zamanlı paket sayacı.
-
-### 2. ⚡ Budak Edge-AI Pruning Lab (`BudakEdgeLab.tsx`)
-- **%80 Model Budama (Pruning):** Yapılandırılmış ve yapılandırılmamış tensör budama motoru.
-- **Donanım Seviyesinde Gizlilik:** FP16, INT8 ve INT4 nicemleme (Quantization) ile canlı VRAM tasarrufu ve gecikme (latency) hesaplayıcısı. Sıfır bulut sızıntısı.
-- **Hazır Kod Dışa Aktarma:** Tek tıkla kopyalanabilir PyTorch / AutoGPTQ üretim budama betiği.
-- **Hedef Donanım Karşılaştırması:** Otonom İHA Companion, NVIDIA Jetson Orin Nano, Raspberry Pi 5 ve Çelik MCU RISC-V donanım profilleri.
-
-### 3. 📜 266+ Sertifika & Akreditasyon Kasası (`CertificationVault.tsx`)
-- **Doğrulanmış Kayıtlar:** SHGM İHA-1 Pilotaj Lisansı, TEI Havacılık Motorları Okulu, TÜBİTAK/GSB KAMP+ Uzay (Radyo Astronomi), BGD KAMP+ Siber Savunma, TUA Astro Hackathon, BTK Akademi ve Bilgeİş akreditasyonları için filtreli, anlık aramalı ve tek tıkla kopyalanabilir dijital kasa.
-
-### 4. 🧠 Vanguard AI Taktik Asistanı (`VanguardAI.tsx`)
-- **Dual-Engine Mimari:** Hem sıfır gecikmeli yerel deterministik kural motoru hem de WebGPU üzerinden tarayıcıda doğrudan koşan Hugging Face Qwen2.5 1.5B Instruct yapay zekâsı.
-- **Saha Bilgi Tabanı:** ASELSAN Gölbaşı saha gezisi, Fransa Gençlik Değişimi, TUA CubeSat görevi, ODTÜ/Hacettepe eğitimi ve 231+ repo hakkında anlık cevaplar.
-
-### 5. ⌨️ Taktik Sistem Terminali (`CommandTerminal.tsx`)
-- **Klavye Kısayolu:** <kbd>Ctrl</kbd> + <kbd>K</kbd> veya <kbd>`</kbd> (Backtick) tuşuyla anında açılır.
-- **Desteklenen Komutlar:**
-  - `whoami`: Operatör kimlik kartı ve akademik matris.
-  - `cv` / `resume`: Doğrulanmış resmi CV dosyasını (PDF) anında açar.
-  - `doctrine`: 8 Ontolojik Sütun ve Sibernetik Manifestoya gider.
-  - `thinkers` / `filozoflar`: Gilbert Simondon'dan Heidegger'e 8 teknoloji filozofunu listeler.
-  - `socrates`: 4 yüksek riskli otonomi ve yapay zeka ikilemini Sokratik laboratuvarda test eder.
-  - `poiesis`: Heidegger'in Poiesis aksiyomunu ve siber direniş tanımını ekrana basar.
-  - `tulpar`: Tulpar Flight Deck simülatörüne doğrudan atlar.
-  - `budak`: Budak %80 model budama laboratuvarına gider.
-  - `certs` / `vault`: 266+ sertifika kasasını açar.
-  - `audio` / `sound`: Prosedürel Web Audio API cyber synth atmosferini açar/kapatır.
-  - `locks`: Yüksek güvenlikli kasayı (Secure Mode) aktifleştirir.
-  - `stats`: 231+ repo, 1500+ yıldız ve GitHub/LinkedIn istatistiklerini listeler.
-  - `ping`: Uç birim düğüm gecikme sürelerini test eder.
+- **📱 Split-Screen Mimari:** Masaüstünde sol sütunda sabit (sticky) profil, dinamik göstergeli sayfa içi navigasyon ve hızlı sosyal bağlantılar; sağ sütunda ise akıcı ve kartlı içerik akışı. Mobilde kusursuz tek sütun deneyimi.
+- **✨ Spotlight Cursor Glow:** Ekran üzerinde fare imlecini takip eden, göz yormayan derin gece mavisi/teal radial spotlight ışığı.
+- **📜 270+ Sertifika & Akreditasyon Kasası (`CertificationVault`):** ODTÜ Bilgeİş, BTK Akademi, SHGM, IBM, TEI ve TÜBİTAK onaylı 270+ sertifika için anlık canlı arama, kategori filtreleme, doğrulama kodları ve tek tıkla CSV dökümü alma imkanı.
+- **🌐 Çift Dil Desteği (TR / EN):** React Context tabanlı, sayfa yenilenmeden tek tıkla Türkçe ve İngilizce dil değişimi.
+- **📄 Doğrudan CV Erişimi:** Tek tıkla güncel PDF özgeçmişi görüntüleme ve indirme.
+- **⚡ Yüksek Performans & SEO:** React 19, Vite, Tailwind CSS 4, OpenGraph ve Twitter Cards meta etiketleri, 100% Type-Safe TypeScript.
 
 ---
 
-## 🏛️ Teknoloji Felsefesi & Sibernetik Doktrin (`/doctrine`)
+## 🚀 Öne Çıkan Projeler
 
-Bahattin Yunus Çetin'in mühendislik yaklaşımı, salt kod yazmanın ötesinde derin bir **Teknoloji Felsefesi** ve **Sibernetik Ontoloji** temeline oturur:
-
-1. **8 Temel Ontolojik Sütun (Octagram):**
-   - **I. Bilişimsel Termodinamik & Negentropi:** Kaosa karşı deterministik kod ile yerel düzen inşası (*Schrödinger, Wiener*).
-   - **II. Via Negativa (Eksiltme ile Zekâ):** Budak Doktrini; %80 budama ile gürültüden arınma (*Plotinus, Simondon*).
-   - **III. Determinizm ↔ Stokastisizm:** RTOS mabet temeli, PyTorch latent uzayı esneyen kubbesidir (*Spinoza, Turing*).
-   - **IV. Silikon Egemenliği:** Kendi çipini (Çelik MCU) ve telemetrisini yazmayan, başkasının simülasyonunda kiracıdır (*İbn Haldun*).
-   - **V. Mythos & Logos:** Kadim mitolojik arketipler ile modern aerodinamik fiziğin sentezi (Arkıl & Tulpar).
-   - **VI. Hilomorfik Silikon:** Donanım bedendir, tensör ağırlıkları ruh. Bedensiz zihin sanrıdır (*Aristoteles, Simondon*).
-   - **VII. Heidegger'in Gestell'i & Poiesis:** Tüketim köleliğine karşı açık kaynak ve yerel WebGPU ile şiirsel yaratım.
-   - **VIII. Epistemolojik Şeffaflık:** Açıklanamayan kara kutu zeka bilim değil, modern puttur (*Karl Popper, Flusser*).
-
-2. **Düşünürler Panteonu:** Gilbert Simondon, Martin Heidegger, Bernard Stiegler, Norbert Wiener, Vilém Flusser, Günther Anders, Donna Haraway, Alan Turing.
-3. **Sokratik Tekno-Etik İkilemler Laboratuvarı:** Otonom vuruş yetkisi, Hiper-ölçekleme vs. Via Negativa, Veri feodalizmi ve Kara kutu putperestliği üzerine etkileşimli diyalektik analizi.
-4. **Sibernetik Glosserium:** Negentropi, Gestell, Poiesis, Hilomorfizm, Pharmakon, Bireyleşme, Via Negativa ve Metal Yaka kavramlarının etimolojik ve mühendislik tanımları.
+| Proje | Alan | Açıklama & Teknolojiler | Repo |
+| :--- | :--- | :--- | :---: |
+| **Datathon Tahminleme Hattı** | Yapay Zekâ / Zaman Serisi | 100+ öznitelik mühendisliğiyle Attention-LSTM, Prophet ve Random Forest modellerini birleştiren ensemble tahminleme hattı. | [İncele](https://github.com/bahattinyunus) |
+| **Aura Hockey AR** | Görüntü İşleme / WebGL 3D | MediaPipe 21 el eklemi takibi ve Three.js fizik motoruyla tarayıcıda 60 FPS koşan artırılmış gerçeklik masa hokeyi oyunu. (Ankara AI Hackathon) | [İncele](https://github.com/bahattinyunus) |
+| **FezaArsivi & TUA Uzay Mimarisi** | Uzay / Aviyonik | TÜBİTAK Uzay Kampı ve TUA Astro Hackathon'da geliştirilen Ay yüzeyi keşfi için ROS 2 & EKF telemetri ve CubeSat spektrogram kütüphanesi. | [İncele](https://github.com/bahattinyunus/FezaArsivi) |
+| **DeepForensics** | Adli Bilişim / Güvenlik | PRNU sensör parmak izi analizi, ELA seviye tespiti, GAN deepfake sınıflandırması ve C2PA dijital içerik doğrulama paketi. | [İncele](https://github.com/bahattinyunus) |
+| **İnsansız Sualtı Robotu Rehberi** | Otonom Sistemler | NVIDIA Jetson Orin uç biriminde çalışan ROS 2 düğüm mimarisi, EKF sensör füzyonu ve otonom sualtı navigasyonu. (TEKNOFEST) | [İncele](https://github.com/bahattinyunus) |
+| **BeeRoute Optimizer** | Algoritma / Optimizasyon | Yapay Arı Kolonisi (ABC) prensibiyle NP-Hard Gezgin Satıcı (TSP) ve otonom rota planlama optimizasyon çekirdeği ($O(G \cdot S \cdot n^2)$). | [İncele](https://github.com/bahattinyunus/BeeRoute) |
+| **Çelik MCU RISC-V SDK** | Gömülü Sistemler | İlk yerli RISC-V çipi Çelik MCU için modern C++20 SDK, FreeRTOS HAL katmanı ve bare-metal donanım sürücüleri. | [İncele](https://github.com/bahattinyunus/Celik-MCU-SDK) |
 
 ---
 
-## 🏢 Kurucu Girişimler & Ar-Ge Ekosistemi
+## 🎓 Akademik Geçmiş & Önemli Başarılar
 
-| Girişim | Rol | Odak Alanı & Açıklama |
-| :--- | :--- | :--- |
-| **Arat Labs** | Kurucu & Baş Yazılım Mühendisi | Next-Gen AI Architectures, asimetrik sistem mühendisliği ve derin teknoloji Ar-Ge'si. |
-| **Tulpar Aero-Dynamics** | Kurucu & Baş Teknoloji Mimarı | UE5 fizik tabanlı uçuş simülasyonları, İHA/SİHA ve eVTOL otonom uçuş algoritmaları. |
-| **Arkıl Games** | Kurucu & Yaratıcı Direktör | Türk mitolojisi tabanlı evren tasarımı ve prosedürel oyun motoru mimarisi. |
-| **MERL (Meta-Engineering Research Lab)** | Baş Araştırmacı & Kurucu | İnsan müdahalesiz otonom kod fabrikaları & stokastik zeka modelleri. |
-| **Budak \| Edge-AI Optimization** | Kurucu & Baş Araştırma Mühendisi | %80 Model budama & INT8/INT4 donanım seviyesinde veri gizliliği kalkanı. |
-| **Anka Silicon Dynamics** | Kurucu & Baş Sistem Mimarı | Knowledge Distillation ile donanım bağımsız zeka & milli NPU/FPGA simülasyonları. |
-
----
-
-## 🎓 Akademik Matris & Akreditasyonlar
-
-- 🏫 **Orta Doğu Teknik Üniversitesi (ODTÜ)** — Bilgisayar ve Öğretim Teknolojileri Eğitimi (BÖTE / CEIT, 2026 – 2032)
-- 🏫 **Hacettepe Üniversitesi** — Mühendislik & Alternatif Enerji Teknolojileri (2026 – 2030)
-- 🏫 **Karadeniz Teknik Üniversitesi (KTÜ)** — Yazılım Mühendisliği (2024 – 2026)
-- 🏫 **Recep Tayyip Erdoğan Üniversitesi (RTEÜ)** — Bilişim ve Teknoloji (2024 – 2026)
-- 🏫 **İstanbul Üniversitesi** — Yönetim Bilişim Sistemleri (AUZEF, 2025 – 2029)
-- 🎖️ **SHGM:** İHA-1 Sportif/Amatör Pilotaj Lisansı
-- 🎖️ **TEI:** 6. Dönem Havacılık Motorları Okulu (Gaz Türbinli Motorlar)
-- 🎖️ **TÜBİTAK & GSB:** KAMP+ Havacılık ve Uzay Kampı (Bursa - FezaArsivi)
-- 🎖️ **BGD & GSB:** KAMP+ Siber Güvenlik Kampı (SOC, Pentest & Adli Bilişim)
-- 🎖️ **Türkiye Uzay Ajansı (TUA):** Astro Hackathon (15 CubeSat / Derin Uzay Görevi)
-- 🎖️ **GSB & TMV:** Türkiye–Fransa Gençlik Değişimi Programı (66.500+ aday arasından seçilen 20 gençten biri)
+- **Orta Doğu Teknik Üniversitesi (ODTÜ)** — Bilgisayar ve Öğretim Teknolojileri Eğitimi (BÖTE / CEIT)
+- **Hacettepe Üniversitesi** — Akademik Araştırma & Mühendislik Çalışmaları
+- **Karadeniz Teknik Üniversitesi (KTÜ)** — Yazılım Mühendisliği Temelleri
+- **T.C. GSB – Türkiye Maarif Vakfı:** Türkiye–Fransa Gençlik Değişimi Programı (**66.500+ aday arasından seçilen ilk 20 gençten biri**; Avrupa Parlamentosu ve AİHM resmi heyet ziyaretleri)
+- **Sivil Havacılık Genel Müdürlüğü (SHGM):** İHA-1 Ticari / Sportif Pilotaj Lisansı (`TR-IHA1H10609053`)
+- **Siber Vatan (SSB):** Beyaz Şapkalı Siber Güvenlik Uzmanlığı
+- **TEI TUSAŞ:** 6. Dönem Havacılık Motorları Okulu (Gaz Türbinli Havacılık Motorları)
+- **TÜBİTAK:** KAMP+ Uzay Kampı (Radyo Astronomi & FezaArsivi)
 
 ---
 
-## 💻 Amiral Gemisi Açık Kaynak Repolar
+## 🛠️ Teknoloji Yığını
 
-- **[BeeRoute](https://github.com/bahattinyunus/BeeRoute):** Bio-mimetic Yapay Arı Kolonisi (ABC) NP-Hard rota optimizasyonu ($O(G \cdot S \cdot n^2)$).
-- **[Tulpar-Aero-Simulator](https://github.com/bahattinyunus/tulpar-aero-dynamics):** UE5 & ROS2 telemetri ve aerodinamik uçuş simülatörü.
-- **[Budak-Edge-Pruner](https://github.com/bahattinyunus/budak-edge-ai):** PyTorch/ONNX %80 model budama ve INT8/INT4 cihaz üstü gizlilik motoru.
-- **[Anka-Distill-Core](https://github.com/bahattinyunus/anka-silicon-dynamics):** 70B teacher modellerini 7B/8B student modellerine aktaran Knowledge Distillation mimarisi.
-- **[FezaArsivi](https://github.com/bahattinyunus/FezaArsivi):** TÜBİTAK/TUA destekli radyo astronomi ve CubeSat telemetri merkezi.
-- **[Aura-Hockey-AR](https://github.com/bahattinyunus/Aura-Hockey-AR):** MediaPipe & Three.js 3D WebGL Ankara AI Hackathon AR projesi.
-- **[Celik-MCU-RISCV-SDK](https://github.com/bahattinyunus/Celik-MCU-SDK):** İlk yerli RISC-V çipi Çelik MCU için gömülü C++ SDK ve RTOS HAL katmanı.
-- **[Trabzon-Protocol-MQTT](https://github.com/bahattinyunus/Trabzon-Protocol):** Denizcilik ve İHA telemetrisi için hafif asenkron ikili haberleşme protokolü.
-- **[Arkil-Mythos-Engine](https://github.com/bahattinyunus/arkil-games):** Türk mitolojisi tabanlı prosedürel evren ve UE5 C++ davranış ağaçları motoru.
-- **[Math2Code-Guide](https://github.com/bahattinyunus/Math2Code-A-Practical-Guide-for-Developers):** Matematiksel modelleri yüksek başarımlı koda dönüştürme rehberi (200+ Yıldız).
+- **Frontend:** React 19, TypeScript, Tailwind CSS 4, Framer Motion, Lucide React
+- **Derleyici & Araçlar:** Vite 7, PostCSS, ESLint
+- **Yapay Zekâ & Optimizasyon:** PyTorch, Model Budama (%80 Pruning), Quantization (INT8/FP4), vLLM, QLoRA, TFLite, OpenCV
+- **Aviyonik & Gömülü:** ROS2 (Humble/Iron), PX4 Autopilot, FreeRTOS, Modern C++20, Linux Kernel, MAVLink, FastDDS
+- **Sistem & DevOps:** Docker, Git/GitHub Actions, Linux/Bash, Siber Savunma Analizi
 
 ---
 
-## 🛠️ Teknoloji Yığını (Tech Stack)
+## 💻 Yerel Geliştirme
 
-| Kategori | Teknolojiler |
-| :--- | :--- |
-| **Frontend & UI** | React 19, TypeScript, Tailwind CSS 4, Shadcn/UI, Lucide React, Framer Motion |
-| **PWA & Mobil** | Web App Manifest, Standalone Mode, Touch-Optimized, Offline Caching |
-| **Ses & Akustik** | Web Audio API Procedural Synth (Sıfır Dış Ses Dosyası Bağımlılığı) |
-| **Grafik & 3D** | Three.js, WebGL, Canvas API, Unreal Engine 5 |
-| **Yapay Zeka & ML** | PyTorch, TensorFlow, Unsloth, vLLM, QLoRA, TFLite, WebLLM (Qwen2.5), ONNX Runtime |
-| **Robotik & Havacılık** | ROS2 (Humble/Foxy), PX4 SITL, Gazebo, MAVLink2, Microstrip RF |
-| **Gömülü & Diller** | C++17/20, C, Python, Rust, Go, RISC-V Assembly, FreeRTOS |
-| **Siber Güvenlik** | Zero Trust, Pwntools, Ghidra, Scapy, AES-256-GCM, Linux Cgroups |
-
----
-
-## 🏃‍♂️ Yerel Kurulum & Çalıştırma
+Projeyi yerel makinenizde çalıştırmak için:
 
 ```bash
 # 1. Depoyu klonlayın
@@ -199,21 +89,24 @@ npm install
 # 3. Geliştirme sunucusunu başlatın
 npm run dev
 
-# 4. Üretim sürümü için derleyin
+# 4. Canlı üretim sürümünü derleyin
 npm run build
 ```
 
+Derlenen dosyalar otomatik olarak `dist/` dizinine çıkar ve GitHub Actions üzerinden `main` branch'ine yapılan her push'ta GitHub Pages'e dağıtılır.
+
 ---
 
-## 📬 İletişim & Ağ
+## 📬 İletişim
 
 - **E-Posta:** [bahattinyunuscetin1@gmail.com](mailto:bahattinyunuscetin1@gmail.com)
-- **LinkedIn:** [linkedin.com/in/bahattinyunus](https://www.linkedin.com/in/bahattinyunus/) (12.600+ Bağlantı & Takipçi)
-- **GitHub:** [github.com/bahattinyunus](https://github.com/bahattinyunus) (231+ Kamu Reposu)
+- **LinkedIn:** [linkedin.com/in/bahattinyunus](https://www.linkedin.com/in/bahattinyunus/)
+- **GitHub:** [github.com/bahattinyunus](https://github.com/bahattinyunus)
 - **Medium:** [medium.com/@bahattinyunus](https://medium.com/@bahattinyunus)
+- **Özgeçmiş:** [CV (PDF) İndir](https://bahattinyunus.github.io/cv3.pdf)
 
 ---
 
 <div align="center">
-  <sub>Geliştirici: <strong>Bahattin Yunus ÇETİN</strong> · Ankara, Türkiye · MIT Lisansı</sub>
+  <sub>© 2026 <strong>Bahattin Yunus Çetin</strong> · Ankara, Türkiye · MIT Lisansı ile lisanslanmıştır.</sub>
 </div>
