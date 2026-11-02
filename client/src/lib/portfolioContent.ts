@@ -48,7 +48,7 @@ export const CONTENT = {
       mail: "E-posta",
     },
     hero: {
-      available: "Yeni Projelere & Ar-Ge İşbirliklerine Açık",
+      available: "Ankara, Türkiye",
       location: "Ankara, Türkiye",
       role: "Yapay Zekâ · Otonom Sistemler · Gömülü Yazılım",
       tagline:
@@ -281,7 +281,7 @@ export const CONTENT = {
             "NVIDIA Jetson Orin tabanlı uç birim yapay zekâ entegrasyonu",
             "ROS 2 düğümleri ile sensör ve motor sürücü yönetimi",
             "Derinlik, IMU ve sonar için EKF durum kestirimi",
-            "Sualtı otonom görev algoritmaları",
+            "Sualtı otonom seyrüsefer algoritmaları",
           ],
           stack: ["ROS 2", "NVIDIA Jetson", "C++", "Python", "Sensör Füzyonu", "EKF"],
           github: "https://github.com/bahattinyunus",
@@ -487,7 +487,7 @@ export const CONTENT = {
       paragraphs: [
         "Pursuing academic studies at Middle East Technical University (METU CEIT) and Hacettepe University, backed by strong software engineering foundations from Karadeniz Technical University and RTEU.",
         "Focusing on deep learning model compression (up to 80% pruning without accuracy loss) and ultra low-latency Edge-AI inference. Developing autonomous UAV avionics with ROS2, PX4 Autopilot, and Unreal Engine 5 physics simulation.",
-        "Selected as one of the 20 delegates out of 66,500+ applicants in the Turkey–France Youth Exchange Program (visiting the European Parliament and ECHR). Holder of 270+ accredited credentials including Turkey Cyber Homeland (White Hat Hacker), DGCA UAV-1 Commercial Pilot License, TEI Aviation Engines School, and TUBITAK Space Camp.",
+        "Selected as one of the 20 delegates out of 66,500+ applicants in the Turkey–France Youth Exchange Program (visiting the European Parliament and ECHR). Holder of 270+ accredited credentials including Turkey Cyber Homeland (Cyber Security), DGCA UAV-1 Commercial Pilot License, TEI Aviation Engines School, and TUBITAK Space Camp.",
       ],
       facts: [
         { label: "University (METU)", value: "METU (CEIT)" },

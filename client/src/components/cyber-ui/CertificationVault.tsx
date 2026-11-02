@@ -147,13 +147,13 @@ export const CertificationVault: React.FC = () => {
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs font-mono">
               <ShieldCheck className="w-3.5 h-3.5" />
-              <span>RESMİ AKREDİTASYON & YETKİNLİK SİCİLİ</span>
+              <span>AKREDİTASYON VE SERTİFİKALAR</span>
             </div>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-100 tracking-tight">
               LİSANSLAR VE SERTİFİKALAR <span className="text-teal-400 font-mono text-xl">({ALL_CERTIFICATES.length}+)</span>
             </h2>
             <p className="text-xs sm:text-sm font-sans text-slate-400 max-w-2xl leading-relaxed">
-              T.C. Cumhurbaşkanlığı İnsan Kaynakları Ofisi, BTK Akademi, ODTÜ destekli Bilgeİş, Turkcell Geleceği Yazanlar, T3 Vakfı ve SHGM onaylı pilotaj ve mühendislik akreditasyonları.
+              T.C. Cumhurbaşkanlığı İnsan Kaynakları Ofisi, BTK Akademi, ODTÜ Bilgeİş, Turkcell Geleceği Yazanlar, T3 Vakfı ve SHGM onaylı pilotaj ve mühendislik sertifikaları.
             </p>
           </div>
 
@@ -162,7 +162,7 @@ export const CertificationVault: React.FC = () => {
             <button
               onClick={downloadCSV}
               className="inline-flex items-center justify-center gap-2 px-3.5 py-2.5 bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/30 text-teal-300 font-mono text-xs rounded-xl transition-all shadow-[0_0_15px_rgba(45,212,191,0.1)]"
-              title="266+ Sertifikanın tamamını Excel/CSV olarak indir"
+              title="Sertifikaların tamamını Excel/CSV olarak indir"
             >
               <FileSpreadsheet className="w-4 h-4" />
               <span>CSV Olarak İndir ({ALL_CERTIFICATES.length})</span>
@@ -173,38 +173,38 @@ export const CertificationVault: React.FC = () => {
               title="Filtrelenen sertifikaları metin olarak kopyala"
             >
               {copiedAll ? <Check className="w-4 h-4 text-teal-400" /> : <Copy className="w-4 h-4 text-slate-400" />}
-              <span>{copiedAll ? "Panoya Kopyalandı!" : "Sicil Dökümü Kopyala"}</span>
+              <span>{copiedAll ? "Panoya Kopyalandı!" : "Metin Olarak Kopyala"}</span>
             </button>
           </div>
         </div>
 
         {/* İstatistik Metrikleri & Kurum Dağılımı */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono mt-6 pt-6 border-t border-white/10">
-          <div className="p-3 bg-white/5 border border-white/10 rounded-xl text-center">
-            <span className="text-2xl font-bold text-accent block">266+</span>
-            <span className="text-[10px] text-white/50 uppercase tracking-wider">Doğrulanmış Sicil</span>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono mt-6 pt-6 border-t border-slate-800">
+          <div className="p-3 bg-slate-800/50 border border-slate-700/60 rounded-xl text-center">
+            <span className="text-2xl font-bold text-teal-400 block">{ALL_CERTIFICATES.length}+</span>
+            <span className="text-[10px] text-slate-400 uppercase tracking-wider">Onaylı Belge</span>
           </div>
-          <div className="p-3 bg-white/5 border border-white/10 rounded-xl text-center">
+          <div className="p-3 bg-slate-800/50 border border-slate-700/60 rounded-xl text-center">
             <span className="text-2xl font-bold text-emerald-400 block">70+</span>
-            <span className="text-[10px] text-white/50 uppercase tracking-wider">Bilgeİş (ODTÜ)</span>
+            <span className="text-[10px] text-slate-400 uppercase tracking-wider">ODTÜ Bilgeİş</span>
           </div>
-          <div className="p-3 bg-white/5 border border-white/10 rounded-xl text-center">
+          <div className="p-3 bg-slate-800/50 border border-slate-700/60 rounded-xl text-center">
             <span className="text-2xl font-bold text-blue-400 block">100+</span>
-            <span className="text-[10px] text-white/50 uppercase tracking-wider">BTK Akademi</span>
+            <span className="text-[10px] text-slate-400 uppercase tracking-wider">BTK Akademi</span>
           </div>
-          <div className="p-3 bg-white/5 border border-white/10 rounded-xl text-center">
-            <span className="text-2xl font-bold text-red-400 block">İHA-1</span>
-            <span className="text-[10px] text-white/50 uppercase tracking-wider">SHGM Ticari Pilot</span>
+          <div className="p-3 bg-slate-800/50 border border-slate-700/60 rounded-xl text-center">
+            <span className="text-2xl font-bold text-amber-400 block">İHA-1</span>
+            <span className="text-[10px] text-slate-400 uppercase tracking-wider">SHGM Ticari Pilot</span>
           </div>
         </div>
 
         {/* Çok Renkli Kategori Dağılım İlerleme Çubuğu */}
-        <div className="mt-6 pt-6 border-t border-white/10 space-y-2">
-          <div className="flex items-center justify-between text-xs font-mono text-white/60">
+        <div className="mt-6 pt-6 border-t border-slate-800 space-y-2">
+          <div className="flex items-center justify-between text-xs font-mono text-slate-400">
             <span className="flex items-center gap-1.5">
-              <Layers className="w-3.5 h-3.5 text-accent" /> YETKİNLİK MATRİSİ DAĞILIMI
+              <Layers className="w-3.5 h-3.5 text-teal-400" /> KATEGORİ DAĞILIMI
             </span>
-            <span className="text-[11px] text-white/40">266 Kayıt · 6 Ana Disiplin</span>
+            <span className="text-[11px] text-slate-500">{ALL_CERTIFICATES.length}+ Belge · 6 Kategori</span>
           </div>
 
           <div className="h-2.5 w-full rounded-full bg-white/5 overflow-hidden flex p-0.5 border border-white/10">
@@ -410,7 +410,7 @@ export const CertificationVault: React.FC = () => {
                     </div>
                   ) : (
                     <div className="flex items-center justify-between w-full text-slate-500 text-[10px]">
-                      <span>Onaylı Sicil Kaydı</span>
+                      <span>Doğrulanmış Sertifika</span>
                       <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
                     </div>
                   )}

@@ -187,8 +187,8 @@ export default function Home() {
         organization: "Siber Vatan (SSB) · SHGM · TEI TUSAŞ · TÜBİTAK",
         description:
           lang === "tr"
-            ? "Türkiye Siber Vatan Beyaz Şapkalı Hacker eğitimi, SHGM İHA-1 Ticari Pilot Lisansı (TR-IHA1H10609053), TEI Havacılık Motorları Okulu ve TÜBİTAK Uzay Kampı programlarını başarıyla tamamladım."
-            : "Completed certified programs including Cyber Homeland (White Hat Hacker), DGCA Commercial UAV-1 Pilot License, TEI Aviation Engines School, and TUBITAK Space Camp.",
+            ? "Türkiye Siber Vatan Siber Güvenlik Uzmanlığı eğitimi, SHGM İHA-1 Ticari Pilot Lisansı (TR-IHA1H10609053), TEI Havacılık Motorları Okulu ve TÜBİTAK Uzay Kampı programlarını başarıyla tamamladım."
+            : "Completed certified programs including Cyber Homeland (Cyber Security), DGCA Commercial UAV-1 Pilot License, TEI Aviation Engines School, and TUBITAK Space Camp.",
         badges: ["Siber Vatan", "SHGM İHA-1", "TEI Motor Okulu", "TÜBİTAK", "Siber Savunma"],
       },
       {
@@ -227,7 +227,7 @@ export default function Home() {
         highlights: ["100+ Feature", "Attention-LSTM", "Hibrit Stacking"],
         tags: ["Python", "PyTorch", "Attention-LSTM", "Prophet", "Scikit-Learn", "Pandas"],
         link: "https://github.com/bahattinyunus",
-        metric: "Datathon 2026 // 100+ Features",
+        metric: "Datathon 2026 · 100+ Features",
       },
       {
         id: "aura-hockey-ar",
@@ -250,7 +250,7 @@ export default function Home() {
         highlights: ["60 FPS WebGL", "21 Eklem Takibi", "Sıfır Ek Donanım"],
         tags: ["Three.js", "MediaPipe", "WebGL", "TypeScript", "TensorFlow.js"],
         link: "https://github.com/bahattinyunus",
-        metric: "Ankara AI Hackathon // 60 FPS",
+        metric: "Ankara AI Hackathon · 60 FPS",
       },
       {
         id: "feza-arsivi-tua",
@@ -273,7 +273,7 @@ export default function Home() {
         highlights: ["ROS 2 Humble", "SDR Spektrogram", "CubeSat Telemetri"],
         tags: ["ROS 2", "Python", "SDR", "Spectrogram", "EKF", "CubeSat"],
         link: "https://github.com/bahattinyunus/FezaArsivi",
-        metric: "TÜBİTAK & TUA // 15 Mimari",
+        metric: "TÜBİTAK & TUA · CubeSat Telemetry",
       },
       {
         id: "deepforensics",
@@ -296,7 +296,7 @@ export default function Home() {
         highlights: ["PRNU Parmak İzi", "Deepfake Tespiti", "C2PA Doğrulama"],
         tags: ["Python", "PyTorch", "OpenCV", "PRNU", "Deepfake", "C2PA"],
         link: "https://github.com/bahattinyunus",
-        metric: "BTK Akademi 42h // C2PA",
+        metric: "BTK Akademi · C2PA Verified",
       },
       {
         id: "insansiz-sualti",
@@ -314,12 +314,12 @@ export default function Home() {
           "NVIDIA Jetson Orin Uç Birim Yapay Zekâ Çıkarımı",
           "ROS 2 Düğümleri ile Sensör ve İtki Yönetimi",
           "Derinlik, IMU ve Sonar için EKF Durum Kestirimi",
-          "Sualtı Otonom Görev & Hedef Tanıma Döngüsü",
+          "Sualtı Otonom Seyrüsefer & Durum Kestirimi",
         ],
         highlights: ["Jetson Orin", "ROS 2 Düğümleri", "EKF Durum Kestirimi"],
         tags: ["ROS 2", "NVIDIA Jetson", "C++", "Python", "EKF", "Sensör Füzyonu"],
         link: "https://github.com/bahattinyunus",
-        metric: "TEKNOFEST // Jetson Orin Edge AI",
+        metric: "TEKNOFEST · Jetson Orin",
       },
       {
         id: "beeroute",
@@ -342,7 +342,7 @@ export default function Home() {
         highlights: ["O(G·S·n²)", "ABC Algoritması", "İHA Sürü Rotalama"],
         tags: ["Python", "C++", "NumPy", "Heuristics", "Graph Theory"],
         link: "https://github.com/bahattinyunus/BeeRoute",
-        metric: "O(G·S·n²) // Algoritmik Çekirdek",
+        metric: "Algoritmik Optimizasyon · O(G·S·n²)",
       },
       {
         id: "celik-mcu",
@@ -365,7 +365,7 @@ export default function Home() {
         highlights: ["Yerli RISC-V", "C++20 HAL", "FreeRTOS Port"],
         tags: ["C++20", "RISC-V", "FreeRTOS", "HAL", "Bare-Metal"],
         link: "https://github.com/bahattinyunus/Celik-MCU-SDK",
-        metric: "Yerli RISC-V // C++20 SDK",
+        metric: "Yerli RISC-V · C++20 SDK",
       },
     ];
   }, [lang]);
@@ -419,15 +419,12 @@ export default function Home() {
             {/* ========================================================== */}
             <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
               <div>
-                {/* Durum Rozeti */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-teal-500/30 bg-teal-500/10 text-xs font-mono text-teal-300 mb-5">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-teal-400" />
-                  </span>
-                  <span>{lang === "tr" ? "Yeni Ar-Ge Projelerine Açık" : "Open for R&D Projects"}</span>
-                  <span className="text-slate-600">•</span>
-                  <span>Ankara, TR</span>
+                {/* Lokasyon & Kurum Rozeti */}
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-700/80 bg-slate-800/40 text-xs font-mono text-slate-300 mb-6">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
+                  <span>Ankara, Türkiye</span>
+                  <span className="text-slate-600">/</span>
+                  <span className="text-slate-400">ODTÜ & Hacettepe</span>
                 </div>
 
                 {/* İsim & Başlık */}
@@ -648,14 +645,14 @@ export default function Home() {
                       <>
                         T.C. GSB – Maarif Vakfı Türkiye–Fransa Gençlik Değişimi Programı'nda{" "}
                         <span className="font-medium text-slate-200">66.500+ aday arasından seçilen ilk 20 genç</span> arasında yer alarak Avrupa Parlamentosu ve AİHM ziyaretlerinde bulundum.{" "}
-                        <span className="font-medium text-slate-200">Siber Vatan</span> (Beyaz Şapkalı Hacker),{" "}
+                        <span className="font-medium text-slate-200">Siber Vatan</span> (Siber Güvenlik Uzmanlığı),{" "}
                         <span className="font-medium text-slate-200">SHGM İHA-1 Ticari Pilot Lisansı</span> ve 270'ten fazla akredite belgeye sahibim.
                       </>
                     ) : (
                       <>
                         Selected among the{" "}
                         <span className="font-medium text-slate-200">top 20 youth out of 66,500+ applicants</span> in the Turkey–France Youth Exchange Program (visiting the European Parliament and ECHR). Holder of{" "}
-                        <span className="font-medium text-slate-200">Cyber Homeland</span> (White Hat Hacker),{" "}
+                        <span className="font-medium text-slate-200">Cyber Homeland</span> (Cyber Security),{" "}
                         <span className="font-medium text-slate-200">DGCA UAV-1 Commercial Pilot License</span>, and 270+ verified credentials.
                       </>
                     )}

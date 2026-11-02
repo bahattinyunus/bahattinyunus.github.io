@@ -1,90 +1,23 @@
-import { lazy, Suspense } from "react";
+import React from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Redirect } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "@/pages/Home";
-import { CyberShell } from "./components/layout/CyberShell";
-import { VaultProvider } from "./contexts/VaultContext";
-import { ClearanceProvider } from "./components/cyber-ui/SecurityClearance";
-
-const Arsenal = lazy(() => import("@/pages/Arsenal"));
-const Operations = lazy(() => import("@/pages/Operations"));
-const Comms = lazy(() => import("@/pages/Comms"));
-const Intelligence = lazy(() => import("@/pages/Intelligence").then((m) => ({ default: m.Intelligence })));
-const Doctrine = lazy(() => import("@/pages/Doctrine"));
-const ProjectDetail = lazy(() => import("@/pages/ProjectDetail"));
-
-function CyberLoading() {
-  return (
-    <div className="min-h-[60vh] flex flex-col items-center justify-center gap-3 text-white/60 font-mono text-xs">
-      <div className="w-8 h-8 border-2 border-white/10 border-t-accent rounded-full animate-spin" />
-      <span className="tracking-wider">Yükleniyor...</span>
-    </div>
-  );
-}
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/arsenal">
-        {() => (
-          <CyberShell>
-            <Suspense fallback={<CyberLoading />}>
-              <Arsenal />
-            </Suspense>
-          </CyberShell>
-        )}
-      </Route>
-      <Route path="/operations">
-        {() => (
-          <CyberShell>
-            <Suspense fallback={<CyberLoading />}>
-              <Operations />
-            </Suspense>
-          </CyberShell>
-        )}
-      </Route>
-      <Route path="/intelligence">
-        {() => (
-          <CyberShell>
-            <Suspense fallback={<CyberLoading />}>
-              <Intelligence />
-            </Suspense>
-          </CyberShell>
-        )}
-      </Route>
-      <Route path="/doctrine">
-        {() => (
-          <CyberShell>
-            <Suspense fallback={<CyberLoading />}>
-              <Doctrine />
-            </Suspense>
-          </CyberShell>
-        )}
-      </Route>
-      <Route path="/operations/:projectId">
-        {() => (
-          <CyberShell>
-            <Suspense fallback={<CyberLoading />}>
-              <ProjectDetail />
-            </Suspense>
-          </CyberShell>
-        )}
-      </Route>
-      <Route path="/comms">
-        {() => (
-          <CyberShell>
-            <Suspense fallback={<CyberLoading />}>
-              <Comms />
-            </Suspense>
-          </CyberShell>
-        )}
-      </Route>
-      <Route component={NotFound} />
+      {/* Eski çocukça askeri linkleri doğrudan ana sayfaya yönlendir */}
+      <Route path="/arsenal">{() => <Redirect to="/" />}</Route>
+      <Route path="/operations">{() => <Redirect to="/" />}</Route>
+      <Route path="/intelligence">{() => <Redirect to="/" />}</Route>
+      <Route path="/doctrine">{() => <Redirect to="/" />}</Route>
+      <Route path="/comms">{() => <Redirect to="/" />}</Route>
+      <Route path="/operations/:projectId">{() => <Redirect to="/" />}</Route>
+      <Route>{() => <Redirect to="/" />}</Route>
     </Switch>
   );
 }
@@ -93,14 +26,10 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
-        <VaultProvider>
-          <ClearanceProvider>
-            <TooltipProvider>
-              <Toaster />
-              <Router />
-            </TooltipProvider>
-          </ClearanceProvider>
-        </VaultProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
