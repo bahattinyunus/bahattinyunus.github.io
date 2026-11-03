@@ -18,9 +18,9 @@
 
 ## 📌 Genel Bakış
 
-Bu depo; **Bahattin Yunus Çetin**'in yapay zekâ model optimizasyonu (%80 pruning & quantization), ROS2/PX4 otonom İHA aviyonikleri, gömülü sistemler ve siber savunma alanlarındaki Ar-Ge çalışmalarını, açık kaynak projelerini ve 270'ten fazla akredite sertifikasını sergileyen resmi kişisel portfolyo web sitesidir.
+Bu depo; **Bahattin Yunus Çetin**'in yapay zekâ model optimizasyonu (%80 pruning & quantization), ROS2/PX4 otonom İHA aviyonikleri, gömülü sistemler ve siber savunma alanlarındaki Ar-Ge çalışmalarını, saha görevlerini, açık kaynak projelerini ve 270'ten fazla akredite sertifikasını sergileyen resmi kişisel portfolyo web sitesidir.
 
-Dünya çapında en saygın açık kaynak geliştirici portfolyolarından (Brittany Chiang formatı) ilham alınarak **iki sütunlu (split-screen sticky navigation)**, fare takipli **spotlight cursor** ve yüksek performanslı modern koyu tema ile geliştirilmiştir.
+En üst düzey modern mühendislik vitrinlerinden ilham alınarak **Next-Gen Autonomous Engineering Bento Matrix & Interactive Hub**, interaktif terminal konsolu (`⌘K`), gerçek saha görevleri fotoğraf galerisi (`FieldOperationsGallery`), fare takipli **spotlight cursor** ve yüksek performanslı modern koyu tema ile geliştirilmiştir.
 
 🔗 **Canlı Bağlantı:** [https://bahattinyunus.github.io/](https://bahattinyunus.github.io/)
 
@@ -28,8 +28,10 @@ Dünya çapında en saygın açık kaynak geliştirici portfolyolarından (Britt
 
 ## ✨ Öne Çıkan Özellikler
 
-- **📱 Split-Screen Mimari:** Masaüstünde sol sütunda sabit (sticky) profil, dinamik göstergeli sayfa içi navigasyon ve hızlı sosyal bağlantılar; sağ sütunda ise akıcı ve kartlı içerik akışı. Mobilde kusursuz tek sütun deneyimi.
-- **✨ Spotlight Cursor Glow:** Ekran üzerinde fare imlecini takip eden, göz yormayan derin gece mavisi/teal radial spotlight ışığı.
+- **🎛️ Autonomous Engineering Bento Grid (Kokpit):** 6 temel yetkinlik sütununu (%80 Model Pruning, SHGM İHA-1 & ROS2/PX4, ODTÜ & Hacettepe, Fransa Değişimi Top 20, 231+ Repo, Savunma & Uzay) tek bakışta sunan interaktif bento mimarisi.
+- **💻 İnteraktif Web Terminali (`InteractiveTerminal`):** `⌘K` veya butonla tetiklenen, ziyaretçilerin `whoami`, `skills`, `projects`, `certs`, `stats`, `neofetch`, `contact` komutlarını çalıştırabildiği gerçek zamanlı geliştirici konsolu.
+- **📸 Saha Operasyonları & Canlı Görev Günlüğü (`FieldOperationsGallery`):** ASELSAN Gölbaşı Teknoloji Üssü, Türkiye–Fransa Gençlik Değişimi (Strazburg, Avrupa Parlamentosu, AİHM), TEI TUSAŞ ve TÜBİTAK saha görevlerinden doğrulanmış fotoğraf galerisi ve lightbox.
+- **✨ Spotlight Cursor Glow:** Ekran üzerinde fare imlecini takip eden, göz yormayan derin zümrüt/cyan radial spotlight ışığı.
 - **📜 270+ Sertifika & Akreditasyon Kasası (`CertificationVault`):** ODTÜ Bilgeİş, BTK Akademi, SHGM, IBM, TEI ve TÜBİTAK onaylı 270+ sertifika için anlık canlı arama, kategori filtreleme, doğrulama kodları ve tek tıkla CSV dökümü alma imkanı.
 - **🌐 Çift Dil Desteği (TR / EN):** React Context tabanlı, sayfa yenilenmeden tek tıkla Türkçe ve İngilizce dil değişimi.
 - **📄 Doğrudan CV Erişimi:** Tek tıkla güncel PDF özgeçmişi görüntüleme ve indirme.

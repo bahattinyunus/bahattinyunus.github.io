@@ -5,10 +5,7 @@ import React, {
   createContext,
   useContext,
 } from "react";
-import {
-  motion,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowUpRight,
   Github,
@@ -17,10 +14,8 @@ import {
   Check,
   Languages,
   Linkedin,
-  Globe,
   ExternalLink,
   Download,
-  FileText,
   Plane,
   Brain,
   Shield,
@@ -28,21 +23,29 @@ import {
   Orbit,
   Sparkles,
   Award,
-  Terminal,
-  Code2,
-  FolderGit2,
+  Terminal as TerminalIcon,
   Search,
-  Tag,
-  X,
   Layers,
-  Star,
-  Activity,
   Send,
   ArrowRight,
   BookOpen,
+  MapPin,
+  CheckCircle2,
+  ChevronRight,
+  Activity,
+  Code2,
+  Filter,
+  FileText,
+  Radio,
+  Globe,
+  Sliders,
+  X,
 } from "lucide-react";
 import { IDENTITY } from "@/lib/portfolioContent";
 import { CertificationVault } from "@/components/cyber-ui/CertificationVault";
+import { FieldOperationsGallery } from "@/components/portfolio/FieldOperationsGallery";
+import { InteractiveTerminal } from "@/components/cyber-ui/InteractiveTerminal";
+import { ALL_CERTIFICATES } from "@/lib/certificatesData";
 import { toast } from "sonner";
 
 /* ================================================================== */
@@ -84,9 +87,12 @@ export default function Home() {
   });
 
   const [mousePosition, setMousePosition] = useState({ x: -1000, y: -1000 });
-  const [activeSection, setActiveSection] = useState<string>("about");
   const [copied, setCopied] = useState(false);
-  
+  const [activeSection, setActiveSection] = useState<string>("hero");
+
+  // Terminal Modal State
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+
   // Proje Filtreleme & Arama Durumu
   const [projectSearch, setProjectSearch] = useState<string>("");
   const [selectedTag, setSelectedTag] = useState<string>("ALL");
@@ -110,9 +116,21 @@ export default function Home() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // ScrollSpy
+  // Keyboard shortcut (Ctrl+K or Cmd+K) to toggle terminal
   useEffect(() => {
-    const sectionIds = ["about", "experience", "projects", "skills", "certificates", "contact"];
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setIsTerminalOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  // ScrollSpy for navbar
+  useEffect(() => {
+    const sectionIds = ["hero", "bento", "projects", "operations", "skills", "certificates", "contact"];
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
@@ -140,69 +158,14 @@ export default function Home() {
   };
 
   const navLinks = [
-    { id: "about", label: lang === "tr" ? "HAKKIMDA" : "ABOUT" },
-    { id: "experience", label: lang === "tr" ? "DENEYİM & EĞİTİM" : "EXPERIENCE & EDUCATION" },
-    { id: "projects", label: lang === "tr" ? "ÖNE ÇIKAN PROJELER" : "FEATURED PROJECTS" },
-    { id: "skills", label: lang === "tr" ? "YETENEKLER & YIĞIN" : "SKILLS & STACK" },
-    { id: "certificates", label: lang === "tr" ? "SERTİFİKALAR" : "CERTIFICATIONS" },
+    { id: "hero", label: lang === "tr" ? "GİRİŞ" : "OVERVIEW" },
+    { id: "bento", label: lang === "tr" ? "KOKPİT" : "BENTO HUB" },
+    { id: "projects", label: lang === "tr" ? "PROJELER" : "PROJECTS" },
+    { id: "operations", label: lang === "tr" ? "SAHA GÖREVLERİ" : "FIELD LOG" },
+    { id: "skills", label: lang === "tr" ? "YETENEKLER" : "SKILLS" },
+    { id: "certificates", label: lang === "tr" ? "SERTİFİKALAR" : "CERTS (270+)" },
     { id: "contact", label: lang === "tr" ? "İLETİŞİM" : "CONTACT" },
   ];
-
-  const experiences = useMemo(() => {
-    return [
-      {
-        period: lang === "tr" ? "2026 — DEVAM" : "2026 — PRESENT",
-        title: lang === "tr" ? "Lisans Öğrencisi & Araştırmacı" : "Undergraduate & Researcher",
-        organization: "ODTÜ (BÖTE / CEIT) & Hacettepe Üniversitesi",
-        description:
-          lang === "tr"
-            ? "Orta Doğu Teknik Üniversitesi ve Hacettepe Üniversitesi bünyesinde çok disiplinli mühendislik, derin öğrenme model optimizasyonu ve otonom sistemler araştırmaları yürütüyorum."
-            : "Pursuing academic studies and research at METU CEIT and Hacettepe University focusing on deep learning model compression, edge AI, and autonomous systems.",
-        badges: ["ODTÜ", "Hacettepe", "Edge AI", "Deep Learning", "Autonomous Systems"],
-        link: "https://www.metu.edu.tr",
-      },
-      {
-        period: lang === "tr" ? "2024 — DEVAM" : "2024 — PRESENT",
-        title: lang === "tr" ? "Gönüllü Gençlik Lideri & Yönetim Kurulu" : "Volunteer Youth Leader & Board Member",
-        organization: "T.C. Gençlik ve Spor Bakanlığı · KTÜ EHK",
-        description:
-          lang === "tr"
-            ? "T.C. Gençlik ve Spor Bakanlığı gönüllü gençlik lideri olarak gençlere yönelik teknoloji ve mühendislik atölyeleri düzenliyor, KTÜ Elektronik ve Haberleşme Kulübü yönetim kurulunda projeler geliştiriyorum."
-            : "Mentoring youth in engineering and technology workshops as a Volunteer Youth Leader at the Ministry of Youth and Sports; organizing tech events on the KTU EHK board.",
-        badges: ["T.C. GSB", "Liderlik", "Atölyeler", "Topluluk", "KTÜ EHK"],
-      },
-      {
-        period: "2024",
-        title: lang === "tr" ? "Uluslararası Delege (Top 20 / 66.500+ Aday)" : "International Delegate (Top 20 / 66.5K+ Applicants)",
-        organization: "T.C. Gençlik ve Spor Bakanlığı & Türkiye Maarif Vakfı",
-        description:
-          lang === "tr"
-            ? "Türkiye–Fransa Gençlik Değişimi Programı kapsamında Türkiye genelinde 66.500'ü aşkın başvuru arasından seçilen 20 genç temsilciden biri olarak Strazburg, Avrupa Parlamentosu ve AİHM resmi heyet ziyaretlerinde bulundum."
-            : "Selected as one of the top 20 youth out of 66,500+ applicants across Turkey for the France Youth Exchange Program, attending official delegations at the European Parliament and ECHR in Strasbourg.",
-        badges: ["Fransa Değişimi", "Avrupa Parlamentosu", "AİHM", "Diplomasi", "Top 20"],
-      },
-      {
-        period: "2023 — 2026",
-        title: lang === "tr" ? "Savunma, Havacılık & Siber Güvenlik Akreditasyonları" : "Defense, Aerospace & Cyber Security Credentials",
-        organization: "Siber Vatan (SSB) · SHGM · TEI TUSAŞ · TÜBİTAK",
-        description:
-          lang === "tr"
-            ? "Türkiye Siber Vatan Siber Güvenlik Uzmanlığı eğitimi, SHGM İHA-1 Ticari Pilot Lisansı (TR-IHA1H10609053), TEI Havacılık Motorları Okulu ve TÜBİTAK Uzay Kampı programlarını başarıyla tamamladım."
-            : "Completed certified programs including Cyber Homeland (Cyber Security), DGCA Commercial UAV-1 Pilot License, TEI Aviation Engines School, and TUBITAK Space Camp.",
-        badges: ["Siber Vatan", "SHGM İHA-1", "TEI Motor Okulu", "TÜBİTAK", "Siber Savunma"],
-      },
-      {
-        period: "2023 — 2025",
-        title: lang === "tr" ? "Yazılım Mühendisliği Temelleri" : "Software Engineering Foundations",
-        organization: "Karadeniz Teknik Üniversitesi & Recep Tayyip Erdoğan Üniv.",
-        description:
-          lang === "tr"
-            ? "Veri yapıları, algoritmalar, C/C++ nesne yönelimli sistem mimarisi, işletim sistemleri ve dağıtık mimariler üzerine güçlü akademik ve pratik temel oluşturdum."
-            : "Built robust engineering foundations in data structures, algorithms, C/C++ architecture, and operating systems.",
-        badges: ["C++", "C", "Algoritmalar", "Veri Yapıları", "Linux"],
-      },
-    ];
-  }, [lang]);
 
   const rawProjects: ProjectItem[] = useMemo(() => {
     return [
@@ -370,19 +333,17 @@ export default function Home() {
     ];
   }, [lang]);
 
-  // Popüler Teknoloji Etiketleri
   const popularTags = ["ALL", "ROS 2", "Python", "PyTorch", "C++20", "Three.js", "FreeRTOS", "SDR", "EKF"];
 
-  // Filtrelenmiş Projeler
   const filteredProjects = useMemo(() => {
     return rawProjects.filter((p) => {
-      const matchTag = selectedTag === "ALL" || p.tags.some(t => t.toLowerCase() === selectedTag.toLowerCase());
+      const matchTag = selectedTag === "ALL" || p.tags.some((t) => t.toLowerCase() === selectedTag.toLowerCase());
       const q = projectSearch.trim().toLowerCase();
       const matchSearch =
         !q ||
         p.title.toLowerCase().includes(q) ||
         p.desc.toLowerCase().includes(q) ||
-        p.tags.some(t => t.toLowerCase().includes(q)) ||
+        p.tags.some((t) => t.toLowerCase().includes(q)) ||
         p.category.toLowerCase().includes(q);
       return matchTag && matchSearch;
     });
@@ -399,796 +360,925 @@ export default function Home() {
 
   return (
     <LangCtx.Provider value={{ lang, setLang }}>
-      {/* Arka Plan: Koyu Gece Mavisi / Slate / Karbon */}
-      <div className="relative min-h-screen bg-[#0b0f17] text-slate-400 font-sans selection:bg-teal-300 selection:text-teal-900">
+      {/* Root Container */}
+      <div className="relative min-h-screen bg-[#07090e] text-neutral-300 font-sans selection:bg-emerald-400/30 selection:text-emerald-200">
         
-        {/* İnteraktif Spotlight Glow (Fare Takibi) */}
+        {/* Dynamic Spotlight Glow */}
         <div
-          className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute"
+          className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300 hidden md:block"
           style={{
-            background: `radial-gradient(650px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(45, 212, 191, 0.08), transparent 80%)`,
+            background: `radial-gradient(750px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(16, 185, 129, 0.06), transparent 80%)`,
           }}
         />
 
-        {/* Ana İki Sütunlu Sayfa Düzeni */}
-        <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
-          <div className="lg:flex lg:justify-between lg:gap-8 xl:gap-14">
-            
-            {/* ========================================================== */}
-            {/* SOL SÜTUN (Desktop Sabit Sticky Navigation)               */}
-            {/* ========================================================== */}
-            <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-              <div>
-                {/* Lokasyon & Kurum Rozeti */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-700/80 bg-slate-800/40 text-xs font-mono text-slate-300 mb-6">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400" />
-                  <span>Ankara, Türkiye</span>
-                  <span className="text-slate-600">/</span>
-                  <span className="text-slate-400">ODTÜ & Hacettepe</span>
-                </div>
+        {/* Subtle Tech Grid Background */}
+        <div className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(to_right,#1f293708_1px,transparent_1px),linear-gradient(to_bottom,#1f293708_1px,transparent_1px)] bg-[size:3.5rem_3.5rem]" />
 
-                {/* İsim & Başlık */}
-                <h1 className="text-4xl font-bold tracking-tight text-slate-100 sm:text-5xl">
-                  <a href="/">{IDENTITY.name}</a>
+        {/* ========================================================== */}
+        {/* TOP COMMAND BAR (Floating Glassmorphic Navbar)            */}
+        {/* ========================================================== */}
+        <nav className="fixed top-3 sm:top-5 inset-x-0 z-40 mx-auto max-w-6xl px-4 pointer-events-none">
+          <div className="pointer-events-auto flex items-center justify-between gap-3 px-4 sm:px-6 py-2.5 rounded-full border border-neutral-800/80 bg-neutral-950/80 backdrop-blur-xl shadow-2xl">
+            {/* Brand Logo */}
+            <a href="#hero" className="flex items-center gap-2.5 group">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]" />
+              <span className="font-mono text-xs sm:text-sm font-bold tracking-wider text-neutral-100 group-hover:text-emerald-400 transition">
+                BYÇ <span className="text-neutral-500 font-normal">// LABS</span>
+              </span>
+            </a>
+
+            {/* Desktop Navigation Links */}
+            <div className="hidden lg:flex items-center gap-1 text-xs font-mono">
+              {navLinks.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`px-3 py-1 rounded-full transition-all duration-200 ${
+                    activeSection === item.id
+                      ? "bg-neutral-800 text-emerald-400 font-semibold"
+                      : "text-neutral-400 hover:text-neutral-100 hover:bg-neutral-900"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
+            {/* Action Tools */}
+            <div className="flex items-center gap-2">
+              {/* Terminal Launcher */}
+              <button
+                onClick={() => setIsTerminalOpen(true)}
+                className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-neutral-700/80 bg-neutral-900/90 hover:bg-neutral-800 text-neutral-200 hover:text-emerald-400 text-xs font-mono transition shadow-sm"
+                title="Terminal Konsolunu Aç (Ctrl+K)"
+              >
+                <TerminalIcon className="w-3.5 h-3.5 text-emerald-400" />
+                <span className="hidden sm:inline">Terminal</span>
+                <span className="hidden sm:inline-block ml-1 px-1.5 py-0.2 text-[9px] rounded bg-neutral-800 text-neutral-400 border border-neutral-700">⌘K</span>
+              </button>
+
+              {/* Language Switcher */}
+              <button
+                onClick={() => setLang(lang === "tr" ? "en" : "tr")}
+                className="flex items-center gap-1 px-2.5 py-1 rounded-full border border-neutral-700/80 bg-neutral-900 hover:bg-neutral-800 text-neutral-300 text-xs font-mono transition"
+                title="Dili Değiştir / Change Language"
+              >
+                <Languages className="w-3.5 h-3.5 text-cyan-400" />
+                <span className="uppercase font-semibold text-[11px]">{lang}</span>
+              </button>
+
+              {/* Direct CV Button */}
+              <a
+                href="/cv3.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-medium transition"
+              >
+                <Download className="w-3 h-3" />
+                <span>CV (PDF)</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        {/* Main Content Flow */}
+        <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-24 space-y-24">
+          
+          {/* ========================================================== */}
+          {/* SECTION 1: HERO & IDENTITY COMMAND CENTER                 */}
+          {/* ========================================================== */}
+          <section id="hero" className="relative">
+            <div className="flex flex-col items-start gap-6">
+              
+              {/* Telemetry Status Badge */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-neutral-800 bg-neutral-900/60 backdrop-blur-md text-xs font-mono text-neutral-300">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span>Ankara, Türkiye</span>
+                <span className="text-neutral-600">/</span>
+                <span className="text-neutral-400">ODTÜ (CEIT) & Hacettepe Üniversitesi</span>
+                <span className="text-neutral-600">/</span>
+                <span className="text-emerald-400 font-semibold">{lang === "tr" ? "AR-GE'YE AÇIK" : "AVAILABLE"}</span>
+              </div>
+
+              {/* Big Bold Headline */}
+              <div className="space-y-3">
+                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-neutral-100 font-display">
+                  {IDENTITY.name}
                 </h1>
                 
-                {/* Unvan */}
-                <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-                  {lang === "tr"
-                    ? "Yapay Zekâ · Otonom Sistemler · Gömülü Yazılım"
-                    : "AI · Autonomous Systems · Embedded Software"}
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium tracking-tight text-neutral-200">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
+                    {lang === "tr"
+                      ? "Yapay Zekâ · Otonom Sistemler · Gömülü Yazılım Mühendisi"
+                      : "AI · Autonomous Systems · Embedded Software Engineer"}
+                  </span>
                 </h2>
-
-                {/* Kısa Vurucu Motto */}
-                <p className="mt-4 max-w-xs text-sm leading-normal text-slate-400">
-                  {lang === "tr"
-                    ? "ODTÜ BÖTE & Hacettepe | ROS2/PX4 otonom aviyonikler, derin öğrenme model optimizasyonu (%80 pruning) ve C++/Python gömülü sistemleri geliştiriyorum."
-                    : "METU CEIT & Hacettepe | Developing ROS2/PX4 autonomous avionics, deep learning model optimization (80% pruning), and C++/Python embedded systems."}
-                </p>
-
-                {/* GitHub & Prestij Rozetleri (Hızlı Metrikler) */}
-                <div className="mt-6 flex flex-wrap gap-2 text-xs font-mono">
-                  <span className="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5">
-                    <FolderGit2 className="w-3.5 h-3.5 text-teal-400" />
-                    <strong>231+</strong> Repos
-                  </span>
-                  <span className="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5">
-                    <Award className="w-3.5 h-3.5 text-teal-400" />
-                    <strong>270+</strong> Credentials
-                  </span>
-                  <span className="px-2.5 py-1 rounded-md bg-slate-800/80 border border-slate-700/80 text-slate-300 flex items-center gap-1.5">
-                    <Activity className="w-3.5 h-3.5 text-teal-400" />
-                    <strong>%80</strong> Pruning
-                  </span>
-                </div>
-
-                {/* Masaüstü Navigasyon (Aktif Çizgi Efekti) */}
-                <nav className="nav hidden lg:block" aria-label="Sayfa İçi Menü">
-                  <ul className="mt-12 w-max space-y-4">
-                    {navLinks.map((link) => {
-                      const isActive = activeSection === link.id;
-                      return (
-                        <li key={link.id}>
-                          <a
-                            href={`#${link.id}`}
-                            className={`group flex items-center py-1 transition-all ${
-                              isActive ? "text-slate-200 font-semibold" : "text-slate-400 hover:text-slate-200"
-                            }`}
-                          >
-                            <span
-                              className={`mr-4 h-px transition-all motion-reduce:transition-none ${
-                                isActive
-                                  ? "w-16 bg-teal-400"
-                                  : "w-8 bg-slate-600 group-hover:w-16 group-hover:bg-slate-200"
-                              }`}
-                            />
-                            <span className="text-xs font-bold font-mono tracking-widest">
-                              {link.label}
-                            </span>
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </nav>
               </div>
 
-              {/* Sol Alt: Hızlı Eylemler, CV ve Sosyal Medya */}
-              <div className="mt-8 lg:mt-0 flex flex-col gap-5">
-                {/* CV İndir & Dil Değiştirici */}
-                <div className="flex items-center gap-3">
-                  <a
-                    href="/cv3.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-400/10 border border-teal-400/30 text-teal-300 text-xs font-mono font-medium hover:bg-teal-400 hover:text-slate-900 transition-all shadow-[0_0_15px_rgba(45,212,191,0.15)]"
-                  >
-                    <Download className="w-3.5 h-3.5" />
-                    <span>{lang === "tr" ? "Özgeçmiş / CV (PDF)" : "Resume / CV (PDF)"}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-70" />
-                  </a>
+              {/* Punchline Statement */}
+              <p className="max-w-3xl text-base sm:text-lg text-neutral-400 leading-relaxed font-normal">
+                {lang === "tr"
+                  ? "Derin öğrenme modellerini doğruluk kaybı olmaksızın %80'e varan oranlarda budama (pruning) ve quantization ile kenar cihazlarda sıfır gecikmeyle koşturuyorum. ROS2/PX4 otopilot mimarileri, C++20 bare-metal sürücüler ve otonom İHA aviyonikleri geliştiriyorum."
+                  : "Compressing deep learning models by up to 80% via pruning and quantization for real-time edge execution. Architecting ROS2/PX4 avionics, C++20 bare-metal firmware, and autonomous aerial platforms."}
+              </p>
 
-                  <button
-                    type="button"
-                    onClick={() => setLang(lang === "tr" ? "en" : "tr")}
-                    className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-slate-700 bg-slate-800/50 text-xs font-mono text-slate-300 hover:text-white hover:border-slate-500 transition-all"
-                  >
-                    <Languages className="w-3.5 h-3.5 text-teal-400" />
-                    <span className="font-bold">{lang.toUpperCase()}</span>
-                  </button>
-                </div>
+              {/* Action Buttons & Fast Links */}
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <a
+                  href="#projects"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-100 text-neutral-900 font-semibold text-sm hover:bg-neutral-200 transition shadow-lg"
+                >
+                  <Layers className="w-4 h-4 text-emerald-600" />
+                  <span>{lang === "tr" ? "Projeleri İncele" : "Explore Projects"}</span>
+                </a>
 
-                {/* Sosyal Medya İkonları */}
-                <ul className="flex items-center gap-5" aria-label="Sosyal Medya Linkleri">
-                  <li>
-                    <a
-                      href={IDENTITY.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="GitHub"
-                      className="block text-slate-400 hover:text-slate-200 transition-colors"
-                      title="GitHub Profile"
-                    >
-                      <Github className="h-5 w-5" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={IDENTITY.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="LinkedIn"
-                      className="block text-slate-400 hover:text-slate-200 transition-colors"
-                      title="LinkedIn Profile"
-                    >
-                      <Linkedin className="h-5 w-5" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={IDENTITY.medium}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="Medium"
-                      className="block text-slate-400 hover:text-slate-200 transition-colors"
-                      title="Medium Articles"
-                    >
-                      <Globe className="h-5 w-5" />
-                    </a>
-                  </li>
-                  <li>
-                    <button
-                      type="button"
-                      onClick={handleCopyEmail}
-                      aria-label="E-postayı Kopyala"
-                      className="block text-slate-400 hover:text-teal-300 transition-colors"
-                      title={copied ? "Kopyalandı!" : "E-postayı Kopyala"}
-                    >
-                      {copied ? <Check className="h-5 w-5 text-teal-300" /> : <Mail className="h-5 w-5" />}
-                    </button>
-                  </li>
-                </ul>
+                <button
+                  onClick={() => setIsTerminalOpen(true)}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-700/80 font-mono text-sm transition"
+                >
+                  <TerminalIcon className="w-4 h-4 text-emerald-400" />
+                  <span>{lang === "tr" ? "Terminali Aç (⌘K)" : "Open Terminal (⌘K)"}</span>
+                </button>
+
+                <a
+                  href="/cv3.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-700/80 text-sm font-medium transition"
+                >
+                  <Download className="w-4 h-4 text-cyan-400" />
+                  <span>{lang === "tr" ? "Özgeçmiş / CV (PDF)" : "Resume (PDF)"}</span>
+                </a>
+
+                <button
+                  onClick={handleCopyEmail}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-neutral-900/60 hover:bg-neutral-800/80 text-neutral-300 border border-neutral-800 text-sm font-mono transition"
+                  title="E-posta Kopyala"
+                >
+                  {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                  <span>{copied ? (lang === "tr" ? "Kopyalandı" : "Copied") : IDENTITY.email}</span>
+                </button>
               </div>
-            </header>
 
-            {/* ========================================================== */}
-            {/* SAĞ SÜTUN (Scrollable İçerik Alanı)                       */}
-            {/* ========================================================== */}
-            <main className="pt-20 lg:w-1/2 lg:py-24 space-y-24">
+              {/* Social Channels Dock */}
+              <div className="flex items-center gap-3 pt-2">
+                <a
+                  href={IDENTITY.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 border border-neutral-800 text-neutral-400 hover:text-white transition"
+                  title="GitHub Repoları"
+                >
+                  <Github className="w-5 h-5" />
+                </a>
+                <a
+                  href={IDENTITY.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 border border-neutral-800 text-neutral-400 hover:text-cyan-400 transition"
+                  title="LinkedIn Profili"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href={`mailto:${IDENTITY.email}`}
+                  className="p-2.5 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 border border-neutral-800 text-neutral-400 hover:text-emerald-400 transition"
+                  title="Doğrudan E-posta"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+                <div className="h-6 w-px bg-neutral-800 mx-1" />
+                <span className="text-xs font-mono text-neutral-500">
+                  {IDENTITY.statsFallback.repos}+ repos · {IDENTITY.statsFallback.stars}+ stars · {ALL_CERTIFICATES.length}+ certs
+                </span>
+              </div>
+            </div>
+          </section>
+
+          {/* ========================================================== */}
+          {/* SECTION 2: AUTONOMOUS ENGINEERING BENTO GRID (COCKPIT)     */}
+          {/* ========================================================== */}
+          <section id="bento" className="space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-neutral-800 pb-4">
+              <div>
+                <span className="text-xs font-mono text-emerald-400 tracking-wider uppercase font-semibold">
+                  {lang === "tr" ? "// MÜHENDİSLİK KOKPİTİ" : "// ENGINEERING COCKPIT"}
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-100 font-display">
+                  {lang === "tr" ? "Yetkinlik & Ar-Ge Bento Matrisi" : "Capability & R&D Bento Matrix"}
+                </h2>
+              </div>
+              <p className="text-xs font-mono text-neutral-500">
+                {lang === "tr" ? "6 Temel Yetkinlik Sütunu" : "6 Core Pillars"}
+              </p>
+            </div>
+
+            {/* Bento Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
               
-              {/* -------------------------------------------------------- */}
-              {/* BÖLÜM 1: HAKKIMDA (About)                                 */}
-              {/* -------------------------------------------------------- */}
-              <section id="about" className="scroll-mt-16 md:scroll-mt-24">
-                <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#0b0f17]/85 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                  <h2 className="text-sm font-bold font-mono tracking-widest text-slate-200 uppercase">
-                    {lang === "tr" ? "Hakkımda" : "About"}
-                  </h2>
+              {/* Card 1: AI & Model Optimization (Span 2) */}
+              <div className="md:col-span-2 p-6 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-emerald-500/40 transition-all duration-300 relative group overflow-hidden">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-emerald-500/20 transition" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                    <Brain className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-neutral-100 text-base">
+                      {lang === "tr" ? "Model Optimizasyonu & Edge AI" : "Model Optimization & Edge AI"}
+                    </h3>
+                    <span className="text-xs font-mono text-emerald-400">%80 Pruning · INT8/FP4 Quantization</span>
+                  </div>
                 </div>
-
-                <div className="space-y-4 leading-relaxed text-slate-400 text-sm sm:text-base">
-                  <p>
-                    {lang === "tr" ? (
-                      <>
-                        Yazılımı teorik sınırlardan çıkarıp;{" "}
-                        <span className="font-medium text-slate-200">
-                          donanımla birleşen, gerçek zamanlı ve otonom sistemlerde sıfır gecikmeyle çalışan
-                        </span>{" "}
-                        mimarilere dönüştürmeye odaklanıyorum.
-                      </>
-                    ) : (
-                      <>
-                        I focus on bringing software beyond theoretical bounds into{" "}
-                        <span className="font-medium text-slate-200">
-                          real-time, zero-latency autonomous architectures fused with hardware
-                        </span>
-                        .
-                      </>
-                    )}
-                  </p>
-
-                  <p>
-                    {lang === "tr" ? (
-                      <>
-                        Şu anda akademik öğrenimimi{" "}
-                        <span className="font-medium text-slate-200">Orta Doğu Teknik Üniversitesi (ODTÜ BÖTE)</span> ve{" "}
-                        <span className="font-medium text-slate-200">Hacettepe Üniversitesi</span>'nde sürdürürken;{" "}
-                        <span className="font-medium text-slate-200">Karadeniz Teknik Üniversitesi (Yazılım Müh.)</span> ve RTEÜ ile çok disiplinli bir mühendislik matrisi kurdum.
-                      </>
-                    ) : (
-                      <>
-                        Pursuing academic studies at{" "}
-                        <span className="font-medium text-slate-200">Middle East Technical University (METU CEIT)</span> and{" "}
-                        <span className="font-medium text-slate-200">Hacettepe University</span>, backed by rigorous software engineering foundations from KTU.
-                      </>
-                    )}
-                  </p>
-
-                  <p>
-                    {lang === "tr" ? (
-                      <>
-                        Derin öğrenme modellerinde doğruluk kaybı olmadan{" "}
-                        <span className="text-teal-300 font-mono font-medium">%80'e varan model budama (pruning)</span>, kenar cihazlarda (Edge AI) düşük gecikmeli çıkarım ve{" "}
-                        <span className="font-medium text-slate-200">ROS2, PX4 Autopilot ve Unreal Engine 5</span> ile otonom İHA aviyonikleri geliştiriyorum.
-                      </>
-                    ) : (
-                      <>
-                        Specializing in{" "}
-                        <span className="text-teal-300 font-mono font-medium">up to 80% model pruning</span> without accuracy loss, low-latency Edge-AI inference, and autonomous UAV avionics with{" "}
-                        <span className="font-medium text-slate-200">ROS2, PX4 Autopilot, and Unreal Engine 5</span>.
-                      </>
-                    )}
-                  </p>
-
-                  <p>
-                    {lang === "tr" ? (
-                      <>
-                        T.C. GSB – Maarif Vakfı Türkiye–Fransa Gençlik Değişimi Programı'nda{" "}
-                        <span className="font-medium text-slate-200">66.500+ aday arasından seçilen ilk 20 genç</span> arasında yer alarak Avrupa Parlamentosu ve AİHM ziyaretlerinde bulundum.{" "}
-                        <span className="font-medium text-slate-200">Siber Vatan</span> (Siber Güvenlik Uzmanlığı),{" "}
-                        <span className="font-medium text-slate-200">SHGM İHA-1 Ticari Pilot Lisansı</span> ve 270'ten fazla akredite belgeye sahibim.
-                      </>
-                    ) : (
-                      <>
-                        Selected among the{" "}
-                        <span className="font-medium text-slate-200">top 20 youth out of 66,500+ applicants</span> in the Turkey–France Youth Exchange Program (visiting the European Parliament and ECHR). Holder of{" "}
-                        <span className="font-medium text-slate-200">Cyber Homeland</span> (Cyber Security),{" "}
-                        <span className="font-medium text-slate-200">DGCA UAV-1 Commercial Pilot License</span>, and 270+ verified credentials.
-                      </>
-                    )}
-                  </p>
-                </div>
-              </section>
-
-              {/* -------------------------------------------------------- */}
-              {/* BÖLÜM 2: DENEYİM & EĞİTİM (Experience & Timeline)         */}
-              {/* -------------------------------------------------------- */}
-              <section id="experience" className="scroll-mt-16 md:scroll-mt-24">
-                <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#0b0f17]/85 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                  <h2 className="text-sm font-bold font-mono tracking-widest text-slate-200 uppercase">
-                    {lang === "tr" ? "Deneyim & Eğitim" : "Experience & Education"}
-                  </h2>
-                </div>
-
-                <div className="space-y-10">
-                  {experiences.map((exp, index) => (
-                    <div
-                      key={index}
-                      className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
-                    >
-                      <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-2xl transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/40 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
-                      
-                      {/* Tarih Kolonu */}
-                      <header
-                        className="z-10 mb-2 mt-1 text-xs font-mono font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
-                        aria-label={exp.period}
-                      >
-                        {exp.period}
-                      </header>
-
-                      {/* İçerik Kolonu */}
-                      <div className="z-10 sm:col-span-6">
-                        <h3 className="font-medium leading-snug text-slate-200">
-                          <div>
-                            <span className="inline-flex items-baseline font-medium leading-tight text-slate-200 group-hover:text-teal-300 focus-visible:text-teal-300 text-base">
-                              <span>{exp.title}</span>
-                              <span className="text-slate-500 mx-2">·</span>
-                              <span className="text-slate-400 text-sm font-normal">{exp.organization}</span>
-                            </span>
-                          </div>
-                        </h3>
-                        
-                        <p className="mt-2 text-xs sm:text-sm leading-normal text-slate-400">
-                          {exp.description}
-                        </p>
-
-                        <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Kullanılan Teknolojiler">
-                          {exp.badges.map((badge, bidx) => (
-                            <li key={bidx}>
-                              <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-mono font-medium leading-4 text-teal-300">
-                                {badge}
-                              </div>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
+                <p className="text-sm text-neutral-400 leading-relaxed mb-4">
+                  {lang === "tr"
+                    ? "PyTorch, TensorRT ve vLLM ile derin öğrenme modellerinde doğruluk kaybı olmadan ağırlık budama (pruning) ve kuantalama mimarileri. Kenar donanımlarda (Jetson Orin, Raspberry Pi) düşük güç tüketimiyle yüksek FPS çıkarım."
+                    : "Zero-accuracy-loss structural pruning and INT8/FP4 quantization with PyTorch, TensorRT, and vLLM. Optimized for low-power edge deployment on Jetson Orin with sub-millisecond latencies."}
+                </p>
+                <div className="flex flex-wrap gap-1.5 font-mono text-xs">
+                  {["PyTorch", "Model Pruning (%80)", "INT8 Quantization", "TensorRT", "vLLM", "QLoRA"].map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 rounded-lg bg-neutral-800/80 text-neutral-300 border border-neutral-700/60">
+                      {tag}
+                    </span>
                   ))}
                 </div>
+              </div>
 
-                {/* CV İndir Butonu */}
-                <div className="mt-10">
+              {/* Card 2: Robotics & Avionics (Span 2) */}
+              <div className="md:col-span-2 p-6 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-cyan-500/40 transition-all duration-300 relative group overflow-hidden">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-cyan-500/20 transition" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                    <Plane className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-neutral-100 text-base">
+                      {lang === "tr" ? "Otonom Aviyonik & SHGM İHA-1" : "Autonomous Avionics & UAV Pilot"}
+                    </h3>
+                    <span className="text-xs font-mono text-cyan-400">ROS2 Humble · PX4 Autopilot · Lisanslı Pilot</span>
+                  </div>
+                </div>
+                <p className="text-sm text-neutral-400 leading-relaxed mb-4">
+                  {lang === "tr"
+                    ? "SHGM onaylı İHA-1 Ticari Pilotaj Lisansı (TR-IHA1H10609053). ROS2 düğüm haberleşmesi, FastDDS, MAVLink telemetrisi, EKF sensör füzyonu ve Gazebo/Unreal Engine simülasyonları ile tam otonom uçuş hatları."
+                    : "DGCA-certified Commercial UAV-1 Pilot License. Architecting ROS2 node graphs, FastDDS bus, MAVLink telemetry, EKF sensor fusion, and hardware-in-the-loop (HIL) simulations."}
+                </p>
+                <div className="flex flex-wrap gap-1.5 font-mono text-xs">
+                  {["ROS2 Humble", "PX4 Autopilot", "SHGM İHA-1", "MAVLink", "EKF Füzyon", "FastDDS"].map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 rounded-lg bg-neutral-800/80 text-neutral-300 border border-neutral-700/60">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card 3: Academic Pedigree (Span 2) */}
+              <div className="md:col-span-2 p-6 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-purple-500/40 transition-all duration-300 relative group overflow-hidden">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400">
+                    <BookOpen className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-neutral-100 text-base">
+                      {lang === "tr" ? "ODTÜ & Hacettepe Üniversitesi" : "METU & Hacettepe University"}
+                    </h3>
+                    <span className="text-xs font-mono text-purple-400">Lisans Araştırmacısı · Çok Disiplinli Temel</span>
+                  </div>
+                </div>
+                <p className="text-sm text-neutral-400 leading-relaxed mb-4">
+                  {lang === "tr"
+                    ? "ODTÜ (BÖTE / CEIT) ve Hacettepe Üniversitesi'nde akademik öğrenim; Karadeniz Teknik Üniversitesi (Yazılım Müh.) ve RTEÜ ile algoritmalar, dağıtık sistemler ve C++ nesne yönelimli mimariler."
+                    : "Pursuing academic studies and research at METU CEIT and Hacettepe University, supported by strong software engineering foundations from Karadeniz Technical University."}
+                </p>
+                <div className="flex flex-wrap gap-1.5 font-mono text-xs">
+                  {["ODTÜ CEIT", "Hacettepe", "KTÜ Yazılım", "Algoritmalar", "Veri Yapıları"].map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 rounded-lg bg-neutral-800/80 text-neutral-300 border border-neutral-700/60">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card 4: International Diplomacy (Span 2) */}
+              <div className="md:col-span-2 p-6 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-amber-500/40 transition-all duration-300 relative group overflow-hidden">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
+                    <Globe className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-neutral-100 text-base">
+                      {lang === "tr" ? "Fransa Değişimi & Uluslararası Heyet" : "France Youth Delegation"}
+                    </h3>
+                    <span className="text-xs font-mono text-amber-400">Top 20 / 66.500+ Aday · T.C. GSB & Maarif</span>
+                  </div>
+                </div>
+                <p className="text-sm text-neutral-400 leading-relaxed mb-4">
+                  {lang === "tr"
+                    ? "66.500'ü aşkın aday arasından seçilen 20 gençten biri olarak; Strasbourg, Avrupa Parlamentosu ve AİHM resmi heyet incelemeleri. T.C. GSB gönüllü gençlik liderliği ve teknoloji mentorluğu."
+                    : "Selected among the top 20 youth out of 66,500+ applicants across Turkey for the official delegation to the European Parliament, ECHR, and University of Strasbourg."}
+                </p>
+                <div className="flex flex-wrap gap-1.5 font-mono text-xs">
+                  {["Top 20 / 66.5K", "Avrupa Parlamentosu", "AİHM", "T.C. GSB Liderlik", "Maarif Vakfı"].map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 rounded-lg bg-neutral-800/80 text-neutral-300 border border-neutral-700/60">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card 5: Open-Source Footprint (Span 2) */}
+              <div className="md:col-span-2 p-6 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-emerald-500/40 transition-all duration-300 relative group overflow-hidden">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                    <Github className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-neutral-100 text-base">
+                      {lang === "tr" ? "Açık Kaynak & GitHub Üretkenliği" : "Open Source Footprint"}
+                    </h3>
+                    <span className="text-xs font-mono text-emerald-400">231+ Public Repos · 1500+ Stars</span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-2 text-center font-mono my-3">
+                  <div className="p-2.5 rounded-xl bg-neutral-950 border border-neutral-800">
+                    <div className="text-xl font-bold text-neutral-100">231+</div>
+                    <div className="text-[10px] text-neutral-500">Public Repos</div>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-neutral-950 border border-neutral-800">
+                    <div className="text-xl font-bold text-amber-400">1,500+</div>
+                    <div className="text-[10px] text-neutral-500">Stars</div>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-neutral-950 border border-neutral-800">
+                    <div className="text-xl font-bold text-cyan-400">2,063+</div>
+                    <div className="text-[10px] text-neutral-500">Followers</div>
+                  </div>
+                </div>
+                <a
+                  href={IDENTITY.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:underline pt-1"
+                >
+                  <span>github.com/bahattinyunus</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
+              {/* Card 6: Defense & Space Deployments (Span 2) */}
+              <div className="md:col-span-2 p-6 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-rose-500/40 transition-all duration-300 relative group overflow-hidden">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400">
+                    <Shield className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-neutral-100 text-base">
+                      {lang === "tr" ? "Savunma, Uzay & Siber Akreditasyon" : "Defense, Space & Cyber"}
+                    </h3>
+                    <span className="text-xs font-mono text-rose-400">Siber Vatan · TEI TUSAŞ · TÜBİTAK</span>
+                  </div>
+                </div>
+                <p className="text-sm text-neutral-400 leading-relaxed mb-4">
+                  {lang === "tr"
+                    ? "T.C. SSB Siber Vatan Beyaz Şapkalı Siber Güvenlik, TEI TUSAŞ Motor Okulu (gaz türbinleri), TÜBİTAK Uzay Kampı (CubeSat & radyo spektrogramı) ve ASELSAN Gölbaşı teknik Ar-Ge incelemesi."
+                    : "Defense credentials including SSB Cyber Homeland Security, TEI TUSAŞ Aviation Gas Turbine Engines School, TUBITAK Space Camp, and ASELSAN R&D mission briefings."}
+                </p>
+                <div className="flex flex-wrap gap-1.5 font-mono text-xs">
+                  {["Siber Vatan (SSB)", "TEI TUSAŞ", "TÜBİTAK KAMP+", "ASELSAN İncelemesi", "Adli Bilişim"].map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 rounded-lg bg-neutral-800/80 text-neutral-300 border border-neutral-700/60">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* ========================================================== */}
+          {/* SECTION 3: CURATED R&D PROJECTS MATRIX                     */}
+          {/* ========================================================== */}
+          <section id="projects" className="space-y-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-neutral-800 pb-4">
+              <div>
+                <span className="text-xs font-mono text-emerald-400 tracking-wider uppercase font-semibold">
+                  {lang === "tr" ? "// ÖNE ÇIKAN ÇALIŞMALAR" : "// FLAGSHIP AR-GE"}
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-100 font-display">
+                  {lang === "tr" ? "Öne Çıkan Mühendislik Projeleri" : "Featured Engineering Projects"}
+                </h2>
+              </div>
+
+              {/* Instant Search Bar */}
+              <div className="relative w-full md:w-72">
+                <Search className="w-4 h-4 text-neutral-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  value={projectSearch}
+                  onChange={(e) => setProjectSearch(e.target.value)}
+                  placeholder={lang === "tr" ? "Proje veya teknoloji ara..." : "Search project or stack..."}
+                  className="w-full pl-9 pr-4 py-2 rounded-xl bg-neutral-900 border border-neutral-800 text-neutral-200 placeholder-neutral-500 text-xs font-mono outline-none focus:border-emerald-500/50 transition"
+                />
+              </div>
+            </div>
+
+            {/* Popular Tag Filters */}
+            <div className="flex flex-wrap items-center gap-1.5 text-xs font-mono">
+              <span className="text-neutral-500 mr-2 flex items-center gap-1">
+                <Filter className="w-3.5 h-3.5" />
+                {lang === "tr" ? "Filtre:" : "Filter:"}
+              </span>
+              {popularTags.map((tag) => (
+                <button
+                  key={tag}
+                  onClick={() => setSelectedTag(tag)}
+                  className={`px-3 py-1 rounded-lg border transition ${
+                    selectedTag === tag
+                      ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/50 font-semibold"
+                      : "bg-neutral-900/60 text-neutral-400 border-neutral-800 hover:text-neutral-200"
+                  }`}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+
+            {/* Project Bento Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filteredProjects.map((project) => (
+                <div
+                  key={project.id}
+                  className="flex flex-col justify-between p-6 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-neutral-700 hover:bg-neutral-900/80 transition-all duration-200 group"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="px-2.5 py-0.5 rounded-full bg-neutral-800 text-neutral-300 border border-neutral-700/80 text-[11px] font-mono">
+                        {project.category}
+                      </span>
+                      <span className="text-[10px] font-mono text-emerald-400 font-semibold">
+                        {project.metric}
+                      </span>
+                    </div>
+
+                    <h3 className="text-lg font-bold text-neutral-100 group-hover:text-emerald-400 transition flex items-center justify-between">
+                      <span>{project.title}</span>
+                    </h3>
+
+                    <p className="text-xs text-neutral-400 leading-relaxed line-clamp-3">
+                      {project.desc}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1 font-mono text-[10px] pt-1">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="px-2 py-0.5 rounded bg-neutral-800/80 text-neutral-400 border border-neutral-800">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-5 mt-4 border-t border-neutral-800/80">
+                    <button
+                      onClick={() => setActiveProjectModal(project)}
+                      className="inline-flex items-center gap-1.5 text-xs font-mono text-neutral-300 hover:text-emerald-400 transition"
+                    >
+                      <span>{lang === "tr" ? "Mimari Detaylar" : "Deep Dive"}</span>
+                      <ChevronRight className="w-3.5 h-3.5 text-emerald-400" />
+                    </button>
+
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white transition"
+                      title="GitHub Reposuna Git"
+                    >
+                      <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ========================================================== */}
+          {/* SECTION 4: FIELD OPERATIONS & MISSION LOG GALLERY          */}
+          {/* ========================================================== */}
+          <section id="operations">
+            <FieldOperationsGallery lang={lang} />
+          </section>
+
+          {/* ========================================================== */}
+          {/* SECTION 5: TECHNICAL RADAR & STACK MATRIX                  */}
+          {/* ========================================================== */}
+          <section id="skills" className="space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-neutral-800 pb-4">
+              <div>
+                <span className="text-xs font-mono text-emerald-400 tracking-wider uppercase font-semibold">
+                  {lang === "tr" ? "// TEKNOLOJİ YIĞINI" : "// TECH MATRIX"}
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-100 font-display">
+                  {lang === "tr" ? "Mühendislik Yetenekleri & Araçlar" : "Engineering Skills & Stack"}
+                </h2>
+              </div>
+              <p className="text-xs font-mono text-neutral-500">
+                {lang === "tr" ? "Derinlikli Uzmanlık Matrisi" : "Technical Proficiency"}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {/* AI & Optimization */}
+              <div className="p-6 rounded-2xl bg-neutral-900/40 border border-neutral-800 space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <Brain className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-neutral-100">
+                      {lang === "tr" ? "Yapay Zekâ, Model Optimizasyonu & LLM" : "AI, Model Compression & LLM"}
+                    </h3>
+                    <p className="text-xs text-neutral-500 font-mono">Edge AI · PyTorch · vLLM · %80 Pruning</p>
+                  </div>
+                </div>
+                <div className="space-y-2 text-xs font-mono text-neutral-300">
+                  <div className="flex justify-between">
+                    <span>PyTorch / TorchVision</span>
+                    <span className="text-emerald-400 font-bold">%95</span>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-emerald-400 h-full rounded-full w-[95%]" />
+                  </div>
+
+                  <div className="flex justify-between pt-1">
+                    <span>Model Budama & Quantization (INT8/FP4)</span>
+                    <span className="text-emerald-400 font-bold">%92</span>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-emerald-400 h-full rounded-full w-[92%]" />
+                  </div>
+
+                  <div className="flex justify-between pt-1">
+                    <span>TensorRT, vLLM, QLoRA Fine-Tuning</span>
+                    <span className="text-emerald-400 font-bold">%88</span>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-emerald-400 h-full rounded-full w-[88%]" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Robotics & Avionics */}
+              <div className="p-6 rounded-2xl bg-neutral-900/40 border border-neutral-800 space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                    <Plane className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-neutral-100">
+                      {lang === "tr" ? "Robotik, Aviyonik & Otonom Sistemler" : "Robotics, Avionics & Control"}
+                    </h3>
+                    <p className="text-xs text-neutral-500 font-mono">ROS2 · PX4 · SHGM İHA-1 · EKF</p>
+                  </div>
+                </div>
+                <div className="space-y-2 text-xs font-mono text-neutral-300">
+                  <div className="flex justify-between">
+                    <span>ROS2 (Humble / Iron) & Düğüm Mimarisi</span>
+                    <span className="text-cyan-400 font-bold">%94</span>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-cyan-400 h-full rounded-full w-[94%]" />
+                  </div>
+
+                  <div className="flex justify-between pt-1">
+                    <span>PX4 Autopilot & MAVLink Telemetri</span>
+                    <span className="text-cyan-400 font-bold">%90</span>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-cyan-400 h-full rounded-full w-[90%]" />
+                  </div>
+
+                  <div className="flex justify-between pt-1">
+                    <span>SHGM İHA-1 Ticari Pilotaj & Saha Uçuşu</span>
+                    <span className="text-cyan-400 font-bold">%100</span>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-cyan-400 h-full rounded-full w-[100%]" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Embedded & Systems */}
+              <div className="p-6 rounded-2xl bg-neutral-900/40 border border-neutral-800 space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    <Cpu className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-neutral-100">
+                      {lang === "tr" ? "Gömülü Sistemler & Donanım Katmanı" : "Embedded Systems & Bare-Metal"}
+                    </h3>
+                    <p className="text-xs text-neutral-500 font-mono">C++20 · FreeRTOS · RISC-V · Jetson</p>
+                  </div>
+                </div>
+                <div className="space-y-2 text-xs font-mono text-neutral-300">
+                  <div className="flex justify-between">
+                    <span>Modern C++ (C++20) & C Bare-Metal</span>
+                    <span className="text-amber-400 font-bold">%90</span>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-amber-400 h-full rounded-full w-[90%]" />
+                  </div>
+
+                  <div className="flex justify-between pt-1">
+                    <span>FreeRTOS Gerçek Zamanlı Çekirdek & HAL</span>
+                    <span className="text-amber-400 font-bold">%86</span>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-amber-400 h-full rounded-full w-[86%]" />
+                  </div>
+
+                  <div className="flex justify-between pt-1">
+                    <span>NVIDIA Jetson Orin & Linux Kernel</span>
+                    <span className="text-amber-400 font-bold">%88</span>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-amber-400 h-full rounded-full w-[88%]" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Defense & Cyber */}
+              <div className="p-6 rounded-2xl bg-neutral-900/40 border border-neutral-800 space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-xl bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                    <Shield className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-neutral-100">
+                      {lang === "tr" ? "Siber Savunma & Dijital Adli Bilişim" : "Cyber Defense & Forensics"}
+                    </h3>
+                    <p className="text-xs text-neutral-500 font-mono">Siber Vatan · PRNU · ELA · C2PA</p>
+                  </div>
+                </div>
+                <div className="space-y-2 text-xs font-mono text-neutral-300">
+                  <div className="flex justify-between">
+                    <span>T.C. SSB Siber Vatan Beyaz Şapka Uzmanlığı</span>
+                    <span className="text-rose-400 font-bold">%92</span>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-rose-400 h-full rounded-full w-[92%]" />
+                  </div>
+
+                  <div className="flex justify-between pt-1">
+                    <span>PRNU & ELA Adli Multimedya Analizi</span>
+                    <span className="text-rose-400 font-bold">%89</span>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-rose-400 h-full rounded-full w-[89%]" />
+                  </div>
+
+                  <div className="flex justify-between pt-1">
+                    <span>C2PA Kriptografik İçerik Doğrulama</span>
+                    <span className="text-rose-400 font-bold">%85</span>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden">
+                    <div className="bg-rose-400 h-full rounded-full w-[85%]" />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          {/* ========================================================== */}
+          {/* SECTION 6: 270+ CERTIFICATION VAULT                        */}
+          {/* ========================================================== */}
+          <section id="certificates" className="space-y-6">
+            <CertificationVault />
+          </section>
+
+          {/* ========================================================== */}
+          {/* SECTION 7: DIRECT CONTACT & INTERACTION HUB                */}
+          {/* ========================================================== */}
+          <section id="contact" className="space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-neutral-800 pb-4">
+              <div>
+                <span className="text-xs font-mono text-emerald-400 tracking-wider uppercase font-semibold">
+                  {lang === "tr" ? "// BAĞLANTI & İLETİŞİM" : "// DIRECT CONTACT"}
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-100 font-display">
+                  {lang === "tr" ? "Mühendislik İş Birlikleri & İletişim" : "Engineering Collaboration & Contact"}
+                </h2>
+              </div>
+              <p className="text-xs font-mono text-neutral-500">
+                {lang === "tr" ? "Anında Geri Dönüş" : "Direct Channels"}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              
+              {/* Left Column: Direct Info Cards */}
+              <div className="space-y-4">
+                <p className="text-sm text-neutral-400 leading-relaxed">
+                  {lang === "tr"
+                    ? "Yapay zekâ model optimizasyonu, ROS2/PX4 otonom aviyonikler, gömülü sistem mimarileri veya Ar-Ge projeleri için doğrudan iletişime geçebilirsiniz."
+                    : "Available for deep learning compression, autonomous avionics, embedded systems engineering, and innovative high-impact projects."}
+                </p>
+
+                <div className="p-5 rounded-2xl bg-neutral-900/50 border border-neutral-800 space-y-3 font-mono text-xs">
+                  <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
+                    <span className="text-neutral-500">E-Posta:</span>
+                    <a href={`mailto:${IDENTITY.email}`} className="text-emerald-400 hover:underline font-semibold">
+                      {IDENTITY.email}
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
+                    <span className="text-neutral-500">LinkedIn:</span>
+                    <a href={IDENTITY.linkedin} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
+                      linkedin.com/in/bahattinyunus
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
+                    <span className="text-neutral-500">GitHub:</span>
+                    <a href={IDENTITY.github} target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:underline">
+                      github.com/bahattinyunus
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-neutral-500">Konum:</span>
+                    <span className="text-neutral-300">{IDENTITY.location}</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={handleCopyEmail}
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-mono font-medium transition"
+                  >
+                    {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                    <span>{copied ? (lang === "tr" ? "Kopyalandı!" : "Copied!") : (lang === "tr" ? "E-postayı Kopyala" : "Copy Email")}</span>
+                  </button>
+
                   <a
                     href="/cv3.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center font-medium font-mono text-xs text-slate-200 hover:text-teal-300 group"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-mono font-medium transition"
                   >
-                    <span>{lang === "tr" ? "Tam Özgeçmişi Görüntüle (PDF)" : "View Full Resume (PDF)"}</span>
-                    <ArrowUpRight className="ml-1 h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                    <Download className="w-4 h-4" />
+                    <span>{lang === "tr" ? "Özgeçmiş İndir" : "Download CV"}</span>
                   </a>
                 </div>
-              </section>
+              </div>
 
-              {/* -------------------------------------------------------- */}
-              {/* BÖLÜM 3: ÖNE ÇIKAN PROJELER (Featured Projects)           */}
-              {/* -------------------------------------------------------- */}
-              <section id="projects" className="scroll-mt-16 md:scroll-mt-24">
-                <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#0b0f17]/85 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                  <h2 className="text-sm font-bold font-mono tracking-widest text-slate-200 uppercase">
-                    {lang === "tr" ? "Öne Çıkan Projeler" : "Featured Projects"}
-                  </h2>
-                </div>
-
-                {/* Arama & Teknoloji Filtreleri Barı */}
-                <div className="space-y-3 mb-8">
-                  {/* Canlı Arama Inputu */}
-                  <div className="relative">
-                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-teal-400" />
+              {/* Right Column: Fast Contact Form */}
+              <div className="p-6 rounded-2xl bg-neutral-900/60 border border-neutral-800">
+                <form onSubmit={handleSendMessage} className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-mono text-neutral-400 mb-1.5">
+                      {lang === "tr" ? "Adınız / Kurumunuz" : "Your Name / Organization"}
+                    </label>
                     <input
                       type="text"
-                      value={projectSearch}
-                      onChange={(e) => setProjectSearch(e.target.value)}
-                      placeholder={lang === "tr" ? "Projeler arasında ara... (örn: ROS2, WebGL, C++, LSTM)" : "Search projects... (e.g. ROS2, WebGL, C++, LSTM)"}
-                      className="w-full pl-10 pr-4 py-2.5 bg-slate-900/80 border border-slate-800 focus:border-teal-400 rounded-xl text-xs sm:text-sm font-mono text-slate-100 placeholder:text-slate-500 outline-none transition-all"
+                      value={contactName}
+                      onChange={(e) => setContactName(e.target.value)}
+                      placeholder={lang === "tr" ? "İsim veya şirket adı..." : "Name or company..."}
+                      className="w-full px-4 py-2.5 rounded-xl bg-neutral-950 border border-neutral-800 text-neutral-200 placeholder-neutral-600 text-xs font-mono outline-none focus:border-emerald-500/50 transition"
                     />
-                    {projectSearch && (
-                      <button
-                        onClick={() => setProjectSearch("")}
-                        className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-mono text-slate-400 hover:text-white"
-                      >
-                        ✕
-                      </button>
-                    )}
                   </div>
 
-                  {/* Popüler Teknoloji Hapları */}
-                  <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none text-xs font-mono">
-                    <span className="text-slate-500 text-[11px] shrink-0 mr-1 flex items-center gap-1">
-                      <Tag className="w-3 h-3 text-teal-400" /> Filtre:
-                    </span>
-                    {popularTags.map((tag) => (
-                      <button
-                        key={tag}
-                        onClick={() => setSelectedTag(tag)}
-                        className={`px-2.5 py-1 rounded text-[11px] whitespace-nowrap transition-all ${
-                          selectedTag === tag
-                            ? "bg-teal-400 text-slate-950 font-bold"
-                            : "bg-slate-800/60 hover:bg-slate-800 border border-slate-700/60 text-slate-400 hover:text-slate-200"
-                        }`}
-                      >
-                        {tag}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Projeler Listesi */}
-                {filteredProjects.length === 0 ? (
-                  <div className="p-8 text-center bg-slate-900/40 border border-slate-800 rounded-xl">
-                    <p className="text-sm font-mono text-slate-400">Aramanıza uygun proje bulunamadı.</p>
-                    <button
-                      onClick={() => { setProjectSearch(""); setSelectedTag("ALL"); }}
-                      className="mt-3 px-3 py-1.5 rounded bg-teal-500/10 text-teal-300 text-xs font-mono border border-teal-500/30"
-                    >
-                      Filtreleri Temizle
-                    </button>
-                  </div>
-                ) : (
-                  <div className="space-y-10">
-                    {filteredProjects.map((proj) => (
-                      <div
-                        key={proj.id}
-                        onClick={() => setActiveProjectModal(proj)}
-                        className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 cursor-pointer"
-                      >
-                        <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-2xl transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/40 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
-                        
-                        {/* Sol: Kategori & Metrik */}
-                        <div className="z-10 sm:col-span-2">
-                          <span className="font-mono text-[11px] uppercase tracking-wider text-teal-400 block mb-1">
-                            {proj.category}
-                          </span>
-                          <span className="font-mono text-[10px] text-slate-500 block">
-                            {proj.metric}
-                          </span>
-                        </div>
-
-                        {/* Sağ: Başlık, Açıklama, Etiketler */}
-                        <div className="z-10 sm:col-span-6">
-                          <h3 className="font-medium leading-snug text-slate-200 flex items-center justify-between">
-                            <span className="inline-flex items-baseline font-medium leading-tight text-slate-200 group-hover:text-teal-300 text-base">
-                              <span>{proj.title}</span>
-                              <ArrowUpRight className="ml-1.5 h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                            </span>
-                          </h3>
-
-                          <p className="mt-2 text-xs sm:text-sm leading-normal text-slate-400">
-                            {proj.desc}
-                          </p>
-
-                          <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Teknolojiler">
-                            {proj.tags.map((tag, tidx) => (
-                              <li key={tidx}>
-                                <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-mono font-medium leading-4 text-teal-300">
-                                  {tag}
-                                </div>
-                              </li>
-                            ))}
-                          </ul>
-
-                          <div className="mt-3 flex items-center gap-3 text-[11px] font-mono text-teal-400/80 group-hover:text-teal-300">
-                            <span className="underline underline-offset-4">Mimari Detayları & Metrikleri Gör →</span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Tüm Repolar Linki */}
-                <div className="mt-10">
-                  <a
-                    href={IDENTITY.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center font-medium font-mono text-xs text-slate-200 hover:text-teal-300 group"
-                  >
-                    <FolderGit2 className="mr-2 h-4 w-4 text-teal-400" />
-                    <span>{lang === "tr" ? "GitHub'daki 231+ Açık Kaynak Projeyi İncele" : "View Full Project Archive on GitHub"}</span>
-                    <ArrowUpRight className="ml-1 h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                  </a>
-                </div>
-              </section>
-
-              {/* -------------------------------------------------------- */}
-              {/* BÖLÜM 4: YETENEKLER & TEKNOLOJİ YIĞINI (Skills)           */}
-              {/* -------------------------------------------------------- */}
-              <section id="skills" className="scroll-mt-16 md:scroll-mt-24">
-                <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#0b0f17]/85 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                  <h2 className="text-sm font-bold font-mono tracking-widest text-slate-200 uppercase">
-                    {lang === "tr" ? "Yetenekler & Teknoloji Yığını" : "Skills & Stack"}
-                  </h2>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Otonom Aviyonik */}
-                  <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-5 hover:border-slate-700 transition-colors">
-                    <div className="flex items-center gap-2.5 text-teal-300 mb-2 font-mono text-xs uppercase tracking-wider">
-                      <Plane className="w-4 h-4" />
-                      <span>{lang === "tr" ? "Otonom Aviyonik & Robotik" : "Autonomous Avionics"}</span>
-                    </div>
-                    <p className="text-xs text-slate-400 leading-relaxed mb-3">
-                      {lang === "tr"
-                        ? "ROS2, PX4 Autopilot, MAVLink, FastDDS ve UE5 fizik simülasyonu ile otonom İHA seyrüseferi."
-                        : "ROS2, PX4 Autopilot, MAVLink, FastDDS, and UE5 physics simulation for UAV autonomy."}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-300">
-                      <span className="px-2 py-0.5 rounded bg-slate-800">ROS2</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">PX4</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">MAVLink</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">FastDDS</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">İHA-1</span>
-                    </div>
-                  </div>
-
-                  {/* Edge AI & Model Optimizasyonu */}
-                  <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-5 hover:border-slate-700 transition-colors">
-                    <div className="flex items-center gap-2.5 text-teal-300 mb-2 font-mono text-xs uppercase tracking-wider">
-                      <Brain className="w-4 h-4" />
-                      <span>{lang === "tr" ? "Edge AI & Model Budama" : "Edge AI & Optimization"}</span>
-                    </div>
-                    <p className="text-xs text-slate-400 leading-relaxed mb-3">
-                      {lang === "tr"
-                        ? "Derin öğrenme modellerinde doğruluk koruyarak %80 budama, INT8/FP4 nicemleme ve uç cihazlarda çıkarım."
-                        : "Up to 80% model pruning without accuracy loss, INT8/FP4 quantization, and microcontroller inference."}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-300">
-                      <span className="px-2 py-0.5 rounded bg-slate-800">PyTorch</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">%80 Pruning</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">vLLM</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">QLoRA</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">TFLite</span>
-                    </div>
-                  </div>
-
-                  {/* Gömülü Sistemler & RTOS */}
-                  <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-5 hover:border-slate-700 transition-colors">
-                    <div className="flex items-center gap-2.5 text-teal-300 mb-2 font-mono text-xs uppercase tracking-wider">
-                      <Cpu className="w-4 h-4" />
-                      <span>{lang === "tr" ? "Gömülü Sistemler & RTOS" : "Embedded & RTOS"}</span>
-                    </div>
-                    <p className="text-xs text-slate-400 leading-relaxed mb-3">
-                      {lang === "tr"
-                        ? "Modern C++20, FreeRTOS, Linux kernel, mikrodenetleyici donanım kontrolü ve EKF sensör füzyonu."
-                        : "Modern C++20, FreeRTOS, Linux kernel, peripheral drivers, and EKF sensor fusion."}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-300">
-                      <span className="px-2 py-0.5 rounded bg-slate-800">C++20</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">C</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">FreeRTOS</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">Linux Kernel</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">EKF</span>
-                    </div>
-                  </div>
-
-                  {/* Siber Güvenlik & Sistem */}
-                  <div className="rounded-xl border border-slate-800 bg-slate-900/40 p-5 hover:border-slate-700 transition-colors">
-                    <div className="flex items-center gap-2.5 text-teal-300 mb-2 font-mono text-xs uppercase tracking-wider">
-                      <Shield className="w-4 h-4" />
-                      <span>{lang === "tr" ? "Siber Savunma & Altyapı" : "Cyber Defense & DevOps"}</span>
-                    </div>
-                    <p className="text-xs text-slate-400 leading-relaxed mb-3">
-                      {lang === "tr"
-                        ? "Siber Vatan beyaz şapkalı siber güvenlik, dijital adli bilişim, Docker ve güvenli mimari tasarımı."
-                        : "White-hat cybersecurity (Cyber Homeland), digital forensics, Docker, and Security by Design."}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-300">
-                      <span className="px-2 py-0.5 rounded bg-slate-800">Siber Vatan</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">Adli Bilişim</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">Docker</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">CI/CD</span>
-                      <span className="px-2 py-0.5 rounded bg-slate-800">Git</span>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* -------------------------------------------------------- */}
-              {/* BÖLÜM 5: SERTİFİKALAR (Certifications Vault)             */}
-              {/* -------------------------------------------------------- */}
-              <section id="certificates" className="scroll-mt-16 md:scroll-mt-24">
-                <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#0b0f17]/85 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                  <h2 className="text-sm font-bold font-mono tracking-widest text-slate-200 uppercase">
-                    {lang === "tr" ? "Sertifikalar (270+)" : "Certifications (270+)"}
-                  </h2>
-                </div>
-
-                <div className="mb-6">
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                    {lang === "tr"
-                      ? "ODTÜ Bilgeİş, BTK Akademi, SHGM, IBM, TEI ve TÜBİTAK tarafından onaylanmış 270'ten fazla akredite sertifikayı aşağıdan canlı arayabilir ve doğrulayabilirsiniz."
-                      : "Search and verify over 270 accredited certificates issued by METU Bilgeİş, BTK Academy, DGCA, IBM, TEI, and TUBITAK below."}
-                  </p>
-                </div>
-
-                {/* İnteraktif Arama & Filtreleme Kasası */}
-                <CertificationVault />
-              </section>
-
-              {/* -------------------------------------------------------- */}
-              {/* BÖLÜM 6: İLETİŞİM (Contact)                              */}
-              {/* -------------------------------------------------------- */}
-              <section id="contact" className="scroll-mt-16 md:scroll-mt-24 pb-24">
-                <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-[#0b0f17]/85 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                  <h2 className="text-sm font-bold font-mono tracking-widest text-slate-200 uppercase">
-                    {lang === "tr" ? "İletişim" : "Contact"}
-                  </h2>
-                </div>
-
-                <div className="rounded-2xl border border-slate-800 bg-slate-900/50 p-6 sm:p-8 backdrop-blur">
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-200 tracking-tight">
-                    {lang === "tr" ? "Birlikte Geleceği İnşa Edelim." : "Let's Build the Future Together."}
-                  </h3>
-                  
-                  <p className="mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed max-w-lg">
-                    {lang === "tr"
-                      ? "Otonom aviyonikler, derin öğrenme model optimizasyonu, gömülü sistemler veya Ar-Ge işbirlikleri için bir e-posta uzağınızdayım."
-                      : "Open for autonomous robotics, deep learning model optimization, embedded engineering, and R&D collaborations."}
-                  </p>
-
-                  {/* Hızlı Mesaj Gönderme Formu */}
-                  <form onSubmit={handleSendMessage} className="mt-6 space-y-3">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      <input
-                        type="text"
-                        value={contactName}
-                        onChange={(e) => setContactName(e.target.value)}
-                        placeholder={lang === "tr" ? "Adınız / Şirketiniz" : "Your Name / Company"}
-                        className="px-3.5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-lg text-xs font-mono text-slate-200 placeholder:text-slate-500 outline-none focus:border-teal-400 transition-all"
-                      />
-                      <button
-                        type="button"
-                        onClick={handleCopyEmail}
-                        className="inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-lg border border-slate-700 bg-slate-800 text-xs font-mono text-slate-200 hover:border-teal-400/50 hover:text-teal-300 transition-all"
-                      >
-                        <Mail className="w-3.5 h-3.5 text-teal-400" />
-                        <span>{IDENTITY.email}</span>
-                        {copied ? <Check className="w-3.5 h-3.5 text-teal-300" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
-                      </button>
-                    </div>
-
+                  <div>
+                    <label className="block text-xs font-mono text-neutral-400 mb-1.5">
+                      {lang === "tr" ? "Mesajınız / Proje Özeti" : "Your Message / Brief"}
+                    </label>
                     <textarea
-                      rows={3}
+                      rows={4}
                       value={contactMessage}
                       onChange={(e) => setContactMessage(e.target.value)}
-                      placeholder={lang === "tr" ? "Proje veya mesajınız hakkında kısa bir not bırakın..." : "Write a brief note regarding your project or inquiry..."}
-                      className="w-full px-3.5 py-2.5 bg-slate-800/80 border border-slate-700 rounded-lg text-xs font-mono text-slate-200 placeholder:text-slate-500 outline-none focus:border-teal-400 transition-all resize-none"
+                      placeholder={lang === "tr" ? "Mesajınızı buraya yazabilirsiniz..." : "Write your message here..."}
+                      className="w-full px-4 py-2.5 rounded-xl bg-neutral-950 border border-neutral-800 text-neutral-200 placeholder-neutral-600 text-xs font-mono outline-none focus:border-emerald-500/50 transition"
+                      required
                     />
-
-                    <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-                      <button
-                        type="submit"
-                        className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg bg-teal-400 text-slate-950 text-xs font-mono font-semibold hover:bg-teal-300 transition-all shadow-[0_0_15px_rgba(45,212,191,0.2)]"
-                      >
-                        <Send className="w-3.5 h-3.5" />
-                        <span>{lang === "tr" ? "Doğrudan E-posta Gönder" : "Send Email Directly"}</span>
-                      </button>
-
-                      <a
-                        href="/cv3.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg border border-slate-700 bg-slate-800 text-xs font-mono text-slate-200 hover:text-white transition-all"
-                      >
-                        <FileText className="w-3.5 h-3.5 text-teal-400" />
-                        <span>{lang === "tr" ? "CV (PDF)" : "Resume (PDF)"}</span>
-                      </a>
-                    </div>
-                  </form>
-
-                  <div className="mt-8 pt-6 border-t border-slate-800 text-xs font-mono text-slate-500 flex flex-wrap items-center justify-between gap-4">
-                    <span>© {new Date().getFullYear()} {IDENTITY.name} · ODTÜ & Hacettepe</span>
-                    <span>Ankara, Türkiye</span>
                   </div>
-                </div>
-              </section>
 
-            </main>
+                  <button
+                    type="submit"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-bold text-xs font-mono transition shadow-lg shadow-emerald-500/20"
+                  >
+                    <Send className="w-4 h-4" />
+                    <span>{lang === "tr" ? "E-Posta İstemcisiyle Gönder" : "Send via Email Client"}</span>
+                  </button>
+                </form>
+              </div>
 
-          </div>
-        </div>
+            </div>
+          </section>
 
-        {/* ========================================================== */}
-        {/* MOBİL FLOATING QUICK NAVIGATION DOCK                       */}
-        {/* ========================================================== */}
-        <div className="lg:hidden fixed bottom-4 inset-x-4 z-40 flex items-center justify-center pointer-events-none">
-          <nav className="pointer-events-auto flex items-center gap-1 p-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 backdrop-blur-xl shadow-2xl text-[11px] font-mono text-slate-300">
-            <a
-              href="#about"
-              className={`px-3 py-1.5 rounded-full transition-colors ${activeSection === "about" ? "bg-teal-400 text-slate-950 font-bold" : "hover:text-white"}`}
-            >
-              Bio
-            </a>
-            <a
-              href="#projects"
-              className={`px-3 py-1.5 rounded-full transition-colors ${activeSection === "projects" ? "bg-teal-400 text-slate-950 font-bold" : "hover:text-white"}`}
-            >
-              Projeler
-            </a>
-            <a
-              href="#certificates"
-              className={`px-3 py-1.5 rounded-full transition-colors ${activeSection === "certificates" ? "bg-teal-400 text-slate-950 font-bold" : "hover:text-white"}`}
-            >
-              Sertifikalar
-            </a>
-            <a
-              href="/cv3.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1.5 rounded-full bg-slate-800 text-teal-300 font-semibold border border-slate-700 hover:bg-slate-700 transition-colors"
-            >
-              CV
-            </a>
-          </nav>
-        </div>
+          {/* ========================================================== */}
+          {/* FOOTER                                                     */}
+          {/* ========================================================== */}
+          <footer className="pt-12 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-500">
+            <div>
+              © {new Date().getFullYear()} {IDENTITY.name}. {lang === "tr" ? "Tüm hakları saklıdır." : "All rights reserved."}
+            </div>
+            <div className="flex items-center gap-4">
+              <span>React 19</span>
+              <span>•</span>
+              <span>TypeScript</span>
+              <span>•</span>
+              <span>Tailwind CSS</span>
+              <span>•</span>
+              <a href={IDENTITY.github} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition">
+                GitHub
+              </a>
+            </div>
+          </footer>
+
+        </main>
 
         {/* ========================================================== */}
-        {/* PROJE DETAY MODALI (Architecture & Spec View)               */}
+        {/* INTERACTIVE TERMINAL DRAWER                                */}
+        {/* ========================================================== */}
+        <InteractiveTerminal
+          isOpen={isTerminalOpen}
+          onClose={() => setIsTerminalOpen(false)}
+          lang={lang}
+        />
+
+        {/* ========================================================== */}
+        {/* PROJECT DEEP DIVE MODAL                                    */}
         {/* ========================================================== */}
         <AnimatePresence>
           {activeProjectModal && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setActiveProjectModal(null)}
-                className="fixed inset-0 bg-black/80 backdrop-blur-sm"
-              />
-
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-slate-700 bg-[#0e131d] p-6 sm:p-8 shadow-2xl text-slate-300 z-10"
+                className="w-full max-w-2xl rounded-2xl border border-neutral-800 bg-[#0c0e14] shadow-2xl overflow-hidden p-6 space-y-5"
               >
-                {/* Kapatma Butonu */}
-                <button
-                  onClick={() => setActiveProjectModal(null)}
-                  className="absolute top-5 right-5 p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
-                  aria-label="Kapat"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-
-                {/* Üst Başlık & Kategori */}
-                <div className="pr-10">
-                  <span className="font-mono text-xs uppercase tracking-wider text-teal-400 block mb-1">
-                    {activeProjectModal.category} • {activeProjectModal.metric}
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-100 tracking-tight">
-                    {activeProjectModal.title}
-                  </h3>
+                <div className="flex items-start justify-between gap-4 border-b border-neutral-800 pb-4">
+                  <div>
+                    <span className="text-[11px] font-mono text-emerald-400 font-semibold uppercase">
+                      {activeProjectModal.category}
+                    </span>
+                    <h3 className="text-xl font-bold text-neutral-100 font-display mt-1">
+                      {activeProjectModal.title}
+                    </h3>
+                  </div>
+                  <button
+                    onClick={() => setActiveProjectModal(null)}
+                    className="p-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-400 hover:text-white transition"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
                 </div>
 
-                {/* Detaylı Açıklama */}
-                <p className="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  {activeProjectModal.longDesc}
-                </p>
+                <div className="space-y-4 text-xs font-mono text-neutral-300">
+                  <p className="leading-relaxed text-neutral-300 text-sm font-sans">
+                    {activeProjectModal.longDesc}
+                  </p>
 
-                {/* Mimari Akış ve Pipeline Bileşenleri */}
-                <div className="mt-6 pt-5 border-t border-slate-800">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 flex items-center gap-1.5 mb-3">
-                    <Layers className="w-3.5 h-3.5 text-teal-400" />
-                    <span>Mühendislik Mimarisi & Çözüm Akışı</span>
-                  </h4>
-                  <ul className="space-y-2 text-xs font-mono text-slate-300">
-                    {activeProjectModal.architecture.map((arch, idx) => (
-                      <li key={idx} className="flex items-start gap-2 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800/80">
-                        <span className="text-teal-400 mt-0.5">▹</span>
-                        <span>{arch}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <div className="space-y-2">
+                    <div className="text-emerald-400 font-bold text-xs uppercase">
+                      {lang === "tr" ? "Mimari ve Teknik Vurgular:" : "Architecture & Technical Highlights:"}
+                    </div>
+                    <ul className="space-y-1.5 list-disc list-inside text-neutral-400">
+                      {activeProjectModal.architecture.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
 
-                {/* Kullanılan Teknolojiler */}
-                <div className="mt-5 pt-4 border-t border-slate-800">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">
-                    Teknoloji Yığını
-                  </h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {activeProjectModal.tags.map((t, tidx) => (
-                      <span
-                        key={tidx}
-                        className="px-2.5 py-1 rounded bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs font-mono"
-                      >
-                        {t}
-                      </span>
-                    ))}
+                  <div className="space-y-2 pt-2">
+                    <div className="text-cyan-400 font-bold text-xs uppercase">
+                      {lang === "tr" ? "Kullanılan Teknolojiler:" : "Tech Stack:"}
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {activeProjectModal.tags.map((tag) => (
+                        <span key={tag} className="px-2.5 py-1 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-200 text-xs">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                {/* Butonlar */}
-                <div className="mt-8 pt-5 border-t border-slate-800 flex items-center justify-between gap-3">
+                <div className="flex items-center justify-between pt-4 border-t border-neutral-800">
+                  <span className="text-xs font-mono text-emerald-400">
+                    {activeProjectModal.metric}
+                  </span>
                   <a
                     href={activeProjectModal.link}
                     target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-400 text-slate-950 font-mono text-xs font-semibold hover:bg-teal-300 transition-all shadow-[0_0_15px_rgba(45,212,191,0.2)]"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-neutral-100 hover:bg-white text-neutral-900 font-bold text-xs font-mono transition"
                   >
-                    <Github className="w-4 h-4" />
-                    <span>GitHub Reposunu İncele</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
+                    <span>{lang === "tr" ? "GitHub Reposunu İncele" : "View on GitHub"}</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
                   </a>
-
-                  <button
-                    onClick={() => setActiveProjectModal(null)}
-                    className="px-4 py-2.5 rounded-xl border border-slate-700 bg-slate-800 text-xs font-mono text-slate-300 hover:text-white"
-                  >
-                    Kapat
-                  </button>
                 </div>
               </motion.div>
             </div>
